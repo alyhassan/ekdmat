@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BodyItems" xml:space="preserve">
+    <value />
+  </data>
+  <data name="business" xml:space="preserve">
+    <value>أعمال</value>
+  </data>
+  <data name="ddlLangAr" xml:space="preserve">
+    <value>عربى</value>
+  </data>
+  <data name="ddlLangEn" xml:space="preserve">
+    <value>انجليزي</value>
+  </data>
+  <data name="lblAboutUs" xml:space="preserve">
+    <value>من نحن</value>
+  </data>
+  <data name="lblAccessServices" xml:space="preserve">
+    <value>خدمات منفذة</value>
+  </data>
+  <data name="lblBusiness" xml:space="preserve">
+    <value>اعمال</value>
+  </data>
+  <data name="lblCanceledServices" xml:space="preserve">
+    <value>خدمات ملغاة</value>
+  </data>
+  <data name="lblClearanceForm" xml:space="preserve">
+    <value>نموذج تخليص جمركي</value>
+  </data>
+  <data name="lblCustomerServices" xml:space="preserve">
+    <value>خدمة العملاء</value>
+  </data>
+  <data name="lblCustomsClearance" xml:space="preserve">
+    <value>نماذج التخليص الجمركي</value>
+  </data>
+  <data name="lblFaq" xml:space="preserve">
+    <value>أسئلة متكررة</value>
+  </data>
+  <data name="lblFunctions" xml:space="preserve">
+    <value>كن منفذا</value>
+  </data>
+  <data name="lblHasBeenApproved" xml:space="preserve">
+    <value>تمت الموافقة</value>
+  </data>
+  <data name="lblHealthMinistry" xml:space="preserve">
+    <value>نماذج وزارة الصحة</value>
+  </data>
+  <data name="lblIncomingMessages" xml:space="preserve">
+    <value>الرسائل الواردة</value>
+  </data>
+  <data name="lblLabourOffice" xml:space="preserve">
+    <value>نماذج مكتب العمل</value>
+  </data>
+  <data name="lblMinistryCommerce" xml:space="preserve">
+    <value>نماذج وزاره التجارة</value>
+  </data>
+  <data name="lblOutlet" xml:space="preserve">
+    <value>وظائف</value>
+  </data>
+  <data name="lblPaymentConfirmation" xml:space="preserve">
+    <value>تم الدفع والتأكيد</value>
+  </data>
+  <data name="lblPaymentMethods" xml:space="preserve">
+    <value>طرق الدفع</value>
+  </data>
+  <data name="lblPendingApprovals" xml:space="preserve">
+    <value>بانتظار الموافقة</value>
+  </data>
+  <data name="lblPersonal" xml:space="preserve">
+    <value>أفراد</value>
+  </data>
+  <data name="lblRejectedServices" xml:space="preserve">
+    <value>خدمات مرفوضة</value>
+  </data>
+  <data name="lblRightsReserved" xml:space="preserve">
+    <value>شركة القنصل الرقمي المالكة لبوابة خدمات كوم </value>
+  </data>
+  <data name="lblServicePrivacy" xml:space="preserve">
+    <value>خصوصية خدمات كوم</value>
+  </data>
+  <data name="lblServices" xml:space="preserve">
+    <value>خدمات</value>
+  </data>
+  <data name="lblShippingInformation" xml:space="preserve">
+    <value>معلومات الشحن</value>
+  </data>
+  <data name="lblSimilarModels" xml:space="preserve">
+    <value>نماذج تهمك</value>
+  </data>
+  <data name="lblSubLink" xml:space="preserve">
+    <value>يكتب هنا رابط فرعى</value>
+  </data>
+  <data name="lblTitle" xml:space="preserve">
+    <value>خدمات كوم</value>
+  </data>
+  <data name="lblUseAgreement" xml:space="preserve">
+    <value>اتفاقية الاستخدام</value>
+  </data>
+  <data name="lblUsersManual" xml:space="preserve">
+    <value>دليل الاستخدام</value>
+  </data>
+  <data name="LeftMenu" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LowerMenu" xml:space="preserve">
+    <value />
+  </data>
+  <data name="personal" xml:space="preserve">
+    <value>أفراد</value>
+  </data>
+  <data name="RightMenu" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtSearcBox" xml:space="preserve">
+    <value>اكتب نص البحث هنا ......</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+</root>
