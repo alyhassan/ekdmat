@@ -211,13 +211,13 @@
                     <div id="collapse503" class="collapse in" aria-expanded="false">
                         <div class="accordion-body clearfix">
                             <div class="col-md-12">
-                                <div class="col-md-6">
+                                <div class="col-md-6 col-sm-6  col-xs-12">
                                     <div class="form-group b-ac">
                                         <label class="clearfix">
                                             <input type="radio" name="cars" value="1" /><span>Credit card</span></label>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 col-sm-6  col-xs-12">
 
                                     <div class="form-group b-ac">
                                         <label class="clearfix">
@@ -226,85 +226,76 @@
                                 </div>
                             </div>
                             <div class="col-md-12 c-card" style="display: none;" id="c-card1">
-                                <div class="col-md-6 pull-right">
-                                    <div class="form-group">
-                                         <div class="form-group ">
-                                            <label>اسم صاحب البطافة</label>
-                                            <input type="text" class="attach form-control" />
-                                        </div>
-                                          <div class="form-group">
-                                            <label>رقم البطاقة</label>
-                                            <input type="text" class="attach form-control" />
-                                        </div>
-                                          <div class="form-group">
-                                            <label>الرقم السرى</label>
-                                            <input type="text" class="attach form-control" />
-                                        </div>
-
-                                      
-                                        <div class="form-group ">
-                                            <label> VIS رقم </label>
-                                            <input type="text" class="attach form-control" name="cars" value="2" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 pull-right">
-                                    <div class="form-group text-center visa-img">
+                                <div class="form-group col-md-12 text-center visa-img">
                                         <img src="/images/visa-bg.jpg" />
 
                                     </div>
-                                      <div class="form-group">
-                                        <label>تاريخ الانتهاء</label>
-                                        <input type="text" class="attach form-control" />
-                                    </div>
                                     <div class="form-group">
-                                        <label>رقم الهاتف </label>
-                                        <input type="text" class="attach form-control" />
+                                         <div class="form-group col-md-6 col-sm-6 col-xs-12  pull-right">
+                                              <label>اسم صاحب البطافة</label>
+                                            <input type="text" class="attach form-control" placeholder="" />
+                                        </div>
+                                        <div class="form-group col-md-6 col-sm-6 col-xs-12  pull-right">
+                                             <label>رقم الهاتف</label>
+                                        <input type="text" class="attach form-control" placeholder="" />
                                     </div>
-
-                                </div>
+                                          <div class="form-group col-md-6 col-sm-6 col-xs-12  pull-right">
+                                              <label>رقم البطاقة</label>
+                                            <input type="text" class="attach form-control" placeholder="" />
+                                        </div>
+                                          <div class="form-group col-md-6 col-sm-6 col-xs-12  pull-right">
+                                               <label>الرقم السرى</label>
+                                            <input type="text" class="attach form-control" placeholder="" />
+                                        </div>
+                                        <div class="form-group col-md-6 col-sm-6 col-xs-12  pull-right">
+                                            <label> VIS رقم</label>
+                                            <input type="text" class="attach form-control" name="VIS" value="" placeholder="" />
+                                        </div>
+                                          <div class="form-group col-md-6 col-sm-6 col-xs-12  pull-right">
+                                              <label> تاريخ الانتهاء</label>
+                                        <input type="text" class="attach form-control" placeholder="" />
+                                    </div>
+                                    </div>
+                            
+                              
                             </div>
                             <div class="col-md-12 c-card" style="display: none;" id="c-card2">
-                                <div class="col-md-6 pull-right">
-                                    
-                                        <div class="form-group">
+                                        <div class="form-group col-md-6 col-sm-6 col-xs-12  pull-right">
                                             <label>أسم صاحب البطاقة</label>
                                             <input type="text" class="attach form-control" />
                                         </div>
-                                         <div class="form-group">
+                                      <div class="form-group col-md-6 col-sm-6 col-xs-12  pull-right">
+                                            <label>رقم الهاتف</label>
+                                            <input type="text" class="attach form-control" />
+                                        </div>
+                                         <div class="form-group col-md-6 col-sm-6 col-xs-12  pull-right">
                                             <label>أسم البنك المحول منه</label>
                                            <select runat="server" id="ddlBankListFrom" class="attach form-control">
                                             <option value="1">بنك 1</option>
                                             <option value="2">بنك 2</option>
                                         </select>
                                         </div>
-                                      <div class="form-group">
-                                            <label>رقم الحساب</label>
-                                            <input type="text" class="attach form-control"  placeholder="اخر 4 ارقام فى الحساب"/>
-                                        </div>
-                                     <div class="form-group">
-                                            <label>قيمة الحوالة</label>
-                                            <input type="text" class="attach form-control" />
-                                        </div>
-                                   
-                                </div>
-                                <div class="col-md-6 pull-right">
-                                       <div class="form-group">
-                                            <label>رقم الهاتف</label>
-                                            <input type="text" class="attach form-control" />
-                                        </div>
-                                     <div class="form-group">
+                                 <div class="form-group col-md-6 col-sm-6 col-xs-12  pull-right">
                                             <label>أسم البنك المحول اليه</label>
                                           <select runat="server" id="ddlBankListTo" class="attach form-control">
                                             <option value="1">بنك 1</option>
                                             <option value="2">بنك 2</option>
                                         </select>
                                         </div>
-                                       <div class="form-group">
-                                            <label>رقم الحوالة</label>
+
+                                      <div class="form-group col-md-6 col-sm-6 col-xs-12  pull-right">
+                                            <label>رقم الحساب</label>
+                                            <input type="text" class="attach form-control"  placeholder="اخر 4 ارقام فى الحساب"/>
+                                        </div>
+                                     <div class="form-group col-md-6 col-sm-6 col-xs-12  pull-right">
+                                            <label>قيمة الحوالة</label>
                                             <input type="text" class="attach form-control" />
                                         </div>
-                                </div>
+                                   
+                                <div class="form-group col-md-6 col-sm-6 col-xs-12  pull-right">
+                                            <label>رقم الحوالة</label>
+                                            <input type="text" class="attach form-control" />
+                                        </div>     
                             </div>
                             <div class="clearfix">&nbsp;</div>
                             <div class="col-md-12">
@@ -352,6 +343,8 @@
             </div>
         </div>
     </div>
+            </div>
+        </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="js" runat="server">
     <script>

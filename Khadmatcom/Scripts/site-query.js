@@ -1,33 +1,43 @@
 ﻿
 $(document).ready(function () {
-   
+
     function toggleChevron(e) {
         $(e.target)
             .prev('.accordion-heading')
             .find(".indi")
            .toggleClass('fa-chevron-up fa-chevron-down')
          .toggleClass('accordion-active');
-        
+
 
         //.toggleClass('L-button');
-          
+
     }
     $('#accordion,#accordion01,#accordion02, #accordion2, #accordion3, #accordion4, #accordion5,#accordion500').on('hidden.bs.collapse', toggleChevron);
     $('#accordion,#accordion01,#accordion02, #accordion2, #accordion3, #accordion4, #accordion5,#accordion500').on('shown.bs.collapse', toggleChevron);
-  
 
-    function toggleHas(f)
-    {
-            $(f.target)
-           .prev('.fal')
-           .find(".accordion-heading")
-           .toggleClass('lanti200');
-       
+
+    function toggleHas(f) {
+        $(f.target)
+       .prev('.fal')
+       .find(".accordion-heading")
+       .toggleClass('lanti200');
+
     }
 
     $("#accordion500").on('hidden.bs.collapse', toggleHas);
     $("#accordion500").on('shown.bs.collapse', toggleHas);
-  
+
+
+    $("#accordion5").on('hidden.bs.collapse', toggleHas2);
+    $("#accordion5").on('shown.bs.collapse', toggleHas2);
+    function toggleHas2(g) {
+        $(g.target)
+       .prev('.accordion-heading')
+       .find(".accordion-toggle")
+       .toggleClass('blue_backgroung');
+
+    }
+
 
 
     function toggleHas1(g) {
@@ -44,50 +54,49 @@ $(document).ready(function () {
 
 
     $(".vdeo").click(function () {
-      
-        $(".iframeVideoHome").attr('src', 'https://www.youtube.com/embed/XGSy3_Czz8k'+ '?rel=0');
-  
+
+        $(".iframeVideoHome").attr('src', 'https://www.youtube.com/embed/XGSy3_Czz8k' + '?rel=0');
+
     });
 
 
-   //cange group event
+    //cange group event
     $('#group').change(function () {
         if ($(this).val() === '1') {
-           
+
             $("#personal").show();
             $("#business").hide();
-         
+
         }
         else if ($(this).val() === '2') {
 
             $("#business").show();
             $("#personal").hide();
         }
-        else
-        {
+        else {
             $("#personal").hide();
             $("#business").hide();
         }
-         
+
 
     });
 
 
- 
-    
+
+
 
     $('.next1').click(function () {
         $(".sub").removeClass("sub-remove");
 
         if ($('.alif:last').hasClass('active')) {
 
-            $('.next1').attr('disabled', true);
+            $('.next1').attr('disabled', true)
         }
 
         else {
             $('.active').removeClass('active').next().addClass('active');
-            
-     
+
+
         }
 
     });
@@ -97,7 +106,7 @@ $(document).ready(function () {
 
         if ($('.alif:last').hasClass('active')) {
 
-            $('.next2').attr('disabled', true);
+            $('.next2').attr('disabled', true)
         }
 
         else {
@@ -112,21 +121,21 @@ $(document).ready(function () {
     $(".app-close").click(function () {
 
         //location.href = "Default.aspx";
-       
+
     });
 
-    
+
     $('.nxt').click(function () {
-      
+
         if ($("#ai li:last").hasClass('active')) {
-            $('.nxt').attr('disabled', true);
+            $('.nxt').attr('disabled', true)
 
         }
 
         else {
             $("#ai").find('.active').removeClass('active').next().addClass('active');
             //$("#all").find('.active').removeClass('active').next().addClass('active');
-           
+
             //$('.active').removeClass('active').next().addClass('active');
             //$('.active').removeClass('active').next().addClass('active');
 
@@ -134,24 +143,24 @@ $(document).ready(function () {
         }
     });
 
-        $('.prv').click(function(){
-            if ($('#ai li').eq(0).hasClass('active')) {
-                $('.prv').attr('disabled', true);
-            }
-            else {
-                $("#ai:last").find('.active').removeClass('active').prev().addClass('active');
-                //$("#all").find('.active').removeClass('active').prev().addClass('active');
-              
-            }
+    $('.prv').click(function () {
+        if ($('#ai li').eq(0).hasClass('active')) {
+            $('.prv').attr('disabled', true)
+        }
+        else {
+            $("#ai:last").find('.active').removeClass('active').prev().addClass('active');
+            //$("#all").find('.active').removeClass('active').prev().addClass('active');
+
+        }
 
 
     });
 
 
 
-        $('.sub').click(function () {
-            $(".sub2").addClass("sub-remove");
-        });
+    $('.sub').click(function () {
+        $(".sub2").addClass("sub-remove");
+    });
 
     $('.main').click(function () {
 
@@ -183,14 +192,13 @@ $(document).ready(function () {
         $(".C-slider").hide();
 
         //$(".prsonal").addClass("akjesa");
-     
+
 
     }
 
 
 
-    else if (se == 'commercial')
-    {
+    else if (se == 'commercial') {
         $(".P-slider").hide();
         $(".C-slider").fadeIn();
 
@@ -198,22 +206,21 @@ $(document).ready(function () {
 
 
     }
-    else if (se == 'active-service1')
-    {
+    else if (se == 'active-service1') {
         $("#right1").addClass("in");
-    
+
         $("a[href='service.aspx?se=active-service1']").addClass("service-add");
     }
 
     else if (se == 'active-service2') {
         $("#right1").addClass("in");
-       
+
         $("a[href='service.aspx?se=active-service2']").addClass("service-add");
     }
 
     else if (se == 'active-service3') {
         $("#right1").addClass("in");
-    
+
         $("a[href='service.aspx?se=active-service3']").addClass("service-add");
     }
 
@@ -225,14 +232,14 @@ $(document).ready(function () {
 
     else if (se == 'active-service5') {
         $("#right1").addClass("in");
-     
+
         $("a[href='service.aspx?se=active-service5']").addClass("service-add");
     }
-    
+
     else if (se == 'hi') {
 
         $("#p10").addClass("in");
-        $("#p10").css({ "display": "block", "margin":"30px 0" });
+        $("#p10").css({ "display": "block", "margin": "30px 0" });
         $(".modal-l").css({ "display": "block" });
     }
 
@@ -283,7 +290,7 @@ $(document).ready(function () {
         var test = $(this).val();
 
         $(".c-card").hide();
-        $("#c-card"+test).show();
+        $("#c-card" + test).show();
     });
 
 
@@ -314,13 +321,13 @@ $(document).ready(function () {
 
 
     /*end*/
-    });
+});
 
 
 
 
 function PlayVideo() {
- 
+
     $(".iframeVideoHome").attr('src', 'https://www.youtube.com/embed/XGSy3_Czz8k' + '?rel=0&autoplay=1');
 
 }

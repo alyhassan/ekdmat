@@ -37,3 +37,6 @@ C:\Users\USER\Documents\Visual Studio 2015\Projects\Khadmatcom\Khadmatcom\bin\Li
 C:\Users\USER\Documents\Visual Studio 2015\Projects\Khadmatcom\Khadmatcom\bin\LinqKit.xml
 C:\Users\USER\Documents\Visual Studio 2015\Projects\Khadmatcom\Khadmatcom\obj\Debug\Khadmatcom.dll
 C:\Users\USER\Documents\Visual Studio 2015\Projects\Khadmatcom\Khadmatcom\obj\Debug\Khadmatcom.pdb
+C:\Users\sherif\Source\Repos\ekdmat\Khadmatcom\obj\Debug\Khadmatcom.csprojResolveAssemblyReference.cache
+C:\Users\sherif\Source\Repos\ekdmat\Khadmatcom\obj\Debug\Khadmatcom.dll
+C:\Users\sherif\Source\Repos\ekdmat\Khadmatcom\obj\Debug\Khadmatcom.pdb
