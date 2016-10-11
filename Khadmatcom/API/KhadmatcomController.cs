@@ -11,6 +11,7 @@ using System.Threading;
 using System.Web.Configuration;
 using System.Web.Http;
 using Khadmatcom.Services;
+using HyperPayClient;
 
 namespace Khadmatcom.API
 {
@@ -56,6 +57,26 @@ namespace Khadmatcom.API
             }
         }
 
+
+        [HttpGet]
+        [ActionName("Checkout")]
+        public string Checkout(decimal amount, string transactionId, int attempt, string userIp)
+        {
+
+            try
+            {
+                PaymentManager paymentManager = new PaymentManager();
+                var _return = paymentManager.Checkout(amount, transactionId, attempt, userIp);
+
+                return _return["id"];//.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries)[0];
+            }
+            catch (Exception ex)
+            {
+                // todo:log the exception
+                return "-";
+
+            }
+        }
         [HttpGet]
         [ActionName("JoinRequest")]
         public string JoinRequest(string companyName, string providerEmail, string contactName, string providerPhoneNumber, int cityId, int mainCategoryId, string servicesJsonData)

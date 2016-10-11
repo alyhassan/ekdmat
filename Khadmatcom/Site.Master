@@ -29,12 +29,16 @@
     <!-- /open graph -->
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
-    <link href="~/Content/site-ar.css" rel="stylesheet" runat="server" /><!-- sherif -->
-    <link href="~/Content/Bootstrap.FontAwsome.css" rel="stylesheet"  runat="server"/> <!-- sherif -->
+    <link href="~/Content/site-ar.css" rel="stylesheet" runat="server" />
+    <!-- sherif -->
+    <link href="~/Content/Bootstrap.FontAwsome.css" rel="stylesheet" runat="server" />
+    <!-- sherif -->
     <link href='javascript:{}' runat="server" id="mainCss" rel="stylesheet" />
     <webopt:BundleReference runat="server" Path="~/bundles/masterCss" />
     <style>
-        .main-content{ margin-top: 20px;}
+        .main-content {
+            margin-top: 20px;
+        }
     </style>
     <script src="http://v4-alpha.getbootstrap.com/assets/js/vendor/tether.min.js"></script>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
@@ -309,7 +313,7 @@
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
-                  <%--  <div class="panel panel_custom">
+                    <%--  <div class="panel panel_custom">
                         <div class="accordion-heading ">
                             <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#accordion2" href="#collapse1" aria-expanded="false">Clearance Form <i class="indi fa fa-chevron-up"></i>
                             </a>
@@ -377,8 +381,6 @@
                             </div>
                         </div>
                     </div>--%>
-
-
                 </div>
 
             </div>
@@ -412,7 +414,7 @@
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
-                   <%-- <div class="panel">
+                    <%-- <div class="panel">
                         <div class="accordion-heading ">
                             <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="false">Clearance Form <i class="indi fa fa-chevron-down"></i>
                             </a>
@@ -480,8 +482,6 @@
                             </div>
                         </div>
                     </div>--%>
-
-
                 </div>
 
             </div>

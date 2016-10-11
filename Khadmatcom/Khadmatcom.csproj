@@ -121,6 +121,10 @@
     <Content Include="card-info.aspx" />
     <Content Include="categories.aspx" />
     <Content Include="category.aspx" />
+    <Content Include="Content\cridet-card.css" />
+    <Content Include="images\credit.png" />
+    <Content Include="OnlinePayment\Pay.aspx" />
+    <Content Include="OnlinePayment\process-payment.aspx" />
     <Content Include="providers\accomplished-requests.aspx" />
     <Content Include="providers\approved-requests.aspx" />
     <Content Include="providers\canceled-requests.aspx" />
@@ -270,6 +274,9 @@
     <Content Include="Scripts\jquery-2.2.3.min.js" />
     <Content Include="Scripts\jquery.blockUI.js" />
     <Content Include="Scripts\jquery.blockUI.min.js" />
+    <Content Include="Scripts\jquery.creditCardValidator.js" />
+    <Content Include="Scripts\jquery.mask.js" />
+    <Content Include="Scripts\jquery.mask.min.js" />
     <Content Include="Scripts\jquery.validationEngine-ar.js" />
     <Content Include="Scripts\jquery.validationEngine-en.js" />
     <Content Include="Scripts\jquery.validationEngine.js" />
@@ -287,6 +294,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="services.aspx" />
+    <Content Include="test.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -333,6 +341,20 @@
     </Compile>
     <Compile Include="category.aspx.designer.cs">
       <DependentUpon>category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlinePayment\Pay.aspx.cs">
+      <DependentUpon>Pay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlinePayment\Pay.aspx.designer.cs">
+      <DependentUpon>Pay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnlinePayment\process-payment.aspx.cs">
+      <DependentUpon>process-payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnlinePayment\process-payment.aspx.designer.cs">
+      <DependentUpon>process-payment.aspx</DependentUpon>
     </Compile>
     <Compile Include="providers\accomplished-requests.aspx.cs">
       <DependentUpon>accomplished-requests.aspx</DependentUpon>
@@ -530,6 +552,10 @@
     <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HyperPayClient\HyperPayClient.csproj">
+      <Project>{75305c4a-786e-4179-abe8-2975d59875f0}</Project>
+      <Name>HyperPayClient</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Khadmatcom.Data\Khadmatcom.Data.csproj">
       <Project>{0a817b92-4e5e-497d-956b-16046022f967}</Project>
       <Name>Khadmatcom.Data</Name>

@@ -3,6 +3,7 @@
 <%@ Import Namespace="Khadmatcom.Services" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="/Content/cridet-card.css" rel="stylesheet" />
     <style>
         .modal-body .body {
             min-height: 180px;
@@ -179,7 +180,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>اسم المرسل اليه</label>
-                                    <input type="text" class="attach" runat="server" ID="txtShippingName" />
+                                    <input type="text" class="attach" runat="server" id="txtShippingName" />
                                 </div>
                                 <div class="form-group">
                                     <label>المدينة</label>
@@ -246,14 +247,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group b-ac">
                                         <label class="clearfix">
-                                            <input type="radio" name="cars" value="1" class="validate[required]" /><span>بطاقة الإتمان</span></label>
+                                            <input type="radio" name="cars" value="1" id="onLineOption" class="validate[required]" /><span>بطاقة الإتمان</span></label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
 
                                     <div class="form-group b-ac">
                                         <label class="clearfix">
-                                            <input type="radio" name="cars" value="2" class="validate[required]" /><span>تحويل بنكي</span></label>
+                                            <input type="radio" name="cars" value="2" id="offLineOption" class="validate[required]" /><span>تحويل بنكي</span></label>
                                     </div>
                                 </div>
                             </div>
@@ -262,22 +263,27 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label dir="rtl">رقم الكارت</label>
-                                            <input type="text" class="attach validate[required]" runat="server" ID="txtCardNo" />
+                                            <input type="text" class="attach validate[required]" runat="server" id="txtCardNo" />
                                         </div>
                                         <div class="form-group">
                                             <label dir="rtl">CVV</label>
-                                            <input type="text" class="attach validate[required]" name="cars" value="" runat="server" ID="txtCvv" />
+                                            <input type="text" maxlength="3" class="attach validate[required]" name="cars" value="" runat="server" id="txtCvv" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group text-center visa-img">
                                         <img src="/images/visa-bg.jpg" />
-
+                                        <input type="text" name="txtExpiryDate" id="txtExpiryDate" runat="server" maxlength="5" placeholder="mm/yy">
+                                        <%-- <select class="form-control validate[required]" name="paymentBrand" runat="server" ID="ddlPaymentBrand">
+                                            <option value="VISA">Visa</option>
+                                            <option value="MASTER">Master Card</option>
+                                            <option value="AMEX">American Express</option>
+                                        </select>--%>
                                     </div>
                                     <div class="form-group">
-                                        <label dir="rtl">Telephone number</label>
-                                        <input type="text" class="attach" />
+                                        <label dir="rtl">اسم حامل الكارت</label>
+                                        <input type="text" class="attach" runat="server" id="txtCardHolder" />
                                     </div>
 
                                 </div>
@@ -337,7 +343,7 @@
                             </div>
                             <div class="clearfix">&nbsp;</div>
                             <div class="col-md-12 form-group clearfix">
-                                <asp:LinkButton Text="إرسال" runat="server" CssClass="nxt s-cl clasic-btn" ID="btnSave" OnClick="btnSave_OnClick" OnClientClick="return validateForm('#divServiceRequest', '<%# languageIso %>');" />
+                                <asp:LinkButton Text="إرسال" runat="server" CssClass="nxt s-cl clasic-btn" ID="btnSave" OnClick="btnSave_OnClick" OnClientClick="return checkPayment()" />
                                 <%--<a href="card-info.aspx" class="nxt s-cl clasic-btn">Pay Now</a>--%>
                                 <%-- <a data-toggle="collapse" data-parent="#accordion500" href="card-info.aspx" class="app-close s-cl clasic-btn">Pay Later</a>--%>
                                 <a data-toggle="collapse" data-parent="#accordion500" href="#collapse502" class="prv s-cl clasic-btn">السابق</a>
@@ -361,14 +367,118 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="onLinePaymentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-header-success">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                    <h1 class="hidden"><i class="fa">&nbsp;</i></h1>
+                </div>
+                <div class="modal-body">
+
+                    <iframe class="iframePayment" frameborder="0" allowfullscreen="true" width="100%" style="min-height: 300px;"></iframe>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <asp:HiddenField ID="hfCardBrand" runat="server" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="js" runat="server">
+    <script src="/Scripts/jquery.creditCardValidator.js"></script>
     <script>
+        var defaultClasses = 'attach validate[required]';
         $(document).ready(function () {
+            $("#txtExpiryDate").mask("99/99");    
+            // $('input#txtCardNo').validateCreditCard(function(result) {
+            //   $("#hfCardBrand").val(result.card_type == null ? '-' : result.card_type.name);
+            // $("#hfCardBrandValid").val(result.valid);
+            //$('.log').html('Card type: ' + (result.card_type == null ? '-' : result.card_type.name)
+            //         + '<br>Valid: ' + result.valid
+            //         + '<br>Length valid: ' + result.length_valid
+            //         + '<br>Luhn valid: ' + result.luhn_valid);
+            //});
             $(".myTab a").click(function (e) {
                 e.preventDefault();
                 $(this).tab('show');
             });
+            $('input#txtCardNo').keyup(function() {
+                var cardResult = $('input#txtCardNo').validateCreditCard({ accept: ['visa', 'mastercard'] });//
+                var cardType = cardResult.card_type == null ? '-' : cardResult.card_type.name;
+
+                $('input#txtCardNo').attr('class',defaultClasses+' '+cardType);
+                $("#hfCardBrand").val(cardType);
+                
+            });
         });
+
+        function ValditPaymentSection() {
+            var result = false;
+            result=validateForm('#divServiceRequest', '<%# languageIso %>');
+            if(result)
+            {
+                var cardResult = $('input#txtCardNo').validateCreditCard({ accept: ['visa', 'mastercard'] });//
+                var cardType = cardResult.card_type == null ? '-' : cardResult.card_type.name;
+                if(cardType  !== '-')$('input#txtCardNo').addClass(cardType);
+                $("#hfCardBrand").val(cardType);
+                
+                result = cardResult.valid;
+                return result;//result;
+            }return result;//result;
+        }
+
+        function checkPayment() {
+            var result = false;
+            result=validateForm('#divServiceRequest', '<%# languageIso %>');
+            var onLineOption = false;
+            onLineOption = $('#onLineOption').is(':checked');//$('#onLineOption').attr('checked') == "checked";
+            if (result && onLineOption) {
+                result = false;
+                payOnline();
+            }
+            return result;
+        }
+        function payOnline() {
+            var amount = <%= CurrentRequest.CurrentPrice.Value%>;
+            var transactionId= '<%= CurrentRequest.Id %>';
+            var userIp= '<%= Servston.Utilities.GetCurrentClientIPAddress() %>';
+
+            var userData = {
+                amount: amount,
+                transactionId: transactionId,
+                attempt: 1,
+                userIp: userIp
+            };
+            $.getJSON("/api/Khadmatcom/Checkout", userData, function (res) {
+                showLoading();
+                if (res&&res.length> 1) {
+                    hideLoading();
+                    <%-- var script = document.createElement("script");
+                    script.setAttribute("type", "text/javascript");
+                    script.setAttribute("src", "<%= HyperPayClient.MerchantConfiguration.Config.Url+"v1/paymentWidgets.js?checkoutId="%>"+res);
+                    document.getElementsByTagName("head")[0].appendChild(script);--%>
+
+                    //$('#onLinePaymentModal').find('iframe').attr('src', '<%= HyperPayClient.MerchantConfiguration.Config.AmaUrl %>'+"?cid="+res+ '&rel=0');
+                    
+                    
+                    $('#onLinePaymentModal').on('shown.bs.modal', function() { //correct here use 'shown.bs.modal' event which comes in bootstrap3
+                        // $(".iframePayment").attr('src', '<%= HyperPayClient.MerchantConfiguration.Config.AmaUrl %>'+"?cid="+res+ '&rel=0');
+                        
+                        $(this).find('iframe').attr('src', '<%= HyperPayClient.MerchantConfiguration.Config.AmaUrl %>'+"?cid="+res);
+                    });
+                    $("#onLinePaymentModal").modal({backdrop: 'static',show:true});
+                    //$().show();
+                }
+                else {
+                    hideLoading();
+                    toastr.error("هناك خطأ  أثناء إرسال طلبك...فضلا حاول لاحقا.", "خطأ"); hideLoading();
+                }
+            });
+        }
     </script>
 </asp:Content>

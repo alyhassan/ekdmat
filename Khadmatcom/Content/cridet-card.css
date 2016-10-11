@@ -1,0 +1,58 @@
+﻿/*Aly for cridet card*/
+  
+ form #txtCardNo {background-color: #fff;
+    border: 1px solid #e5e5e5;
+    color: #333;
+    display: block;
+    font-size: 18px;
+    height: 32px;
+    padding: 0 5px;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+        background-image: url(/images/credit.png),url(/images/credit.png);
+        background-position: 2px -121px,260px -61px;
+        background-size: 120px 361px,120px 361px;
+        background-repeat: no-repeat;
+        padding-left: 54px;
+     width: 160px;
+    }
+
+        form #txtCardNo.visa {
+            background-position: 2px -163px,260px -61px;
+        }
+
+        form #txtCardNo.visa_electron {
+            background-position: 2px -205px,260px -61px;
+        }
+
+        form #txtCardNo.mastercard {
+            background-position: 2px -247px,260px -61px;
+        }
+
+        form #txtCardNo.maestro {
+            background-position: 2px -289px,260px -61px;
+        }
+
+        form #txtCardNo.discover {
+            background-position: 2px -331px,260px -61px;
+        }
+
+        form #txtCardNo.valid.visa {
+            background-position: 2px -163px,260px -87px;
+        }
+
+        form #txtCardNo.valid.visa_electron {
+            background-position: 2px -205px,260px -87px;
+        }
+
+        form #txtCardNo.valid.mastercard {
+            background-position: 2px -247px,260px -87px;
+        }
+
+        form #txtCardNo.valid.maestro {
+            background-position: 2px -289px,260px -87px;
+        }
+
+        form #txtCardNo.valid.discover {
+            background-position: 2px -331px,260px -87px;
+        }

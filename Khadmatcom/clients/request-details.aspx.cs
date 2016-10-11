@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using HyperPayClient;
 using Khadmatcom.Data.Model;
 using Khadmatcom.Services;
 using Region = Khadmatcom.Services.Model.Region;
@@ -69,12 +70,23 @@ namespace Khadmatcom.clients
         protected void btnSave_OnClick(object sender, EventArgs e)
         {
             string paymentMethod = Request.Form["cars"];
-
+            string payId = "";
+            CurrentRequest.ModifiedDate = DateTime.Now;
+            SetShippingInfo();
             switch (paymentMethod)
             {
                 case "1"://online payment
                     CurrentRequest.PaymentMethod = 1;
-
+                    _serviceRequests.UpdateServiceRequest(CurrentRequest);
+                    PaymentManager paymentManager = new PaymentManager();
+                    string brand = hfCardBrand.Value.Length > 1 ? hfCardBrand.Value : "";
+                    if (brand == "mastercard") brand = "MASTER";
+                    if (CurrentRequest.CurrentPrice != null)
+                    {
+                       // paymentManager.Checkout(CurrentRequest.CurrentPrice.Value, CurrentRequest.Id.ToString(),1,Servston.Utilities.GetCurrentClientIPAddress());
+                        var _return = paymentManager.Pay(CurrentRequest.CurrentPrice.Value, CurrentRequest.Id.ToString(), txtCardNo.Value, txtCardHolder.Value, txtExpiryDate.Value.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries)[0], "20" + txtExpiryDate.Value.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries)[1], txtCvv.Value, 1, Servston.Utilities.GetCurrentClientIPAddress(), brand.ToUpper());
+                       payId = _return["id"];
+                    }
                     break;
                 case "2"://transfare payment...set to in progress if saved
                     CurrentRequest.PaymentMethod = 2;
@@ -82,14 +94,16 @@ namespace Khadmatcom.clients
                     CurrentRequest.PaymentDate = DateTime.Parse(txtDate.Value);
                     CurrentRequest.PaymentReferanceCode = txtRefNumber.Value;
                     CurrentRequest.StatusId = (int)RequestStatus.Paid;
+                    _serviceRequests.UpdateServiceRequest(CurrentRequest);
                     break;
                 default:
 
                     break;
             }
-            CurrentRequest.ModifiedDate = DateTime.Now;
-            SetShippingInfo();
-            _serviceRequests.UpdateServiceRequest(CurrentRequest);
+
+
+            if (paymentMethod == "1" && payId.Length > 3)
+                Response.Redirect(HyperPayClient.MerchantConfiguration.Config.ReturnUrl, false);
         }
 
         private void SetShippingInfo()

@@ -21,6 +21,7 @@ namespace Khadmatcom
                 "~/scripts/toastr.min.js",
                 "~/scripts/jquery.blockUI.min.js",
                 "~/scripts/jquery.magnific-popup.min.js",
+                "~/scripts/jquery.mask.js",
                 "~/scripts/functions.js",
                 "~/scripts/site-query.js"
                 ));
