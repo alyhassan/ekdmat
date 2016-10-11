@@ -49,15 +49,6 @@ namespace Khadmatcom.Controls {
         protected global::System.Web.UI.WebControls.DropDownList ddlCount;
         
         /// <summary>
-        /// txtDetails control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtDetails;
-        
-        /// <summary>
         /// txtManagerName control.
         /// </summary>
         /// <remarks>
@@ -947,6 +938,15 @@ namespace Khadmatcom.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtBusCount;
+        
+        /// <summary>
+        /// txtDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtDetails;
         
         /// <summary>
         /// btnProceed control.

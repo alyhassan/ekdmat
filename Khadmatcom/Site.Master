@@ -84,8 +84,8 @@
                                     <li><a href="javascript:{}">الإعدادت <i class="fa fa-cog" aria-hidden="true"></i>
                                     </a></li>
                                     <li><%--<a href="javascript:{}" class="lst">--%>
-                                        <asp:LoginStatus CssClass="lst" ID="LoginStatus1" runat="server" LoginText="" LogoutText="تسجيل الخروج" LogoutPageUrl='<%# GetLocalizedUrl("") %>' />
-                                        <i class="fa fa-power-off" aria-hidden="true"></i>
+                                        <asp:LoginStatus CssClass="lst lst_icon" ID="LoginStatus1" runat="server" LoginText="" LogoutText="تسجيل الخروج" LogoutPageUrl='<%# GetLocalizedUrl("") %>' />
+                                        
                                         <%--</a>--%></li>
 
                                 </ul>
@@ -253,13 +253,13 @@
 
 
 
-        <div class="banner clearfix hidden-sm  hidden-xs hidden-md hidden-lg">
-            <div class="container clearfix">
+        <div class="banner clearfix hidden-sm  hidden-xs">
+            <div class="container clearfix hidden-sm  hidden-xs">
 
-                <div class="col-md-7 col-sm-12 col-xs-12 padLeftRight0 banner-right">
+                <div class="col-md-7 col-sm-12 col-xs-12 padLeftRight0 banner-right hidden-sm  hidden-xs hidden-md hidden-lg" >
                     <img src="/images/banner.jpg" alt="" class="pull-left" />
                 </div>
-                <div class="col-md-5 hidden-xs hidden-sm padLeftRight0 logo-img">
+                <div class="col-md-5 hidden-xs hidden-sm padLeftRight0 logo-img pull-right">
                     <a href="<%= GetLocalizedUrl("") %>">
                         <img src='/images/logo.png' /></a>
                 </div>
@@ -267,7 +267,7 @@
 
             </div>
         </div>
-
+        <div class="visible-sm visible-xs" style="margin-top:30px;"> </div>
         <div class="container clearfix hidden">
 
             <div class="col-md-6 col-md-offset-3">
@@ -700,7 +700,7 @@
             <div class="modal-dialog  faq-div">
                 <div class="modal-content">
                     <div class="modal-header modal-header-success">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="fa fa-times" aria-hidden="true"></span></button>
                         <h1><i class="fa my-faq">&nbsp;</i><%= GetGlobalResourceObject("general.aspx","lblFaq") %></h1>
                     </div>
                     <div class="modal-body">
@@ -710,7 +710,9 @@
                                 <ItemTemplate>
                                     <div class="panel">
                                         <div class="accordion-heading ">
-                                            <a class="accordion-toggle indicator collapsed" data-toggle="collapse" data-parent="#accordion5" href="#collapse<%# Item.Id+1 %>" aria-expanded="false"><%# Item.Question %> <i class="indi fa fa-chevron-down"></i>
+                                            <a class="accordion-toggle indicator collapsed" data-toggle="collapse" data-parent="#accordion5" href="#collapse<%# Item.Id+1 %>" aria-expanded="false">
+                                                <%# Item.Question %> 
+                                                <i class="indi fa fa-chevron-up"></i>
                                             </a>
                                         </div>
                                         <div id="collapse<%# Item.Id+1 %>" class="collapse" aria-expanded="false">
@@ -774,7 +776,7 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">إغلاق</button>
                     </div>
                 </div>
                 <!-- /.modal-content -->
