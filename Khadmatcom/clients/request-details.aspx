@@ -445,7 +445,7 @@
         }
         function payOnline() {
             var amount = <%= CurrentRequest.CurrentPrice.Value%>;
-            var transactionId= '<%= CurrentRequest.Id %>';
+            var transactionId= <%= CurrentRequest.Id %>;
             var userIp= '<%= Servston.Utilities.GetCurrentClientIPAddress() %>';
 
             var userData = {

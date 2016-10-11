@@ -24,7 +24,7 @@
                     </div>
                 </GroupTemplate>
                 <ItemTemplate>
-                    <a href="javascript:{}" onclick='requestService(<%# Item.Id %>,"<%# Item.Notes %>","<%# Item.Options.ToLower() %>")' title="<%# Item.Name %>" class="anchor">
+                    <a href="javascript:{}" onclick='requestService(<%# Item.Id %>,"<%# Item.Notes %>",<%# Item.EstamaitedCost %>,"<%# Item.Options.ToLower() %>")' title="<%# Item.Name %>" class="anchor">
                         <!--href="#p10"-->
                         <span class="top-span">خدمة</span>
                         <span class="bot-span"><%# Item.Name %></span>
@@ -73,11 +73,12 @@
 
         });
 
-        function requestService(id, notes, options) {
+        function requestService(id, notes,price, options) {
             $('#hfServiceId').val(id);
             $('#ddlService').val(id);
             $('#lblNotes').html(notes);
-            $("#p10").modal();
+            $('#servicePrice').html(price);
+            $("#p10").modal({ backdrop: 'static', show: true });
 
             $('.options').addClass('hidden');
             if (options != '') {

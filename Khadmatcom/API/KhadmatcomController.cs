@@ -60,7 +60,7 @@ namespace Khadmatcom.API
 
         [HttpGet]
         [ActionName("Checkout")]
-        public string Checkout(decimal amount, string transactionId, int attempt, string userIp)
+        public string Checkout(decimal amount, int transactionId, int attempt, string userIp)
         {
 
             try

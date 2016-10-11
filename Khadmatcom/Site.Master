@@ -62,7 +62,7 @@
                     </span>
                     </li>
                     <li><a href="#p9" data-toggle="modal" class="my-mark">أسئلة متكررة<i>&nbsp;</i></a></li>
-                    <li><a href="#p8" data-toggle="modal" class="contact-btn"><span class="visible-xs">أتصل بنا</span>0545545133<i>&nbsp;</i></a>
+                    <li><a href="#p8" data-toggle="modal" class="contact-btn" data-backdrop="static"><span class="visible-xs">أتصل بنا</span>0545545133<i>&nbsp;</i></a>
                     </li>
                 </ul>
 
@@ -70,7 +70,7 @@
                     <AnonymousTemplate>
                         <div class="pull-right">
                             <ul class="left-nav">
-                                <li><a href="#p7" data-toggle="modal" class="login">تسجيل الدخول<i>&nbsp;</i></a></li>
+                                <li><a href="#p7" data-toggle="modal" class="login" data-backdrop="static">تسجيل الدخول<i>&nbsp;</i></a></li>
                             </ul>
                         </div>
                     </AnonymousTemplate>
@@ -121,14 +121,14 @@
                     </span>
                     </li>
                     <li><a href="#p9" data-toggle="modal" class="my-mark"><%= GetGlobalResourceObject("general.aspx","lblFaq") %><<i>&nbsp;</i></a></li>
-                    <li><a href="#p8" data-toggle="modal" class="contact-btn"><span>أتصل بنا</span>0545545133<i>&nbsp;</i></a>
+                    <li><a href="#p8" data-toggle="modal" class="contact-btn" data-backdrop="static"><span>أتصل بنا</span>0545545133<i>&nbsp;</i></a>
                     </li>
                 </ul>
                 <asp:LoginView ID="LoginView2" runat="server">
                     <AnonymousTemplate>
                         <div class="pull-right">
                             <ul class="left-nav">
-                                <li><a href="#p7" data-toggle="modal" class="login">تسجيل الدخول<i>&nbsp;</i></a></li>
+                                <li><a href="#p7" data-toggle="modal" class="login" data-backdrop="static">تسجيل الدخول<i>&nbsp;</i></a></li>
                             </ul>
                         </div>
                     </AnonymousTemplate>
