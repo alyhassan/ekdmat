@@ -69,7 +69,7 @@
                                 <div class="input-group hidden validationEngineContainer" id="reason<%# Item.Id %>">
                                     <input type="text" id="txtReason<%# Item.Id %>" class=" validate[required]" /> 
                                    <label for="txtPrice<%# Item.Id %>" id="txtPriceLabel<%# Item.Id %>">سعر الخدمة</label>  <input type="number" id="txtPrice<%# Item.Id %>" class=" validate[required] hidden" value='<%# Item.RequestProviders.First(r=>r.ProviderId==CurrentUser.Id).Price %>' />
-                                    
+                                     <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>">وقت التنفيذ المتوقع</label>  <input type="number" id="txtDuration<%# Item.Id %>" class=" validate[required] hidden" value='' /> <%--<%# Item.Service.ServiceProviders.First(r=>r.MemberId==CurrentUser.Id).EstamaitedTime %>--%>
                                     <asp:Button Text="إرسال" OnClientClick="return takeReuestAction();" OnClick="OnClick"  CssClass="btn btn-success btn-sm" runat="server" CommandName="Update" CommandArgument="<%# Item.Id %>"  />
                                 </div>
                                 <a href="<%# GetLocalizedUrl(string.Format("providers/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt hidden">Edit</a>
@@ -102,9 +102,13 @@
             if (state === 2) {
                 $("#txtPrice" + id).removeClass('hidden');
                 $("#txtPriceLabel" + id).removeClass('hidden');
+                $("#txtDuration" + id).removeClass('hidden');
+                $("#txtDurationLabel" + id).removeClass('hidden');
             } else {
                 $("#txtPrice" + id).addClass('hidden');
                 $("#txtPriceLabel" + id).addClass('hidden');
+                $("#txtDuration" + id).addClass('hidden');
+                $("#txtDurationLabel" + id).addClass('hidden');
             }
             $("#reason" + id).removeClass('hidden');
 

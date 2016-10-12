@@ -39,7 +39,8 @@ namespace Khadmatcom.providers
                 int status = int.Parse(Request.Form["status"]);
                 string reason = Request.Form["txtReason" + id.ToString()];
                 decimal price = decimal.Parse(Request.Form["txtPrice" + id.ToString()]);
-                _serviceRequests.UpdateProviderRequest(id,CurrentUser.Id,status,reason,price);
+                int duration = int.Parse(Request.Form["txtDuration"] + id.ToString());
+                _serviceRequests.UpdateProviderRequest(id,CurrentUser.Id,status,reason,price, duration);
             }
         }
 

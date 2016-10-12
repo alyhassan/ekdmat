@@ -124,12 +124,12 @@ namespace Khadmatcom.API
 
         [HttpGet]
         [ActionName("UpdateProviderRequest")]
-        public bool UpdateProviderRequest(int userId, int id, int status, string reason, decimal price)
+        public bool UpdateProviderRequest(int userId, int id, int status, string reason, decimal price,int duration)
         {
             try
             {
                 ServiceRequests _serviceRequests = new ServiceRequests();
-                _serviceRequests.UpdateProviderRequest(id, userId, status, reason, price);
+                _serviceRequests.UpdateProviderRequest(id, userId, status, reason, price,duration);
                 return true;
             }
             catch (Exception ex)
