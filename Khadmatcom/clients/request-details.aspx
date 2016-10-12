@@ -274,12 +274,16 @@
                                 <div class="col-md-6">
                                     <div class="form-group text-center visa-img">
                                         <img src="/images/visa-bg.jpg" />
-                                        <input type="text" name="txtExpiryDate" id="txtExpiryDate" runat="server" maxlength="5" placeholder="mm/yy">
+                                       
                                         <%-- <select class="form-control validate[required]" name="paymentBrand" runat="server" ID="ddlPaymentBrand">
                                             <option value="VISA">Visa</option>
                                             <option value="MASTER">Master Card</option>
                                             <option value="AMEX">American Express</option>
                                         </select>--%>
+                                    </div>
+                                    <div class="form-group">
+                                        <label dir="rtl">تاريخ صلاحية الكارت</label>
+                                         <input type="text" name="txtExpiryDate" id="txtExpiryDate" runat="server" maxlength="5" placeholder="mm/yy"/>
                                     </div>
                                     <div class="form-group">
                                         <label dir="rtl">اسم حامل الكارت</label>
@@ -294,7 +298,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label dir="rtl">تاريخ التحويل</label>
-                                        <input type="text" class="attach validate[required]" id="txtDate" runat="server" />
+                                        <input type="text" class="attach validate[required] datetimepicker" id="txtDate" runat="server" maxlength="10" placeholder="dd/mm/yyyy" />
                                     </div>
                                     <%--<div class="form-group">
                                         <label>تاريخ التحويل</label>
@@ -407,6 +411,11 @@
                 e.preventDefault();
                 $(this).tab('show');
             });
+
+            $(".datetimepicker").mask("99/99/9999");  
+            //$('.datetimepicker').datetimepicker({
+            //    locale: 'ar'
+            //});
             $('input#txtCardNo').keyup(function() {
                 var cardResult = $('input#txtCardNo').validateCreditCard({ accept: ['visa', 'mastercard'] });//
                 var cardType = cardResult.card_type == null ? '-' : cardResult.card_type.name;

@@ -91,7 +91,7 @@ namespace Khadmatcom.clients
                 case "2"://transfare payment...set to in progress if saved
                     CurrentRequest.PaymentMethod = 2;
                     CurrentRequest.PaymentProviderName = ddlBanks.Value;
-                    CurrentRequest.PaymentDate = DateTime.Parse(txtDate.Value);
+                    CurrentRequest.PaymentDate = DateTime.ParseExact(txtDate.Value, "dd/MM/yyyy", new System.Globalization.CultureInfo("en-GB")); // DateTime.Parse(txtDate.Value);
                     CurrentRequest.PaymentReferanceCode = txtRefNumber.Value;
                     CurrentRequest.StatusId = (int)RequestStatus.Paid;
                     _serviceRequests.UpdateServiceRequest(CurrentRequest);
