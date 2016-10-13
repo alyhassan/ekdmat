@@ -508,7 +508,7 @@
                                 <a href="javascript:{}">Computer Services</a>
                                 <a href="javascript:{}">Software Services </a>--%>
                                         <a href="<%= GetLocalizedUrl("clients/services-requests/new-requests") %>">طلبات جديدة</a>
-                                        <a href="<%= GetLocalizedUrl("clients/services-requests/approved-requests") %>">طلبات بإنتظار الدفع</a>
+                                        <a href="<%= GetLocalizedUrl("clients/services-requests/approved-requests") %>">طلبات مؤكدة و بإنتظار الدفع</a>
                                         <a href="<%= GetLocalizedUrl("clients/services-requests/inprogress-requests") %>">طلبات تحت العمل</a>
                                         <a href="<%= GetLocalizedUrl("clients/services-requests/finished-requests") %>">طلبات منفذة</a>
                                         <a href="<%= GetLocalizedUrl("clients/services-requests/refused-requests") %>">طلبات مرفوضة</a>

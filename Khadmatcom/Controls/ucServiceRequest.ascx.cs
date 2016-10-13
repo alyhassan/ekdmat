@@ -73,12 +73,13 @@ namespace Khadmatcom.Controls
                 //attachment
 
                 request.AddRequest(requestData);
-
+                InitializeCulture();
                 Notify("تم طلب الخدمة");
             }
             catch (Exception ex)
             {
                 Server.ClearError();
+                InitializeCulture();
                 if (ex.InnerException != null)
                     Notify(ex.InnerException.Message, "حدث خطأ أثناء الطلب", NotificationType.Error);
                 //Notify("فضلا حاول فى وقت لاحق","حدث خطأ أثناء الطلب",NotificationType.Error);

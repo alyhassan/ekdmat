@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
@@ -76,6 +77,42 @@ namespace Khadmatcom
                 // return the same path untranslated if no resources found
                 return path;
             }
+        }
+
+        protected  void InitializeCulture()
+        {
+            // uncomment the following code to set culture 
+            string domain = Request.Url.GetComponents(UriComponents.Path, UriFormat.SafeUnescaped);
+            string language;
+            string[] fragments = domain.Split(new char[] { '/' });
+            string culture = "ar-SA";
+            int fragmentIndex = 0;
+            if (Request.RawUrl.Contains("/www"))
+                fragmentIndex = 1;
+            if (Request.IsLocal)
+                language = fragments.ToList()[fragmentIndex];
+            else
+                language = fragments.First();
+
+            switch (language)
+            {
+                case "ar":
+                    culture = "ar-SA";
+                    break;
+                case "en":
+                    culture = "en-GB";
+                    break;
+                default:
+                    culture = "ar-SA";
+                    break;
+            }
+
+            Page.Culture = Page.UICulture = culture;
+            Page.LCID = new CultureInfo(culture).LCID;
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(culture);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
+            Response.Cookies["SelectedCulture"].Value = culture;
+            Response.Cookies["SelectedCulture"].Expires = DateTime.Today.AddYears(1);
         }
     }
 
