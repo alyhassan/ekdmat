@@ -373,10 +373,10 @@ namespace Khadmatcom
                     value = service.Notes;
                     break;
                 case "category":
-                    value = service.ServiceSubcategory.ServiceCategory.Name;
+                    value = service.CategoryTitle;
                     break;
                 case "subcategory":
-                    value = service.ServiceSubcategory.Name;
+                    value = service.SubCategoryTitle;
                     break;
                 default:
                     value = service.Name;
