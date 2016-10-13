@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Khadmatcom
+namespace Khadmatcom.providers
 {
 
 
-    public partial class card_info
+    public partial class request_details
     {
     }
 }

@@ -71,13 +71,21 @@
             $(".owl-next").addClass("fa-chevron-right");
             $(".owl-next").text("");
 
+            $('#ddlCount').on('change', function () {
+               //$('#servicePrice').html(this.value * parseInt($('#hfServicePrice').val()));
+            });
+
+            $('#ddlCount').change(function () {
+                $('#servicePrice').html(this.value * parseInt($('#hfServicePrice').val()));
+            });
         });
 
-        function requestService(id, notes,price, options) {
+        function requestService(id, notes, price, options) {
             $('#hfServiceId').val(id);
             $('#ddlService').val(id);
             $('#lblNotes').html(notes);
             $('#servicePrice').html(price);
+            $('#hfServicePrice').val(price);
             $("#p10").modal({ backdrop: 'static', show: true });
 
             $('.options').addClass('hidden');
@@ -88,7 +96,6 @@
                 }
             }
         }
-
 
 
     </script>

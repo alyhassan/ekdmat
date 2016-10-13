@@ -140,5 +140,41 @@ namespace Khadmatcom.API
             }
 
         }
+
+        [HttpGet]
+        [ActionName("IncreaseProviderRequest")]
+        public bool IncreaseProviderRequest(int id,  int duration)
+        {
+            try
+            {
+                ServiceRequests _serviceRequests = new ServiceRequests();
+                _serviceRequests.IncreaceRequestDuration(id,  duration);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // todo:log the exception
+                return false;
+
+            }
+        }
+
+        [HttpGet]
+        [ActionName("CloseProviderRequest")]
+        public bool CloseProviderRequest(int id)
+        {
+            try
+            {
+                ServiceRequests _serviceRequests = new ServiceRequests();
+                _serviceRequests.CloseProviderRequest(id);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // todo:log the exception
+                return false;
+
+            }
+        }
     }
 }

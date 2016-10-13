@@ -26,8 +26,8 @@
                             <div class="L-container">
                              <div class="L1">
                                     <span class="ni">رقم الطلب: <span class="red"><%# Item.Id %></span> </span>
-                                    <span>الخدمة المطلوبة: <span class="blue"><%# Item.Service.Name %></span> </span>
-                                    <span>نوعها:<span class="blue"><%# Item.Service.ServiceSubcategory.Name %></span> </span>
+                                    <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
+                                    <span>نوعها:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
                                 </div>
  <div class="clearfix"></div>
                                 <div class="row L2">

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="inprogress-requests.aspx.cs" Inherits="Khadmatcom.clients.inprogress_requests" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="inprogress-requests2.aspx.cs" Inherits="Khadmatcom.clients.inprogress_requests" %>
 <%@ Import Namespace="Khadmatcom" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -26,8 +26,8 @@
                             <div class="L-container">
                                <div class="L1">
                                     <span class="ni">رقم الطلب: <span class="red"><%# Item.Id %></span> </span>
-                                    <span> لخدمة: <span class="blue"><%# Item.Service.Name %></span> </span>
-                                    <span>نوع الخدمة:<span class="blue"><%# Item.Service.ServiceSubcategory.Name %></span> </span>
+                                 <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
+                                    <span>نوع الخدمة:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
                                 </div>
                                 <div class="L2">
                                     التفاصيل:

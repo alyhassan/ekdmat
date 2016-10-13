@@ -7,10 +7,11 @@
     <link rel="stylesheet" type="text/css" href="/Content/carousel-css/owl.carousel.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
-   <ul class="nav nav-tabs nav-arow myTab">
+    <ul class="nav nav-tabs nav-arow myTab">
         <li class="main alif"><a href="<%= GetLocalizedUrl("") %>"><%= GetGlobalResourceObject("general.aspx","Home") %></a></li>
         <li class="sub active alif"><a href="javascript:{}">خدمات جديدة</a></li>
-    </ul> <div id="chuu-owl" class="chuu owl-carousel owl-theme">
+    </ul>
+    <div id="chuu-owl" class="chuu owl-carousel owl-theme">
         <asp:ListView runat="server" OnItemCommand="lvServiceRequest_OnItemCommand" ID="lvServiceRequest" SelectMethod="GetServiceRequests" ItemPlaceholderID="PlaceHolder1" GroupItemCount="5" ItemType="Khadmatcom.Data.Model.ServiceRequest">
             <GroupTemplate>
                 <div class="item">
@@ -27,14 +28,16 @@
                             <div class="L-container">
                                 <div class="L1">
                                     <span class="ni">رقم الطلب: <span class="red"><%# Item.Id %></span> </span>
-                                    <span>الخدمة المطلوبة: <span class="blue"><%# Item.Service.Name %></span> </span>
-                                    <span>نوعها:<span class="blue"><%# Item.Service.ServiceSubcategory.Name %></span> </span>
+                                    <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
+                                    <span>نوعها:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
+                                    <span>الوقت المتبقي للرد:<br />
+                                        <span class="blue" dir="ltr"><%# string.Format("{0:dd MMM yyyy HH:mm}",Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime) %></span> </span>
                                 </div>
- <div class="clearfix"></div>
+                                <div class="clearfix"></div>
                                 <div class="row L2">
                                     <div class="col-md-12 col-sm-12 col-xs-12 pull-right;">
-                                    تفاصيل الخدمة
-                                      </div>
+                                        تفاصيل الخدمة
+                                    </div>
                                 </div>
                                 <div class="row L3">
                                     <p>
@@ -60,17 +63,20 @@
                                     </ItemTemplate>
                                 </asp:Repeater>
                             </p>
-                            <br/>
+                            <br />
                             <div class="L-button" id="">
                                 <div class="input-group" id="s<%# Item.Id %>">
                                     <input type="button" class="btn btn-danger  btn-sm" value="رفض الطلب" onclick="takeAction(<%# Item.Id %>,6);" />
                                     <input type="button" class="btn btn-success btn-sm" value="قبول الطلب" onclick="takeAction(<%# Item.Id %>,2);" />
                                 </div>
                                 <div class="input-group hidden validationEngineContainer" id="reason<%# Item.Id %>">
-                                    <input type="text" id="txtReason<%# Item.Id %>" class=" validate[required]" /> 
-                                   <label for="txtPrice<%# Item.Id %>" id="txtPriceLabel<%# Item.Id %>">سعر الخدمة</label>  <input type="number" id="txtPrice<%# Item.Id %>" class=" validate[required] hidden" value='<%# Item.RequestProviders.First(r=>r.ProviderId==CurrentUser.Id).Price %>' />
-                                     <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>">وقت التنفيذ المتوقع</label>  <input type="number" id="txtDuration<%# Item.Id %>" class=" validate[required] hidden" value='' /> <%--<%# Item.Service.ServiceProviders.First(r=>r.MemberId==CurrentUser.Id).EstamaitedTime %>--%>
-                                    <asp:Button Text="إرسال" OnClientClick="return takeReuestAction();" OnClick="OnClick"  CssClass="btn btn-success btn-sm" runat="server" CommandName="Update" CommandArgument="<%# Item.Id %>"  />
+                                    <input type="text" id="txtReason<%# Item.Id %>" class=" validate[required]" />
+                                    <label for="txtPrice<%# Item.Id %>" id="txtPriceLabel<%# Item.Id %>">سعر الخدمة</label>
+                                    <input type="number" id="txtPrice<%# Item.Id %>" class=" validate[required] hidden" value='<%# Item.RequestProviders.First(r=>r.ProviderId==CurrentUser.Id).Price %>' />
+                                    <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>">وقت التنفيذ المتوقع</label>
+                                    <input type="number" id="txtDuration<%# Item.Id %>" class=" validate[required] hidden" value='' />
+                                    <%--<%# Item.Service.ServiceProviders.First(r=>r.MemberId==CurrentUser.Id).EstamaitedTime %>--%>
+                                    <asp:Button Text="إرسال" OnClientClick="return takeRequestAction();" OnClick="OnClick" CssClass="btn btn-success btn-sm" runat="server" CommandName="Update" CommandArgument="<%# Item.Id %>" />
                                 </div>
                                 <a href="<%# GetLocalizedUrl(string.Format("providers/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt hidden">Edit</a>
                             </div>
@@ -117,7 +123,7 @@
         }
 
         
-        function takeReuestAction() {
+        function takeRequestAction() {
             var result = validateForm('#reason'+id, '<%= languageIso %>');
             //do what you need here
             if (result) {
@@ -126,6 +132,7 @@
                     userId: <%= CurrentUser.Id %>,
                     id: id,
                     status: state,
+                    duration:$('#txtDuration'+id).val(),
                     price: $('#txtPrice'+id).val(),
                     reason: $('#txtReason'+id).val()
                 };
@@ -138,6 +145,7 @@
                         toastr.success("تم تنفيذ أمرك", "شكرا لك");
                         clearFormData('#txtPrice'+id);
                         clearFormData('#txtReason'+id);
+                        clearFormData('#txtDuration'+id);
                     }
                     else {
                         hideLoading();

@@ -38,6 +38,11 @@ namespace Khadmatcom.Controls
 
         protected void btnProceed_OnClick(object sender, EventArgs e)
         {
+            string culture = "en-GB";
+            Page.Culture = Page.UICulture = culture;
+            Page.LCID = new System.Globalization.CultureInfo(culture).LCID;
+            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(culture);
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(culture);
             SetLoogedUserInfo();
             try
             {
@@ -50,35 +55,34 @@ namespace Khadmatcom.Controls
                     CreatedDate = DateTime.Now,
                     CreatedBy = CurrentUser.Id,
                     RequestDate = DateTime.Now,
-                   // HijriDate = Servston.Utilities.GetHijriToday(),
-                    StatusId = (int) RequestStatus.New,
+                    // HijriDate = Servston.Utilities.GetHijriToday(),
+                    StatusId = (int)RequestStatus.New,
                     ServiceId = int.Parse(hfServiceId.Value),
                     CityId = int.Parse(hfCityId.Value)
 
                 };
-                var options=_servicesServices.GetService(LanguageId, requestData.ServiceId).RequestOptions;
+                var options = _servicesServices.GetService(LanguageId, requestData.ServiceId).RequestOptions;
                 RequestsOptionsAnswer requestOption;
 
                 foreach (RequestOption option in options)
                 {
-                    requestOption = new RequestsOptionsAnswer() {Value = GetOptionValue(option.Id), OptionId = option.Id};
+                    requestOption = new RequestsOptionsAnswer() { Value = GetOptionValue(option.Id), OptionId = option.Id };
                     requestData.RequestsOptionsAnswers.Add(requestOption);
                 }
-                
+
                 //attachment
 
                 request.AddRequest(requestData);
 
                 Notify("تم طلب الخدمة");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Server.ClearError();
-                Notify(ex.Message, "حدث خطأ أثناء الطلب", NotificationType.Error);
+                if (ex.InnerException != null)
+                    Notify(ex.InnerException.Message, "حدث خطأ أثناء الطلب", NotificationType.Error);
                 //Notify("فضلا حاول فى وقت لاحق","حدث خطأ أثناء الطلب",NotificationType.Error);
             }
-
-
         }
 
         private string GetOptionValue(int optionId)

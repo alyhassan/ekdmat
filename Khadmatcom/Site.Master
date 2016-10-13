@@ -85,7 +85,7 @@
                                     </a></li>
                                     <li><%--<a href="javascript:{}" class="lst">--%>
                                         <asp:LoginStatus CssClass="lst lst_icon" ID="LoginStatus1" runat="server" LoginText="" LogoutText="تسجيل الخروج" LogoutPageUrl='<%# GetLocalizedUrl("") %>' />
-                                        
+
                                         <%--</a>--%></li>
 
                                 </ul>
@@ -195,11 +195,10 @@
                                                 <a href="<%= GetLocalizedUrl("clients/services-requests/new-requests") %>">طلبات جديدة</a>
                                                 <a href="<%= GetLocalizedUrl("clients/services-requests/approved-requests") %>">طلبات بإنتظار الدفع</a>
                                                 <a href="<%= GetLocalizedUrl("clients/services-requests/inprogress-requests") %>">طلبات تحت العمل</a>
+                                                <a href="<%= GetLocalizedUrl("clients/services-requests/finished-requests") %>">طلبات منفذة</a>
                                                 <a href="<%= GetLocalizedUrl("clients/services-requests/refused-requests") %>">طلبات مرفوضة</a>
-                                                <a href="<%= GetLocalizedUrl("clients/services-requests/expired-requests") %>">طلبات منتهية الصلاحية</a>
                                                 <a href="<%= GetLocalizedUrl("clients/services-requests/canceled-requests") %>">طلبات ملغاة</a>
-                                                <a href="<%= GetLocalizedUrl("clients/services-requests/finished-requests") %>">طلبات منتهية</a>
-
+                                                <a href="<%= GetLocalizedUrl("clients/services-requests/expired-requests") %>">طلبات منتهية المدة</a>
                                                 <%-- <a href="javascript:{}">Govt Services </a>
                                         <a href="javascript:{}">GOSI Services</a>
                                         <a href="javascript:{}">IT Services</a>
@@ -256,7 +255,7 @@
         <div class="banner clearfix hidden-sm  hidden-xs">
             <div class="container clearfix hidden-sm  hidden-xs">
 
-                <div class="col-md-7 col-sm-12 col-xs-12 padLeftRight0 banner-right hidden-sm  hidden-xs hidden-md hidden-lg" >
+                <div class="col-md-7 col-sm-12 col-xs-12 padLeftRight0 banner-right hidden-sm  hidden-xs hidden-md hidden-lg">
                     <img src="/images/banner.jpg" alt="" class="pull-left" />
                 </div>
                 <div class="col-md-5 hidden-xs hidden-sm padLeftRight0 logo-img pull-right">
@@ -267,7 +266,7 @@
 
             </div>
         </div>
-        <div class="visible-sm visible-xs" style="margin-top:30px;"> </div>
+        <div class="visible-sm visible-xs" style="margin-top: 30px;"></div>
         <div class="container clearfix hidden">
 
             <div class="col-md-6 col-md-offset-3">
@@ -511,10 +510,10 @@
                                         <a href="<%= GetLocalizedUrl("clients/services-requests/new-requests") %>">طلبات جديدة</a>
                                         <a href="<%= GetLocalizedUrl("clients/services-requests/approved-requests") %>">طلبات بإنتظار الدفع</a>
                                         <a href="<%= GetLocalizedUrl("clients/services-requests/inprogress-requests") %>">طلبات تحت العمل</a>
+                                        <a href="<%= GetLocalizedUrl("clients/services-requests/finished-requests") %>">طلبات منفذة</a>
                                         <a href="<%= GetLocalizedUrl("clients/services-requests/refused-requests") %>">طلبات مرفوضة</a>
-                                        <a href="<%= GetLocalizedUrl("clients/services-requests/expired-requests") %>">طلبات منتهية الصلاحية</a>
                                         <a href="<%= GetLocalizedUrl("clients/services-requests/canceled-requests") %>">طلبات ملغاة</a>
-                                        <a href="<%= GetLocalizedUrl("clients/services-requests/finished-requests") %>">طلبات منتهية</a>
+                                        <a href="<%= GetLocalizedUrl("clients/services-requests/expired-requests") %>">طلبات منتهية المدة</a>
                                     </div>
                                 </div>
                             </div>
@@ -530,10 +529,10 @@
                                         <a href="<%= GetLocalizedUrl("providers/services-requests/new-requests") %>">خدمات جديدة</a>
                                         <a href="<%= GetLocalizedUrl("providers/services-requests/approved-requests") %>">خدمات بإنتظار الدفع</a>
                                         <a href="<%= GetLocalizedUrl("providers/services-requests/inprogress-requests") %>">خدمات تحت العمل</a>
-                                        <a href="<%= GetLocalizedUrl("providers/services-requests/finished-requests") %>">خدمات منتهية </a>
+                                        <a href="<%= GetLocalizedUrl("providers/services-requests/finished-requests") %>">خدمات منفذة </a>
                                         <a href="<%= GetLocalizedUrl("providers/services-requests/refused-requests") %>">خدمات مرفوضة</a>
-                                        <a href="<%= GetLocalizedUrl("providers/services-requests/expired-requests") %>">خدمات منتهية الصلاحية</a>
                                         <a href="<%= GetLocalizedUrl("providers/services-requests/canceled-requests") %>">خدمات ملغاة</a>
+                                        <a href="<%= GetLocalizedUrl("providers/services-requests/expired-requests") %>">خدمات منتهية المدة</a>
                                     </div>
                                 </div>
                             </div>
@@ -711,7 +710,7 @@
                                     <div class="panel">
                                         <div class="accordion-heading ">
                                             <a class="accordion-toggle indicator collapsed" data-toggle="collapse" data-parent="#accordion5" href="#collapse<%# Item.Id+1 %>" aria-expanded="false">
-                                                <%# Item.Question %> 
+                                                <%# Item.Question %>
                                                 <i class="indi fa fa-chevron-up"></i>
                                             </a>
                                         </div>

@@ -460,6 +460,9 @@
       <DependentUpon>inprogress-requests.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="providers\inprogress-requests.aspx.designer.cs">
+      <DependentUpon>inprogress-requests.aspx</DependentUpon>
+    </Compile>
     <Compile Include="providers\refused-requests.aspx.cs">
       <DependentUpon>refused-requests.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

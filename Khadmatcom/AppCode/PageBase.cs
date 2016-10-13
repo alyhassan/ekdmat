@@ -11,6 +11,7 @@ using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
+using Khadmatcom.Services;
 using Khadmatcom.Services.Services;
 
 namespace Khadmatcom
@@ -356,6 +357,32 @@ namespace Khadmatcom
             {
                 return string.Empty;
             }
+        }
+
+        public static string GetServiceInfo(int id,int languageId, string infohint)
+        {
+            ServicesServices serviceManager=new ServicesServices();
+            var service=serviceManager.GetService(languageId,id);
+            string value = "";
+            switch (infohint)
+            {
+                case "title":
+                    value = service.Name;
+                    break;
+                case "notes":
+                    value = service.Notes;
+                    break;
+                case "category":
+                    value = service.ServiceSubcategory.ServiceCategory.Name;
+                    break;
+                case "subcategory":
+                    value = service.ServiceSubcategory.Name;
+                    break;
+                default:
+                    value = service.Name;
+                    break;
+            }
+            return value;
         }
     }
 }

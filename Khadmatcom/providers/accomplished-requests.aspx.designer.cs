@@ -7,7 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Khadmatcom.clients {
+namespace Khadmatcom.providers
+{
     
     
     public partial class accomplished_services {
