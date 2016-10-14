@@ -88,7 +88,7 @@ namespace Khadmatcom.providers
                 {
                     if (fileNames.Count > 0)
                     {
-                        _serviceRequests.AddRequestAttchments(fileNames, requestId);
+                        _serviceRequests.AddRequestAttchments(fileNames, requestId,true);
                     }
                     _serviceRequests.CloseProviderRequest(requestId);
                     RedirectAndNotify(GetLocalizedUrl("providers/services-requests/inprogress-requests"), "تم تفيذذ الخدمة");
