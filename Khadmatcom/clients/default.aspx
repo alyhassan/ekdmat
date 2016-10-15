@@ -50,10 +50,10 @@
                             <div class="list-group L-container">
                                 <asp:Repeater runat="server" ItemType="Khadmatcom.Data.Model.RequestsOptionsAnswer" DataSource='<%# Item.RequestsOptionsAnswers %>'>
                                             <ItemTemplate>
-                                                <div class="col-md-6">
+                                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                                     <div class="input-group">
                                                          <label  class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> <%# Item.RequestOption.Title %></label>
-                                                        <label ><%# GetAnswer(Item.Value) %></label>
+                                                         &nbsp; <label ><%# GetAnswer(Item.Value) %></label>
                                                     </div>
                                                 </div>
                                             </ItemTemplate>
