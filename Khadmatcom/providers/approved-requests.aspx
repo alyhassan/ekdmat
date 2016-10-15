@@ -47,7 +47,7 @@
                     </div>
                     <div id="right<%# Item.Id %>" class="collapse" aria-expanded="false">
                         <div class="accordion-body clearfix" dir="rtl" style="direction: rtl;" >
-                            <p dir="rtl" class="pull-right">
+                            <div class="list-group L-container">
                                 <asp:Repeater runat="server" ItemType="Khadmatcom.Data.Model.RequestsOptionsAnswer" DataSource='<%# Item.RequestsOptionsAnswers %>'>
                                             <ItemTemplate>
                                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
@@ -58,7 +58,7 @@
                                                 </div>
                                             </ItemTemplate>
                                         </asp:Repeater>
-                            </p>
+                            </div>
                             <div class="L-button hidden" id="">
                                 <a href="<%# GetLocalizedUrl(string.Format("providers/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt">Edit</a>
                             </div>
