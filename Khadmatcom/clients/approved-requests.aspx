@@ -28,7 +28,7 @@
                                     <span>نوع الخدمة:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
                                   </div>
                                 <div class="L2">
-                                    التفاصيل:
+                                    :تفاصيل الخدمة
                                 </div>
                                 <div class="L3">
                                     <p>
@@ -42,18 +42,18 @@
                     </div>
                     <div id="right<%# Item.Id %>" class="collapse" aria-expanded="false">
                         <div class="accordion-body clearfix" dir="rtl" style="direction: rtl;">
-                            <p dir="rtl" class="pull-right">
+                            <div class="list-group L-container">
                                 <asp:Repeater runat="server" ItemType="Khadmatcom.Data.Model.RequestsOptionsAnswer" DataSource='<%# Item.RequestsOptionsAnswers %>'>
                                     <ItemTemplate>
-                                        <div class="col-md-6">
+                                        <div class="col-md-6 col-sm-6 col-xs-12 pull-right list-group-item">
                                             <div class="input-group">
-                                                <label><%# Item.RequestOption.Title %></label>
-                                                <span class=""><%# GetAnswer(Item.Value) %></span>
+                                                <label  class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> <%# Item.RequestOption.Title %></label>
+                                                <label ><%# GetAnswer(Item.Value) %></label>
                                             </div>
                                         </div>
                                     </ItemTemplate>
                                 </asp:Repeater>
-                                <br />
+                                </div>
                                 <div class="col-md-12">
                                     <div class="input-group">
                                         <label>الوقت المتوقع لإتمام الخدمة المطلوبة</label>

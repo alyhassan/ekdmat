@@ -52,8 +52,8 @@
                                             <ItemTemplate>
                                                 <div class="col-md-6">
                                                     <div class="input-group">
-                                                        <label><%# Item.RequestOption.Title %></label>
-                                                        <span class=""><%# GetAnswer(Item.Value) %></span>
+                                                         <label  class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> <%# Item.RequestOption.Title %></label>
+                                                        <label ><%# GetAnswer(Item.Value) %></label>
                                                     </div>
                                                 </div>
                                             </ItemTemplate>
