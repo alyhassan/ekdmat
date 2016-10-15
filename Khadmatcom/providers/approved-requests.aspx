@@ -32,7 +32,7 @@
  <div class="clearfix"></div>
                                 <div class="row L2">
                                     <div class="col-md-12 col-sm-12 col-xs-12 pull-right;">
-                                    تفاصيل الخدمة
+                                    :تفاصيل الخدمة
                                       </div>
                                 </div>
                                 <div class="row L3">
@@ -50,10 +50,10 @@
                             <p dir="rtl" class="pull-right">
                                 <asp:Repeater runat="server" ItemType="Khadmatcom.Data.Model.RequestsOptionsAnswer" DataSource='<%# Item.RequestsOptionsAnswers %>'>
                                             <ItemTemplate>
-                                                <div class="col-md-6">
+                                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                                     <div class="input-group">
-                                                        <label><%# Item.RequestOption.Title %></label>
-                                                        <span class=""><%# GetAnswer(Item.Value) %></span>
+                                                        <label><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i><%# Item.RequestOption.Title %></label>
+                                                        <label><%# GetAnswer(Item.Value) %></label>
                                                     </div>
                                                 </div>
                                             </ItemTemplate>
