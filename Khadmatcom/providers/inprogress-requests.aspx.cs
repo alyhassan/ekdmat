@@ -91,7 +91,8 @@ namespace Khadmatcom.providers
                         _serviceRequests.AddRequestAttchments(fileNames, requestId,true);
                     }
                     _serviceRequests.CloseProviderRequest(requestId);
-                    RedirectAndNotify(GetLocalizedUrl("providers/services-requests/inprogress-requests"), "تم تفيذذ الخدمة");
+                    //RedirectAndNotify(GetLocalizedUrl("providers/services-requests/inprogress-requests"), "تم تفيذذ الخدمة");
+                    Response.Redirect(GetLocalizedUrl("providers/services-requests/inprogress-requests")+ "?msg=تم تفيذ الخدمة&msgtype=0");
                 }
 
 

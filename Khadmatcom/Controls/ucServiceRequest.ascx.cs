@@ -62,11 +62,10 @@ namespace Khadmatcom.Controls
 
                 };
                 var options = _servicesServices.GetService(LanguageId, requestData.ServiceId).RequestOptions;
-                RequestsOptionsAnswer requestOption;
 
                 foreach (RequestOption option in options)
                 {
-                    requestOption = new RequestsOptionsAnswer() { Value = GetOptionValue(option.Id), OptionId = option.Id };
+                    var requestOption = new RequestsOptionsAnswer() { Value = GetOptionValue(option.Id), OptionId = option.Id };
                     requestData.RequestsOptionsAnswers.Add(requestOption);
                 }
 
@@ -80,9 +79,9 @@ namespace Khadmatcom.Controls
             {
                 Server.ClearError();
                 InitializeCulture();
-                if (ex.InnerException != null)
-                    Notify(ex.InnerException.Message, "حدث خطأ أثناء الطلب", NotificationType.Error);
-                //Notify("فضلا حاول فى وقت لاحق","حدث خطأ أثناء الطلب",NotificationType.Error);
+                //if (ex.InnerException != null)
+                //    Notify(ex.InnerException.Message, "حدث خطأ أثناء الطلب", NotificationType.Error);
+                Notify("فضلا حاول فى وقت لاحق","حدث خطأ أثناء الطلب",NotificationType.Error);
             }
         }
 
