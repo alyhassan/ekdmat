@@ -35,7 +35,7 @@
                                     :تفاصيل الخدمة
                                       </div>
                                 </div>
-                                <div class="row L3">
+                                <div class="L3">
                                     <p>
                                         <%# Item.Details %>
                                     </p>
@@ -52,8 +52,8 @@
                                             <ItemTemplate>
                                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                                     <div class="input-group">
-                                                        <label><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i><%# Item.RequestOption.Title %></label>
-                                                        <label><%# GetAnswer(Item.Value) %></label>
+                                                         <label  class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i><%# Item.RequestOption.Title %></label>
+                                                          &nbsp;<label><%# GetAnswer(Item.Value) %></label>
                                                     </div>
                                                 </div>
                                             </ItemTemplate>
