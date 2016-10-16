@@ -1703,3 +1703,6 @@ button[type="submit"].c-btn {
 .no_bottom_border {
     border-bottom: none;
 }
+.head { 
+    border-bottom-style: none !important ;
+}
