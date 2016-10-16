@@ -615,7 +615,7 @@
                         <button type="button" class="close vdeo" data-dismiss="modal" aria-hidden="true">X</button>
                         <h1><i class="fa">&nbsp;</i><%= GetGlobalResourceObject("general.aspx","lblShippingInformation") %></h1>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body no_bottom_border">
 
                         <iframe class="iframeVideoHome" frameborder="0" allowfullscreen></iframe>
 
