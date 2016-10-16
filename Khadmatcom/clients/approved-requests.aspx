@@ -60,8 +60,8 @@
                                         <span class=""><%# Item.CurrentDuration %></span>
                                         <label>ثمن الخدمة</label>
                                         <span class=""><%# Item.CurrentPrice %></span>
-                                        <label>ملحظت منفذ الخدمة</label>
-                                        <span class=""><%# Item.RequestNotes %></span>
+                                        <label>ملاحظات منفذ الخدمة</label>
+                                        <span class=""><%# Item.Notes %></span>
                                     </div>
                                 </div>
                             </p>

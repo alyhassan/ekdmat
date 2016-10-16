@@ -124,7 +124,7 @@ namespace Khadmatcom.API
 
         [HttpGet]
         [ActionName("UpdateProviderRequest")]
-        public bool UpdateProviderRequest(int userId, int id, int status, string reason, decimal price,int duration)
+        public bool UpdateProviderRequest(int userId, int id, int status, string reason, decimal price,int duration=0)
         {
             try
             {
