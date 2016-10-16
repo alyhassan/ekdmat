@@ -78,15 +78,15 @@ namespace Khadmatcom.clients
                 case "1"://online payment
                     CurrentRequest.PaymentMethod = 1;
                     _serviceRequests.UpdateServiceRequest(CurrentRequest);
-                    PaymentManager paymentManager = new PaymentManager();
-                    string brand = hfCardBrand.Value.Length > 1 ? hfCardBrand.Value : "";
-                    if (brand == "mastercard") brand = "MASTER";
-                    if (CurrentRequest.CurrentPrice != null)
-                    {
-                       // paymentManager.Checkout(CurrentRequest.CurrentPrice.Value, CurrentRequest.Id.ToString(),1,Servston.Utilities.GetCurrentClientIPAddress());
-                        var _return = paymentManager.Pay(CurrentRequest.CurrentPrice.Value, CurrentRequest.Id.ToString(), txtCardNo.Value, txtCardHolder.Value, txtExpiryDate.Value.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries)[0], "20" + txtExpiryDate.Value.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries)[1], txtCvv.Value, 1, Servston.Utilities.GetCurrentClientIPAddress(), brand.ToUpper());
-                       payId = _return["id"];
-                    }
+                    //PaymentManager paymentManager = new PaymentManager();
+                    //string brand = hfCardBrand.Value.Length > 1 ? hfCardBrand.Value : "";
+                    //if (brand == "mastercard") brand = "MASTER";
+                    //if (CurrentRequest.CurrentPrice != null)
+                    //{
+                    //   // paymentManager.Checkout(CurrentRequest.CurrentPrice.Value, CurrentRequest.Id.ToString(),1,Servston.Utilities.GetCurrentClientIPAddress());
+                    //    var _return = paymentManager.Pay(CurrentRequest.CurrentPrice.Value, CurrentRequest.Id.ToString(), txtCardNo.Value, txtCardHolder.Value, txtExpiryDate.Value.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries)[0], "20" + txtExpiryDate.Value.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries)[1], txtCvv.Value, 1, Servston.Utilities.GetCurrentClientIPAddress(), brand.ToUpper());
+                    //   payId = _return["id"];
+                    //}
                     break;
                 case "2"://transfare payment...set to in progress if saved
                     CurrentRequest.PaymentMethod = 2;
@@ -95,6 +95,7 @@ namespace Khadmatcom.clients
                     CurrentRequest.PaymentReferanceCode = txtRefNumber.Value;
                     CurrentRequest.StatusId = (int)RequestStatus.Paid;
                     _serviceRequests.UpdateServiceRequest(CurrentRequest);
+                    RedirectAndNotify(GetLocalizedUrl("clients/services-requests/approved-requests"), "رجاءاَ قم بالإتصال بالإدارة للتأكد من وصول الحوالة.");
                     break;
                 default:
 
@@ -102,8 +103,8 @@ namespace Khadmatcom.clients
             }
 
 
-            if (paymentMethod == "1" && payId.Length > 3)
-                Response.Redirect(HyperPayClient.MerchantConfiguration.Config.ReturnUrl, false);
+            //if (paymentMethod == "1" && payId.Length > 3)
+            //    Response.Redirect(HyperPayClient.MerchantConfiguration.Config.ReturnUrl, false);
         }
 
         private void SetShippingInfo()
