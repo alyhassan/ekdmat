@@ -30,7 +30,7 @@
                                     <span>نوعها:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
                                 </div>
                                 <div class="L2">
-                                    التفاصيل:
+                                   :التفاصيل
                                 </div>
                                 <div class="L3">
                                     <p>

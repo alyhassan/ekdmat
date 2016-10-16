@@ -34,10 +34,10 @@
                                 <div class="clearfix"></div>
                                 <div class="row L2">
                                     <div class="col-md-12 col-sm-12 col-xs-12 pull-right;">
-                                        تفاصيل الخدمة
+                                        :تفاصيل الخدمة
                                     </div>
                                 </div>
-                                <div class="row L3">
+                                <div class="L3">
                                     <p>
                                         <%# Item.Details %>
                                     </p>
@@ -49,18 +49,18 @@
                     </div>
                     <div id="right<%# Item.Id %>" class="collapse" aria-expanded="false">
                         <div class="accordion-body clearfix" dir="rtl" style="direction: rtl;">
-                            <p dir="rtl" class="pull-right">
+                            <div class="list-group L-container">
                                 <asp:Repeater runat="server" ItemType="Khadmatcom.Data.Model.RequestsOptionsAnswer" DataSource='<%# Item.RequestsOptionsAnswers %>'>
                                     <ItemTemplate>
-                                        <div class="col-md-6">
+                                      <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                             <div class="input-group">
-                                                <label><%# Item.RequestOption.Title %></label>
-                                                <span class=""><%# GetAnswer(Item.Value) %></span>
+                                                 <label><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.RequestOption.Title %></label>
+                                                &nbsp;<label><%# GetAnswer(Item.Value) %></label>
                                             </div>
                                         </div>
                                     </ItemTemplate>
                                 </asp:Repeater>
-                            </p>
+                            </div>
                             <br />
                             <div class="L-button" id="">
                                 <div class="input-group" id="s<%# Item.Id %>">
