@@ -41,7 +41,9 @@ namespace Khadmatcom
 
         public IQueryable<Service> GetServices()
         {
-            return _servicesServices.GetServicesList(LanguageId, subcategoryId.Value).AsQueryable();
+            var services= _servicesServices.GetServicesList(LanguageId, subcategoryId.Value).AsQueryable();
+            ucServiceRequest.PageServices = services;
+            return services;
         }
     }
 }

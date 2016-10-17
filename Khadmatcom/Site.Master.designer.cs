@@ -103,13 +103,13 @@ namespace Khadmatcom {
         protected global::Khadmatcom.Controls.uclogin uclogin;
         
         /// <summary>
-        /// ucServiceRequest control.
+        /// footer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Khadmatcom.Controls.ucServiceRequest ucServiceRequest;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder footer;
         
         /// <summary>
         /// js control.

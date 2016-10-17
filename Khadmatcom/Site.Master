@@ -1,6 +1,6 @@
 ﻿<%@ Master ViewStateMode="Enabled" EnableViewState="true" Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Khadmatcom.Site" %>
 
-<%@ Register Src="~/Controls/ucServiceRequest.ascx" TagPrefix="uc1" TagName="ucServiceRequest" %>
+
 <%@ Register Src="~/Controls/uclogin.ascx" TagPrefix="uc1" TagName="uclogin" %>
 
 
@@ -785,9 +785,10 @@
 
 
 
-        <uc1:ucServiceRequest runat="server" ID="ucServiceRequest" />
+        
 
-
+         <asp:ContentPlaceHolder ID="footer" runat="server">
+        </asp:ContentPlaceHolder>
         <div class="A-Div" style="position: absolute; top: 0; left: 0; background: rgba(0, 0, 0, 0.45); z-index: 999; display: none; width: 100%; height: 100%;"></div>
 
 
