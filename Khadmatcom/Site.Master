@@ -84,7 +84,7 @@
                                     <li><a href="javascript:{}">الإعدادت <i class="fa fa-cog" aria-hidden="true"></i>
                                     </a></li>
                                     <li><%--<a href="javascript:{}" class="lst">--%>
-                                        <asp:LoginStatus CssClass="lst lst_icon" ID="LoginStatus1" runat="server" LoginText="" LogoutText="تسجيل الخروج" LogoutPageUrl='<%# GetLocalizedUrl("") %>' />
+                                        <asp:LoginStatus CssClass="lst lst_icon" ID="LoginStatus1" runat="server" LoginText="" LogoutText="تسجيل الخروج" LogoutPageUrl="Default.aspx"  />
 
                                         <%--</a>--%></li>
 
@@ -142,7 +142,7 @@
                                     <li><a href="javascript:{}">Setings <i class="fa fa-cog" aria-hidden="true"></i>
                                     </a></li>
                                     <li><%--<a href="#" class="lst">--%>
-                                        <asp:LoginStatus CssClass="lst" ID="LoginStatus1" runat="server" LoginText="" LogoutText="تسجيل الخروج" LogoutPageUrl='<%# GetLocalizedUrl("") %>' />
+                                        <asp:LoginStatus CssClass="lst" ID="LoginStatus1" runat="server" LoginText="" LogoutText="تسجيل الخروج" LogoutPageUrl="Default.aspx" />
                                         <i class="fa fa-power-off" aria-hidden="true"></i>
                                         <%--</a>--%></li>
 
