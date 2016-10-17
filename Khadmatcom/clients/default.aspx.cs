@@ -27,9 +27,7 @@ namespace Khadmatcom.clients
         }
         public IQueryable<ServiceRequest> GetServiceRequests()
         {
-            var item= _serviceRequests.GetMemberRequests(CurrentUser.Id).AsQueryable();
-            
-            return item;
+            return (CurrentUser != null) ?_serviceRequests.GetMemberRequests(CurrentUser.Id).AsQueryable():null;
         }
     }
 }
