@@ -610,12 +610,12 @@
 
         <div class="vdeo modal fade" id="p6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog frm-vdeo">
-                <div class="modal-content">
+                <div class="modal-content no_bottom_border">
                     <div class="modal-header modal-header-success">
                         <button type="button" class="close vdeo" data-dismiss="modal" aria-hidden="true">X</button>
                         <h1><i class="fa">&nbsp;</i><%= GetGlobalResourceObject("general.aspx","lblShippingInformation") %></h1>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body ">
 
                         <iframe class="iframeVideoHome" frameborder="0" allowfullscreen></iframe>
 

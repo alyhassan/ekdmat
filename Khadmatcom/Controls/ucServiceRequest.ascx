@@ -19,6 +19,7 @@
                             <%--<li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse501">المرفقات</a></li>
                      <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse502">بيانات الشحن </a></li>--%>
                             <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse503">متطلبات الطلب</a></li>
+                              <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse504">إرسال الطلب</a></li>
                         </ul>
                         <ul class="nav nav-bar  col-lg-2 col-md-2 col-xs-6 col-sm-3 navbar-left">
                             <li class="text-success text-left">
@@ -621,12 +622,11 @@
                         <div class="clearfix fal">
                             <div class="accordion-heading">متطلبات الطلب<i class="indi fa fa-chevron-up"></i></div>
                         </div>
-
                         <div id="collapse503" class="collapse" aria-expanded="false">
                             <div class="accordion-body clearfix">
                                 <div class="row ">
                                     <%-- <div class="form-group  col-md-2 col-sm-6 col-xs-12 pull-right">--%>
-                                    <div class="form-group  col-md-6 col-sm-6 col-xs-12 pull-right">
+                                    <div class="form-group  col-md-6 col-sm-6 col-xs-12 pull-right" style="margin-right:35px;color:#4070a0;">
                                         <span id="lblNotes"></span>
                                     </div>
                                 </div>
@@ -642,13 +642,25 @@
                                     <asp:LinkButton Text="أتم الطلب" runat="server" ID="btnProceed" CssClass="nxt s-cl clasic-btn" OnClientClick="return true;" OnClick="btnProceed_OnClick" />
                                     <%--  <a data-toggle="collapse" data-parent="#accordion500" href="card-info.aspx" class="app-close s-cl clasic-btn">Pay Later</a>--%>
 
-                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse500" class="prv s-cl clasic-btn">Previous</a>
+                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse500" class="prv s-cl clasic-btn">السابق</a>
                                 </div>
 
                             </div>
                         </div>
-
                     </div>
+
+                    <div class="panel">
+                        <div class="clearfix fal">
+                            <div class="accordion-heading">إرسال الطلب<i class="indi fa fa-chevron-up"></i></div>
+                        </div>
+                          <div id="collapse504" class="collapse" aria-expanded="false">
+                            <div class="accordion-body clearfix">
+                                <div class="row ">
+                                    </div>
+                                </div>
+                              </div>
+                      </div>
+
                 </div>
             </div>
         </div>
