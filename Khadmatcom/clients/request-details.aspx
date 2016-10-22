@@ -66,7 +66,7 @@
 
             </ul>
             <div class="clearfix"></div>
-            <button type="button" style="padding:3px;opacity:1; color:red;border-color:#2e6da2;" class="btn btn-default disabled text-success pull-left"><span style="display:inline-block;">ريال</span> &nbsp;<span style="display:inline-block;">سعر الخدمة النهائى : 210 </span> </button>
+            <button type="button" style="padding:3px;opacity:1; color:red;border-color:#2e6da2;border-width:2px;" class="btn btn-default disabled text-success pull-left"><span style="display:inline-block;">ريال</span> &nbsp;<span style="display:inline-block;">سعر الخدمة النهائى : 210 </span> </button>
             <%--    <a class="accordion-toggle indicator collapsed" data-toggle="collapse" data-parent="#accordion500" href="#collapse500" aria-expanded="false">Characteristic of your services from the rest of institutions that provide the same services? <i class="indi fa fa-chevron-down"></i>
                         </a>--%>
             <div class="clearfix"></div>
