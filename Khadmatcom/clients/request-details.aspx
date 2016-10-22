@@ -175,7 +175,7 @@
                 </div>
                 <div class="panel">
                     <div class="clearfix fal">
-                        <div class="accordion-heading">بيانات الشحن<i class="indi fa fa-chevron-up"></i></div>
+                        <div class="accordion-heading"> العنوان<i class="indi fa fa-chevron-up"></i></div>
                     </div>
                     <div id="collapse502" class="collapse" aria-expanded="false">
                         <div class="accordion-body clearfix">
