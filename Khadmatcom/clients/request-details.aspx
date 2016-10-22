@@ -60,9 +60,9 @@
             <ul class="nav nav-tabs nav-arow myTab" id="ai">
              <!--   <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse500">بيانات الخدمة</a></li> -->
                 <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse501">المرفقات</a></li>
-                <li class="active"><a data-toggle="collapse" data-parent="#accordion500" href="#collapse502">بيانات</a></li>
-                <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse503">طرق الدفع</a></li>
-                <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse504">ملخص العملية</a></li>
+                <li class="active"><a data-toggle="collapse" data-parent="#accordion500" href="#collapse502">العنوان</a></li>
+                <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse503"> الدفع</a></li>
+                <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse504">ملخص الطلب</a></li>
 
             </ul>
             <%--    <a class="accordion-toggle indicator collapsed" data-toggle="collapse" data-parent="#accordion500" href="#collapse500" aria-expanded="false">Characteristic of your services from the rest of institutions that provide the same services? <i class="indi fa fa-chevron-down"></i>
@@ -140,10 +140,10 @@
                 -->
                 <div class="panel">
                     <div class="clearfix fal">
-                        <div class="accordion-heading">Attaching documents <i class="indi fa fa-chevron-up"></i></div>
+                        <div class="accordion-heading">المرفقات <i class="indi fa fa-chevron-up"></i></div>
                     </div>
                     <div id="collapse501" class="collapse" aria-expanded="false">
-                        <div class="accordion-body clearfix">
+                        <div class="accordion-body clearfix"ب>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Attachments 1</label>
@@ -241,7 +241,7 @@
                 </div>
                 <div class="panel">
                     <div class="clearfix fal">
-                        <div class="accordion-heading lanti200">طرق الدفع<i class="indi fa fa-chevron-down"></i></div>
+                        <div class="accordion-heading lanti200"> الدفع<i class="indi fa fa-chevron-down"></i></div>
                     </div>
                     <div id="collapse503" class="collapse in" aria-expanded="false">
                         <div class="accordion-body clearfix validationEngineContainer" id="divServiceRequest">
@@ -334,15 +334,15 @@
                                     <tr>
                                         <td>
                                             <label dir="rtl">الإجمالى: </label>
-                                            <span class="rounded"><%= CurrentRequest.CurrentPrice.Value.ToCurrency("ريال") %></span>
+                                            <span class="rounded"><span style="display:inline-block;">ريال</span>&nbsp; <%= CurrentRequest.CurrentPrice.Value %> </span>
                                         </td>
                                         <td>
                                             <label dir="rtl">تكلفة الشحن:</label>
-                                            <span class="ga"><%= ShippingPrice.ToCurrency("ريال") %></span>
+                                            <span class="ga"><span style="display:inline-block;">ريال</span>&nbsp; <%= ShippingPrice %></span>
                                         </td>
                                         <td>
                                             <label dir="rtl">قيمة الخدمة:</label>
-                                            <span class="ga"><%= ServicePrice.ToCurrency("ريال") %></span>
+                                            <span class="ga"><span style="display:inline-block;">ريال</span>&nbsp; <%= ServicePrice %></span>
                                         </td>
                                     </tr>
                                 </table>
@@ -359,7 +359,7 @@
                 </div>
                 <div class="panel">
                     <div class="clearfix fal">
-                        <div class="accordion-heading">Request Details<i class="indi fa fa-chevron-up"></i></div>
+                        <div class="accordion-heading">ملخص الطلب <i class="indi fa fa-chevron-up"></i></div>
                     </div>
                     <div id="collapse504" class="collapse" aria-expanded="false">
                         <div class="accordion-body clearfix">
