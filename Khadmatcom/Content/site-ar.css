@@ -1759,3 +1759,5 @@ button[type="submit"].c-btn {
 .fa-power-off {
     display:none;
 }
+/* accordin add 5px padding  in pages new-requests /approvrd request ,etc*/
+.accordion-body  { padding:5px;}
