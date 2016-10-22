@@ -32,6 +32,11 @@
     font-family: FontAwesome;
     padding-left: 10px !important;
 }
+ .lst:after {
+    content: "\f011";
+    font-family: FontAwesome;
+    padding-left: 10px !important;
+}
 
     .olo .panel {
         width: 50%;

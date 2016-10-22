@@ -167,7 +167,7 @@ header {
     padding: 0 10px;
     position: fixed;
     width: 100%;
-    z-index: 999;
+    z-index: 100;
     top: 0;
     left: 0;
 }
@@ -1577,6 +1577,7 @@ button[type="submit"].c-btn {
     margin-top: 5px;
     padding: 0 !important;
     margin-left: 5px;
+    display:none;
 }
 
 
