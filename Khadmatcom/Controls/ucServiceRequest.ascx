@@ -66,7 +66,20 @@
                                             <option>Web Design</option>
                                         </select>--%>
                                         </div>
-                                        <div class="form-group    col-md-2 col-sm-4 col-xs-12  pull-right">
+                                    
+                                        <%--<div class="clearfix"></div>--%>
+                                        <div class="form-group  col-md-2 col-sm-4 col-xs-12  pull-right">
+                                            <label class="col-md-12">مدينة</label>
+                                            <select class="form-control validate[required]" id="ddlCities" onchange="$('#hfCityId').val($('#ddlCities').val());">
+                                                <option value="">أختر مدينة</option>
+                                                <asp:Repeater runat="server" ItemType="Khadmatcom.Services.Model.City" SelectMethod="GetCities">
+                                                    <ItemTemplate>
+                                                        <option value="<%# Item.CityId %>"><%# Item.Name %></option>
+                                                    </ItemTemplate>
+                                                </asp:Repeater>
+                                            </select>
+                                        </div>
+                                            <div class="form-group    col-md-2 col-sm-4 col-xs-6  pull-right">
                                             <label class="col-md-12 col-sm-12 col-xs-12 text-right">العدد</label>
                                             <asp:DropDownList runat="server" CssClass="form-control   validate[required]" ID="ddlCount">
                                                 <asp:ListItem Value="" Text="اختر العدد" />
@@ -81,21 +94,9 @@
                                             <option>2</option>
                                         </select>--%>
                                         </div>
-                                        <%--<div class="clearfix"></div>--%>
-                                        <div class="form-group  col-md-2 col-sm-4 col-xs-12  pull-right">
-                                            <label class="col-md-12">مدينة</label>
-                                            <select class="form-control validate[required]" id="ddlCities" onchange="$('#hfCityId').val($('#ddlCities').val());">
-                                                <option value="">أختر مدينة</option>
-                                                <asp:Repeater runat="server" ItemType="Khadmatcom.Services.Model.City" SelectMethod="GetCities">
-                                                    <ItemTemplate>
-                                                        <option value="<%# Item.CityId %>"><%# Item.Name %></option>
-                                                    </ItemTemplate>
-                                                </asp:Repeater>
-                                            </select>
-                                        </div>
-                                        <div class="form-group  col-md-3 col-sm-4 col-xs-12 pull-right">
+                                        <div class="form-group  col-md-3 col-sm-4 col-xs-6 pull-right">
                                             <label class="clo-md-12">تاريخ الطلب</label>
-                                            <span class="fixed-no"><%= string.Format("{0:MMMM d, yyyy}",DateTime.Now) %></span>
+                                            <span class="fixed-no form-control"><%= string.Format("{0:MMMM d, yyyy}",DateTime.Now) %></span>
 
                                         </div>
                                     </div>
@@ -178,8 +179,7 @@
                                         <input type="text" class="form-control validate[required]" runat="server" id="txtLicenceNo" placeholder="رقم الرخصة" />
                                     </div>
                                     <div class="form-group options col-md-4 col-sm-4 col-xs-12 o75 pull-right">
-                                        <label>سبب التعديل</label>
-                                        <textarea rows="5" runat="server" id="txtReason" class="form-control validate[required]"></textarea>
+                                        <textarea rows="5" runat="server" id="txtReason" class="form-control validate[required]" placeholder=">سبب التعديل"></textarea>
                                     </div>
                                     <div class="form-group options col-md-4 col-sm-4 col-xs-12 pull-right o46">
                                         <select runat="server" id="ddlPortName" class="form-control validate[required]">
