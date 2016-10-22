@@ -25,11 +25,11 @@ namespace Khadmatcom.providers
         }
         public IQueryable<ServiceRequest> GetServiceRequests()
         {
-            if (CurrentUser.Id > 0)
+            //if (CurrentUser.Id > 0)
                 return
-                    _serviceRequests.GetProviderRequests(CurrentUser.Id, (int) RequestStatus.InProgress, false)
-                        .AsQueryable();
-            else return null;
+                   (CurrentUser != null) ? _serviceRequests.GetProviderRequests(CurrentUser.Id, (int) RequestStatus.InProgress, false)
+                        .AsQueryable():null;
+            //else return null;
         }
 
         protected void btnSave_OnClick(object sender, EventArgs e)

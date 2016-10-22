@@ -54,13 +54,13 @@
                                     <ItemTemplate>
                                         <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                             <div class="input-group">
-                                                <label><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> &nbsp;<%# Item.RequestOption.Title %></label>
+                                                <label><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.RequestOption.Title %></label>
                                                 &nbsp;<label><%# GetAnswer(Item.Value) %></label>
                                             </div>
                                         </div>
                                     </ItemTemplate>
                                 </asp:Repeater>
-                         </div>
+                            </div>
                             <br />
                             <div class="L-button" id="">
                                 <div class="input-group" id="s<%# Item.Id %>">
@@ -96,6 +96,7 @@
     <script type="text/javascript">
         var id;
         var state;
+        var duration = 0;
         function takeAction(id1,state1) {
             id = id1;
             state = state1;
@@ -125,12 +126,14 @@
             var result = validateForm('#reason'+id, '<%= languageIso %>');
             //do what you need here
             if (result) {
-            
+                if( $('#txtDuration' + id).val().length>0)
+                    duration = $('#txtDuration' + id).val();
+
                 var userData = {
                     userId: <%= CurrentUser.Id %>,
                     id: id,
                     status: state,
-                    duration:$('#txtDuration'+id).val(),
+                    duration:duration,
                     price: $('#txtPrice'+id).val(),
                     reason: $('#txtReason'+id).val()
                 };

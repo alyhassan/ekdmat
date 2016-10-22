@@ -26,7 +26,12 @@
 
 @media(max-width:992px) {
 
-
+    /*logout icon*/
+.lst_icon:after {
+    content: "\f011";
+    font-family: FontAwesome;
+    padding-left: 10px !important;
+}
 
     .olo .panel {
         width: 50%;

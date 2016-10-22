@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="services.aspx.cs" Inherits="Khadmatcom.services" %>
-
+<%@ Register Src="~/Controls/ucServiceRequest.ascx" TagPrefix="uc1" TagName="ucServiceRequest" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="/Content/carousel-css/owl.theme.css" />
     <link rel="stylesheet" type="text/css" href="/Content/carousel-css/owl.carousel.css" />
@@ -36,6 +36,9 @@
         </div>
 
     </div>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="footer" runat="server">
+    <uc1:ucServiceRequest runat="server" ID="ucServiceRequest" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="js" runat="server">
     <script src="/Scripts/carousel-js/owl.carousel.js"></script>

@@ -26,9 +26,7 @@ namespace Khadmatcom.providers
         }
         public IQueryable<ServiceRequest> GetServiceRequests()
         {
-            var item = _serviceRequests.GetProviderRequests(CurrentUser.Id).AsQueryable();
-
-            return item;
+            return (CurrentUser != null) ? _serviceRequests.GetProviderRequests(CurrentUser.Id).AsQueryable() : null;
         }
 
         protected void lvServiceRequest_OnItemCommand(object sender, ListViewCommandEventArgs e)
@@ -40,13 +38,13 @@ namespace Khadmatcom.providers
                 string reason = Request.Form["txtReason" + id.ToString()];
                 decimal price = decimal.Parse(Request.Form["txtPrice" + id.ToString()]);
                 int duration = int.Parse(Request.Form["txtDuration"] + id.ToString());
-                _serviceRequests.UpdateProviderRequest(id,CurrentUser.Id,status,reason,price, duration);
+                _serviceRequests.UpdateProviderRequest(id, CurrentUser.Id, status, reason, price, duration);
             }
         }
 
         protected void OnClick(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

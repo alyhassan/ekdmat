@@ -17,6 +17,10 @@ namespace Khadmatcom.Controls
     {
         private readonly AreasServices _areasServices;
         private readonly ServicesServices _servicesServices;
+
+        public IQueryable<Service> PageServices { get; set; }
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
         }
@@ -33,7 +37,7 @@ namespace Khadmatcom.Controls
         }
         public IQueryable<Service> GetServices()
         {
-            return _servicesServices.GetServicesList(LanguageId).AsQueryable();
+            return PageServices ?? _servicesServices.GetServicesList(LanguageId).AsQueryable();
         }
 
         protected void btnProceed_OnClick(object sender, EventArgs e)

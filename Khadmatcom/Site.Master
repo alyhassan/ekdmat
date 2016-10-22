@@ -1,6 +1,6 @@
 ﻿<%@ Master ViewStateMode="Enabled" EnableViewState="true" Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Khadmatcom.Site" %>
 
-<%@ Register Src="~/Controls/ucServiceRequest.ascx" TagPrefix="uc1" TagName="ucServiceRequest" %>
+
 <%@ Register Src="~/Controls/uclogin.ascx" TagPrefix="uc1" TagName="uclogin" %>
 
 
@@ -84,7 +84,7 @@
                                     <li><a href="javascript:{}">الإعدادت <i class="fa fa-cog" aria-hidden="true"></i>
                                     </a></li>
                                     <li><%--<a href="javascript:{}" class="lst">--%>
-                                        <asp:LoginStatus CssClass="lst lst_icon" ID="LoginStatus1" runat="server" LoginText="" LogoutText="تسجيل الخروج" LogoutPageUrl='<%# GetLocalizedUrl("") %>' />
+                                        <asp:LoginStatus CssClass="lst lst_icon" ID="LoginStatus1" runat="server" LoginText="" LogoutText="تسجيل الخروج" LogoutPageUrl="Default.aspx"  />
 
                                         <%--</a>--%></li>
 
@@ -142,7 +142,7 @@
                                     <li><a href="javascript:{}">Setings <i class="fa fa-cog" aria-hidden="true"></i>
                                     </a></li>
                                     <li><%--<a href="#" class="lst">--%>
-                                        <asp:LoginStatus CssClass="lst" ID="LoginStatus1" runat="server" LoginText="" LogoutText="تسجيل الخروج" LogoutPageUrl='<%# GetLocalizedUrl("") %>' />
+                                        <asp:LoginStatus CssClass="lst" ID="LoginStatus1" runat="server" LoginText="" LogoutText="تسجيل الخروج" LogoutPageUrl="Default.aspx" />
                                         <i class="fa fa-power-off" aria-hidden="true"></i>
                                         <%--</a>--%></li>
 
@@ -788,9 +788,10 @@
 
 
 
-        <uc1:ucServiceRequest runat="server" ID="ucServiceRequest" />
+        
 
-
+         <asp:ContentPlaceHolder ID="footer" runat="server">
+        </asp:ContentPlaceHolder>
         <div class="A-Div" style="position: absolute; top: 0; left: 0; background: rgba(0, 0, 0, 0.45); z-index: 999; display: none; width: 100%; height: 100%;"></div>
 
 
