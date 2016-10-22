@@ -563,6 +563,7 @@
                     <li><a href="<%= GetSocialLinkUrl("TwitterPage") %>" target="_blank"><i class="fa fa-2x fa-twitter-square"></i></a></li>
                     <li><a href="<%= GetSocialLinkUrl("FacebookPage") %>" target="_blank"><i class="fa fa-2x fa-facebook-square"></i></a></li>
                     <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank"><i class="fa fa-2x fa-plus-square"></i></a></li>
+                     <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank"><i class="fa fa-snapchat"></i></a></li>
                     <%--<li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank"><i class="fa fa-2x fa-google-plus-square"></i></a></li>
                         <li><a href="javascript:{}" target="_blank"><i class="fa fa-2x fa-linkedin-square"></i></a></li>--%>
                     <li class="dis-hide"><a data-toggle="modal" href="#p8" target="_blank"><i class="fa fa-2x fa-envelope-square"></i></a></li>
@@ -598,6 +599,8 @@
                 <li><a href="<%= GetSocialLinkUrl("TwitterPage") %>" target="_blank">Twitter   <i class="fa fa-twitter"></i></a></li>
                 <li><a href="<%= GetSocialLinkUrl("FacebookPage") %>" target="_blank">Facebook <i class="fa fa-facebook"></i></a></li>
                 <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank">كن شريكآ<i class="fa fa-plus"></i></a></li>
+                  <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank">سناب شات<i class="fa fa-snapchat"></i></a></li>
+
                 <%--
                     <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank">أنضم لفريق العمل <i class="fa fa-google-plus"></i></a></li> 
                     <li><a href="javascript:{}" target="_blank">Linkdin<i class="fa fa-linkedin"></i></a></li>

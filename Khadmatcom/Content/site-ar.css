@@ -1755,3 +1755,7 @@ button[type="submit"].c-btn {
 .head { 
     border-bottom-style: none !important;
 }
+/* hide power off icon*/
+.fa-power-off {
+    display:none;
+}
