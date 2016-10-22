@@ -58,7 +58,7 @@
         <div class="modal-body">
 
             <ul class="nav nav-tabs nav-arow myTab" id="ai">
-                <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse500">بيانات الخدمة</a></li>
+             <!--   <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse500">بيانات الخدمة</a></li> -->
                 <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse501">المرفقات</a></li>
                 <li class="active"><a data-toggle="collapse" data-parent="#accordion500" href="#collapse502">بيانات</a></li>
                 <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse503">طرق الدفع</a></li>
@@ -68,6 +68,7 @@
             <%--    <a class="accordion-toggle indicator collapsed" data-toggle="collapse" data-parent="#accordion500" href="#collapse500" aria-expanded="false">Characteristic of your services from the rest of institutions that provide the same services? <i class="indi fa fa-chevron-down"></i>
                         </a>--%>
             <div class="accordion clearfix" id="accordion500">
+                <!--
                 <div class="panel">
                     <div class="clearfix fal">
                         <div class="accordion-heading ">Service Request &nbsp;  <%= CurrentRequest.MemberId %> <i class="indi fa fa-chevron-up"></i></div>
@@ -136,6 +137,7 @@
                         </div>
                     </div>
                 </div>
+                -->
                 <div class="panel">
                     <div class="clearfix fal">
                         <div class="accordion-heading">Attaching documents <i class="indi fa fa-chevron-up"></i></div>
