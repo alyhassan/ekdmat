@@ -1140,7 +1140,7 @@ button[type="submit"].c-btn {
 
 
 .chuu .accordion-toggle {
-    background: #1A548E;
+    background: #efedee;
     height: 100% !important;
     padding: 15px 12px;
     border: solid 1px #ccc;
@@ -1185,7 +1185,7 @@ button[type="submit"].c-btn {
     }
 
     .L1 .blue {
-        color: #fff;
+        color: #1a548e;
     }
 
     .L1 span {

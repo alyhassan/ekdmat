@@ -55,30 +55,38 @@
                                 </asp:Repeater>
                                 </div>
                                 <div class="list-group L-container">
-                                     <div class="col-md-6">
+                                     <div class="col-md-6 pull-right">
                                     <div class="input-group"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp; 
                                      <label>مدة التنفيذ</label>:&nbsp; 
                                      <span class=""><%# Item.CurrentDuration %></span>&nbsp;<span>يوم</span>
                                      </div>
                                          </div>
                                      <div class="col-md-6">
-                                      <div class="input-group"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp; 
+
+                                     <!-- <div class="input-group"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp; 
                                       <label>ثمن الخدمة</label>:&nbsp; 
                                       <span class=""><%# Item.CurrentPrice %></span>
-                                      </div>
-                                         </div>
-                                </div>
-                           <div class="col-md-12">
-                                  <div class="input-group"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp; 
-                                <label>ملاجظات منفذ الخدمة</label>:&nbsp; 
+                                      </div>-->
+
+                                   <div class="input-group"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp; 
+                                <label>  تعليق</label>:&nbsp; 
                                 <span class=""><%# Item.Notes %></span>
                                  </div>
-                            </div>
+                                         </div>
+                                </div>
+                          <!-- <div class="col-md-12">
+                                  <div class="input-group"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp; 
+                                <label>  تعليق</label>:&nbsp; 
+                                <span class=""><%# Item.Notes %></span>
+                                 </div>
+                            </div> -->
                             
                             </p>
+                           
                             <div class="L-button" id="">
                                 <a href="<%# GetLocalizedUrl(string.Format("clients/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt">إكمال الطلب</a>
                             </div>
+                                                                                     <button type="button" style="padding:3px;opacity:1; color:green;" class="btn btn-default disabled text-success pull-left">سعر الخدمة : <%# Item.CurrentPrice %> <span style="display:inline-block;">ريال</span> </button>
 
                         </div>
                     </div>
