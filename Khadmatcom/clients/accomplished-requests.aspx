@@ -42,6 +42,7 @@
                         </a>
 
                     </div>
+                      
                     <div id="right<%# Item.Id %>" class="collapse" aria-expanded="false">
                         <div class="accordion-body clearfix ">
                             <p>
@@ -51,10 +52,10 @@
                                 <a href="<%# GetLocalizedUrl(string.Format("clients/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt">Edit</a>
                             </div>
                                 <button type="button" style="padding:3px;opacity:1; color:green;" class="btn btn-default disabled text-success pull-left">سعر الخدمةالنهائى:<%# Item.CurrentPrice %>&nbsp;<span style="display:inline-block;float:left">ريال</span>&nbsp;  </button>&nbsp; 
-                       <div class="clearfix"></div>
+                   
                             
                                 <!-- attachement -->
- <div class="dropdown pull-right">
+ <div class="dropdown pull-right col-md-3 col-xs-12">
  &nbsp; <button class="btn btn-sm btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     المرفقات
     <span class="caret"></span>
@@ -65,12 +66,12 @@
     <li><a href="#">3 ملف</a></li>
   </ul>&nbsp;
 </div>
-          
+          </div>
                             <!-- end attachement -->
 
                         </div>
                     </div>
-                </div>
+                
 
                 </ItemTemplate>
             </asp:ListView>
