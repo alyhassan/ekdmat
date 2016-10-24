@@ -50,22 +50,22 @@
                             <div class="L-button" id="">
                                 <a href="<%# GetLocalizedUrl(string.Format("clients/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt">Edit</a>
                             </div>
-                                <button type="button" style="padding:3px;opacity:1; color:green;" class="btn btn-default disabled text-success pull-left">سعر الخدمةالنهائى:<%# Item.CurrentPrice %>&nbsp;<span style="display:inline-block;float:left">ريال</span>&nbsp;  </button>&nbsp; 
-                       <div class="clearfix"></div>
-                            
+                                <button type="button" style="padding:3px;opacity:1; color:green;" class="btn btn-default disabled text-success pull-left">سعر الخدمةالنهائى:<%# Item.CurrentPrice %>&nbsp;<span style="display:inline-block;float:left">ريال</span>&nbsp;  </button>
+                       
                                 <!-- attachement -->
- <div class="dropdown pull-right">
- &nbsp; <button class="btn btn-sm btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    المرفقات
+                          <!-- Split button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-danger">المرفقات</button>
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
   </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="text-align:right;left:-100px;">
+  <ul class="dropdown-menu">
     <li><a href="#">ملف 1</a></li>
-    <li><a href="#">2 ملف</a></li>
-    <li><a href="#">3 ملف</a></li>
-  </ul>&nbsp;
+    <li><a href="#">2 ملف </a></li>
+    <li><a href="#">3 ملف </a></li>
+  </ul>
 </div>
-          
                             <!-- end attachement -->
 
                         </div>

@@ -632,6 +632,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Attachments\" />
+    <Folder Include="clients\fz3-14773457217880\" />
     <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
