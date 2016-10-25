@@ -56,9 +56,13 @@
                                             </ItemTemplate>
                                         </asp:Repeater>
                             </div>
-                            <div class="L-button hidden" id="">
+                             <div class="L-button  " id="">
                                 <a href="<%# GetLocalizedUrl(string.Format("clients/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt">Edit</a>
                             </div>
+                            <div class="L-button">
+                              <button type="button" style="padding:3px;opacity:1; color:green;" class="btn btn-default disabled text-success ">سعر الخدمةالمبدئى:<%# Item.CurrentPrice %>&nbsp;<span style="display:inline-block;float:left">ريال</span>&nbsp;  </button>&nbsp; 
+                            </div>
+                           
 
                         </div>
                     </div>

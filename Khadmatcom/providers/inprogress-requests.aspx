@@ -64,10 +64,13 @@
                             <br />
                             <div class="L-button" id="">
                                 <div class="input-group" id="s<%# Item.Id %>">
+                                                                       <button type="button" style="padding:3px;opacity:1; color:green;" class="btn btn-default disabled text-success ">سعر الخدمةالمبدئى:<%# Item.CurrentPrice %>&nbsp;<span style="display:inline-block;float:left">ريال</span>&nbsp;  </button>&nbsp; 
+
                                     <input type="hidden" id="hasAttachment<%# Item.Id %>" value="<%# Item.Service.HasAttachment? 1:0 %>" />
-                                    <input type="button" class="btn btn-danger  btn-sm" value="إنهاء الطلب" onclick="finishRequest(<%# Item.Id %>);" />
-                                    <input type="button" class="btn btn-success btn-sm" value="تمديد الطلب" onclick="increaceDuration(<%# Item.Id %>);" />
-                                </div>
+                                    <input type="button" class="btn btn-danger  btn-sm" value="إنهاء الطلب" onclick="finishRequest(<%# Item.Id %>);" />&nbsp;
+                                    <input type="button" class="btn btn-success btn-sm" value="تمديد الطلب" onclick="increaceDuration(<%# Item.Id %>);" />&nbsp;
+
+                                     </div>
                                 <div class="input-group hidden validationEngineContainer increaseDiv" id="increase<%# Item.Id %>">
 
                                     <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>">وقت التنفيذ الإضافي</label>
@@ -96,13 +99,18 @@
                     <h1 class="hidden"><i class="fa">&nbsp;</i></h1>
                 </div>
                 <div class="modal-body validationEngineContainer" id="attachmentContainer">
-
+                    <div class="row">
+                        <div class="col-md-6 form-group pull-right">
                     <label for=""></label>
                     <asp:FileUpload ID="fupAttachment" ClientIDMode="Static" runat="server" CssClass="attach validate[required]" AllowMultiple="True" />
-                    <span class="small glyphicon-resize-small"><i class="glyphicon-signal">&nbsp;</i>الحد الأقصى للملفات المرفوعة هو ا ميجا لكل ملف </span>
-                    <asp:Button ID="btnSave" runat="server" Text="إرسال" CssClass="glyphicon-hdd btn-default btn btn-sm" OnClientClick="return validateForm('#attachmentContainer', '<%= languageIso %>')" OnClick="btnSave_OnClick" />
-                </div>
+                             </div>
+                        <div class="col-md-12 pull-right">
+                    <span ><i class="fa fa-signal"></i>&nbsp;الحد الأقصى للملفات المرفوعة هو ا ميجا لكل ملف </span>
+                     </div>
+                    </div>
+                    </div>
                 <div class="modal-footer">
+                   <asp:Button ID="btnSave" runat="server" Text="إرسال" CssClass="glyphicon-hdd btn-primary btn btn-sm" OnClientClick="return validateForm('#attachmentContainer', '<%= languageIso %>')" OnClick="btnSave_OnClick" />
                 </div>
             </div>
             <!-- /.modal-content -->

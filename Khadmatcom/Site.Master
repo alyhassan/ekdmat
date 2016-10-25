@@ -1,12 +1,7 @@
 ﻿<%@ Master ViewStateMode="Enabled" EnableViewState="true" Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Khadmatcom.Site" %>
-
-
 <%@ Register Src="~/Controls/uclogin.ascx" TagPrefix="uc1" TagName="uclogin" %>
 
-
-
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link rel="author" href="/humans.txt" />
@@ -75,7 +70,7 @@
                         </div>
                     </AnonymousTemplate>
                     <LoggedInTemplate>
-                        <ul class=" navbar-right">
+                        <ul class=" navbar-right right-nav clearfix pull-right">
 
                             <li class="dropdown mydropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= CurrentUser.FullName %><span class="caret"></span></a>
@@ -133,7 +128,7 @@
                         </div>
                     </AnonymousTemplate>
                     <LoggedInTemplate>
-                        <ul class=" navbar-right pull-right">
+                       <!-- <ul class=" navbar-right pull-right">
 
                             <li class="dropdown mydropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">اسم المستخدم<span class="caret"></span></a>
@@ -144,6 +139,22 @@
                                     <li><%--<a href="#" class="lst">--%>
                                         <asp:LoginStatus CssClass="lst" ID="LoginStatus1" runat="server" LoginText="" LogoutText="تسجيل الخروج" LogoutPageUrl="Default.aspx" />
                                         <i class="fa fa-power-off" aria-hidden="true"></i>
+                                        <%--</a>--%></li>
+
+                                </ul>
+                            </li>
+                        </ul> -->
+                         <ul class=" navbar-right right-nav clearfix pull-right">
+
+                            <li class="dropdown mydropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= CurrentUser.FullName %><span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="javascript:{}">ملفك الشخصي <i class="fa fa-briefcase" aria-hidden="true"></i></a></li>
+                                    <li><a href="javascript:{}">الإعدادت <i class="fa fa-cog" aria-hidden="true"></i>
+                                    </a></li>
+                                    <li><%--<a href="javascript:{}" class="lst">--%>
+                                        <asp:LoginStatus CssClass="lst lst_icon" ID="LoginStatus2" runat="server" LoginText="" LogoutText="تسجيل الخروج" LogoutPageUrl="Default.aspx"  />
+
                                         <%--</a>--%></li>
 
                                 </ul>
