@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="inprogress-requests2.aspx.cs" Inherits="Khadmatcom.clients.inprogress_requests" %>
+<%@ Import Namespace="System.Diagnostics" %>
 <%@ Import Namespace="Khadmatcom" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -33,6 +34,10 @@
                                     :التفاصيل
                                 </div>
                                 <div class="L3">
+                                    مدة التنفيذ: <%# Item.TotalDuration %>
+                            <%# Item.Notes %>
+                            :السعر <%# Khadmatcom.Services.ExtensionMethods.ToCurrency(Item.CurrentPrice,"ريال") %>
+                                    طريقة الدفع:<%#GetPaymentMethod(Item.PaymentMethod) %>
                                     <p>
                                         <%# Item.Details %>
                                     </p>
@@ -56,6 +61,7 @@
                                             </ItemTemplate>
                                         </asp:Repeater>
                             </div>
+                           
                              <div class="L-button  " id="">
                                 <a href="<%# GetLocalizedUrl(string.Format("clients/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt">Edit</a>
                             </div>

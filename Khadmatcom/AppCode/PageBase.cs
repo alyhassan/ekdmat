@@ -384,5 +384,25 @@ namespace Khadmatcom
             }
             return value;
         }
+
+        protected string GetPaymentMethod(int? paymentMethod)
+        {
+            string type = "";
+            if (paymentMethod.HasValue)
+            {
+                switch (paymentMethod.Value)
+                {
+                    case 1:
+                        type = "دفع اون لاين";
+                        break;
+                    case 2:
+                        type = "تحويل بنكي";
+                        break;
+                    default:
+                        break;
+                }
+            }
+            return type;
+        }
     }
 }
