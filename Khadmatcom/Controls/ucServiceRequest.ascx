@@ -639,7 +639,7 @@
                                 <div class="col-md-12 form-group clearfix">
 
                                     <%-- <a href="#" class="nxt s-cl clasic-btn">Proceed</a>--%>
-                                    <asp:LinkButton Text="أتم الطلب" runat="server" ID="btnProceed" CssClass="nxt s-cl clasic-btn" OnClientClick="return true;" OnClick="btnProceed_OnClick" />
+                                     <a data-toggle="collapse" data-parent="#accordion500" href="#collapse504" id="test2" onclick="NextStep();" class="clasic-btn">التالي</a>
                                     <%--  <a data-toggle="collapse" data-parent="#accordion500" href="card-info.aspx" class="app-close s-cl clasic-btn">Pay Later</a>--%>
 
                                     <a data-toggle="collapse" data-parent="#accordion500" href="#collapse500" class="prv s-cl clasic-btn">السابق</a>
@@ -656,6 +656,7 @@
                           <div id="collapse504" class="collapse" aria-expanded="false">
                             <div class="accordion-body clearfix">
                                 <div class="row ">
+                                    <asp:LinkButton Text="أتم الطلب" runat="server" ID="btnProceed" CssClass="nxt s-cl clasic-btn" OnClientClick="return true;" OnClick="btnProceed_OnClick" />
                                     </div>
                                 </div>
                               </div>
