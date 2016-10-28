@@ -37,13 +37,15 @@
                                 <div class="L3">
                                     <p>
                                         <%# Item.Details %>
-                                    </p>
-                                    <asp:ListView runat="server" DataSource="<%# Item.Attachments.Where(x=>x.IsOutput) %>" ItemType="Khadmatcom.Data.Model.Attachment">
+                                        <br/>
+                                        <asp:ListView runat="server" DataSource="<%# Item.Attachments.Where(x=>x.IsOutput) %>" ItemType="Khadmatcom.Data.Model.Attachment">
                                         <ItemTemplate>
                                             <a target="_blank" href='<%# string.Format("/Attachments/{0}", Item.Path)%>'>المرفق <%# Container.DataItemIndex+1 %></a>
                                         </ItemTemplate>
                                         <ItemSeparatorTemplate>, </ItemSeparatorTemplate>
                                     </asp:ListView>
+                                    </p>
+                                    
                                 </div>
                             </div>
 
@@ -64,7 +66,6 @@
                                             </div>
                                         </div>
                                     </ItemTemplate>
-                                    t
                                 </asp:Repeater>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
@@ -82,7 +83,7 @@
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>سبب الرفض </label>
+                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>تعليق </label>
                                         :
                                                        &nbsp; <span class=""><%# Item.Notes %></span>
                                     </div>

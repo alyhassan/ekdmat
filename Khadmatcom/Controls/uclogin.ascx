@@ -33,7 +33,7 @@
                     </div>
                     <div class="col-md-10 col-md-offset-1 form-group">
                         <span class="pull-left"><a href="<%= GetLocalizedUrl("register") %>" id="register">Register</a></span>
-                        <span class="pull-right"><a href="javascript{}">Forgot Password?</a></span>
+                        <span class="pull-right"><a href="javascript:{}">Forgot Password?</a></span>
                     </div>
 
                 </div>

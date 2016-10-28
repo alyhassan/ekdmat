@@ -723,12 +723,12 @@
                                 <ItemTemplate>
                                     <div class="panel">
                                         <div class="accordion-heading ">
-                                            <a class="accordion-toggle indicator collapsed" data-toggle="collapse" data-parent="#accordion5" href="#collapse<%# Item.Id+1 %>" aria-expanded="false">
+                                            <a class="accordion-toggle indicator collapsed" data-toggle="collapse" data-parent="#accordion5" href="#collapse<%# Item.Id-1000 %>" aria-expanded="false">
                                                 <%# Item.Question %>
                                                 <i class="indi fa fa-chevron-up"></i>
                                             </a>
                                         </div>
-                                        <div id="collapse<%# Item.Id+1 %>" class="collapse" aria-expanded="false">
+                                        <div id="collapse<%# Item.Id-1000 %>" class="collapse" aria-expanded="false">
                                             <div class="accordion-body clearfix">
                                                 <%# Item.Answer %>
                                             </div>
