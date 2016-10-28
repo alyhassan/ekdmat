@@ -393,7 +393,7 @@ namespace Khadmatcom
                 switch (paymentMethod.Value)
                 {
                     case 1:
-                        type = "دفع اون لاين";
+                        type = "بطاقة الأئتمانية";
                         break;
                     case 2:
                         type = "تحويل بنكي";

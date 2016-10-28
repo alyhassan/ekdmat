@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="inprogress-requests2.aspx.cs" Inherits="Khadmatcom.clients.inprogress_requests" %>
+
 <%@ Import Namespace="System.Diagnostics" %>
 <%@ Import Namespace="Khadmatcom" %>
 
@@ -7,37 +8,34 @@
     <link rel="stylesheet" type="text/css" href="/Content/carousel-css/owl.carousel.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
-   <ul class="nav nav-tabs nav-arow myTab">
+    <ul class="nav nav-tabs nav-arow myTab">
         <li class="main alif"><a href="<%= GetLocalizedUrl("") %>"><%= GetGlobalResourceObject("general.aspx","Home") %></a></li>
         <li class="sub active alif"><a href="javascript:{}">طلبات تحت التنفيذ</a></li>
-    </ul> <div id="chuu-owl" class="chuu owl-carousel owl-theme">
-         <asp:ListView runat="server" ID="lvServiceRequest" SelectMethod="GetServiceRequests" ItemPlaceholderID="PlaceHolder1" GroupItemCount="3" ItemType="Khadmatcom.Data.Model.ServiceRequest">
-                <GroupTemplate>
-                   <div class="item">
-            <div class="accordion clearfix" id="accordion01">
-                            <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
-                        </div>
+    </ul>
+    <div id="chuu-owl" class="chuu owl-carousel owl-theme">
+        <asp:ListView runat="server" ID="lvServiceRequest" SelectMethod="GetServiceRequests" ItemPlaceholderID="PlaceHolder1" GroupItemCount="3" ItemType="Khadmatcom.Data.Model.ServiceRequest">
+            <GroupTemplate>
+                <div class="item">
+                    <div class="accordion clearfix" id="accordion01">
+                        <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
                     </div>
-                </GroupTemplate>
-                <ItemTemplate>
-                    <div class="panel">
+                </div>
+            </GroupTemplate>
+            <ItemTemplate>
+                <div class="panel">
                     <div class="accordion-heading">
                         <a class="clearfix accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#accordion4" href='#right<%# Item.Id %>' aria-expanded="false">
 
                             <div class="L-container">
-                               <div class="L1">
+                                <div class="L1">
                                     <span class="ni">رقم الطلب: <span class="red"><%# Item.Id %></span> </span>
-                                 <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
+                                    <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
                                     <span>نوع الخدمة:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
                                 </div>
                                 <div class="L2">
                                     :التفاصيل
                                 </div>
                                 <div class="L3">
-                                    مدة التنفيذ: <%# Item.TotalDuration %>
-                            <%# Item.Notes %>
-                            :السعر <%# Khadmatcom.Services.ExtensionMethods.ToCurrency(Item.CurrentPrice,"ريال") %>
-                                    طريقة الدفع:<%#GetPaymentMethod(Item.PaymentMethod) %>
                                     <p>
                                         <%# Item.Details %>
                                     </p>
@@ -48,35 +46,65 @@
 
                     </div>
                     <div id="right<%# Item.Id %>" class="collapse" aria-expanded="false">
-                        <div class="accordion-body clearfix" dir="rtl" style="direction: rtl;" >
-                             <div class="list-group L-container">
+                        <div class="accordion-body clearfix" dir="rtl" style="direction: rtl;">
+                            <div class="list-group L-container">
                                 <asp:Repeater runat="server" ItemType="Khadmatcom.Data.Model.RequestsOptionsAnswer" DataSource='<%# Item.RequestsOptionsAnswers %>'>
-                                            <ItemTemplate>
-                                               <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
-                                                    <div class="input-group">
-                                                         <label  class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i><%# Item.RequestOption.Title %></label>:
-                                                        &nbsp;  <lable class=""><%# GetAnswer(Item.Value) %></lable>
-                                                    </div>
-                                                </div>
-                                            </ItemTemplate>
-                                        </asp:Repeater>
+                                    <ItemTemplate>
+                                        <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                            <div class="input-group">
+                                                <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i><%# Item.RequestOption.Title %></label>:
+                                                        &nbsp; 
+                                                <lable class=""><%# GetAnswer(Item.Value) %></lable>
+                                            </div>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                    <div class="input-group">
+                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>سبب الرفض </label>
+                                        :
+                                                       &nbsp; <span class=""><%# Item.Notes %></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                    <div class="input-group">
+                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
+                                        :
+                                                       &nbsp; <span class=""><%# Item.TotalDuration %></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                    <div class="input-group">
+                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>طريقة الدفع</label>
+                                        :
+                                                       &nbsp; <span class=""><%# GetPaymentMethod(Item.PaymentMethod) %></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                    <div class="input-group">
+                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>سبب الرفض </label>
+                                        :
+                                                       &nbsp; <span class=""><%# Item.Notes %></span>
+                                    </div>
+                                </div>
                             </div>
-                           
-                             <div class="L-button  " id="">
+
+                            <div class="L-button  " id="">
                                 <a href="<%# GetLocalizedUrl(string.Format("clients/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt">Edit</a>
                             </div>
                             <div class="L-button">
-                              <button type="button" style="padding:3px;opacity:1; color:green;" class="btn btn-default disabled text-success ">سعر الخدمةالمبدئى:<%# Item.CurrentPrice %>&nbsp;<span style="display:inline-block;float:left">ريال</span>&nbsp;  </button>&nbsp; 
+                                <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success ">سعر الخدمةالمبدئى:<%# Item.CurrentPrice %>&nbsp;<span style="display: inline-block; float: left">ريال</span>&nbsp;  </button>
+                                &nbsp; 
                             </div>
-                           
+
 
                         </div>
                     </div>
                 </div>
 
-                </ItemTemplate>
-            </asp:ListView>
-      </div>
+            </ItemTemplate>
+        </asp:ListView>
+    </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="js" runat="server">
     <script src="/Scripts/carousel-js/owl.carousel.js"></script>

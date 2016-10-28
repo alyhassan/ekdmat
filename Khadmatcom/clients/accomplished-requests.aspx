@@ -35,10 +35,6 @@
                                     :التفاصيل
                                 </div>
                                 <div class="L3">
-                                    مدة التنفيذ: <%# Item.TotalDuration %>
-                                    <%# Item.Notes %>
-                            :السعر <%# Khadmatcom.Services.ExtensionMethods.ToCurrency(Item.CurrentPrice,"ريال") %>
-                                    طريقة الدفع:<%#GetPaymentMethod(Item.PaymentMethod) %>
                                     <p>
                                         <%# Item.Details %>
                                     </p>
@@ -56,10 +52,42 @@
                     </div>
 
                     <div id="right<%# Item.Id %>" class="collapse" aria-expanded="false">
-                        <div class="accordion-body clearfix ">
-                            <p>
-                                <%# Item.Details %>
-                            </p>
+                        <div class="accordion-body clearfix" dir="rtl" style="direction: rtl;">
+                            <div class="list-group L-container">
+                                <asp:Repeater runat="server" ItemType="Khadmatcom.Data.Model.RequestsOptionsAnswer" DataSource='<%# Item.RequestsOptionsAnswers %>'>
+                                    <ItemTemplate>
+                                        <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                            <div class="input-group">
+                                                <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i><%# Item.RequestOption.Title %></label>:
+                                                        &nbsp; 
+                                                <lable class=""><%# GetAnswer(Item.Value) %></lable>
+                                            </div>
+                                        </div>
+                                    </ItemTemplate>
+                                    t
+                                </asp:Repeater>
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                    <div class="input-group">
+                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
+                                        :
+                                                       &nbsp; <span class=""><%# Item.TotalDuration %></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                    <div class="input-group">
+                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>طريقة الدفع</label>
+                                        :
+                                                       &nbsp; <span class=""><%# GetPaymentMethod(Item.PaymentMethod) %></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                    <div class="input-group">
+                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>سبب الرفض </label>
+                                        :
+                                                       &nbsp; <span class=""><%# Item.Notes %></span>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="L-button" id="">
                                 <a href="<%# GetLocalizedUrl(string.Format("clients/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt">Edit</a>
                             </div>

@@ -38,11 +38,7 @@
                                     </div>
                                 </div>
                                 <div class="L3">
-                                    مدة التنفيذ: <%# Item.TotalDuration %>
-                                    <%# Item.Notes %>
-                            :السعر <%# Khadmatcom.Services.ExtensionMethods.ToCurrency(Item.CurrentPrice,"ريال") %>
-                                    طريقة الدفع:<%#GetPaymentMethod(Item.PaymentMethod) %>
-                                    <p>
+                                   <p>
                                         <%# Item.Details %>
                                     </p>
                                     <asp:ListView runat="server" DataSource="<%# Item.Attachments.Where(x=>x.IsOutput==false) %>" ItemType="Khadmatcom.Data.Model.Attachment">
@@ -70,11 +66,39 @@
                                         </div>
                                     </ItemTemplate>
                                 </asp:Repeater>
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                    <div class="input-group">
+                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>سبب الرفض </label>
+                                        :
+                                                       &nbsp; <span class=""><%# Item.Notes %></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                    <div class="input-group">
+                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
+                                        :
+                                                       &nbsp; <span class=""><%# Item.TotalDuration %></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                    <div class="input-group">
+                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>طريقة الدفع</label>
+                                        :
+                                                       &nbsp; <span class=""><%# GetPaymentMethod(Item.PaymentMethod) %></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                    <div class="input-group">
+                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>سبب الرفض </label>
+                                        :
+                                                       &nbsp; <span class=""><%# Item.Notes %></span>
+                                    </div>
+                                </div>
                             </div>
                             <br />
                             <div class="L-button" id="">
                                 <div class="input-group" id="s<%# Item.Id %>">
-                                    <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success ">سعر الخدمةالمبدئى:<%# Item.CurrentPrice %>&nbsp;<span style="display: inline-block; float: left">ريال</span>&nbsp;  </button>
+                                    <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success ">سعر الخدمة:<%# Item.CurrentPrice %>&nbsp;<span style="display: inline-block; float: left">ريال</span>&nbsp;  </button>
                                     &nbsp; 
 
                                     <input type="hidden" id="hasAttachment<%# Item.Id %>" value="<%# Item.Service.HasAttachment? 1:0 %>" />
