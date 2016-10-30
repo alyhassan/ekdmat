@@ -42,7 +42,6 @@
             font-size: 1.0em;
             padding: 0px 15px;
         }
-       
     </style>
 
 </asp:Content>
