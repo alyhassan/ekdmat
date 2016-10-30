@@ -76,15 +76,6 @@ namespace Khadmatcom.clients {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtCardHolder;
         
         /// <summary>
-        /// txtDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDate;
-        
-        /// <summary>
         /// txtRefNumber control.
         /// </summary>
         /// <remarks>
@@ -92,6 +83,15 @@ namespace Khadmatcom.clients {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtRefNumber;
+        
+        /// <summary>
+        /// txtDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDate;
         
         /// <summary>
         /// ddlBanks control.

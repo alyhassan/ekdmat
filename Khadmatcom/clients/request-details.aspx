@@ -150,21 +150,21 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Attachments 1</label>
-                                    <input type="file" class="attach" />
+                                    <input type="file" class="attach form-control" />
                                 </div>
                                 <div class="form-group">
                                     <label>Attachments 2</label>
-                                    <input type="file" class="attach" />
+                                    <input type="file" class="attach form-control" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Attachments 3</label>
-                                    <input type="file" class="attach" />
+                                    <input type="file" class="attach form-control" />
                                 </div>
                                 <div class="form-group">
                                     <label>Attachments 4</label>
-                                    <input type="file" class="attach" />
+                                    <input type="file" class="attach form-control" />
                                 </div>
                             </div>
                             <div class="clearfix">&nbsp;</div>
@@ -185,7 +185,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>اسم المرسل اليه</label>
-                                    <input type="text" class="attach" runat="server" id="txtShippingName" />
+                                    <input type="text" class="attach form-control" runat="server" id="txtShippingName" />
                                 </div>
                                 <div class="form-group">
                                     <label>المدينة</label>
@@ -209,11 +209,11 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>رقم الجوال</label>
-                                    <input type="text" class="attach" runat="server" id="txtShippingPhone" />
+                                    <input type="text" class="attach form-control" runat="server" id="txtShippingPhone" />
                                 </div>
                                 <div class="form-group">
                                     <label>العنوان</label>
-                                    <input type="text" class="attach" runat="server" id="txtShippingAddress" />
+                                    <input type="text" class="attach form-control" runat="server" id="txtShippingAddress" />
                                 </div>
                                 <%--  <div class="form-group">
                                     <label>Region</label>
@@ -252,7 +252,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group b-ac">
                                         <label class="clearfix">
-                                            <input type="radio" name="cars" value="1" id="onLineOption" class="validate[required]" /><span>بطاقة الإتمان</span></label>
+                                            <input type="radio" name="cars" value="1" id="onLineOption" class="validate[required] " /><span>بطاقة الإتمان</span></label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -268,11 +268,11 @@
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label dir="rtl">رقم الكارت</label>
-                                            <input type="text" class="attach validate[required]" runat="server" id="txtCardNo" />
+                                            <input type="text" class="attach validate[required] form-control" runat="server" id="txtCardNo" />
                                         </div>
                                         <div class="form-group">
                                             <label dir="rtl">CVV</label>
-                                            <input type="text" maxlength="3" class="attach validate[required]" name="cars" value="" runat="server" id="txtCvv" />
+                                            <input type="text" maxlength="3" class="attach validate[required] form-control" name="cars" value="" runat="server" id="txtCvv" />
                                         </div>
                                     </div>
                                 </div>
@@ -288,37 +288,40 @@
                                     </div>
                                     <div class="form-group">
                                         <label dir="rtl">تاريخ صلاحية الكارت</label>
-                                         <input type="text" name="txtExpiryDate" id="txtExpiryDate" runat="server" maxlength="5" placeholder="mm/yy"/>
+                                         <input type="text" name="txtExpiryDate" class="form-control" id="txtExpiryDate" runat="server" maxlength="5" placeholder="mm/yy"/>
                                     </div>
                                     <div class="form-group">
                                         <label dir="rtl">اسم حامل الكارت</label>
-                                        <input type="text" class="attach" runat="server" id="txtCardHolder" />
+                                        <input type="text" class="attach form-control" runat="server" id="txtCardHolder" />
                                     </div>
 
                                 </div>
                             </div>
                             <div class="col-md-12 c-card" style="display: none;" id="c-card2">
-                                <div class="col-md-6">
-                                    <div class="form-group  text-center visa-img">
-                                    </div>
-                                    <div class="form-group">
+                              
+                                  <div class="col-md-6 form-group pull-right">
+                                            <label dir="rtl">رقم الحوالة(العملية)</label>
+                                            <input type="text" class="attach validate[required] form-control" runat="server" id="txtRefNumber" />
+                                        </div>
+
+                                  
+                                    
+                                    <div class="form-groupcol-md-6 pull-right" >
                                         <label dir="rtl">تاريخ التحويل</label>
-                                        <input type="text" class="attach validate[required] datetimepicker" id="txtDate" runat="server" maxlength="10" placeholder="dd/mm/yyyy" />
+                                        <input type="text" class="attach validate[required] datetimepicker form-control" id="txtDate" runat="server" maxlength="10" placeholder="dd/mm/yyyy" />
                                     </div>
                                     <%--<div class="form-group">
                                         <label>تاريخ التحويل</label>
                                         <input type="text" class="attach" />
                                     </div>--%>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="form-group">
-                                            <label dir="rtl">رقم الحوالة(العملية)</label>
-                                            <input type="text" class="attach validate[required]" runat="server" id="txtRefNumber" />
-                                        </div>
-                                        <div class="form-group">
+                               
+                               
+                                   
+                                      
+
+                                        <div class="col-md-6 form-group pull-right">
                                             <label dir="rtl">البنك المحول اليه</label>
-                                            <select class="attach validate[required]" runat="server" id="ddlBanks">
+                                            <select class="attach validate[required] form-control" runat="server" id="ddlBanks">
                                                 <option value="">اختر البنك</option>
                                                 <option value="1">الراجحي</option>
                                                 <option value="2">الأهلي</option>
@@ -327,8 +330,8 @@
 
                                             </select>
                                         </div>
-                                    </div>
-                                </div>
+                                  
+                                
 
                             </div>
                             <div class="clearfix">&nbsp;</div>
