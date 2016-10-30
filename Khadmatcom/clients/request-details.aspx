@@ -277,12 +277,12 @@
                                         </select>--%>
                                     </div>
                                      </div>
-                                 <div class="form-group col-md-6 col-sm-6 col-xs-6 pull-right">
+                                 <div class="form-group col-md-6 col-sm-6 col-xs-12 pull-right">
                                         <label dir="rtl">اسم حامل الكارت</label>
                                         <input type="text" class="attach form-control" runat="server" id="txtCardHolder" />
                                     </div>
 
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-6 pull-right">
+                                    <div class="form-group col-md-6 col-sm-6 col-xs-12 pull-right">
                                             <label dir="rtl">رقم الكارت</label>
                                             <input type="text" class="attach validate[required] form-control" runat="server" id="txtCardNo" />
                                              </div>
