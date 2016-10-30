@@ -71,19 +71,19 @@
                                 <div class="input-group hidden validationEngineContainer  form-group col-md-12" id="reason<%# Item.Id %>">
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                       
-                                    <input type="text" id="txtReason<%# Item.Id %>" class="validate[required] col-md-12 pull-right form-control" placeholder="تعليق" /> &nbsp;
+                                    <input type="text" id="txtReason<%# Item.Id %>" class="validate[required] col-md-12 pull-right form-control" placeholder="تعليق" /> 
                                         </div>
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-6">
-                                     <label for="txtPrice<%# Item.Id %>" id="txtPriceLabel<%# Item.Id %>" class="col-md-6 col-sm-6 col-xs-6   pull-right">سعر الخدمة</label> &nbsp;
-                                    <input type="number" id="txtPrice<%# Item.Id %>" class=" validate[required] hidden col-md-4 col-sm-4 col-xs-4 f pull-right" value='<%# Item.RequestProviders.First(r=>r.ProviderId==CurrentUser.Id).Price %>' /> &nbsp;
+                                    <div class="form-group col-md-4 col-sm-4 col-xs-5 pull-right">
+                                     <label for="txtPrice<%# Item.Id %>" id="txtPriceLabel<%# Item.Id %>" class="  pull-right">سعر الخدمة</label>
+                                    <input type="number" id="txtPrice<%# Item.Id %>" class=" validate[required] hidden col-md-4 col-sm-4 col-xs-4 f pull-right form-control" value='<%# Item.RequestProviders.First(r=>r.ProviderId==CurrentUser.Id).Price %>' />
                                   </div>
-                                      <div class="form-group col-md-6 col-sm-6 col-xs-6">
-                                          <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>" class="col-md-6 col-sm-6 col-xs-6  pull-right">وقت التنفيذ المتوقع</label> &nbsp;
-                                    <input type="number" id="txtDuration<%# Item.Id %>" class=" validate[required] hidden col-md-4 col-sm-4 col-xs-4  pull-right" value='' />
+                                      <div class="form-group col-md-4 col-sm-4 col-xs-5 pull-right">
+                                          <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>" class="pull-right">وقت التنفيذ المتوقع</label> 
+                                    <input type="number" id="txtDuration<%# Item.Id %>" class=" validate[required] hidden col-md-4 col-sm-4 col-xs-4  pull-right form-control" value='' />
                                     <%--<%# Item.Service.ServiceProviders.First(r=>r.MemberId==CurrentUser.Id).EstamaitedTime %>--%>
                                       </div>
                                      <div class="form-group col-md-6 col-sm-12 col-xs-12 pull-right">
-                                    <asp:Button Text="إرسال" OnClientClick="return takeRequestAction();" OnClick="OnClick" CssClass="btn btn-success" runat="server" CommandName="Update" CommandArgument="<%# Item.Id %>" /> &nbsp;
+                                    <asp:Button Text="إرسال" OnClientClick="return takeRequestAction();" OnClick="OnClick" CssClass="btn btn-success" runat="server" CommandName="Update" CommandArgument="<%# Item.Id %>" />
                                    </div>
                                          </div>
                             <div class="L-button" id="">

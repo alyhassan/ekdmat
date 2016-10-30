@@ -124,6 +124,7 @@
     <Content Include="Content\cridet-card.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="images\credit.png" />
+    <Content Include="images\logo.png" />
     <Content Include="OnlinePayment\Pay.aspx" />
     <Content Include="OnlinePayment\process-payment.aspx" />
     <Content Include="providers\accomplished-requests.aspx" />
@@ -173,7 +174,7 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="humans.txt" />
-    <Content Include="images\logo.png" />
+    <Content Include="images\logo_2.png" />
     <Content Include="images\a-slic.jpg" />
     <Content Include="images\a.bg.jpg" />
     <Content Include="images\aa.png" />
