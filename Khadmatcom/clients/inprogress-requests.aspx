@@ -89,7 +89,7 @@
                                 </div>
                             </div>
 
-                            <div class="L-button  " id="">
+                            <div class="L-button  hidden" id="">
                                 <a href="<%# GetLocalizedUrl(string.Format("clients/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt">Edit</a>
                             </div>
                             <div class="L-button">

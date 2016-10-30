@@ -7,6 +7,10 @@
     <link rel="stylesheet" type="text/css" href="/Content/carousel-css/owl.carousel.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
+    <ul class="nav nav-tabs nav-arow myTab">
+        <li class="main alif"><a href="<%= GetLocalizedUrl("") %>"><%= GetGlobalResourceObject("general.aspx","Home") %></a></li>
+        <li class="sub active alif"><a href="javascript:{}">طلبات مؤكدة وبإنتظار الدفع</a></li>
+    </ul>
     <div id="chuu-owl" class="chuu owl-carousel owl-theme">
         <asp:ListView runat="server" ID="lvServiceRequest" SelectMethod="GetServiceRequests" ItemPlaceholderID="PlaceHolder1" GroupItemCount="3" ItemType="Khadmatcom.Data.Model.ServiceRequest">
             <GroupTemplate>
