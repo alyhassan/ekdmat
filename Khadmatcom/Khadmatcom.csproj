@@ -123,8 +123,11 @@
     <Content Include="category.aspx" />
     <Content Include="Content\cridet-card.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="images\Ahli.png" />
     <Content Include="images\credit.png" />
     <Content Include="images\logo.png" />
+    <Content Include="images\rajhi.png" />
+    <Content Include="images\Riyadh.png" />
     <Content Include="OnlinePayment\Pay.aspx" />
     <Content Include="OnlinePayment\process-payment.aspx" />
     <Content Include="providers\accomplished-requests.aspx" />
