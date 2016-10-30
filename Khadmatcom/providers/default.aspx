@@ -62,23 +62,27 @@
                                 </asp:Repeater>
                             </div>
                             <br />
-                            <div class="L-button" id="">
-                                <div class="input-group" id="s<%# Item.Id %>">
-                                    <input type="button" class="btn btn-danger  btn-sm" value="رفض الطلب" onclick="takeAction(<%# Item.Id %>,6);" />
+                            
+                                <div class="input-group pull-left" id="s<%# Item.Id %>">
+                                    <input type="button" class="btn btn-danger  btn-sm" value="رفض الطلب" onclick="takeAction(<%# Item.Id %>,6);" /> &nbsp;
                                     <input type="button" class="btn btn-success btn-sm" value="قبول الطلب" onclick="takeAction(<%# Item.Id %>,2);" />
                                 </div>
-                                <div class="input-group hidden validationEngineContainer" id="reason<%# Item.Id %>">
-                                    <input type="text" id="txtReason<%# Item.Id %>" class=" validate[required]" />
-                                    <label for="txtPrice<%# Item.Id %>" id="txtPriceLabel<%# Item.Id %>">سعر الخدمة</label>
-                                    <input type="number" id="txtPrice<%# Item.Id %>" class=" validate[required] hidden" value='<%# Item.RequestProviders.First(r=>r.ProviderId==CurrentUser.Id).Price %>' />
-                                    <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>">وقت التنفيذ المتوقع</label>
-                                    <input type="number" id="txtDuration<%# Item.Id %>" class=" validate[required] hidden" value='' />
+                            <div class="form">
+                                <div class="input-group hidden validationEngineContainer col-md-12 form-group" id="reason<%# Item.Id %>">
+                                    <input type="text" id="txtReason<%# Item.Id %>" class="validate[required] col-md-12" /> &nbsp;
+                                    <label for="txtPrice<%# Item.Id %>" id="txtPriceLabel<%# Item.Id %>" class="col-md-2 col-sm-2 col-xs-6 pull-right">سعر الخدمة</label> &nbsp;
+                                    <input type="number" id="txtPrice<%# Item.Id %>" class=" validate[required] hidden col-md-4 col-sm-4 col-xs-6 pull-right" value='<%# Item.RequestProviders.First(r=>r.ProviderId==CurrentUser.Id).Price %>' /> &nbsp;
+                                    <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>" class="col-md-2 col-sm-2 col-xs-6 pull-right">وقت التنفيذ المتوقع</label> &nbsp;
+                                    <input type="number" id="txtDuration<%# Item.Id %>" class=" validate[required] hidden col-md-4 col-sm-4 col-xs-6 pull-right" value='' />
                                     <%--<%# Item.Service.ServiceProviders.First(r=>r.MemberId==CurrentUser.Id).EstamaitedTime %>--%>
-                                    <asp:Button Text="إرسال" OnClientClick="return takeRequestAction();" OnClick="OnClick" CssClass="btn btn-success btn-sm" runat="server" CommandName="Update" CommandArgument="<%# Item.Id %>" />
-                                </div>
+                                    <div class="col-md-12">
+                                    <asp:Button Text="إرسال" OnClientClick="return takeRequestAction();" OnClick="OnClick" CssClass="btn btn-success btn-sm" runat="server" CommandName="Update" CommandArgument="<%# Item.Id %>" /> &nbsp;
+                                   </div>
+                                         </div>
+                            <div class="L-button" id="">
                                 <a href="<%# GetLocalizedUrl(string.Format("providers/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt hidden">Edit</a>
                             </div>
-
+</div>
                         </div>
                     </div>
                 </div>
