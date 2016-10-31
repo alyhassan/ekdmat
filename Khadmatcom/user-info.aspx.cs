@@ -13,6 +13,9 @@ namespace Khadmatcom
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Membership.GetUser() == null)
+                Response.Redirect(GetLocalizedUrl(""), true);
+
             if (!IsPostBack)
             {
                 txtName.Value = CurrentUser.FullName;
@@ -36,10 +39,11 @@ namespace Khadmatcom
         protected void btnUpdatePassword_OnClick(object sender, EventArgs e)
         {
             if (Membership.ValidateUser(txtEmail.Value, txtOldPassword.Value))
-            { if (Membership.GetUser().ChangePassword(txtOldPassword.Value, txtPassword.Value))
-                Notify("تم تحديث كلمة المرور بنجاح", "", NotificationType.Success);
-            else
-                Notify("حدث خطأ أثناء تحديث كلمة المرور....فضلا حاول مرة اخري", "", NotificationType.Error);
+            {
+                if (Membership.GetUser().ChangePassword(txtOldPassword.Value, txtPassword.Value))
+                    Notify("تم تحديث كلمة المرور بنجاح", "", NotificationType.Success);
+                else
+                    Notify("حدث خطأ أثناء تحديث كلمة المرور....فضلا حاول مرة اخري", "", NotificationType.Error);
             }
             else
                 Notify("كلمة المرور القديمة غير صحيحة", "", NotificationType.Error);
