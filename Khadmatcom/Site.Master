@@ -75,8 +75,8 @@
                             <li class="dropdown mydropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= CurrentUser.FullName %><span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="javascript:{}">ملفك الشخصي <i class="fa fa-briefcase" aria-hidden="true"></i></a></li>
-                                    <li><a href="javascript:{}">الإعدادت <i class="fa fa-cog" aria-hidden="true"></i>
+                                    <li><a href="<%= GetLocalizedUrl("user-info") %>">ملفك الشخصي <i class="fa fa-briefcase" aria-hidden="true"></i></a></li>
+                                    <li  class="hidden"><a href="javascript:{}">الإعدادت <i class="fa fa-cog" aria-hidden="true"></i>
                                     </a></li>
                                     <li><%--<a href="javascript:{}" class="lst">--%>
                                         <asp:LoginStatus CssClass="lst lst_icon" ID="LoginStatus1" runat="server" LoginText="" LogoutText="تسجيل الخروج" LogoutPageUrl="Default.aspx"  />
@@ -149,8 +149,8 @@
                             <li class="dropdown mydropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= CurrentUser.FullName %><span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="javascript:{}">ملفك الشخصي <i class="fa fa-briefcase" aria-hidden="true"></i></a></li>
-                                    <li><a href="javascript:{}">الإعدادت <i class="fa fa-cog" aria-hidden="true"></i>
+                                    <li><a href="<%= GetLocalizedUrl("user-info") %>">ملفك الشخصي <i class="fa fa-briefcase" aria-hidden="true"></i></a></li>
+                                    <li class="hidden"><a href="javascript:{}">الإعدادت <i class="fa fa-cog" aria-hidden="true"></i>
                                     </a></li>
                                     <li><%--<a href="javascript:{}" class="lst">--%>
                                         <asp:LoginStatus CssClass="lst lst_icon" ID="LoginStatus2" runat="server" LoginText="" LogoutText="تسجيل الخروج" LogoutPageUrl="Default.aspx"  />

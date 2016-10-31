@@ -21,6 +21,7 @@ namespace Khadmatcom
             //RouteTable.Routes.MapPageRoute("home-personal", "personal", "~/default.aspx");
             //RouteTable.Routes.MapPageRoute("home-business", "business", "~/default.aspx");
 
+            RouteTable.Routes.MapPageRoute("user-info", "user-info", "~/user-info.aspx");
             RouteTable.Routes.MapPageRoute("card-info", "card-info", "~/card-info.aspx");
             RouteTable.Routes.MapPageRoute("join-request", "join-request", "~/join-request.aspx");
             RouteTable.Routes.MapPageRoute("provider-join-request", "service-provider/join-request", "~/join-request.aspx");
@@ -83,6 +84,7 @@ namespace Khadmatcom
             routes.EnableFriendlyUrls(settings);
 
             #region Localized Routes
+            RouteTable.Routes.MapPageRoute("user-info-loc", "{locale}/user-info", "~/user-info.aspx", false, defaultLocale, localeConstraints);
             RouteTable.Routes.MapPageRoute("join-request-loc", "{locale}/join-request", "~/join-request.aspx", false, defaultLocale, localeConstraints);
             RouteTable.Routes.MapPageRoute("provider-join-request-loc", "{locale}/service-provider/join-request", "~/join-request.aspx", false, defaultLocale, localeConstraints);
             //Home

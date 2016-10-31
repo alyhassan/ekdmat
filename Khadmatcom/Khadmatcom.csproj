@@ -349,6 +349,8 @@
     <Content Include="Content\bootstrap\bootstrap.less" />
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="clients\web.config" />
+    <Content Include="providers\web.config" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.3.js" />
     <Content Include="Scripts\jquery-2.2.3.min.js" />
@@ -379,6 +381,7 @@
     <Content Include="Global.asax" />
     <Content Include="services.aspx" />
     <Content Include="test.css" />
+    <Content Include="user-info.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -632,6 +635,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="user-info.aspx.cs">
+      <DependentUpon>user-info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user-info.aspx.designer.cs">
+      <DependentUpon>user-info.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
