@@ -64,7 +64,7 @@ namespace Khadmatcom {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtOldPassword;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtOldPassword;
         
         /// <summary>
         /// txtPassword control.

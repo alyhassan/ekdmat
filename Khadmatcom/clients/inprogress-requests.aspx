@@ -59,18 +59,12 @@
                                         </div>
                                     </ItemTemplate>
                                 </asp:Repeater>
-                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
-                                    <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>سبب الرفض </label>
-                                        :
-                                                       &nbsp; <span class=""><%# Item.Notes %></span>
-                                    </div>
-                                </div>
+                                
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
                                         <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
                                         :
-                                                       &nbsp; <span class=""><%# Item.TotalDuration %></span>
+                                                       &nbsp; <span class=""><span class=""><%# Item.TotalDuration %> يوم</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
@@ -89,8 +83,15 @@
                                 </div>
                             </div>
 
-                            <div class="L-button  hidden" id="">
-                                <a href="<%# GetLocalizedUrl(string.Format("clients/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt">Edit</a>
+                            <div class="L-button  " id="">
+                                 <label class="list-group-item-heading pull-right"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>المرفقات</label>
+                                <asp:ListView runat="server" DataSource="<%# Item.Attachments.Where(x=>x.IsOutput==false) %>" ItemType="Khadmatcom.Data.Model.Attachment">
+                                    <ItemTemplate>
+                                        <a target="_blank" href='<%# string.Format("/Attachments/{0}", Item.Path)%>'>المرفق <%# Container.DataItemIndex+1 %></a>
+                                    </ItemTemplate>
+                                    <ItemSeparatorTemplate>, </ItemSeparatorTemplate>
+                                </asp:ListView>
+                                <a href="<%# GetLocalizedUrl(string.Format("clients/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt hidden">Edit</a>
                             </div>
                             <div class="L-button">
                                 <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success ">سعر الخدمة:<%# Item.CurrentPrice %>&nbsp;<span style="display: inline-block; float: left">ريال</span>&nbsp;  </button>

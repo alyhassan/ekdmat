@@ -63,16 +63,9 @@
                                 </asp:Repeater>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>تعليق </label>
-                                        :
-                                                       &nbsp; <span class=""><%# Item.Notes %></span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
-                                    <div class="input-group">
                                         <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
                                         :
-                                                       &nbsp; <span class=""><%# Item.TotalDuration %></span>
+                                                       &nbsp; <span class=""><span class=""><%# Item.TotalDuration %> يوم</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
@@ -84,11 +77,15 @@
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>سبب الرفض </label>
+                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>تعليق </label>
                                         :
                                                        &nbsp; <span class=""><%# Item.Notes %></span>
                                     </div>
                                 </div>
+                            </div>
+                             <div class="L-button">
+                                <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success ">سعر الخدمة:<%# Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).Price %>&nbsp;<span style="display: inline-block; float: left">ريال</span>&nbsp;  </button>
+                                &nbsp; 
                             </div>
                             <br />
                             <div class="L-button" id="">
@@ -100,9 +97,7 @@
                                     <ItemSeparatorTemplate>, </ItemSeparatorTemplate>
                                 </asp:ListView>
                                 <div class="input-group" id="s<%# Item.Id %>">
-                                    <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success ">سعر الخدمة:<%# Item.CurrentPrice %>&nbsp;<span style="display: inline-block; float: left">ريال</span>&nbsp;  </button>
-                                    &nbsp; 
-
+                                  
                                     <input type="hidden" id="hasAttachment<%# Item.Id %>" value="<%# Item.Service.HasAttachment? 1:0 %>" />
                                     <input type="button" class="btn btn-danger  btn-sm" value="إنهاء الطلب" onclick="finishRequest(<%# Item.Id %>);" />&nbsp;
                                     <input type="button" class="btn btn-success btn-sm" value="تمديد الطلب" onclick="increaceDuration(<%# Item.Id %>);" />&nbsp;

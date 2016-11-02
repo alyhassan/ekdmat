@@ -54,7 +54,7 @@
     <div class="modal-content">
         <div class="modal-header modal-header-success">
             <%--        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>--%>
-            <h1><i class="fa">&nbsp;</i>Service Request</h1>
+            <h1><i class="fa">&nbsp;</i><%= CurrentUser.FullName %></h1>
         </div>
         <div class="modal-body">
 
@@ -150,22 +150,26 @@
                         <div class="accordion-body clearfix"ب>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Attachments 1</label>
-                                    <input type="file" class="attach form-control" />
+                                    <label>المرفق 1</label>
+                                    <input type="file" class="attach form-control hidden" />
+                                    <asp:FileUpload ID="fup1" runat="server" CssClass="attach form-control" />
                                 </div>
                                 <div class="form-group">
-                                    <label>Attachments 2</label>
-                                    <input type="file" class="attach form-control" />
+                                    <label>المرفق 2</label>
+                                    <input type="file" class="attach form-control hidden" />
+                                    <asp:FileUpload ID="fup2" runat="server" CssClass="attach form-control" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Attachments 3</label>
-                                    <input type="file" class="attach form-control" />
+                                    <label>المرفق 3</label>
+                                    <input type="file" class="attach form-control hidden" />
+                                    <asp:FileUpload ID="fup3" runat="server" CssClass="attach form-control" />
                                 </div>
                                 <div class="form-group">
-                                    <label>Attachments 4</label>
-                                    <input type="file" class="attach form-control" />
+                                    <label>المرفق 4</label>
+                                    <input type="file" class="attach form-control hidden" />
+                                    <asp:FileUpload ID="fup4" runat="server" CssClass="attach form-control" />
                                 </div>
                             </div>
                             <div class="clearfix">&nbsp;</div>

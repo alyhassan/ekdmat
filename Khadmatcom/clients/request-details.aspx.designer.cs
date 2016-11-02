@@ -13,6 +13,42 @@ namespace Khadmatcom.clients {
     public partial class request_details {
         
         /// <summary>
+        /// fup1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fup1;
+        
+        /// <summary>
+        /// fup2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fup2;
+        
+        /// <summary>
+        /// fup3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fup3;
+        
+        /// <summary>
+        /// fup4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fup4;
+        
+        /// <summary>
         /// txtShippingName control.
         /// </summary>
         /// <remarks>

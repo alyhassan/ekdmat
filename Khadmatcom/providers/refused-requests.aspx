@@ -60,6 +60,13 @@
                                         </div>
                                     </ItemTemplate>
                                 </asp:Repeater>
+                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                    <div class="input-group">
+                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>سبب الرفض </label>
+                                        :
+                                                       &nbsp; <span class=""><%# Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).RejectedReson %></span>
+                                    </div>
+                                </div>
                             </div>
                             <div class="L-button hidden" id="">
                                 <a href="<%# GetLocalizedUrl(string.Format("providers/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt">Edit</a>

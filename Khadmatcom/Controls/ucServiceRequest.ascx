@@ -8,7 +8,7 @@
         <div class="modal-content">
             <div class="modal-header modal-header-success">
                 <button type="button" class="close app-close" data-dismiss="modal" aria-hidden="true"><span class="fa fa-times" aria-hidden="true"></span></button>
-                <h1>طلب خدمة</h1>
+                <h1><%= CurrentUser==null?"طلب خدمة":CurrentUser.FullName %></h1>
             </div>
 
             <div class="modal-body panel">

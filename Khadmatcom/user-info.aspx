@@ -62,7 +62,7 @@
             <div class="clearfix login-body validationEngineContainer" id="passwordForm">
                 <div class="col-md-10 col-md-offset-1 form-group">
                    <label class="form-label">كلمة المرور القديمة</label>
-                    <input type="text" class="form-control  validate[required]" required="required" placeholder="Please old enter password" runat="server" id="txtOldPassword" />
+                    <input type="password" class="form-control  validate[required]" required="required" placeholder="Please old enter password" runat="server" id="txtOldPassword" />
                 </div>
                 
 

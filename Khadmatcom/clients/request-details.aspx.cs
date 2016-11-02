@@ -73,6 +73,22 @@ namespace Khadmatcom.clients
             string payId = "";
             CurrentRequest.ModifiedDate = DateTime.Now;
             SetShippingInfo();
+            // save uploaded files
+            List<string> fileNames = new List<string>();
+            List<string> errorsList = new List<string>();
+            SaveUploadedFile(fup1, fileNames, errorsList);
+            SaveUploadedFile(fup2, fileNames, errorsList);
+            SaveUploadedFile(fup3, fileNames, errorsList);
+            SaveUploadedFile(fup4, fileNames, errorsList);
+            if (errorsList.Count > 0)
+            {
+                Notify(string.Join("\r\n", errorsList.ToArray()), "حدث خطأ أثناء الطلب", NotificationType.Error);
+                return;
+            }
+            else
+                if (fileNames.Count > 0)
+                _serviceRequests.AddRequestAttchments(fileNames, CurrentRequest.Id, false);
+
             switch (paymentMethod)
             {
                 case "1"://online payment
@@ -106,6 +122,48 @@ namespace Khadmatcom.clients
             //if (paymentMethod == "1" && payId.Length > 3)
             //    Response.Redirect(HyperPayClient.MerchantConfiguration.Config.ReturnUrl, false);
         }
+
+        private void SaveUploadedFile(FileUpload file, List<string> fileNames, List<string> errorsList)
+        {
+            string path = Server.MapPath("~/Attachments/");
+            if (fup1.HasFile)
+            {
+
+                bool fileError = false;
+                string fileExtension = System.IO.Path.GetExtension(file.PostedFile.FileName).ToLower();
+                var fileName = string.Format("{0}_{1}{2}", Servston.Utilities.GetRandomString(5, true), System.IO.Path.GetFileNameWithoutExtension(file.FileName), fileExtension);
+                //Is the file too big to upload?
+                int fileSize = file.PostedFile.ContentLength;
+                if (fileSize > (6 * 1024 * 1024))
+                {
+                    fileError = true;
+                    errorsList.Add(string.Format("هذا لملف -{0} - قد تخطى الحجم المسموح به.", file.FileName));
+                }
+
+                List<string> acceptedFileTypes = new List<string>()
+                        {
+                            ".pdf",
+                            ".doc",
+                            ".docx",
+                            ".jpg",
+                            ".jpeg",
+                            ".gif",
+                            ".png"
+                        };
+                if (!acceptedFileTypes.Contains(fileExtension))
+                {
+                    fileError = true;
+                    errorsList.Add(string.Format("امتداد هذا لملف -{0} - غير مسموح .", file.FileName));
+                }
+                if (!fileError)
+                {
+                    file.SaveAs(path + fileName);
+                    fileNames.Add(fileName);
+                }
+
+            }
+        }
+
 
         private void SetShippingInfo()
         {

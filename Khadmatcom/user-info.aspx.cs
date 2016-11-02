@@ -21,8 +21,8 @@ namespace Khadmatcom
                 txtName.Value = CurrentUser.FullName;
                 txtMobileNumber.Value = CurrentUser.MobielNumber;
                 ddlGroup.Value = CurrentUser.UserType.ToString();
-                txtEmail.Value = Membership.GetUser().Email.ToLower();
             }
+            txtEmail.Value = Membership.GetUser().Email.ToLower();
         }
 
         protected void btnRegister_OnClick(object sender, EventArgs e)

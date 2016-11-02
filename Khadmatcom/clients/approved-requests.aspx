@@ -30,7 +30,7 @@
                                     <span class="ni">رقم الطلب: <span class="red"><%# Item.Id %></span> </span>
                                     <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
                                     <span>نوع الخدمة:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
-                                  </div>
+                                </div>
                                 <div class="L2">
                                     :تفاصيل الخدمة
                                 </div>
@@ -45,52 +45,55 @@
 
                     </div>
                     <div id="right<%# Item.Id %>" class="collapse" aria-expanded="false">
-                        <div class="accordion-body clearfix" dir="rtl" style="direction: rtl;padding:5px;">
+                        <div class="accordion-body clearfix" dir="rtl" style="direction: rtl; padding: 5px;">
                             <div class="list-group L-container">
                                 <asp:Repeater runat="server" ItemType="Khadmatcom.Data.Model.RequestsOptionsAnswer" DataSource='<%# Item.RequestsOptionsAnswers %>'>
                                     <ItemTemplate>
                                         <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                             <div class="input-group">
-                                                <label  class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> <%# Item.RequestOption.Title %></label>:
-                                                 &nbsp; <label ><%# GetAnswer(Item.Value) %></label>
+                                                <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i><%# Item.RequestOption.Title %></label>:
+                                                 &nbsp;
+                                                <label><%# GetAnswer(Item.Value) %></label>
                                             </div>
                                         </div>
                                     </ItemTemplate>
                                 </asp:Repeater>
-                                </div>
-                                <div class="list-group L-container">
-                                     <div class="col-md-6 pull-right">
-                                    <div class="input-group"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp; 
+                            </div>
+                            <div class="list-group L-container">
+                                <div class="col-md-6 pull-right">
+                                    <div class="input-group">
+                                        <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp; 
                                      <label>مدة التنفيذ</label>:&nbsp; 
                                      <span class=""><%# Item.CurrentDuration %></span>&nbsp;<span>يوم</span>
-                                     </div>
-                                         </div>
-                                     <div class="col-md-6">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
 
-                                     <!-- <div class="input-group"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp; 
+                                    <!-- <div class="input-group"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp; 
                                       <label>ثمن الخدمة</label>:&nbsp; 
                                       <span class=""><%# Item.CurrentPrice %></span>
                                       </div>-->
 
-                                   <div class="input-group"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp; 
-                                <label>  تعليق</label>:&nbsp; 
+                                    <div class="input-group">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp; 
+                                <label>تعليق</label>:&nbsp; 
                                 <span class=""><%# Item.Notes %></span>
-                                 </div>
-                                         </div>
+                                    </div>
                                 </div>
-                          <!-- <div class="col-md-12">
+                            </div>
+                            <!-- <div class="col-md-12">
                                   <div class="input-group"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp; 
                                 <label>  تعليق</label>:&nbsp; 
                                 <span class=""><%# Item.Notes %></span>
                                  </div>
                             </div> -->
-                            
+
                             </p>
                            
                             <div class="L-button" id="">
                                 <a href="<%# GetLocalizedUrl(string.Format("clients/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt">إكمال الطلب</a>
                             </div>
-                                                                                     <button type="button" style="padding:3px;opacity:1; color:green;" class="btn btn-default disabled text-success pull-left">سعر الخدمة : <%# Item.CurrentPrice %> <span style="display:inline-block;">ريال</span> </button>
+                            <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success pull-left">سعر الخدمة : <%# Item.CurrentPrice %> <span style="display: inline-block;">ريال</span> </button>
 
                         </div>
                     </div>
