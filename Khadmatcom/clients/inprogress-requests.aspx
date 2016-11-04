@@ -83,7 +83,7 @@
                                 </div>
                             </div>
 
-                            <div class="L-button  " id="">
+                             <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                  <label class="list-group-item-heading pull-right"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>المرفقات</label>
                                 <asp:ListView runat="server" DataSource="<%# Item.Attachments.Where(x=>x.IsOutput==false) %>" ItemType="Khadmatcom.Data.Model.Attachment">
                                     <ItemTemplate>
