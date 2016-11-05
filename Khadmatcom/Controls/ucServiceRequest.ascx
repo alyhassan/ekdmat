@@ -108,7 +108,7 @@
                                     <div class="clearfix"></div>
 
                                     <div class="form-group col-md-4 col-sm-4 col-xs-12 o1 options pull-right">
-                                        <input type="text" class="form-control" runat="server" id="txtManagerName" placeholder="مدير المحتوى" />
+                                        <input type="text" class="form-control" runat="server" id="txtManagerName" placeholder="إسم المدير" />
                                     </div>
                                     <div class="form-group o2 options col-md-4 col-sm-4 col-xs-12 col-md-6 col-sm-6 col-xs-12 pull-right">
 
