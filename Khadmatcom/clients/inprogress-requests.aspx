@@ -81,9 +81,7 @@
                                                        &nbsp; <span class=""><%# Item.Notes %></span>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="L-button  " id="">
+                                        <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                  <label class="list-group-item-heading pull-right"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>المرفقات</label>
                                 <asp:ListView runat="server" DataSource="<%# Item.Attachments.Where(x=>x.IsOutput==false) %>" ItemType="Khadmatcom.Data.Model.Attachment">
                                     <ItemTemplate>
@@ -93,6 +91,9 @@
                                 </asp:ListView>
                                 <a href="<%# GetLocalizedUrl(string.Format("clients/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt hidden">Edit</a>
                             </div>
+                            </div>
+
+                     
                             <div class="L-button">
                                 <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success ">سعر الخدمة:<%# Item.CurrentPrice %>&nbsp;<span style="display: inline-block; float: left">ريال</span>&nbsp;  </button>
                                 &nbsp; 

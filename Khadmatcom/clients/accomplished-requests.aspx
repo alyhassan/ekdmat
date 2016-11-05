@@ -81,18 +81,21 @@
                                                        &nbsp; <span class=""><%# Item.Notes %></span>
                                     </div>
                                 </div>
+                                  <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                  <label class="pull-right"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>المرفقات</label>
+                            <asp:ListView runat="server" DataSource="<%# Item.Attachments.Where(x=>x.IsOutput) %>" ItemType="Khadmatcom.Data.Model.Attachment">
+                                <ItemTemplate>
+                                    <a style="display:inline !important;padding-top:0px !important;" target="_blank" href='<%# string.Format("/Attachments/{0}", Item.Path)%>'>المرفق <%# Container.DataItemIndex+1 %></a>
+                                </ItemTemplate>
+                                <ItemSeparatorTemplate>, </ItemSeparatorTemplate>
+                            </asp:ListView>
+</div>
                             </div>
                             <div class="L-button hidden" id="">
                                 <a href="<%# GetLocalizedUrl(string.Format("clients/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt">Edit</a>
                             </div>
                             <br class="clearfix"/>
-                            <label class="pull-right"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>المرفقات</label>
-                            <asp:ListView runat="server" DataSource="<%# Item.Attachments.Where(x=>x.IsOutput) %>" ItemType="Khadmatcom.Data.Model.Attachment">
-                                <ItemTemplate>
-                                    <a target="_blank" href='<%# string.Format("/Attachments/{0}", Item.Path)%>'>المرفق <%# Container.DataItemIndex+1 %></a>
-                                </ItemTemplate>
-                                <ItemSeparatorTemplate>, </ItemSeparatorTemplate>
-                            </asp:ListView>
+                          
                             <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success pull-left">سعر الخدمةالنهائى:<%# Item.CurrentPrice %>&nbsp;<span style="display: inline-block; float: left">ريال</span>&nbsp;  </button>
                             &nbsp; 
                    
