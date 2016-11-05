@@ -254,7 +254,7 @@ namespace Khadmatcom.Controls
                     answer = chkSaudi.Checked.ToString();
                     break;
                 case 54:
-                    answer = txtContainer.Value;
+                    answer = ddlContainer.Value;
                     break;
                 case 55:
                     answer = txtShippingCity.Value;

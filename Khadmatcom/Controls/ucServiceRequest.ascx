@@ -108,7 +108,7 @@
                                     <div class="clearfix"></div>
 
                                     <div class="form-group col-md-4 col-sm-4 col-xs-12 o1 options pull-right">
-                                        <input type="text" class="form-control" runat="server" id="txtManagerName" placeholder="اسم مدير المحتوى" />
+                                        <input type="text" class="form-control" runat="server" id="txtManagerName" placeholder="مدير المحتوى" />
                                     </div>
                                     <div class="form-group o2 options col-md-4 col-sm-4 col-xs-12 col-md-6 col-sm-6 col-xs-12 pull-right">
 
@@ -270,7 +270,12 @@
                                         <input type="text" class="form-control validate[required]" runat="server" id="txtCompanyName" placeholder="اسم المنشأة" />
                                     </div>
                                     <div class="form-group options col-md-4 col-sm-4 col-xs-12 o54 pull-right">
-                                        <input type="text" class="form-control validate[required]" runat="server" id="txtContainer" placeholder="نوع الكونتينر" />
+                                        <select runat="server" id="ddlContainer" class="form-control validate[required]">
+                                            <option value="">أختر نوع الكونتينر</option>
+                                            <option value="20 قدم">20 قدم</option>
+                                            <option value="40 قدم">40 قدم</option>
+                                        </select>
+                                     <%--   <input type="text" class="form-control validate[required]" runat="server" id="txtContainer" placeholder="نوع الكونتينر" />--%>
                                     </div>
                                     <div class="form-group options col-md-4 col-sm-4 col-xs-12 o55 pull-right">
                                         <input type="text" class="form-control validate[required]" runat="server" id="txtShippingCity" placeholder="مدينة الشحن" />
@@ -504,8 +509,8 @@
                                 </div>
 
                                 <div class="col-md-12 col-sm-12 ag-1">
-                                    <a href="#" class="righttag">Please register for the follow - up steps</a>
-                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" id="test" onclick="NextStep();" class="clasic-btn">follow up</a>
+                                    <a href="#" class="righttag hidden">Please register for the follow - up steps</a>
+                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" id="test" onclick="NextStep();" class="clasic-btn">التالي</a>
                                 </div>
                             </div>
                         </div>

@@ -427,13 +427,13 @@ namespace Khadmatcom.Controls {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtCompanyName;
         
         /// <summary>
-        /// txtContainer control.
+        /// ddlContainer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtContainer;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect ddlContainer;
         
         /// <summary>
         /// txtShippingCity control.

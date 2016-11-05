@@ -60,14 +60,14 @@
 
             <ul class="nav nav-tabs nav-arow myTab" id="ai">
              <!--   <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse500">بيانات الخدمة</a></li> -->
-                <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse501">المرفقات</a></li>
-                <li class="active"><a data-toggle="collapse" data-parent="#accordion500" href="#collapse502">العنوان</a></li>
+                <li class="active"><a data-toggle="collapse" data-parent="#accordion500" href="#collapse501">المرفقات</a></li>
+                <li class="hidden"><a data-toggle="collapse" data-parent="#accordion500" href="#collapse502">العنوان</a></li>
                 <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse503"> الدفع</a></li>
                 <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse504">ملخص الطلب</a></li>
 
             </ul>
             <div class="clearfix"></div>
-            <button type="button" style="padding:3px;opacity:1; color:red;border-color:#2e6da2;border-width:2px;" class="btn btn-default disabled text-success pull-left"><span style="display:inline-block;">ريال</span> &nbsp;<span style="display:inline-block;">سعر الخدمة النهائى : 210 </span> </button>
+            <button type="button" style="padding:3px;opacity:1; color:red;border-color:#2e6da2;border-width:2px;" class="btn btn-default disabled text-success pull-left"><span style="display:inline-block;">ريال</span> &nbsp;<span style="display:inline-block;">سعر الخدمة النهائى : <%= ServicePrice %> </span> </button>
             <%--    <a class="accordion-toggle indicator collapsed" data-toggle="collapse" data-parent="#accordion500" href="#collapse500" aria-expanded="false">Characteristic of your services from the rest of institutions that provide the same services? <i class="indi fa fa-chevron-down"></i>
                         </a>--%>
             <div class="clearfix"></div>
@@ -371,7 +371,7 @@
                             </div>
                             <div class="clearfix">&nbsp;</div>
                             <div class="col-md-12 form-group clearfix">
-                                <asp:LinkButton Text="إرسال" runat="server" CssClass="nxt s-cl clasic-btn" ID="btnSave" OnClick="btnSave_OnClick" OnClientClick="return checkPayment()" />
+                                <a data-toggle="collapse" data-parent="#accordion500" href="#collapse504" class="nxt clasic-btn">التالي</a><span>&nbsp; &nbsp; &nbsp;</span>
                                 <%--<a href="card-info.aspx" class="nxt s-cl clasic-btn">Pay Now</a>--%>
                                 <%-- <a data-toggle="collapse" data-parent="#accordion500" href="card-info.aspx" class="app-close s-cl clasic-btn">Pay Later</a>--%>
                                 <a data-toggle="collapse" data-parent="#accordion500" href="#collapse502" class="prv s-cl clasic-btn">السابق</a>
@@ -386,7 +386,8 @@
                     <div id="collapse504" class="collapse" aria-expanded="false">
                         <div class="accordion-body clearfix">
                             <div class="col-md-12 form-group clearfix">
-                                <a href="#" class="nxt s-cl clasic-btn">Proceed</a>
+                                <asp:LinkButton Text="إرسال" runat="server" CssClass="nxt s-cl clasic-btn" ID="btnSave" OnClick="btnSave_OnClick" OnClientClick="return checkPayment()" />
+                                <%--<a href="#" class="nxt s-cl clasic-btn">Proceed</a>--%>
                                 <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" class="prv s-cl clasic-btn">Previous</a>
                             </div>
                         </div>
