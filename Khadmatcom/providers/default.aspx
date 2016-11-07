@@ -153,11 +153,15 @@
                 $.getJSON("/api/Khadmatcom/UpdateProviderRequest", userData, function (res) {
                     showLoading();
                     if (res) {
-                        hideLoading();
-                        toastr.success("تم تنفيذ أمرك", "شكرا لك", {timeOut: 60000,rtl:true,closeButton:true,positionClass:'toast-top-center'});
-                        clearFormData('#txtPrice'+id);
-                        clearFormData('#txtReason'+id);
-                        clearFormData('#txtDuration'+id);
+                        setTimeout(function() {
+                            //do what you need here
+                            hideLoading();
+                            toastr.success("تم تنفيذ أمرك", "شكرا لك", {timeOut: 60000,rtl:true,closeButton:true,positionClass:'toast-top-center'});
+                            clearFormData('#txtPrice'+id);
+                            clearFormData('#txtReason'+id);
+                            clearFormData('#txtDuration'+id);
+                        }, 4000);
+                        
                     }
                     else {
                         hideLoading();
