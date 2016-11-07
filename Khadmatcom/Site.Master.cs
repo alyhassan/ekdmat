@@ -126,7 +126,7 @@ namespace Khadmatcom
         public override void ShowNotifier(string message, string title, NotificationType notificationType)
         {
             //Show Toaster Notification
-            string jsMethodName = "<script language='javascript'> $(document).ready(function(){toastr." + notificationType.ToString().ToLower() + "('" + message + "','" + title + ", {timeOut: 60000,rtl:true,closeButton:true,positionClass:'toast-top-center'}'); }) </script>";
+            string jsMethodName = "<script language='javascript'> $(document).ready(function(){toastr." + notificationType.ToString().ToLower() + "('" + message + "','" + title + "', {timeOut: 60000,rtl:true,closeButton:true,positionClass:'toast-top-center'}); }) </script>";
             Page.ClientScript.RegisterStartupScript(this.GetType(), "notyScript", jsMethodName);
         }
 
