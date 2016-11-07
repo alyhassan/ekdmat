@@ -136,7 +136,7 @@
                             </div>
                             <div class="col-md-12 col-sm-12 ag-1">
                                 <%--  <a href="#" class="righttag">Please register for the follow - up steps</a>--%>
-                                <a data-toggle="collapse" data-parent="#accordion500" href="#collapse501" class="nxt clasic-btn">التالي</a>
+                                <a data-toggle="collapse" data-parent="#accordion500" href="#collapse501" class="nxt clasic-btn pull-right">التالي</a>
                             </div>
                         </div>
                     </div>
