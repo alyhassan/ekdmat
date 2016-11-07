@@ -61,7 +61,7 @@
             <ul class="nav nav-tabs nav-arow myTab" id="ai">
              <!--   <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse500">بيانات الخدمة</a></li> -->
                 <li class="active"><a data-toggle="collapse" data-parent="#accordion500" href="#collapse501">المرفقات</a></li>
-                <li class="hidden"><a data-toggle="collapse" data-parent="#accordion500" href="#collapse502">العنوان</a></li>
+                <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse502">العنوان</a></li>
                 <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse503"> الدفع</a></li>
                 <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse504">ملخص الطلب</a></li>
 

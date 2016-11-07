@@ -43,6 +43,7 @@ namespace Khadmatcom
         {
             var services= _servicesServices.GetServicesList(LanguageId, subcategoryId.Value).AsQueryable();
             ucServiceRequest.PageServices = services;
+            hfServiceTypeName.Value = string.Format("{0} - {1}", CategoryName, SubcategoryName);
             return services;
         }
     }

@@ -14,6 +14,7 @@
     </ul>
 
     <div id="main" class="tab-pane fade in active">
+        <asp:HiddenField ID="hfServiceTypeName" runat="server" />
         <div id="" class="owl-demo owl-carousel owl-theme">
             <asp:ListView runat="server" ID="lvCategories" SelectMethod="GetServices" ItemPlaceholderID="PlaceHolder1" GroupItemCount="12" ItemType="Khadmatcom.Services.Model.Service">
                 <GroupTemplate>

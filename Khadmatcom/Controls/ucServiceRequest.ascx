@@ -3,7 +3,7 @@
 <div class="modal fade" id="p10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <asp:HiddenField ID="hfServiceId" runat="server" ClientIDMode="Static" />
     <asp:HiddenField ID="hfCityId" runat="server" ClientIDMode="Static" />
-     <asp:HiddenField ID="hfServicePrice" runat="server" ClientIDMode="Static" Value="0" />
+    <asp:HiddenField ID="hfServicePrice" runat="server" ClientIDMode="Static" Value="0" />
     <div class="modal-dialog  service-div">
         <div class="modal-content">
             <div class="modal-header modal-header-success">
@@ -19,7 +19,7 @@
                             <%--<li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse501">المرفقات</a></li>
                      <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse502">بيانات الشحن </a></li>--%>
                             <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse503">متطلبات الطلب</a></li>
-                              <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse504">إرسال الطلب</a></li>
+                            <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse504">إرسال الطلب</a></li>
                         </ul>
                         <ul class="nav nav-bar  col-lg-2 col-md-2 col-xs-6 col-sm-3 navbar-left">
                             <li class="text-success text-left">
@@ -66,7 +66,7 @@
                                             <option>Web Design</option>
                                         </select>--%>
                                         </div>
-                                    
+
                                         <%--<div class="clearfix"></div>--%>
                                         <div class="form-group  col-md-2 col-sm-4 col-xs-12  pull-right">
                                             <label class="col-md-12">مدينة</label>
@@ -79,7 +79,7 @@
                                                 </asp:Repeater>
                                             </select>
                                         </div>
-                                            <div class="form-group    col-md-2 col-sm-4 col-xs-6  pull-right">
+                                        <div class="form-group    col-md-2 col-sm-4 col-xs-6  pull-right">
                                             <label class="col-md-12 col-sm-12 col-xs-12 text-right">العدد</label>
                                             <asp:DropDownList runat="server" CssClass="form-control   validate[required]" ID="ddlCount">
                                                 <asp:ListItem Value="" Text="اختر العدد" />
@@ -275,7 +275,7 @@
                                             <option value="20 قدم">20 قدم</option>
                                             <option value="40 قدم">40 قدم</option>
                                         </select>
-                                     <%--   <input type="text" class="form-control validate[required]" runat="server" id="txtContainer" placeholder="نوع الكونتينر" />--%>
+                                        <%--   <input type="text" class="form-control validate[required]" runat="server" id="txtContainer" placeholder="نوع الكونتينر" />--%>
                                     </div>
                                     <div class="form-group options col-md-4 col-sm-4 col-xs-12 o55 pull-right">
                                         <input type="text" class="form-control validate[required]" runat="server" id="txtShippingCity" placeholder="مدينة الشحن" />
@@ -510,7 +510,7 @@
 
                                 <div class="col-md-12 col-sm-12 ag-1">
                                     <a href="#" class="righttag hidden">Please register for the follow - up steps</a>
-                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" id="test" onclick="NextStep();" class="clasic-btn">التالي</a>
+                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" id="test" onclick="return NextStep();" class="clasic-btn">التالي</a>
                                 </div>
                             </div>
                         </div>
@@ -631,7 +631,7 @@
                             <div class="accordion-body clearfix">
                                 <div class="row ">
                                     <%-- <div class="form-group  col-md-2 col-sm-6 col-xs-12 pull-right">--%>
-                                    <div class="form-group  col-md-6 col-sm-6 col-xs-12 pull-right" style="margin-right:35px;color:#4070a0;">
+                                    <div class="form-group  col-md-6 col-sm-6 col-xs-12 pull-right" style="margin-right: 35px; color: #4070a0;">
                                         <span id="lblNotes"></span>
                                     </div>
                                 </div>
@@ -644,7 +644,7 @@
                                 <div class="col-md-12 form-group clearfix">
 
                                     <%-- <a href="#" class="nxt s-cl clasic-btn">Proceed</a>--%>
-                                     <a data-toggle="collapse" data-parent="#accordion500" href="#collapse504" id="test2" onclick="NextStep();" class="clasic-btn">التالي</a>
+                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse504" id="test2" onclick="buildSummary();" class="clasic-btn">التالي</a>
                                     <%--  <a data-toggle="collapse" data-parent="#accordion500" href="card-info.aspx" class="app-close s-cl clasic-btn">Pay Later</a>--%>
 
                                     <a data-toggle="collapse" data-parent="#accordion500" href="#collapse500" class="prv s-cl clasic-btn">السابق</a>
@@ -658,14 +658,30 @@
                         <div class="clearfix fal">
                             <div class="accordion-heading">إرسال الطلب<i class="indi fa fa-chevron-up"></i></div>
                         </div>
-                          <div id="collapse504" class="collapse" aria-expanded="false">
+                        <div id="collapse504" class="collapse" aria-expanded="false">
                             <div class="accordion-body clearfix">
-                                <div class="row ">
-                                    <asp:LinkButton Text="أتم الطلب" runat="server" ID="btnProceed" CssClass="nxt s-cl clasic-btn" OnClientClick="return true;" OnClick="btnProceed_OnClick" />
-                                    </div>
+                                <div class="col-md-12 form-group clearfix ">
+                                    <ul dir="rtl">
+                                        <li><strong>أسم صاحب الطلب: </strong><span><%= CurrentUser==null?"طلب خدمة":CurrentUser.FullName %></span></li>
+                                        <li><strong>نوع الخدمة: </strong><span id="summaryCategory"></span></li>
+                                        <li><strong>اسم الخدمة: </strong><span><%= ddlService.SelectedItem.Text %></span> </li>
+                                        <li><strong>العدد: </strong><span id="summaryCount"></span></li>
+                                        <li><strong>المدينة: </strong><span id="summaryCity"></span></li>
+                                        <li><strong>السعر المبدئي: </strong><span id="summaryPrice"></span></li>
+                                    </ul>
+                                    <p>
+                                        <strong>سيتم الرد علي طلبكم خلال موعد أقصاه 24 ساعة 
+                                        <br />
+                                            شكرآ لكم لأختياركم خدمات كوم</strong>
+                                    </p>
                                 </div>
-                              </div>
-                      </div>
+                                <div class="col-md-12 form-group clearfix">
+
+                                    <asp:LinkButton Text="إرسال" runat="server" ID="btnProceed" CssClass="nxt s-cl clasic-btn" OnClick="btnProceed_OnClick" OnClientClick="return checkLoggedIn();" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -675,9 +691,25 @@
 
 </div>
 <script>
+    function buildSummary() {
+        $('#summaryPrice').html($('#hfServicePrice').val()+' ريال');
+        $('#summaryCategory').html($('#hfServiceTypeName').val());
+        $('#summaryCity').html($('#ddlCities option:selected').text());
+        $('#summaryCount').html($('#ddlCount option:selected').text());
+    }
+
+    function checkLoggedIn() {
+        var result = '<%= CurrentUser==null?"false":"true" %>';
+        if (result == 'false') {
+            toastr.error('فضلا سجل الدخول أولا','', {timeOut: 6000,rtl:true,closeButton:true,positionClass:'toast-top-center'});
+        }
+        return (result === 'true');
+    }
+
     function NextStep() {
         var  result = validateForm('#collapse500', '<%= System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName.ToLower() %>');
         if (result) {
+            return result;
             result = <%= Membership.GetUser()!=null%>;
             if (result==true) {
                 if ($("#ai li:last").hasClass('active')) {
