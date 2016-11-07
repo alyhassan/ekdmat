@@ -21,7 +21,8 @@ namespace Khadmatcom
                 return WebConfigurationManager.AppSettings["FrontEndPhysicalPath"];
             }
         }
-        protected Khadmatcom.Data.Model.User CurrentUser;
+
+        public Khadmatcom.Data.Model.User CurrentUser { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {

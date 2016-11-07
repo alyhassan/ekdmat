@@ -8,7 +8,7 @@
         <div class="modal-content">
             <div class="modal-header modal-header-success">
                 <button type="button" class="close app-close" data-dismiss="modal" aria-hidden="true"><span class="fa fa-times" aria-hidden="true"></span></button>
-                <h1><%= CurrentUser==null?"طلب خدمة":CurrentUser.FullName %></h1>
+                <h1>طلب خدمة</h1>
             </div>
 
             <div class="modal-body panel">
@@ -44,7 +44,7 @@
                 <div class="accordion clearfix" id="accordion500">
                     <div class="panel">
                         <div class="clearfix fal">
-                            <div class="accordion-heading lanti200">طالب الخدمة &nbsp;   <i class="indi fa fa-chevron-up"></i></div>
+                            <div class="accordion-heading lanti200"><%= CurrentUser==null?"طالب الخدمة":CurrentUser.FullName %> &nbsp;   <i class="indi fa fa-chevron-up"></i></div>
 
                         </div>
                         <div id="collapse500" class="collapse in validationEngineContainer" aria-expanded="true">
@@ -664,7 +664,7 @@
                                     <ul dir="rtl">
                                         <li><strong>أسم صاحب الطلب: </strong><span><%= CurrentUser==null?"طلب خدمة":CurrentUser.FullName %></span></li>
                                         <li><strong>نوع الخدمة: </strong><span id="summaryCategory"></span></li>
-                                        <li><strong>اسم الخدمة: </strong><span><%= ddlService.SelectedItem.Text %></span> </li>
+                                        <li><strong>اسم الخدمة: </strong><span id="summaryService"></span></li>
                                         <li><strong>العدد: </strong><span id="summaryCount"></span></li>
                                         <li><strong>المدينة: </strong><span id="summaryCity"></span></li>
                                         <li><strong>السعر المبدئي: </strong><span id="summaryPrice"></span></li>
@@ -696,14 +696,16 @@
         $('#summaryCategory').html($('#hfServiceTypeName').val());
         $('#summaryCity').html($('#ddlCities option:selected').text());
         $('#summaryCount').html($('#ddlCount option:selected').text());
+        $('#summaryService').html($('#ddlService option:selected').text());
     }
 
     function checkLoggedIn() {
         var result = '<%= CurrentUser==null?"false":"true" %>';
+       
         if (result == 'false') {
             toastr.error('فضلا سجل الدخول أولا','', {timeOut: 6000,rtl:true,closeButton:true,positionClass:'toast-top-center'});
         }
-        return (result === 'true');
+        return (result == 'true');
     }
 
     function NextStep() {

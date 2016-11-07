@@ -37,6 +37,7 @@ namespace Khadmatcom
         {
             if (string.IsNullOrEmpty(sectionName))
                 RedirectAndNotify(GetLocalizedUrl(""), "Invalid section name", "Erorr", NotificationType.Error);
+            ucServiceRequest.CurrentUser = CurrentUser;
         }
 
         public IQueryable<Service> GetServices()
