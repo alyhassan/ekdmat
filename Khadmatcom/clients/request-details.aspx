@@ -400,7 +400,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header modal-header-success">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="fa fa-times" aria-hidden="true"></span></button>
                     <h1 class="hidden"><i class="fa">&nbsp;</i></h1>
                 </div>
                 <div class="modal-body">

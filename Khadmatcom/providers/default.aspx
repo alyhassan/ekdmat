@@ -62,34 +62,35 @@
                                 </asp:Repeater>
                             </div>
                             <br />
-                            
-                                <div class="input-group pull-left" id="s<%# Item.Id %>">
-                                    <input type="button" class="btn btn-danger  btn-sm" value="رفض الطلب" onclick="takeAction(<%# Item.Id %>,6);" /> &nbsp;
+
+                            <div class="input-group pull-left" id="s<%# Item.Id %>">
+                                <input type="button" class="btn btn-danger  btn-sm" value="رفض الطلب" onclick="takeAction(<%# Item.Id %>,6);" />
+                                &nbsp;
                                     <input type="button" class="btn btn-success btn-sm" value="قبول الطلب" onclick="takeAction(<%# Item.Id %>,2);" />
-                                </div>
+                            </div>
                             <div class="form">
                                 <div class="input-group hidden validationEngineContainer  form-group col-md-12" id="reason<%# Item.Id %>">
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                      
-                                    <input type="text" id="txtReason<%# Item.Id %>" class="validate[required] col-md-12 pull-right form-control" placeholder="تعليق" /> 
-                                        </div>
+
+                                        <input type="text" id="txtReason<%# Item.Id %>" class="validate[required] col-md-12 pull-right form-control" placeholder="تعليق" />
+                                    </div>
                                     <div class="form-group col-md-4 col-sm-4 col-xs-5 pull-right">
-                                     <label for="txtPrice<%# Item.Id %>" id="txtPriceLabel<%# Item.Id %>" class="  pull-right">سعر الخدمة</label>
-                                    <input type="number" id="txtPrice<%# Item.Id %>" class=" validate[required] hidden col-md-4 col-sm-4 col-xs-4 f pull-right form-control" value='<%# Item.RequestProviders.First(r=>r.ProviderId==CurrentUser.Id).Price %>' />
-                                  </div>
-                                      <div class="form-group col-md-4 col-sm-4 col-xs-5 pull-right">
-                                          <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>" class="pull-right">وقت التنفيذ المتوقع</label> 
-                                    <input type="number" id="txtDuration<%# Item.Id %>" class=" validate[required] hidden col-md-4 col-sm-4 col-xs-4  pull-right form-control" value='' />
-                                    <%--<%# Item.Service.ServiceProviders.First(r=>r.MemberId==CurrentUser.Id).EstamaitedTime %>--%>
-                                      </div>
-                                     <div class="form-group col-md-6 col-sm-12 col-xs-12 pull-right">
-                                    <asp:Button Text="إرسال" OnClientClick="return takeRequestAction();" OnClick="OnClick" CssClass="btn btn-success" runat="server" CommandName="Update" CommandArgument="<%# Item.Id %>" />
-                                   </div>
-                                         </div>
-                            <div class="L-button" id="">
-                                <a href="<%# GetLocalizedUrl(string.Format("providers/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt hidden">Edit</a>
+                                        <label for="txtPrice<%# Item.Id %>" id="txtPriceLabel<%# Item.Id %>" class="  pull-right">سعر الخدمة</label>
+                                        <input type="number" id="txtPrice<%# Item.Id %>" class=" validate[required] hidden col-md-4 col-sm-4 col-xs-4 f pull-right form-control" value='<%# Item.RequestProviders.First(r=>r.ProviderId==CurrentUser.Id).Price %>' />
+                                    </div>
+                                    <div class="form-group col-md-4 col-sm-4 col-xs-5 pull-right">
+                                        <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>" class="pull-right">وقت التنفيذ المتوقع</label>
+                                        <input type="number" id="txtDuration<%# Item.Id %>" class=" validate[required] hidden col-md-4 col-sm-4 col-xs-4  pull-right form-control" value='' />
+                                        <%--<%# Item.Service.ServiceProviders.First(r=>r.MemberId==CurrentUser.Id).EstamaitedTime %>--%>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12 col-xs-12 pull-right">
+                                        <asp:Button Text="إرسال" OnClientClick="return takeRequestAction();" OnClick="OnClick" CssClass="btn btn-success" runat="server" CommandName="Update" CommandArgument="<%# Item.Id %>" />
+                                    </div>
+                                </div>
+                                <div class="L-button" id="">
+                                    <a href="<%# GetLocalizedUrl(string.Format("providers/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt hidden">Edit</a>
+                                </div>
                             </div>
-</div>
                         </div>
                     </div>
                 </div>
@@ -150,18 +151,17 @@
                 };
 
                 $.getJSON("/api/Khadmatcom/UpdateProviderRequest", userData, function (res) {
-                    $("#p8").modal('hide');
                     showLoading();
                     if (res) {
                         hideLoading();
-                        toastr.success("تم تنفيذ أمرك", "شكرا لك");
+                        toastr.success("تم تنفيذ أمرك", "شكرا لك", {timeOut: 60000,rtl:true,closeButton:true,positionClass:'toast-top-center'});
                         clearFormData('#txtPrice'+id);
                         clearFormData('#txtReason'+id);
                         clearFormData('#txtDuration'+id);
                     }
                     else {
                         hideLoading();
-                        toastr.error("هناك خطأ  أثناء إرسال أمرك...فضلا حاول لاحقا.", "خطأ"); hideLoading();
+                        toastr.error("هناك خطأ  أثناء إرسال أمرك...فضلا حاول لاحقا.", "خطأ", {timeOut: 60000,rtl:true,closeButton:true,positionClass:'toast-top-center'}); hideLoading();
                     }
                 });
 

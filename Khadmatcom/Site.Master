@@ -56,7 +56,7 @@
                         </asp:DropDownList>
                     </span>
                     </li>
-                    <li><a href="#p9" data-toggle="modal" class="my-mark">أسئلة متكررة<i>&nbsp;</i></a></li>
+                    <li><a href="#p9" data-toggle="modal" class="my-mark"><%= GetGlobalResourceObject("general.aspx","lblFaq") %><i>&nbsp;</i></a></li>
                     <li><a href="#p8" data-toggle="modal" class="contact-btn" data-backdrop="static"><span class="visible-xs">أتصل بنا</span>0545545133<i>&nbsp;</i></a>
                     </li>
                 </ul>
@@ -115,7 +115,7 @@
                         </select>--%>
                     </span>
                     </li>
-                    <li><a href="#p9" data-toggle="modal" class="my-mark"><%= GetGlobalResourceObject("general.aspx","lblFaq") %><<i>&nbsp;</i></a></li>
+                    <li><a href="#p9" data-toggle="modal" class="my-mark"><%= GetGlobalResourceObject("general.aspx","lblFaq") %><i>&nbsp;</i></a></li>
                     <li><a href="#p8" data-toggle="modal" class="contact-btn" data-backdrop="static"><span>أتصل بنا</span>0545545133<i>&nbsp;</i></a>
                     </li>
                 </ul>
@@ -650,7 +650,7 @@
             <div class="modal-dialog contact-dialog">
                 <div class="modal-content">
                     <div class="modal-header modal-header-success">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="fa fa-times" aria-hidden="true"></span></button>
                         <h1><i class="fa my-envelop">&nbsp;</i>مرحبا بك</h1>
                     </div>
                     <div class="modal-body">
