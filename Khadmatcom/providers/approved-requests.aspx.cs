@@ -26,7 +26,7 @@ namespace Khadmatcom.providers
         }
         public IQueryable<ServiceRequest> GetServiceRequests()
         {
-            return (CurrentUser != null) ? _serviceRequests.GetProviderRequests(CurrentUser.Id, (int)RequestStatus.Approved, false).AsQueryable():null ;
+            return (CurrentUser != null) ? _serviceRequests.GetProviderRequests(CurrentUser.Id, (int)RequestStatus.Approved, false).AsQueryable(): null;
         }
     }
 }
