@@ -384,7 +384,9 @@
                         <div class="accordion-heading">ملخص الطلب <i class="indi fa fa-chevron-up"></i></div>
                     </div>
                     <div id="collapse504" class="collapse" aria-expanded="false">
-                        <div class="accordion-body clearfix">
+                        <div class="accordion-body clearfix validationEngineContainer" id="submitServiceRequest">
+                            <div class="form-group col-md-12" style="min-height:50px;"></div>
+                            <div class="clearfix">&nbsp;</div>
                             <div class="col-md-12 form-group clearfix">
                                 <asp:LinkButton Text="إرسال" runat="server" CssClass="nxt s-cl clasic-btn" ID="btnSave" OnClick="btnSave_OnClick" OnClientClick="return checkPayment()" />
                                 <%--<a href="#" class="nxt s-cl clasic-btn">Proceed</a>--%>
