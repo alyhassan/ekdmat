@@ -20,21 +20,22 @@ namespace Khadmatcom.admin_area
         private readonly AreasServices _areasServices;
         private readonly ServicesServices _servicesServices;
         protected int? _id;
-        private UserServices userServices;
+        private readonly UserServices _userServices;
         protected User CurrentProvider;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             TryGetRouteParameter("Key", out _id);
-            if (_id.HasValue && !IsPostBack)
+            if (_id.HasValue)
             {
-                LoadProviderDate();
+                CurrentProvider = _userServices.GetProvider(_id.Value);
+                if (!IsPostBack) LoadProviderDate();
             }
         }
 
         private void LoadProviderDate()
         {
-            CurrentProvider = userServices.GetProvider(_id.Value);
+           
             txtName.Value = CurrentProvider.FullName;
             txtMobileNumber.Value = CurrentProvider.MobielNumber;
             txtEmail.Value = CurrentProvider.Email;
@@ -61,7 +62,7 @@ namespace Khadmatcom.admin_area
         {
             _areasServices = new AreasServices();
             _servicesServices = new ServicesServices();
-            userServices = new UserServices();
+            _userServices = new UserServices();
         }
 
         public IQueryable<Khadmatcom.Services.Model.City> GetCities()
@@ -91,7 +92,7 @@ namespace Khadmatcom.admin_area
         {
             Banks banktype;
             Enum.TryParse(ddlBanks.Value, out banktype);
-            int id = userServices.AddProvider(txtEmail.Value, txtPassword.Value, txtEmail.Value, txtName.Value,
+            int id = _userServices.AddProvider(txtEmail.Value, txtPassword.Value, txtEmail.Value, txtName.Value,
                 txtMobileNumber.Value, txtIdentityNumber.Value, int.Parse(ddlCities.SelectedValue),
                 int.Parse(ddlCategories.SelectedValue), txtCompanyName.Value, banktype, txtBankAccountNumber.Value,
                 "Providers", Khadmatcom.Data.Model.IdentityType.Provider);
@@ -143,7 +144,7 @@ namespace Khadmatcom.admin_area
                         Notify("الخدمة غير موجودة", notificationType: NotificationType.Error);
                     }
                 }
-                userServices.UpdateAndSave();
+                _userServices.UpdateAndSave();
                 Notify("تم الحفظ");
             }
             catch
@@ -165,7 +166,7 @@ namespace Khadmatcom.admin_area
                     CurrentProvider.ServiceProviders.Remove(
                         CurrentProvider.ServiceProviders.FirstOrDefault(
                             x => x.Id == int.Parse(e.CommandArgument.ToString())));
-                    userServices.UpdateAndSave();
+                    _userServices.UpdateAndSave();
                     Notify("تم الحذف");
                 }
                 catch
