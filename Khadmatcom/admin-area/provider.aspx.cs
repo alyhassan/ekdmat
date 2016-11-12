@@ -35,19 +35,21 @@ namespace Khadmatcom.admin_area
 
         private void LoadProviderDate()
         {
-           
+
             txtName.Value = CurrentProvider.FullName;
             txtMobileNumber.Value = CurrentProvider.MobielNumber;
             txtEmail.Value = CurrentProvider.Email;
             txtCompanyName.Value = CurrentProvider.CompanyName;
             txtBankAccountNumber.Value = CurrentProvider.BankAccountNumber;
             ddlCategories.SelectedValue = CurrentProvider.MainCategoryId.ToString();
-
+            txtIdentityNumber.Value = CurrentProvider.IdentityNumber;
+           chkIsMain.Checked = CurrentProvider.IsMain;
             if (CurrentProvider.BankAccountType != null)
-                ddlBanks.Value = CurrentProvider.BankAccountType.Value.ToString();
+                ddlBanks.Value = ((int)CurrentProvider.BankAccountType.Value).ToString();
             ddlCities.SelectedValue = CurrentProvider.CityId.ToString();
 
             ddlCategories.Enabled = false;
+            txtCompanyName.Disabled = true;
             ddlCities.Enabled = false;
             txtEmail.Disabled = true;
             txtPassword.Disabled = true;
@@ -90,6 +92,14 @@ namespace Khadmatcom.admin_area
 
         protected void btnRegister_OnClick(object sender, EventArgs e)
         {
+            if (chkIsMain.Checked)
+            {
+                if (_userServices.CheckMain(int.Parse(ddlCategories.SelectedValue), int.Parse(ddlCities.SelectedValue)))
+                {
+                    Notify("يوجد شريك أخر لذات النشاط الرئيسي داخل نفس المحافظة", "", NotificationType.Error);
+                    return;
+                }
+            }
             Banks banktype;
             Enum.TryParse(ddlBanks.Value, out banktype);
             int id = _userServices.AddProvider(txtEmail.Value, txtPassword.Value, txtEmail.Value, txtName.Value,
@@ -100,7 +110,7 @@ namespace Khadmatcom.admin_area
             string _out = (id > 0) ? string.Empty : "حدث خطأ أثناء الإضافة...فضلا حاول لاحقا";
             if (!string.IsNullOrEmpty(_out))
             {
-                RedirectAndNotify(GetLocalizedUrl($"managment/providers/{id}/provider-info"), "تم الإضافة بنجاح بنجاح");
+                RedirectAndNotify(GetLocalizedUrl($"managment/providers/{id}/provider-info"), "تم الإضافة بنجاح");
             }
             else
                 Notify(_out, "", NotificationType.Error);
@@ -108,6 +118,25 @@ namespace Khadmatcom.admin_area
 
         protected void btnUpdate_OnClick(object sender, EventArgs e)
         {
+            if (chkIsMain.Checked)
+            {
+                if (_userServices.CheckMain(int.Parse(ddlCategories.SelectedValue), int.Parse(ddlCities.SelectedValue),_id.Value))
+                {
+                    Notify("يوجد شريك أخر لذات النشاط الرئيسي داخل نفس المحافظة", "", NotificationType.Error);
+                    return;
+                }
+            }
+            CurrentProvider.FullName = txtName.Value;
+            CurrentProvider.MobielNumber = txtMobileNumber.Value;
+            CurrentProvider.IdentityNumber = txtIdentityNumber.Value;
+            Banks banktype;
+            Enum.TryParse(ddlBanks.Value, out banktype);
+            CurrentProvider.BankAccountType = banktype;
+            CurrentProvider.BankAccountNumber = txtBankAccountNumber.Value;
+            CurrentProvider.IsMain = chkIsMain.Checked;
+            _userServices.UpdateAndSave();
+            RedirectAndNotify(GetLocalizedUrl($"managment/providers/{_id}/provider-info"), "تم التحديث بنجاح");
+
         }
 
         protected void btnAddService_Click(object sender, EventArgs e)

@@ -31,13 +31,22 @@ namespace Khadmatcom.admin_area {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtCompanyName;
         
         /// <summary>
+        /// chkIsMain control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox chkIsMain;
+        
+        /// <summary>
         /// txtIdentityNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtIdentityNumber;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtIdentityNumber;
         
         /// <summary>
         /// ddlCities control.
@@ -100,7 +109,7 @@ namespace Khadmatcom.admin_area {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtBankAccountNumber;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtBankAccountNumber;
         
         /// <summary>
         /// btnRegister control.

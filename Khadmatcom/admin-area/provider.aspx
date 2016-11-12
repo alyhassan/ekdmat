@@ -7,7 +7,7 @@
         <div class="modal-header modal-header-success">
             <%--        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>--%>
             <h1><i class="fa my-lock">&nbsp;</i>شريك العمل</h1>
-            
+
         </div>
         <div class="modal-body">
             <div class="clearfix login-body validationEngineContainer" id="providerForm">
@@ -24,8 +24,12 @@
                     <input type="text" class="form-control validate[required]" runat="server" id="txtCompanyName" required="required" placeholder="أدخل اسم الشركة/ المؤسسة" />
                 </div>
                 <div class="col-md-10 col-md-offset-1 form-group">
+                    <input type="checkbox" class="good " runat="server" id="chkIsMain" required="required" placeholder="أدخل اسم الشركة/ المؤسسة" />
+                    <label dir="rtl" for="chkIsMain">شريك أساسي</label>
+                </div>
+                <div class="col-md-10 col-md-offset-1 form-group">
                     <label dir="rtl" class="form-label">رقم السجل التجاري</label>
-                    <input type="text" class="form-control validate[required]" runat="server" id="txtIdentityNumber" required="required" placeholder="أدخل رقم السجل التجاري" />
+                    <input type="number" class="form-control validate[required]" runat="server" id="txtIdentityNumber" required="required" placeholder="أدخل رقم السجل التجاري" />
                 </div>
                 <div class="col-md-10 col-md-offset-1 form-group">
                     <label dir="rtl" class="form-label">المحافظة</label>
@@ -45,7 +49,7 @@
                     <input type="email" class="form-control  validate[required,custom[email]]" required="required" placeholder="أدخل البريد الإلكتروني" runat="server" id="txtEmail" />
                 </div>
 
-                <div class="col-md-10 col-md-offset-1 form-group">
+                <div class="col-md-10 col-md-offset-1 form-groupp<%= _id.HasValue?" hidden":"" %>">
                     <label dir="rtl" class="form-label">كلمة المرور</label>
                     <input type="password" class="form-control validate[required]" required="required" placeholder="أدخل كلمة المرور" runat="server" id="txtPassword" />
                 </div>
@@ -75,7 +79,7 @@
                 </div>
                 <div class="col-md-10 col-md-offset-1 form-group">
                     <label dir="rtl" class="form-label">رقم الحساب:</label>
-                    <input type="text" class="form-control validate[required]" required="required" placeholder="" runat="server" id="txtBankAccountNumber" />
+                    <input type="number" class="form-control validate[required]" required="required" placeholder="" runat="server" id="txtBankAccountNumber" />
                 </div>
                 <div class="col-md-10 col-md-offset-1 form-group display-lab">
                     <label id="gl" class="fa fa-close"></label>
