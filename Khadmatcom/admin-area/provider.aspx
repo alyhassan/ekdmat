@@ -58,7 +58,7 @@
                 <!--Personal-->
                 <div class="col-md-10 col-md-offset-1 form-group">
                     <label dir="rtl" class="form-label">رقم الجوال:</label>
-                    <input type="text" class="form-control validate[required]" required="required" placeholder="أدخل رقم الجوال" runat="server" id="txtMobileNumber" />
+                    <input type="number" class="form-control validate[required]" required="required" placeholder="أدخل رقم الجوال" runat="server" id="txtMobileNumber" />
                 </div>
 
                 <div class="col-md-10 col-md-offset-1 form-group">
