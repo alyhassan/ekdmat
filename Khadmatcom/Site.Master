@@ -242,7 +242,19 @@
                                     </div>
                                 </div>
                             </li>
-
+                             <div class='accordion clearfix <%= Roles.IsUserInRole("Admins")?"":"hidden" %>' id="managment2">
+                            <div class="panel">
+                                <div class="accordion-heading ">
+                                    <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#managment2" href="#managmentright2" aria-expanded="false">لوحة التحكم<i class="fa fa-2x my-ser">&nbsp;</i>
+                                    </a>
+                                </div>
+                                <div id="managmentright2" class="collapse" aria-expanded="false">
+                                    <div class="accordion-body clearfix">
+                                        <a href="<%= GetLocalizedUrl("managment/providers") %>">شركاء العمل</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
 
@@ -544,6 +556,20 @@
                                         <a href="<%= GetLocalizedUrl("providers/services-requests/refused-requests") %>">خدمات مرفوضة</a>
                                         <a href="<%= GetLocalizedUrl("providers/services-requests/canceled-requests") %>">خدمات ملغاة</a>
                                         <a href="<%= GetLocalizedUrl("providers/services-requests/expired-requests") %>">خدمات منتهية المدة</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class='accordion clearfix <%= Roles.IsUserInRole("Admins")?"":"hidden" %>' id="managment">
+                            <div class="panel">
+                                <div class="accordion-heading ">
+                                    <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#managment" href="#managmentright" aria-expanded="false">لوحة التحكم<i class="fa fa-2x my-ser">&nbsp;</i>
+                                    </a>
+                                </div>
+                                <div id="managmentright" class="collapse" aria-expanded="false">
+                                    <div class="accordion-body clearfix">
+                                        <a href="<%= GetLocalizedUrl("managment/providers") %>">شركاء العمل</a>
                                     </div>
                                 </div>
                             </div>

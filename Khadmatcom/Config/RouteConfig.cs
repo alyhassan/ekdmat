@@ -70,6 +70,10 @@ namespace Khadmatcom
             RouteTable.Routes.MapPageRoute("providers-accomplished-request", "providers/services-requests/finished-requests", "~/providers/accomplished-requests.aspx");
             RouteTable.Routes.MapPageRoute("providers-request-details", "providers/services-requests/{Key}/request-details", "~/providers/request-details.aspx");
 
+            //managment
+            RouteTable.Routes.MapPageRoute("providers-list", "managment/providers", "~/admin-area/providers.aspx");
+            RouteTable.Routes.MapPageRoute("new-provider-managment", "managment/providers/new", "~/admin-area/provider.aspx");
+            RouteTable.Routes.MapPageRoute("provider-managment", "managment/providers/{Key}/provider-info", "~/admin-area/provider.aspx");
 
             //404
             RouteTable.Routes.MapPageRoute("404", "error/404", "~/error/404.aspx");
@@ -132,6 +136,11 @@ namespace Khadmatcom
             RouteTable.Routes.MapPageRoute("about-us-loc", "{locale}/about-us", "~/about-us.aspx", false, defaultLocale, localeConstraints);
             //contact us
             RouteTable.Routes.MapPageRoute("contact-loc", "{locale}/contact-us", "~/contact-us.aspx", false, defaultLocale, localeConstraints);
+
+            //managment
+            RouteTable.Routes.MapPageRoute("providers-list-loc", "{locale}/managment/providers", "~/admin-area/providers.aspx", false, defaultLocale, localeConstraints);
+            RouteTable.Routes.MapPageRoute("new-provider-managment-loc", "{locale}/managment/providers/new", "~/admin-area/provider.aspx", false, defaultLocale, localeConstraints);
+            RouteTable.Routes.MapPageRoute("provider-managment-loc", "{locale}/managment/providers/{Key}/provider-info", "~/admin-area/provider.aspx", false, defaultLocale, localeConstraints);
 
             //404
             RouteTable.Routes.MapPageRoute("404-loc", "{locale}/error/404", "~/error/404.aspx", false, defaultLocale, localeConstraints);

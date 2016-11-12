@@ -7,11 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Khadmatcom.providers
-{
+namespace Khadmatcom.providers {
     
     
-    public partial class approved_services {
+    public partial class approved_requests {
         
         /// <summary>
         /// lvServiceRequest control.
