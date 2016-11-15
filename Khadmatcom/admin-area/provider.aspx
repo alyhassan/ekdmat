@@ -115,6 +115,7 @@
                                     </th>
                                     <th>عمولة الموقع
                                     </th>
+                                    <th>شريك أساسي</th>
                                     <th></th>
                                 </tr>
                         </HeaderTemplate>
@@ -126,6 +127,8 @@
                                 <td><%# Item.EstamaitedTime %></td>
                                 <td><%# Item.City.Name %></td>
                                 <td><%# Item.SiteCommission %>%</td>
+                                <td>
+                                    <input type="checkbox" <%# Item.IsMain?"checked":"" %> disabled="disabled" /></td>
                                 <td>
                                     <a href='javascript:{}' onclick="editService('#addService',<%# Item.Id %>,<%# Item.EstamaitedCost %>,<%# Item.EstamaitedTime %>,<%# Item.SiteCommission %>,<%# Item.ServiceId %>,<%# Item.CityId %>,<%# Item.IsMain.ToString().ToLower() %>)"><i class="fa fa-edit">&nbsp; تعديل</i></a>
                                     <asp:LinkButton Text="حذف" CommandName="Delete" CommandArgument="<%# Item.Id %>" OnClientClick="return confirm('هل انت متاكد من الحذف؟')" runat="server" CssClass="fa fa-remove" />
@@ -167,9 +170,9 @@
                         </asp:DropDownList>
                     </div>
                     <div class="col-md-10 col-md-offset-1 form-group">
-                    <input type="checkbox" class="good " runat="server" id="chkIsMain" />
-                    <label dir="rtl" for="chkIsMain">شريك أساسي</label>
-                </div>
+                        <input type="checkbox" class="good " runat="server" id="chkIsMain" />
+                        <label dir="rtl" for="chkIsMain">شريك أساسي</label>
+                    </div>
                     <div class="col-md-10 col-md-offset-1 form-group">
                         <label dir="rtl" class="form-label">التكلفة المبدئية</label>
                         <asp:TextBox runat="server" ID="txtCost" CssClass="form-control  validate[required]" />
@@ -240,7 +243,7 @@
 
         }
 
-        function editService(selector, id, cost, time, comm, serviceId, cityId,isMain) {
+        function editService(selector, id, cost, time, comm, serviceId, cityId, isMain) {
             $('#hfId').val(id);
             $('#hfState').val(1);
             $('#txtCost').val(cost);
@@ -248,7 +251,7 @@
             $('#txtSiteCommission').val(comm);
             $('#ddlServices').val(serviceId);
             $('#ddlServiceCity').val(cityId);
-            if (isMain=='true')
+            if (isMain == 'true')
                 $('#chkIsMain').attr('checked', 'checked');
             else $('#chkIsMain').removeAttr('checked');
             showModel(selector);
