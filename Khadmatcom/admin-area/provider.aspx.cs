@@ -43,7 +43,7 @@ namespace Khadmatcom.admin_area
             txtBankAccountNumber.Value = CurrentProvider.BankAccountNumber;
             ddlCategories.SelectedValue = CurrentProvider.MainCategoryId.ToString();
             txtIdentityNumber.Value = CurrentProvider.IdentityNumber;
-           chkIsMain.Checked = CurrentProvider.IsMain;
+           //chkIsMain.Checked = CurrentProvider.IsMain;
             if (CurrentProvider.BankAccountType != null)
                 ddlBanks.Value = ((int)CurrentProvider.BankAccountType.Value).ToString();
             ddlCities.SelectedValue = CurrentProvider.CityId.ToString();
@@ -92,23 +92,17 @@ namespace Khadmatcom.admin_area
 
         protected void btnRegister_OnClick(object sender, EventArgs e)
         {
-            if (chkIsMain.Checked)
-            {
-                if (_userServices.CheckMain(int.Parse(ddlCategories.SelectedValue), int.Parse(ddlCities.SelectedValue)))
-                {
-                    Notify("يوجد شريك أخر لذات النشاط الرئيسي داخل نفس المحافظة", "", NotificationType.Error);
-                    return;
-                }
-            }
+            int categoryId = int.Parse(Request.Form[ddlCategories.UniqueID]);
+            int cityId = int.Parse(Request.Form[ddlCities.UniqueID]);
             Banks banktype;
             Enum.TryParse(ddlBanks.Value, out banktype);
             int id = _userServices.AddProvider(txtEmail.Value, txtPassword.Value, txtEmail.Value, txtName.Value,
-                txtMobileNumber.Value, txtIdentityNumber.Value, int.Parse(ddlCities.SelectedValue),
-                int.Parse(ddlCategories.SelectedValue), txtCompanyName.Value, banktype, txtBankAccountNumber.Value,
+                txtMobileNumber.Value, txtIdentityNumber.Value, cityId,
+               categoryId, txtCompanyName.Value, banktype, txtBankAccountNumber.Value,
                 "Providers", Khadmatcom.Data.Model.IdentityType.Provider);
 
             string _out = (id > 0) ? string.Empty : "حدث خطأ أثناء الإضافة...فضلا حاول لاحقا";
-            if (!string.IsNullOrEmpty(_out))
+            if (string.IsNullOrEmpty(_out))
             {
                 RedirectAndNotify(GetLocalizedUrl($"managment/providers/{id}/provider-info"), "تم الإضافة بنجاح");
             }
@@ -118,14 +112,8 @@ namespace Khadmatcom.admin_area
 
         protected void btnUpdate_OnClick(object sender, EventArgs e)
         {
-            if (chkIsMain.Checked)
-            {
-                if (_userServices.CheckMain(int.Parse(ddlCategories.SelectedValue), int.Parse(ddlCities.SelectedValue),_id.Value))
-                {
-                    Notify("يوجد شريك أخر لذات النشاط الرئيسي داخل نفس المحافظة", "", NotificationType.Error);
-                    return;
-                }
-            }
+           
+            
             CurrentProvider.FullName = txtName.Value;
             CurrentProvider.MobielNumber = txtMobileNumber.Value;
             CurrentProvider.IdentityNumber = txtIdentityNumber.Value;
@@ -133,7 +121,7 @@ namespace Khadmatcom.admin_area
             Enum.TryParse(ddlBanks.Value, out banktype);
             CurrentProvider.BankAccountType = banktype;
             CurrentProvider.BankAccountNumber = txtBankAccountNumber.Value;
-            CurrentProvider.IsMain = chkIsMain.Checked;
+            //CurrentProvider.IsMain = chkIsMain.Checked;
             _userServices.UpdateAndSave();
             RedirectAndNotify(GetLocalizedUrl($"managment/providers/{_id}/provider-info"), "تم التحديث بنجاح");
 
@@ -143,30 +131,52 @@ namespace Khadmatcom.admin_area
         {
             try
             {
-
+                int serviceId = int.Parse(Request.Form[ddlServices.UniqueID]);
+                int cityId = int.Parse(Request.Form[ddlServiceCity.UniqueID]);
 
                 if (hfState.Value == "0")
+                {
+                    if (chkIsMain.Checked)
+                    {
+                        if (_userServices.CheckMain(serviceId, cityId, CurrentProvider.Id))
+                        {
+                            Notify("يوجد شريك أخر لذات النشاط الرئيسي داخل نفس المحافظة", "", NotificationType.Error);
+                            return;
+                        }
+                    }
                     CurrentProvider.ServiceProviders.Add(new ServiceProvider()
                     {
-                        CityId = int.Parse(ddlServiceCity.SelectedValue),
+                        CityId = cityId,
+                        IsMain = chkIsMain.Checked,
                         EstamaitedCost = decimal.Parse(txtCost.Text),
                         EstamaitedTime = txtTime.Text,
                         SiteCommission = decimal.Parse(txtSiteCommission.Text),
-                        ServiceId = int.Parse(ddlServices.SelectedValue)
+                        ServiceId = serviceId
                     });
+                }
                 else
                 {
+                    if (chkIsMain.Checked)
+                    {
+                        if (_userServices.CheckMain(serviceId, cityId, CurrentProvider.Id))
+                        if (_userServices.CheckMain(serviceId, cityId, CurrentProvider.Id))
+                        {
+                            Notify("يوجد شريك أخر لذات النشاط الرئيسي داخل نفس المحافظة", "", NotificationType.Error);
+                            return;
+                        }
+                    }
                     var currentService =
                         CurrentProvider.ServiceProviders.FirstOrDefault(x => x.Id == int.Parse(hfId.Value));
 
 
                     if (currentService != null)
                     {
-                        currentService.CityId = int.Parse(ddlServiceCity.SelectedValue);
+                        currentService.CityId = cityId;
                         currentService.EstamaitedCost = decimal.Parse(txtCost.Text);
                         currentService.EstamaitedTime = txtTime.Text;
                         currentService.SiteCommission = decimal.Parse(txtSiteCommission.Text);
-                        currentService.ServiceId = int.Parse(ddlServices.SelectedValue);
+                        currentService.ServiceId = serviceId;
+                        currentService.IsMain = chkIsMain.Checked;
                     }
                     else
                     {

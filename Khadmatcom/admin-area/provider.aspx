@@ -24,10 +24,6 @@
                     <input type="text" class="form-control validate[required]" runat="server" id="txtCompanyName" required="required" placeholder="أدخل اسم الشركة/ المؤسسة" />
                 </div>
                 <div class="col-md-10 col-md-offset-1 form-group">
-                    <input type="checkbox" class="good " runat="server" id="chkIsMain" required="required" placeholder="أدخل اسم الشركة/ المؤسسة" />
-                    <label dir="rtl" for="chkIsMain">شريك أساسي</label>
-                </div>
-                <div class="col-md-10 col-md-offset-1 form-group">
                     <label dir="rtl" class="form-label">رقم السجل التجاري</label>
                     <input type="number" class="form-control validate[required]" runat="server" id="txtIdentityNumber" required="required" placeholder="أدخل رقم السجل التجاري" />
                 </div>
@@ -131,7 +127,7 @@
                                 <td><%# Item.City.Name %></td>
                                 <td><%# Item.SiteCommission %>%</td>
                                 <td>
-                                    <a href='javascript:{}' onclick="editService('#addService',<%# Item.Id %>,<%# Item.EstamaitedCost %>,<%# Item.EstamaitedTime %>,<%# Item.SiteCommission %>,<%# Item.ServiceId %>,<%# Item.CityId %>)"><i class="fa fa-edit">&nbsp; تعديل</i></a>
+                                    <a href='javascript:{}' onclick="editService('#addService',<%# Item.Id %>,<%# Item.EstamaitedCost %>,<%# Item.EstamaitedTime %>,<%# Item.SiteCommission %>,<%# Item.ServiceId %>,<%# Item.CityId %>,<%# Item.IsMain.ToString().ToLower() %>)"><i class="fa fa-edit">&nbsp; تعديل</i></a>
                                     <asp:LinkButton Text="حذف" CommandName="Delete" CommandArgument="<%# Item.Id %>" OnClientClick="return confirm('هل انت متاكد من الحذف؟')" runat="server" CssClass="fa fa-remove" />
                                 </td>
                             </tr>
@@ -171,6 +167,10 @@
                         </asp:DropDownList>
                     </div>
                     <div class="col-md-10 col-md-offset-1 form-group">
+                    <input type="checkbox" class="good " runat="server" id="chkIsMain" />
+                    <label dir="rtl" for="chkIsMain">شريك أساسي</label>
+                </div>
+                    <div class="col-md-10 col-md-offset-1 form-group">
                         <label dir="rtl" class="form-label">التكلفة المبدئية</label>
                         <asp:TextBox runat="server" ID="txtCost" CssClass="form-control  validate[required]" />
                     </div>
@@ -182,7 +182,7 @@
                     <div class="col-md-10 col-md-offset-1 form-group">
                         <label dir="rtl" class="form-label">عمولة الموقع</label>
 
-                        <asp:TextBox runat="server" ID="txtSiteCommission" CssClass="form-control validate[required]" placeholder="4" Text="4" />
+                        <asp:TextBox runat="server" ID="txtSiteCommission" CssClass="form-control validate[required]" placeholder="4" />
 
                     </div>
 
@@ -240,7 +240,7 @@
 
         }
 
-        function editService(selector, id, cost, time, comm, serviceId, cityId) {
+        function editService(selector, id, cost, time, comm, serviceId, cityId,isMain) {
             $('#hfId').val(id);
             $('#hfState').val(1);
             $('#txtCost').val(cost);
@@ -248,6 +248,9 @@
             $('#txtSiteCommission').val(comm);
             $('#ddlServices').val(serviceId);
             $('#ddlServiceCity').val(cityId);
+            if (isMain=='true')
+                $('#chkIsMain').attr('checked', 'checked');
+            else $('#chkIsMain').removeAttr('checked');
             showModel(selector);
         }
 
