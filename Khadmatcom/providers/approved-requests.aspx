@@ -14,7 +14,7 @@
         <asp:ListView runat="server" ID="lvServiceRequest" SelectMethod="GetServiceRequests" ItemPlaceholderID="PlaceHolder1" GroupItemCount="3" ItemType="Khadmatcom.Data.Model.ServiceRequest">
             <GroupTemplate>
                 <div class="item">
-                    <div class="accordion clearfix" id="accordion01">
+                    <div class="accordion clearfix" id="accordion04">
                         <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
                     </div>
                 </div>
@@ -117,5 +117,10 @@
 
 
         });
+        /*   $(".item .panel .accordion-heading a").click(function () {
+          $('#accordion4').collapse("hide");
+          $(this).collapse("toggle");
+      });
+      */
     </script>
 </asp:Content>
