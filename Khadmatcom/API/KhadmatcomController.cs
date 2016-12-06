@@ -176,5 +176,24 @@ namespace Khadmatcom.API
 
             }
         }
+
+        [HttpGet]
+        [ActionName("ConfirmRequest")]
+        public bool ConfirmRequest(int id,bool dummy,int x)
+        {
+            try
+            {
+                AdminServices adminServices = new AdminServices();
+                adminServices.ConfirmRequest(id);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // todo:log the exception
+                return false;
+
+            }
+        }
+        
     }
 }

@@ -116,6 +116,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin-area\bank-data.aspx" />
     <Content Include="admin-area\provider.aspx" />
     <Content Include="admin-area\providers.aspx" />
     <Content Include="App_Data\MailTemplates\join-request.html" />
@@ -401,6 +402,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin-area\bank-data.aspx.cs">
+      <DependentUpon>bank-data.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin-area\bank-data.aspx.designer.cs">
+      <DependentUpon>bank-data.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin-area\provider.aspx.cs">
       <DependentUpon>provider.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
