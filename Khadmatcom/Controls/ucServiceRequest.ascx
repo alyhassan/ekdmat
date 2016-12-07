@@ -674,8 +674,9 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12 form-group clearfix">
+                                        <asp:LinkButton Text="إرسال" runat="server" ID="btnProceed" CssClass="nxt s-cl clasic-btn" OnClick="btnProceed_OnClick" OnClientClick="return checkLoggedIn();" />
                                     <asp:LinkButton Text="إلغاء" runat="server" ID="btnCancel" CssClass="nxt s-cl clasic-btn" />
-                                    <asp:LinkButton Text="إرسال" runat="server" ID="btnProceed" CssClass="nxt s-cl clasic-btn" OnClick="btnProceed_OnClick" OnClientClick="return checkLoggedIn();" />
+                                
                                 </div>
                             </div>
                         </div>
