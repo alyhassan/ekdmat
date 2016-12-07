@@ -659,19 +659,19 @@
                         <div id="collapse504" class="collapse" aria-expanded="false">
                             <div class="accordion-body clearfix">
                                 <div class="col-md-12 form-group clearfix ">
-                                    <ul dir="rtl">
-                                        <li><strong>أسم صاحب الطلب: </strong><span><%= CurrentUser==null?"طلب خدمة":CurrentUser.FullName %></span></li>
-                                        <li><strong>نوع الخدمة: </strong><span id="summaryCategory"></span></li>
-                                        <li><strong>اسم الخدمة: </strong><span id="summaryService"></span></li>
-                                        <li><strong>العدد: </strong><span id="summaryCount"></span></li>
-                                        <li><strong>المدينة: </strong><span id="summaryCity"></span></li>
-                                        <li><strong>السعر المبدئي: </strong><span id="summaryPrice"></span></li>
+                                    <ul class="cleafix" dir="rtl">
+                                        <li class="col-md-6 col-sm-6"><strong>أسم صاحب الطلب: </strong><span><%= CurrentUser==null?"طلب خدمة":CurrentUser.FullName %></span></li>
+                                        <li class="col-md-6 col-sm-6"><strong>نوع الخدمة: </strong><span id="summaryCategory"></span></li>
+                                        <li class="col-md-6 col-sm-6"><strong>اسم الخدمة: </strong><span id="summaryService"></span></li>
+                                        <li class="col-md-6 col-sm-6"><strong>العدد: </strong><span id="summaryCount"></span></li>
+                                        <li class="col-md-6 col-sm-6"><strong>المدينة: </strong><span id="summaryCity"></span></li>
+                                        <li class="col-md-6 col-sm-6"><strong>السعر المبدئي: </strong><span id="summaryPrice"></span></li>
                                     </ul>
-                                    <p>
+                                    <div class="clearfix col-md-12 alert alert-info fade in alert-dismissable">
                                         <strong>سيتم الرد علي طلبكم خلال موعد أقصاه 24 ساعة 
                                         <br />
                                             شكرآ لكم لأختياركم خدمات كوم</strong>
-                                    </p>
+                                    </div>
                                 </div>
                                 <div class="col-md-12 form-group clearfix">
 
