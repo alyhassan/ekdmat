@@ -659,7 +659,7 @@
                         <div id="collapse504" class="collapse" aria-expanded="false">
                             <div class="accordion-body clearfix">
                                 <div class="col-md-12 form-group clearfix ">
-                                    <ul class="cleafix" dir="rtl">
+                                    <ul class="cleafix" dir="rtl" style="margin-top:10px;">
                                         <li class="col-md-6 col-sm-6"><strong>أسم صاحب الطلب: </strong><span><%= CurrentUser==null?"طلب خدمة":CurrentUser.FullName %></span></li>
                                         <li class="col-md-6 col-sm-6"><strong>نوع الخدمة: </strong><span id="summaryCategory"></span></li>
                                         <li class="col-md-6 col-sm-6"><strong>اسم الخدمة: </strong><span id="summaryService"></span></li>
@@ -667,14 +667,14 @@
                                         <li class="col-md-6 col-sm-6"><strong>المدينة: </strong><span id="summaryCity"></span></li>
                                         <li class="col-md-6 col-sm-6"><strong>السعر المبدئي: </strong><span id="summaryPrice"></span></li>
                                     </ul>
-                                    <div class="clearfix col-md-12 alert alert-info fade in alert-dismissable">
+                                    <div class="clearfix col-md-12 alert alert-info fade in alert-dismissable" style="margin-top:20px;">
                                         <strong>سيتم الرد علي طلبكم خلال موعد أقصاه 24 ساعة 
                                         <br />
                                             شكرآ لكم لأختياركم خدمات كوم</strong>
                                     </div>
                                 </div>
                                 <div class="col-md-12 form-group clearfix">
-
+                                    <asp:LinkButton Text="إلغاء" runat="server" ID="btnCancel" CssClass="nxt s-cl clasic-btn" />
                                     <asp:LinkButton Text="إرسال" runat="server" ID="btnProceed" CssClass="nxt s-cl clasic-btn" OnClick="btnProceed_OnClick" OnClientClick="return checkLoggedIn();" />
                                 </div>
                             </div>
