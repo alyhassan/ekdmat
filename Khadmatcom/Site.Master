@@ -539,10 +539,10 @@
                 <!--Right custom nav-->
                 <asp:LoginView ID="LoginView3" runat="server">
                     <LoggedInTemplate>
-                        <div class="accordion clearfix" id="accordion_request">
+                        <div class="accordion clearfix" id="accordion_managment">
                             <div class="panel">
                                 <div class="accordion-heading ">
-                                    <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#accordion_request" href="#myRequest" aria-expanded="false">طلباتي<i class="fa fa-2x my-ser">&nbsp;</i>
+                                    <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#accordion_managment" href="#myRequest" aria-expanded="false">طلباتي<i class="fa fa-2x my-ser">&nbsp;</i>
                                     </a>
                                 </div>
                                 <div id="myRequest" class="collapse" aria-expanded="false">
@@ -562,11 +562,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class='accordion clearfix <%= Roles.IsUserInRole("Providers")?"":"hidden" %>' id="requests">
-                            <div class="panel">
+                       
+                      
+                            <div class="panel <%= Roles.IsUserInRole("Providers")?"":"hidden" %>">
                                 <div class="accordion-heading ">
-                                    <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#requests" href="#requestsright" aria-expanded="false">خدماتي<i class="fa fa-2x my-ser">&nbsp;</i>
+                                    <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#accordion_managment" href="#requestsright" aria-expanded="false">خدماتي<i class="fa fa-2x my-ser">&nbsp;</i>
                                     </a>
                                 </div>
                                 <div id="requestsright" class="collapse" aria-expanded="false">
@@ -581,12 +581,12 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        
 
-                        <div class='accordion clearfix <%= Roles.IsUserInRole("Admins")?"":"hidden" %>' id="managment">
-                            <div class="panel">
+                       
+                            <div class="panel <%= Roles.IsUserInRole("Admins")?"":"hidden" %>">
                                 <div class="accordion-heading ">
-                                    <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#managment" href="#managmentright" aria-expanded="false">لوحة التحكم<i class="fa fa-2x my-ser">&nbsp;</i>
+                                    <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#accordion_managment" href="#managmentright" aria-expanded="false">لوحة التحكم<i class="fa fa-2x my-ser">&nbsp;</i>
                                     </a>
                                 </div>
                                 <div id="managmentright" class="collapse" aria-expanded="false">
@@ -595,11 +595,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class='accordion clearfix <%= Roles.IsUserInRole("Admins")?"":"hidden" %>' id="financial">
-                            <div class="panel">
+                        
+                      
+                            <div class="panel <%= Roles.IsUserInRole("Admins")?"":"hidden" %>">
                                 <div class="accordion-heading ">
-                                    <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#financial" href="#financialright" aria-expanded="false">المالية<i class="fa fa-2x my-ser">&nbsp;</i>
+                                    <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#accordion_managment" href="#financialright" aria-expanded="false">المالية<i class="fa fa-2x my-ser">&nbsp;</i>
                                     </a>
                                 </div>
                                 <div id="financialright" class="collapse" aria-expanded="false">
@@ -617,7 +617,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        
+                            </div>
                     </LoggedInTemplate>
                 </asp:LoginView>
 
