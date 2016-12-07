@@ -101,10 +101,8 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
                                 <div class="col-md-12 col-xs-12 form-group arabic-r">
-                                    <div class="clearfix fal">
-                                        <h3>بيانات خاصة بالخدمة</h3>
-                                    </div>
                                     <div class="clearfix"></div>
 
                                     <div class="form-group col-md-4 col-sm-4 col-xs-12 o1 options pull-right">
@@ -507,7 +505,7 @@
                                     </div>
                                     <!--</div>-->
                                 </div>
-
+                                </div>
                                 <div class="col-md-12 col-sm-12 ag-1">
                                     <a href="#" class="righttag hidden">Please register for the follow - up steps</a>
                                     <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" id="test" onclick="return NextStep();" class="clasic-btn pull-right">التالي</a>
@@ -631,7 +629,7 @@
                             <div class="accordion-body clearfix">
                                 <div class="row ">
                                     <%-- <div class="form-group  col-md-2 col-sm-6 col-xs-12 pull-right">--%>
-                                    <div class="form-group  col-md-6 col-sm-6 col-xs-12 pull-right" style="margin-right: 35px; color: #4070a0;">
+                                    <div class="form-group  col-md-12 col-sm-12 col-xs-12 pull-right" style="margin-right: 35px; color: #4070a0;">
                                         <span id="lblNotes"></span>
                                     </div>
                                 </div>
