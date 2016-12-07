@@ -517,13 +517,13 @@
                 <!--Right custom nav-->
                 <asp:LoginView ID="LoginView3" runat="server">
                     <LoggedInTemplate>
-                        <div class="accordion clearfix" id="accordion1">
+                        <div class="accordion clearfix" id="accordion_request">
                             <div class="panel">
                                 <div class="accordion-heading ">
-                                    <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#accordion1" href="#right1" aria-expanded="false">طلباتي<i class="fa fa-2x my-ser">&nbsp;</i>
+                                    <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#accordion_request" href="#myRequest" aria-expanded="false">طلباتي<i class="fa fa-2x my-ser">&nbsp;</i>
                                     </a>
                                 </div>
-                                <div id="right1" class="collapse" aria-expanded="false">
+                                <div id="myRequest" class="collapse" aria-expanded="false">
                                     <div class="accordion-body clearfix">
                                         <%--<a href="javascript:{}">Govt Services </a>
                                 <a href="javascript:{}">GOSI Services</a>
