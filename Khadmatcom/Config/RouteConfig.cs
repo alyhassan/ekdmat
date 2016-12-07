@@ -74,6 +74,7 @@ namespace Khadmatcom
             RouteTable.Routes.MapPageRoute("providers-list", "managment/providers", "~/admin-area/providers.aspx");
             RouteTable.Routes.MapPageRoute("new-provider-managment", "managment/providers/new", "~/admin-area/provider.aspx");
             RouteTable.Routes.MapPageRoute("provider-managment", "managment/providers/{Key}/provider-info", "~/admin-area/provider.aspx");
+            RouteTable.Routes.MapPageRoute("banks-list", "financial/{Name}/banks", "~/admin-area/bank-data.aspx");
 
             //404
             RouteTable.Routes.MapPageRoute("404", "error/404", "~/error/404.aspx");
@@ -141,6 +142,7 @@ namespace Khadmatcom
             RouteTable.Routes.MapPageRoute("providers-list-loc", "{locale}/managment/providers", "~/admin-area/providers.aspx", false, defaultLocale, localeConstraints);
             RouteTable.Routes.MapPageRoute("new-provider-managment-loc", "{locale}/managment/providers/new", "~/admin-area/provider.aspx", false, defaultLocale, localeConstraints);
             RouteTable.Routes.MapPageRoute("provider-managment-loc", "{locale}/managment/providers/{Key}/provider-info", "~/admin-area/provider.aspx", false, defaultLocale, localeConstraints);
+            RouteTable.Routes.MapPageRoute("banks-list-loc", "{locale}/financial/{Name}/banks", "~/admin-area/bank-data.aspx", false, defaultLocale, localeConstraints);
 
             //404
             RouteTable.Routes.MapPageRoute("404-loc", "{locale}/error/404", "~/error/404.aspx", false, defaultLocale, localeConstraints);

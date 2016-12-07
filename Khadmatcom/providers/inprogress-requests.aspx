@@ -233,8 +233,8 @@
                 if (fileUpload[0].files[0].size < maxFileSize) {
                     $('#button_fileUpload').prop('disabled', false);
                     return true;
-                }else{
-                    $('#lbl_uploadMessage').text('File too big !')
+                }else {
+                    $('#lbl_uploadMessage').text('File too big !');
                     return false;
                 }
             }
