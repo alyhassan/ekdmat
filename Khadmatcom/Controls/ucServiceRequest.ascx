@@ -667,6 +667,7 @@
                                         <li class="col-md-6 col-sm-6"><strong>المدينة: </strong><span id="summaryCity"></span></li>
                                         <li class="col-md-6 col-sm-6"><strong>السعر المبدئي: </strong><span id="summaryPrice"></span></li>
                                     </ul>
+                                    <div class="clearfix"></div>
                                     <div class="clearfix col-md-12 alert alert-info fade in alert-dismissable" style="margin-top:20px;">
                                         <strong>سيتم الرد علي طلبكم خلال موعد أقصاه 24 ساعة 
                                         <br />

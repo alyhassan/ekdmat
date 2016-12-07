@@ -195,7 +195,7 @@
                             <%-- <li><a href="<%= GetLocalizedUrl("personal/categories") %>"><%= GetGlobalResourceObject("general.aspx","personal") %></a></li>
                     <li><a href="<%= GetLocalizedUrl("business/categories") %>"><%= GetGlobalResourceObject("general.aspx","business") %> </a></li>--%>
 
-                            <li>
+                         
                                 <div class="accordion clearfix" id="subMenuHedaer">
                                     <div class="panel">
                                         <div class="accordion-heading ">
@@ -219,34 +219,31 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </li>
-                            <li <%= Roles.IsUserInRole("Providers")?"":"class='hidden'" %>>
-                                <div class="accordion clearfix" id="subMenuHedaer2">
-                                    <div class="panel">
+                               
+                              
+                               <div class="panel <%= Roles.IsUserInRole("Providers")?"":"hidde" %>">
                                         <div class="accordion-heading ">
-                                            <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#subMenuHedaer2" href="#subMenu2" aria-expanded="false">خدماتى<i class="fa fa-2x">&nbsp;</i>
+                                            <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#subMenuHedaer" href="#subMenu2" aria-expanded="false">خدماتى<i class="fa fa-2x">&nbsp;</i>
                                             </a>
                                         </div>
                                         <div id="subMenu2" class="collapse" aria-expanded="false">
                                             <div class="accordion-body clearfix">
                                                 <a href="<%= GetLocalizedUrl("providers/services-requests/new-requests") %>">خدمات جديدة</a>
-                                                <a href="<%= GetLocalizedUrl("providers/services-requests/approved-requests") %>">خدمات مؤكدة</a>
+                                                <a href="<%= GetLocalizedUrl("providers/services-requests/approved-requests") %>">خدمات بإنتظار الدفع</a>
                                                 <a href="<%= GetLocalizedUrl("providers/services-requests/inprogress-requests") %>">خدمات تحت العمل</a>
-                                                <a href="<%= GetLocalizedUrl("providers/services-requests/finished-requests") %>">خدمات منتهية </a>
+                                                <a href="<%= GetLocalizedUrl("providers/services-requests/finished-requests") %>">خدمات منفذة  </a>
                                                 <a href="<%= GetLocalizedUrl("providers/services-requests/refused-requests") %>">خدمات مرفوضة</a>
-                                                <a href="<%= GetLocalizedUrl("providers/services-requests/expired-requests") %>">خدمات منتهية الصلاحية</a>
                                                 <a href="<%= GetLocalizedUrl("providers/services-requests/canceled-requests") %>">خدمات ملغاة</a>
-
+                                                <a href="<%= GetLocalizedUrl("providers/services-requests/expired-requests") %>">خدمات منتهية المدة</a>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </li>
-                            <div class='accordion clearfix <%= Roles.IsUserInRole("Admins")?"":"hidden" %>' id="managment2">
-                                <div class="panel">
+                                
+                            
+                           
+                                <div class="panel <%= Roles.IsUserInRole("Admins")?"":"hidden" %>">
                                     <div class="accordion-heading ">
-                                        <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#managment2" href="#managmentright2" aria-expanded="false">لوحة التحكم<i class="fa fa-2x my-ser">&nbsp;</i>
+                                        <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#subMenuHedaer" href="#managmentright2" aria-expanded="false">لوحة التحكم<i class="fa fa-2x my-ser">&nbsp;</i>
                                         </a>
                                     </div>
                                     <div id="managmentright2" class="collapse" aria-expanded="false">
@@ -255,11 +252,11 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class='accordion clearfix <%= Roles.IsUserInRole("Admins")?"":"hidden" %>' id="managment3">
-                                <div class="panel">
+                            
+     
+                                <div class="panel <%= Roles.IsUserInRole("Admins")?"":"hidden" %>">
                                     <div class="accordion-heading ">
-                                        <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#managment3" href="#managmentright3" aria-expanded="false">المالية<i class="fa fa-2x my-ser">&nbsp;</i>
+                                        <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#subMenuHedaer" href="#managmentright3" aria-expanded="false">المالية<i class="fa fa-2x my-ser">&nbsp;</i>
                                         </a>
                                     </div>
                                     <div id="managmentright3" class="collapse" aria-expanded="false">
