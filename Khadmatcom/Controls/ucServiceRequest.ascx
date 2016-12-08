@@ -28,7 +28,7 @@
                                        <div>
                                            سعر الخدمة المبدئى
                                         </div>
-                                        <div class="body custom_font_blue">
+                                        <div class="custom_font_blue">
                                             ريال
                                             <span id="servicePrice" style="display:inline-block;"></span>
                                   
