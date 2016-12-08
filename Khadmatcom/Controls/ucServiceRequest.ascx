@@ -24,15 +24,14 @@
                         <ul class="nav nav-bar  col-lg-2 col-md-2 col-xs-6 col-sm-3 navbar-left">
                             <li class="text-success text-left">
                                 <div class="price_custom">
-                                    <table style="width: auto; margin: auto;">
-                                        <tr>
-                                            <td colspan="2">سعر الخدمة المبدئى</td>
-                                        </tr>
-                                        <tr>
-                                            <td>ريال</td>
-                                            <td id="servicePrice"></td>
-                                        </tr>
-                                    </table>
+                                   
+                                       <div>
+                                           سعر الخدمة المبدئى
+                                        </div>
+                                        <div class="body custom_font_blue">
+                                            ريال
+                                            <span id="servicePrice" style="display:inline-block;"></span>
+                                  
                                 </div>
 
                             </li>

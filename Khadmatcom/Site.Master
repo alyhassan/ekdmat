@@ -652,12 +652,12 @@
             </nav>
 
             <div class="container padLeftRight0">
-                <div class="pull-left">
+               <!-- <div class="pull-left">
                     <div class="asaa">
                         <a href="#">functions &nbsp;|&nbsp;</a> <a href="#">Be outlet</a>
                     </div>
 
-                </div>
+                </div>-->
                 <div class="pull-right">
 
                     <span class="foot-ab"><%= GetGlobalResourceObject("general.aspx","lblRightsReserved") %>  <%= DateTime.Today.Year %> &copy;</span>
