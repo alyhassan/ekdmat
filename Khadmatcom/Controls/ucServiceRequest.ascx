@@ -24,15 +24,14 @@
                         <ul class="nav nav-bar  col-lg-2 col-md-2 col-xs-6 col-sm-3 navbar-left">
                             <li class="text-success text-left">
                                 <div class="price_custom">
-                                    <table style="width: auto; margin: auto;">
-                                        <tr>
-                                            <td colspan="2">سعر الخدمة المبدئى</td>
-                                        </tr>
-                                        <tr>
-                                            <td>ريال</td>
-                                            <td id="servicePrice"></td>
-                                        </tr>
-                                    </table>
+                                   
+                                       <div>
+                                           سعر الخدمة المبدئى
+                                        </div>
+                                        <div class="custom_font_blue">
+                                            ريال
+                                            <span id="servicePrice" style="display:inline-block;"></span>
+                                  
                                 </div>
 
                             </li>
@@ -101,10 +100,8 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
                                 <div class="col-md-12 col-xs-12 form-group arabic-r">
-                                    <div class="clearfix fal">
-                                        <h3>بيانات خاصة بالخدمة</h3>
-                                    </div>
                                     <div class="clearfix"></div>
 
                                     <div class="form-group col-md-4 col-sm-4 col-xs-12 o1 options pull-right">
@@ -507,7 +504,7 @@
                                     </div>
                                     <!--</div>-->
                                 </div>
-
+                                </div>
                                 <div class="col-md-12 col-sm-12 ag-1">
                                     <a href="#" class="righttag hidden">Please register for the follow - up steps</a>
                                     <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" id="test" onclick="return NextStep();" class="clasic-btn pull-right">التالي</a>
@@ -631,7 +628,7 @@
                             <div class="accordion-body clearfix">
                                 <div class="row ">
                                     <%-- <div class="form-group  col-md-2 col-sm-6 col-xs-12 pull-right">--%>
-                                    <div class="form-group  col-md-6 col-sm-6 col-xs-12 pull-right" style="margin-right: 35px; color: #4070a0;">
+                                    <div class="form-group  col-md-12 col-sm-12 col-xs-12 pull-right" style="margin-right: 35px; color: #4070a0;">
                                         <span id="lblNotes"></span>
                                     </div>
                                 </div>
@@ -661,23 +658,25 @@
                         <div id="collapse504" class="collapse" aria-expanded="false">
                             <div class="accordion-body clearfix">
                                 <div class="col-md-12 form-group clearfix ">
-                                    <ul dir="rtl">
-                                        <li><strong>أسم صاحب الطلب: </strong><span><%= CurrentUser==null?"طلب خدمة":CurrentUser.FullName %></span></li>
-                                        <li><strong>نوع الخدمة: </strong><span id="summaryCategory"></span></li>
-                                        <li><strong>اسم الخدمة: </strong><span id="summaryService"></span></li>
-                                        <li><strong>العدد: </strong><span id="summaryCount"></span></li>
-                                        <li><strong>المدينة: </strong><span id="summaryCity"></span></li>
-                                        <li><strong>السعر المبدئي: </strong><span id="summaryPrice"></span></li>
+                                    <ul class="cleafix" dir="rtl" style="margin-top:10px;">
+                                        <li class="col-md-6 col-sm-6"><strong>أسم صاحب الطلب: </strong><span><%= CurrentUser==null?"طلب خدمة":CurrentUser.FullName %></span></li>
+                                        <li class="col-md-6 col-sm-6"><strong>نوع الخدمة: </strong><span id="summaryCategory"></span></li>
+                                        <li class="col-md-6 col-sm-6"><strong>اسم الخدمة: </strong><span id="summaryService"></span></li>
+                                        <li class="col-md-6 col-sm-6"><strong>العدد: </strong><span id="summaryCount"></span></li>
+                                        <li class="col-md-6 col-sm-6"><strong>المدينة: </strong><span id="summaryCity"></span></li>
+                                        <li class="col-md-6 col-sm-6"><strong>السعر المبدئي: </strong><span id="summaryPrice"></span></li>
                                     </ul>
-                                    <p>
+                                    <div class="clearfix"></div>
+                                    <div class="clearfix col-md-12 alert alert-info fade in alert-dismissable" style="margin-top:20px;">
                                         <strong>سيتم الرد علي طلبكم خلال موعد أقصاه 24 ساعة 
                                         <br />
                                             شكرآ لكم لأختياركم خدمات كوم</strong>
-                                    </p>
+                                    </div>
                                 </div>
                                 <div class="col-md-12 form-group clearfix">
-
-                                    <asp:LinkButton Text="إرسال" runat="server" ID="btnProceed" CssClass="nxt s-cl clasic-btn" OnClick="btnProceed_OnClick" OnClientClick="return checkLoggedIn();" />
+                                        <asp:LinkButton Text="إرسال" runat="server" ID="btnProceed" CssClass="nxt s-cl clasic-btn" OnClick="btnProceed_OnClick" OnClientClick="return checkLoggedIn();" />
+                                    <asp:LinkButton Text="إلغاء" runat="server" ID="btnCancel" CssClass="nxt s-cl clasic-btn" />
+                                
                                 </div>
                             </div>
                         </div>

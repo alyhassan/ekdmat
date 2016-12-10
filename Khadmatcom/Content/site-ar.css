@@ -1761,3 +1761,14 @@ button[type="submit"].c-btn {
 }
 /* accordin add 5px padding  in pages new-requests /approvrd request ,etc*/
 .accordion-body  { padding:5px !important;}
+/* custom color  for pages in footer*/
+.custom_font_blue {color:#1a548e;}
+/*attachment url in accomplished request*/
+.attach_url{
+        display: inherit !important;
+    padding-top: 0px !important;
+    text-decoration: underline !important;
+    padding: 0px !important;
+    color: #428bca !important;
+    margin: 0px !important;
+}

@@ -12,7 +12,7 @@
                         <p class="head">
                         <%= CurrentPage.SubTitle %>  
                         </p>
-                        <div class="body">
+                        <div class="body custom_font_blue">
                            <%= CurrentPage.Body %> 
                         </div>
 
