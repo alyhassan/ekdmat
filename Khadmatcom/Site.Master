@@ -195,52 +195,52 @@
                             <%-- <li><a href="<%= GetLocalizedUrl("personal/categories") %>"><%= GetGlobalResourceObject("general.aspx","personal") %></a></li>
                     <li><a href="<%= GetLocalizedUrl("business/categories") %>"><%= GetGlobalResourceObject("general.aspx","business") %> </a></li>--%>
 
-                         
-                                <div class="accordion clearfix" id="subMenuHedaer">
-                                    <div class="panel">
-                                        <div class="accordion-heading ">
-                                            <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#subMenuHedaer" href="#subMenu" aria-expanded="false">طلباتي<i class="fa fa-2x">&nbsp;</i>
-                                            </a>
-                                        </div>
-                                        <div id="subMenu" class="collapse" aria-expanded="false">
-                                            <div class="accordion-body clearfix">
-                                                <a href="<%= GetLocalizedUrl("clients/services-requests/new-requests") %>">طلبات جديدة</a>
-                                                <a href="<%= GetLocalizedUrl("clients/services-requests/approved-requests") %>">طلبات بإنتظار الدفع</a>
-                                                <a href="<%= GetLocalizedUrl("clients/services-requests/inprogress-requests") %>">طلبات تحت العمل</a>
-                                                <a href="<%= GetLocalizedUrl("clients/services-requests/finished-requests") %>">طلبات منفذة</a>
-                                                <a href="<%= GetLocalizedUrl("clients/services-requests/refused-requests") %>">طلبات مرفوضة</a>
-                                                <a href="<%= GetLocalizedUrl("clients/services-requests/canceled-requests") %>">طلبات ملغاة</a>
-                                                <a href="<%= GetLocalizedUrl("clients/services-requests/expired-requests") %>">طلبات منتهية المدة</a>
-                                                <%-- <a href="javascript:{}">Govt Services </a>
+
+                            <div class="accordion clearfix" id="subMenuHedaer">
+                                <div class="panel">
+                                    <div class="accordion-heading ">
+                                        <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#subMenuHedaer" href="#subMenu" aria-expanded="false">طلباتي<i class="fa fa-2x">&nbsp;</i>
+                                        </a>
+                                    </div>
+                                    <div id="subMenu" class="collapse" aria-expanded="false">
+                                        <div class="accordion-body clearfix">
+                                            <a href="<%= GetLocalizedUrl("clients/services-requests/new-requests") %>">طلبات جديدة</a>
+                                            <a href="<%= GetLocalizedUrl("clients/services-requests/approved-requests") %>">طلبات بإنتظار الدفع</a>
+                                            <a href="<%= GetLocalizedUrl("clients/services-requests/inprogress-requests") %>">طلبات تحت العمل</a>
+                                            <a href="<%= GetLocalizedUrl("clients/services-requests/finished-requests") %>">طلبات منفذة</a>
+                                            <a href="<%= GetLocalizedUrl("clients/services-requests/refused-requests") %>">طلبات مرفوضة</a>
+                                            <a href="<%= GetLocalizedUrl("clients/services-requests/canceled-requests") %>">طلبات ملغاة</a>
+                                            <a href="<%= GetLocalizedUrl("clients/services-requests/expired-requests") %>">طلبات منتهية المدة</a>
+                                            <%-- <a href="javascript:{}">Govt Services </a>
                                         <a href="javascript:{}">GOSI Services</a>
                                         <a href="javascript:{}">IT Services</a>
                                         <a href="javascript:{}">Computer Services</a>
                                         <a href="javascript:{}">Software Services </a>--%>
-                                            </div>
                                         </div>
                                     </div>
-                               
-                              
-                               <div class="panel <%= Roles.IsUserInRole("Providers")?"":"hidde" %>">
-                                        <div class="accordion-heading ">
-                                            <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#subMenuHedaer" href="#subMenu2" aria-expanded="false">خدماتى<i class="fa fa-2x">&nbsp;</i>
-                                            </a>
-                                        </div>
-                                        <div id="subMenu2" class="collapse" aria-expanded="false">
-                                            <div class="accordion-body clearfix">
-                                                <a href="<%= GetLocalizedUrl("providers/services-requests/new-requests") %>">خدمات جديدة</a>
-                                                <a href="<%= GetLocalizedUrl("providers/services-requests/approved-requests") %>">خدمات بإنتظار الدفع</a>
-                                                <a href="<%= GetLocalizedUrl("providers/services-requests/inprogress-requests") %>">خدمات تحت العمل</a>
-                                                <a href="<%= GetLocalizedUrl("providers/services-requests/finished-requests") %>">خدمات منفذة  </a>
-                                                <a href="<%= GetLocalizedUrl("providers/services-requests/refused-requests") %>">خدمات مرفوضة</a>
-                                                <a href="<%= GetLocalizedUrl("providers/services-requests/canceled-requests") %>">خدمات ملغاة</a>
-                                                <a href="<%= GetLocalizedUrl("providers/services-requests/expired-requests") %>">خدمات منتهية المدة</a>
-                                            </div>
+                                </div>
+
+
+                                <div class="panel <%= Roles.IsUserInRole("Providers")?"":"hidde" %>">
+                                    <div class="accordion-heading ">
+                                        <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#subMenuHedaer" href="#subMenu2" aria-expanded="false">خدماتى<i class="fa fa-2x">&nbsp;</i>
+                                        </a>
+                                    </div>
+                                    <div id="subMenu2" class="collapse" aria-expanded="false">
+                                        <div class="accordion-body clearfix">
+                                            <a href="<%= GetLocalizedUrl("providers/services-requests/new-requests") %>">خدمات جديدة</a>
+                                            <a href="<%= GetLocalizedUrl("providers/services-requests/approved-requests") %>">خدمات بإنتظار الدفع</a>
+                                            <a href="<%= GetLocalizedUrl("providers/services-requests/inprogress-requests") %>">خدمات تحت العمل</a>
+                                            <a href="<%= GetLocalizedUrl("providers/services-requests/finished-requests") %>">خدمات منفذة  </a>
+                                            <a href="<%= GetLocalizedUrl("providers/services-requests/refused-requests") %>">خدمات مرفوضة</a>
+                                            <a href="<%= GetLocalizedUrl("providers/services-requests/canceled-requests") %>">خدمات ملغاة</a>
+                                            <a href="<%= GetLocalizedUrl("providers/services-requests/expired-requests") %>">خدمات منتهية المدة</a>
                                         </div>
                                     </div>
-                                
-                            
-                           
+                                </div>
+
+
+
                                 <div class="panel <%= Roles.IsUserInRole("Admins")?"":"hidden" %>">
                                     <div class="accordion-heading ">
                                         <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#subMenuHedaer" href="#managmentright2" aria-expanded="false">لوحة التحكم<i class="fa fa-2x my-ser">&nbsp;</i>
@@ -252,8 +252,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            
-     
+
+
                                 <div class="panel <%= Roles.IsUserInRole("Admins")?"":"hidden" %>">
                                     <div class="accordion-heading ">
                                         <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#subMenuHedaer" href="#managmentright3" aria-expanded="false">المالية<i class="fa fa-2x my-ser">&nbsp;</i>
@@ -261,16 +261,17 @@
                                     </div>
                                     <div id="managmentright3" class="collapse" aria-expanded="false">
                                         <div class="accordion-body clearfix">
-                                        <a href="<%= GetLocalizedUrl("financial/الراجحي/banks") %>">الراجحي</a>
+                                            <a href="<%= GetLocalizedUrl("financial/الراجحي/banks") %>">الراجحي</a>
                                             <a href="<%= GetLocalizedUrl("financial/الأهلي/banks") %>">الأهلي</a>
                                             <a href="<%= GetLocalizedUrl("financial/الرياض/banks") %>">الرياض</a>
-                                          <%--  <a href="<%= GetLocalizedUrl("financial/ساب/banks") %>">ساب</a>
+                                            <%--  <a href="<%= GetLocalizedUrl("financial/ساب/banks") %>">ساب</a>
                                             <a href="<%= GetLocalizedUrl("financial/السعودي_الفرنسي/banks") %>">السعودي الفرنسي</a>
                                             <a href="<%= GetLocalizedUrl("financial/السعودي_للإستثمار/banks") %>">السعودي للإستثمار</a>
                                             <a href="<%= GetLocalizedUrl("financial/البلاد/banks") %>">البلاد</a>--%>
                                             <a href="<%= GetLocalizedUrl("financial/سامبا/banks") %>">سامبا</a>
-                                           <%-- <a href="<%= GetLocalizedUrl("financial/الإنماء/banks") %>">الإنماء</a>
+                                            <%-- <a href="<%= GetLocalizedUrl("financial/الإنماء/banks") %>">الإنماء</a>
                                             <a href="<%= GetLocalizedUrl("financial/العربي_الوطني/banks") %>">العربي_الوطني</a>--%>
+                                            <a href="<%= GetLocalizedUrl("financial/online/requests") %>">الدفع اون لاين</a>
                                         </div>
                                     </div>
                                 </div>
@@ -559,8 +560,8 @@
                                     </div>
                                 </div>
                             </div>
-                       
-                      
+
+
                             <div class="panel <%= Roles.IsUserInRole("Providers")?"":"hidden" %>">
                                 <div class="accordion-heading ">
                                     <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#accordion_managment" href="#requestsright" aria-expanded="false">خدماتي<i class="fa fa-2x my-ser">&nbsp;</i>
@@ -578,9 +579,9 @@
                                     </div>
                                 </div>
                             </div>
-                        
 
-                       
+
+
                             <div class="panel <%= Roles.IsUserInRole("Admins")?"":"hidden" %>">
                                 <div class="accordion-heading ">
                                     <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#accordion_managment" href="#managmentright" aria-expanded="false">لوحة التحكم<i class="fa fa-2x my-ser">&nbsp;</i>
@@ -592,8 +593,8 @@
                                     </div>
                                 </div>
                             </div>
-                        
-                      
+
+
                             <div class="panel <%= Roles.IsUserInRole("Admins")?"":"hidden" %>">
                                 <div class="accordion-heading ">
                                     <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#accordion_managment" href="#financialright" aria-expanded="false">المالية<i class="fa fa-2x my-ser">&nbsp;</i>
@@ -601,21 +602,22 @@
                                 </div>
                                 <div id="financialright" class="collapse" aria-expanded="false">
                                     <div class="accordion-body clearfix">
-                                       <a href="<%= GetLocalizedUrl("financial/الراجحي/banks") %>">الراجحي</a>
-                                            <a href="<%= GetLocalizedUrl("financial/الأهلي/banks") %>">الأهلي</a>
-                                            <a href="<%= GetLocalizedUrl("financial/الرياض/banks") %>">الرياض</a>
-                                            <a href="<%= GetLocalizedUrl("financial/ساب/banks") %>">ساب</a>
+                                        <a href="<%= GetLocalizedUrl("financial/الراجحي/banks") %>">الراجحي</a>
+                                        <a href="<%= GetLocalizedUrl("financial/الأهلي/banks") %>">الأهلي</a>
+                                        <a href="<%= GetLocalizedUrl("financial/الرياض/banks") %>">الرياض</a>
+                                        <%-- <a href="<%= GetLocalizedUrl("financial/ساب/banks") %>">ساب</a>
                                             <a href="<%= GetLocalizedUrl("financial/السعودي_الفرنسي/banks") %>">السعودي الفرنسي</a>
                                             <a href="<%= GetLocalizedUrl("financial/السعودي_للإستثمار/banks") %>">السعودي للإستثمار</a>
-                                            <a href="<%= GetLocalizedUrl("financial/البلاد/banks") %>">البلاد</a>
-                                            <a href="<%= GetLocalizedUrl("financial/سامبا/banks") %>">سامبا</a>
-                                            <a href="<%= GetLocalizedUrl("financial/الإنماء/banks") %>">الإنماء</a>
-                                            <a href="<%= GetLocalizedUrl("financial/العربي_الوطني/banks") %>">العربي_الوطني</a>
+                                            <a href="<%= GetLocalizedUrl("financial/البلاد/banks") %>">البلاد</a>--%>
+                                        <a href="<%= GetLocalizedUrl("financial/سامبا/banks") %>">سامبا</a>
+                                        <%-- <a href="<%= GetLocalizedUrl("financial/الإنماء/banks") %>">الإنماء</a>
+                                            <a href="<%= GetLocalizedUrl("financial/العربي_الوطني/banks") %>">العربي_الوطني</a>--%>
+                                        <a href="<%= GetLocalizedUrl("financial/online/requests") %>">الدفع اون لاين</a>
                                     </div>
                                 </div>
                             </div>
-                        
-                            </div>
+
+                        </div>
                     </LoggedInTemplate>
                 </asp:LoginView>
 
@@ -652,7 +654,7 @@
             </nav>
 
             <div class="container padLeftRight0">
-               <!-- <div class="pull-left">
+                <!-- <div class="pull-left">
                     <div class="asaa">
                         <a href="#">functions &nbsp;|&nbsp;</a> <a href="#">Be outlet</a>
                     </div>

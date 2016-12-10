@@ -234,4 +234,43 @@
   <data name="Home" xml:space="preserve">
     <value>الرئيسية</value>
   </data>
+  <data name="Application" xml:space="preserve">
+    <value>برنامج</value>
+  </data>
+  <data name="BuyFrom" xml:space="preserve">
+    <value>الشراء من</value>
+  </data>
+  <data name="Certificate" xml:space="preserve">
+    <value>شهادة</value>
+  </data>
+  <data name="Design" xml:space="preserve">
+    <value>تصميم</value>
+  </data>
+  <data name="Insurance" xml:space="preserve">
+    <value>تأمين</value>
+  </data>
+  <data name="Istakdam" xml:space="preserve">
+    <value>إستقدام</value>
+  </data>
+  <data name="Licence" xml:space="preserve">
+    <value>رخصة</value>
+  </data>
+  <data name="Marketing" xml:space="preserve">
+    <value>تسويق</value>
+  </data>
+  <data name="Offer" xml:space="preserve">
+    <value>عرض</value>
+  </data>
+  <data name="Rent" xml:space="preserve">
+    <value>إيجار</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>خدمة</value>
+  </data>
+  <data name="System" xml:space="preserve">
+    <value>نظام</value>
+  </data>
+  <data name="Transletion" xml:space="preserve">
+    <value>ترجمة</value>
+  </data>
 </root>

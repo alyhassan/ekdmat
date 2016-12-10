@@ -122,7 +122,7 @@
                         <ItemTemplate>
                             <tr dir="rtl">
                                 <td><%# Container.ItemIndex+1 %></td>
-                                <td><%# Item.Service.LocalizedServices.First(l=>l.LanguageId==LanguageId).Title %></td>
+                                <td><%# (Item.Service.LocalizedServices==null)?"":Item.Service.LocalizedServices.First(l=>l.LanguageId==LanguageId).Title %></td>
                                 <td><%# Item.EstamaitedCost %></td>
                                 <td><%# Item.EstamaitedTime %></td>
                                 <td><%# Item.City.Name %></td>

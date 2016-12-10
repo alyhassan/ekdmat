@@ -27,7 +27,7 @@
                 <ItemTemplate>
                     <a href="javascript:{}" onclick='requestService(<%# Item.Id %>,"<%# Item.Notes %>",<%# Item.EstamaitedCost %>,"<%# Item.Options.ToLower() %>")' title="<%# Item.Name %>" class="anchor">
                         <!--href="#p10"-->
-                        <span class="top-span">خدمة</span>
+                        <span class="top-span"><%# GetGlobalResourceObject("general.aspx", Item.IdentityType) %></span>
                         <span class="bot-span"><%# Item.Name %></span>
 
                     </a>

@@ -186,7 +186,7 @@ namespace Khadmatcom.admin_area
                 _userServices.UpdateAndSave();
                 Notify("تم الحفظ");
             }
-            catch
+            catch(Exception ex)
             {
                 Server.ClearError();
                 Notify("حدث خطأ أثناء اخر عملية فضلا حاول لاحقا", "", NotificationType.Error);

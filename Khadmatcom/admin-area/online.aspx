@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="bank-data.aspx.cs" Inherits="Khadmatcom.admin_area.bank_data" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="online.aspx.cs" Inherits="Khadmatcom.admin_area.online" %>
 
 <%@ Import Namespace="Khadmatcom" %>
 <%@ Import Namespace="Khadmatcom.Data.Model" %>
@@ -13,7 +13,7 @@
         <li class="sub active alif"><a href="javascript:{}">خدمات منفذة</a></li>
     </ul>
     <div id="chuu-owl" class="chuu owl-carousel owl-theme">
-        <asp:ListView runat="server" ID="lvServiceRequest" SelectMethod="GetServiceRequests" ItemPlaceholderID="PlaceHolder1" GroupItemCount="3" ItemType="Khadmatcom.Data.Model.ServiceRequest" OnItemCommand="lvServiceRequest_OnItemCommand">
+        <asp:ListView runat="server" ID="lvServiceRequest" SelectMethod="GetServiceRequests" ItemPlaceholderID="PlaceHolder1" GroupItemCount="3" ItemType="Khadmatcom.Data.Model.ServiceRequest">
             <GroupTemplate>
                 <div class="item">
                     <div class="accordion clearfix" id="accordion01">
@@ -86,14 +86,14 @@
                                                        &nbsp; <span class=""><%# Item.Provider.FullName %></span>
                                     </div>
                                 </div>
-                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
                                         <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الجوال </label>
                                         :
                                                        &nbsp; <span class=""><%# Item.Provider.MobielNumber %></span>
                                     </div>
                                 </div>
-                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
                                         <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الحساب </label>
                                         :
@@ -122,10 +122,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group col-md-6 col-sm-12 col-xs-12 pull-right">
-                                <%--<asp:Button Text="تم التاكيد" OnClientClick="return confirmRequest(<%# Item.Id %>)" CssClass="btn btn-success" runat="server" CommandName="Confirm" CommandArgument="<%# Item.Id %>" />--%>
-                                <input type="button" class="btn btn-danger  btn-sm" value="تم التاكيد" onclick="return confirmRequest(<%# Item.Id %>);" />
-                            </div>
                             <div class="L-button" id="">
                                 <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success ">سعر الخدمة:<%# Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).Price %>&nbsp;<span style="display: inline-block; float: left">ريال</span>&nbsp;  </button>
                             </div>
@@ -148,32 +144,6 @@
     <script src="/Scripts/carousel-js/owl.carousel.min.js"></script>
     <script type="text/javascript">
 
-        function confirmRequest(id) {
-           var a = confirm("هل انت متاكد؟");
-            if (a == true) {
-           
-                var userData = {
-                    id: id,dummy:false,x:0
-
-                };
-
-                $.getJSON("/api/Khadmatcom/ConfirmRequest", userData, function (res) {
-                    showLoading();
-                    if (res) {
-                        setTimeout(function () {
-                            //do what you need here
-                            hideLoading();
-                            toastr.success("تم تأكيد الطلب", "شكرا لك", { timeOut: 60000, rtl: true, closeButton: true, positionClass: 'toast-top-center' });
-
-                        }, 4000);
-
-                    }
-                    else {
-                        hideLoading();
-                        toastr.error("هناك خطأ  أثناء إرسال أمرك...فضلا حاول لاحقا.", "خطأ", { timeOut: 60000, rtl: true, closeButton: true, positionClass: 'toast-top-center' }); hideLoading();
-                    }
-                }); }
-        }
         $(document).ready(function () {
             $("#chuu-owl").owlCarousel({
 
