@@ -267,13 +267,13 @@
                                         <a href="<%= GetLocalizedUrl("financial/الراجحي/banks") %>">الراجحي</a>
                                             <a href="<%= GetLocalizedUrl("financial/الأهلي/banks") %>">الأهلي</a>
                                             <a href="<%= GetLocalizedUrl("financial/الرياض/banks") %>">الرياض</a>
-                                            <a href="<%= GetLocalizedUrl("financial/ساب/banks") %>">ساب</a>
+                                          <%--  <a href="<%= GetLocalizedUrl("financial/ساب/banks") %>">ساب</a>
                                             <a href="<%= GetLocalizedUrl("financial/السعودي_الفرنسي/banks") %>">السعودي الفرنسي</a>
                                             <a href="<%= GetLocalizedUrl("financial/السعودي_للإستثمار/banks") %>">السعودي للإستثمار</a>
-                                            <a href="<%= GetLocalizedUrl("financial/البلاد/banks") %>">البلاد</a>
+                                            <a href="<%= GetLocalizedUrl("financial/البلاد/banks") %>">البلاد</a>--%>
                                             <a href="<%= GetLocalizedUrl("financial/سامبا/banks") %>">سامبا</a>
-                                            <a href="<%= GetLocalizedUrl("financial/الإنماء/banks") %>">الإنماء</a>
-                                            <a href="<%= GetLocalizedUrl("financial/العربي_الوطني/banks") %>">العربي_الوطني</a>
+                                           <%-- <a href="<%= GetLocalizedUrl("financial/الإنماء/banks") %>">الإنماء</a>
+                                            <a href="<%= GetLocalizedUrl("financial/العربي_الوطني/banks") %>">العربي_الوطني</a>--%>
                                         </div>
                                     </div>
                                 </div>
