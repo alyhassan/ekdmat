@@ -25,7 +25,7 @@ namespace Khadmatcom.admin_area
 
         public IQueryable<ServiceRequest> GetServiceRequests()
         {
-            return (CurrentUser != null) ? adminServices.GetProviderOnlineRequests().AsQueryable() : null;
+            return (CurrentUser != null) ? adminServices.GetProviderOnlineRequests(30).AsQueryable() : null;
         }
 
         

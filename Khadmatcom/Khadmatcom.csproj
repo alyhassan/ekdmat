@@ -117,8 +117,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin-area\bank-data.aspx" />
+    <Content Include="admin-area\online.aspx" />
     <Content Include="admin-area\provider.aspx" />
     <Content Include="admin-area\providers.aspx" />
+    <Content Include="admin-area\transactions.aspx" />
     <Content Include="App_Data\MailTemplates\join-request.html" />
     <Content Include="App_Data\MailTemplates\contact-us.html" />
     <Content Include="card-info.aspx" />
@@ -409,6 +411,13 @@
     <Compile Include="admin-area\bank-data.aspx.designer.cs">
       <DependentUpon>bank-data.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin-area\online.aspx.cs">
+      <DependentUpon>online.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin-area\online.aspx.designer.cs">
+      <DependentUpon>online.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin-area\provider.aspx.cs">
       <DependentUpon>provider.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -422,6 +431,13 @@
     </Compile>
     <Compile Include="admin-area\providers.aspx.designer.cs">
       <DependentUpon>providers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin-area\transactions.aspx.cs">
+      <DependentUpon>transactions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin-area\transactions.aspx.designer.cs">
+      <DependentUpon>transactions.aspx</DependentUpon>
     </Compile>
     <Compile Include="API\KhadmatcomController.cs" />
     <Compile Include="API\NewsletterController.cs" />

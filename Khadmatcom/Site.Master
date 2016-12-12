@@ -275,6 +275,24 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="panel <%= Roles.IsUserInRole("Admins")?"":"hidden" %>">
+                                    <div class="accordion-heading ">
+                                        <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#subMenuHedaer" href="#managmentright4" aria-expanded="false">العمليات<i class="fa fa-2x my-ser">&nbsp;</i>
+                                        </a>
+                                    </div>
+                                    <div id="managmentright4" class="collapse" aria-expanded="false">
+                                        <div class="accordion-body clearfix">
+                                            <a href="<%= GetLocalizedUrl("transactions/new/1/requests") %>">جديدة</a>
+                                            <a href="<%= GetLocalizedUrl("transactions/approved/2/requests") %>">مؤكدة</a>
+                                            <a href="<%= GetLocalizedUrl("transactions/paid/3/requests") %>">مدفوعة</a>
+                                            <a href="<%= GetLocalizedUrl("transactions/in-progress/4/requests") %>">تحت التنفيذ</a>
+                                            <a href="<%= GetLocalizedUrl("transactions/accomplished/5/requests") %>">منفذ</a>
+                                            <a href="<%= GetLocalizedUrl("transactions/refused/6/requests") %>">مرفوضة</a>
+                                            <a href="<%= GetLocalizedUrl("transactions/canceled/7/requests") %>">ملغية</a>
+                                            <a href="<%= GetLocalizedUrl("transactions/expired/8/requests") %>">منتهية الصلاحية</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
 
@@ -616,7 +634,24 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <div class="panel <%= Roles.IsUserInRole("Admins")?"":"hidden" %>">
+                                <div class="accordion-heading ">
+                                    <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#accordion_managment" href="#transactionright" aria-expanded="false">العمليات<i class="fa fa-2x my-ser">&nbsp;</i>
+                                    </a>
+                                </div>
+                                <div id="transactionright" class="collapse" aria-expanded="false">
+                                    <div class="accordion-body clearfix">
+                                        <a href="<%= GetLocalizedUrl("transactions/new/1/requests") %>">جديدة</a>
+                                        <a href="<%= GetLocalizedUrl("transactions/approved/2/requests") %>">مؤكدة</a>
+                                        <a href="<%= GetLocalizedUrl("transactions/paid/3/requests") %>">مدفوعة</a>
+                                        <a href="<%= GetLocalizedUrl("transactions/in-progress/4/requests") %>">تحت التنفيذ</a>
+                                        <a href="<%= GetLocalizedUrl("transactions/accomplished/5/requests") %>">منفذ</a>
+                                        <a href="<%= GetLocalizedUrl("transactions/refused/6/requests") %>">مرفوضة</a>
+                                        <a href="<%= GetLocalizedUrl("transactions/canceled/7/requests") %>">ملغية</a>
+                                        <a href="<%= GetLocalizedUrl("transactions/expired/8/requests") %>">منتهية الصلاحية</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </LoggedInTemplate>
                 </asp:LoginView>
