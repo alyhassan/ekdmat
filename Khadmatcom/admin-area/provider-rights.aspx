@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="transactions.aspx.cs" Inherits="Khadmatcom.admin_area.transactions" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="provider-rights.aspx.cs" Inherits="Khadmatcom.admin_area.provider_rights" %>
 
 <%@ Import Namespace="Khadmatcom" %>
 <%@ Import Namespace="Khadmatcom.Data.Model" %>
@@ -9,8 +9,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
     <ul class="nav nav-tabs nav-arow myTab">
         <li class="main alif"><a href="<%= GetLocalizedUrl("") %>"><%= GetGlobalResourceObject("general.aspx","Home") %></a></li>
-        <li class="sub active alif"><a href="javascript:{}">العمليات</a></li>
-        <li class="sub active alif"><a href="javascript:{}">-</a></li>
+        <li class="sub active alif"><a href="javascript:{}">خدمات مدفوعة اون لاين</a></li>
+        <li class="sub active alif"><a href="javascript:{}">خدمات مدفوعة اون لاين</a></li>
     </ul>
     <div id="chuu-owl" class="chuu owl-carousel owl-theme">
         <asp:ListView runat="server" ID="lvServiceRequest" SelectMethod="GetServiceRequests" ItemPlaceholderID="PlaceHolder1" GroupItemCount="3" ItemType="Khadmatcom.Data.Model.ServiceRequest">
@@ -36,7 +36,7 @@
                                     <span class="ni">اسم العميل: <span class="red"><%# Item.Client.FullName %></span> </span>
                                     <span>رقم الجوال: <span class="blue"><%# Item.Client.MobielNumber %></span> </span>
                                 </div>
-                               
+
                                 <div class="clearfix"></div>
                                 <div class="row L2">
                                     <div class="col-md-12 col-sm-12 col-xs-12 pull-right;">
@@ -66,7 +66,7 @@
                                         </div>
                                     </ItemTemplate>
                                 </asp:Repeater>
-                               
+
 
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
@@ -103,8 +103,8 @@
                                                        &nbsp; <span class=""><%# Item.CurrentProvider.HasValue?Item.Provider.BankAccountNumber :"-" %></span>
                                     </div>
                                 </div>
-                               
-                                 <hr/>  
+
+                                <hr />
                                 <asp:Repeater runat="server" ItemType="Khadmatcom.Data.Model.RequestProvider" DataSource='<%# Item.RequestProviders %>'>
                                     <ItemTemplate>
                                         <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
@@ -119,7 +119,25 @@
                             <div class="L-button" id="">
                                 <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success ">حالة الطلب:<%# (RequestStatus)Item.StatusId %>&nbsp;<span style="display: inline-block; float: left"></span>&nbsp;  </button>
                             </div>
+                            <div class='<%# string.IsNullOrEmpty(Item.PartnerPaymentCode)?"hidden":"" %>'>
+                                <div class="L1">
+                                    <span class="ni">رقم التحويل: <span class="red"><%# Item.PartnerPaymentCode %></span> </span>
+                                    <span>تاريخ التحويل: <span class="blue"><%# Item.PartnerPaymentDate %></span> </span>
+                                   
+                                </div>
+                            </div>
+                            <div class='<%# string.IsNullOrEmpty(Item.PartnerPaymentCode)?"":"hidden" %>'>
+                            <div class="input-group" id="s<%# Item.Id %>">
 
+                                <input type="button" class="btn btn-danger  btn-sm" value="تأكيد التحويل" onclick="transfare(<%# Item.Id %>);" />
+
+                            </div>
+                            <div class="input-group hidden validationEngineContainer transfareDiv" id="transfare<%# Item.Id %>">
+
+                                <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>">رقم التحويل</label>
+                                <input type="number" id="txtDuration<%# Item.Id %>" class=" validate[required]" value='' />
+                                <input type="button" class="btn btn-success btn-sm" value="تأكيد" onclick="transfareAction(<%# Item.Id %>);" />
+                            </div> </div>
                         </div>
                     </div>
                 </div>
@@ -137,7 +155,42 @@
     <script src="/Scripts/carousel-js/owl.carousel.js"></script>
     <script src="/Scripts/carousel-js/owl.carousel.min.js"></script>
     <script type="text/javascript">
+        function transfare(id) {
+            showTtransfareBlock(id);
+        }
 
+        function showTtransfareBlock(id) {
+            $(".transfareDiv").addClass('hidden');
+            $("#transfare" + id).removeClass('hidden');
+        }
+
+        function transfareAction(id) {
+            var result = validateForm('#transfare' + id, '<%= languageIso %>');
+            //do what you need here
+            if (result) {
+                var userData = {
+                    id: id,
+                    code:$('#txtDuration'+id).val()
+                };
+                $.getJSON("/api/KhadmatcomAdmin/Transfare", userData, function (res) {
+                    showLoading();
+                    if (res) {
+                        hideLoading();
+                        toastr.success("تم تنفيذ طلبك", "شكرا لك");
+                        clearFormData('#txtDuration'+id);
+                        window.setTimeout(location.reload(), 30000);//30 second
+                    }
+                    else {
+                        result = false;
+                        hideLoading();
+                        clearFormData('#txtDuration'+id);
+                        toastr.error("هناك خطأ  أثناء إرسال طلبك...فضلا حاول لاحقا.", "خطأ"); 
+                    }
+                });
+
+            }
+            return result;
+        }
         $(document).ready(function () {
             $("#chuu-owl").owlCarousel({
 

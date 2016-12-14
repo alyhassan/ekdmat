@@ -13,17 +13,17 @@
                     <div class="col-md-10 col-md-offset-1 form-group">
                         <div class="clearfix error text-center">Username or Password are incorrect</div>
                         <label class="form-label">البريد الإلكتروني</label>
-                        <input type="text" id="username" class="form-control validate[required,custom[email]]" required="required" placeholder="Enter Username/Email" runat="server"  />
+                        <input type="text" id="username" class="form-control validate[required,custom[email]]" required="required" placeholder="أدخل اسم المستخدم" runat="server"  />
                     </div>
                     <div class="col-md-10 col-md-offset-1 form-group">
                         <label class="form-label">كلمة المرور</label>
-                        <input type="password" id="password" class="form-control validate[required]" required="required" placeholder="Please enter password" runat="server" />
+                        <input type="password" id="password" class="form-control validate[required]" required="required" placeholder="أدخل كلمة المرور" runat="server" />
                     </div>
 
                     <div class="col-md-10 col-md-offset-1 form-group">
                         <label class="checkbox">
                             <input type="checkbox" name="remember" runat="server" ID="chkRemember"/>
-                            <span>Remember me next time</span>
+                            <span>تذكرني</span>
 
                         </label>
                     </div>
@@ -32,8 +32,8 @@
                         <%--<button type="submit" class="btn my-btn btn-block">دخول</button>--%>
                     </div>
                     <div class="col-md-10 col-md-offset-1 form-group">
-                        <span class="pull-left"><a href="<%= GetLocalizedUrl("register") %>" id="register">Register</a></span>
-                        <span class="pull-right"><a href="javascript:{}">Forgot Password?</a></span>
+                        <span class="pull-left"><a href="<%= GetLocalizedUrl("register") %>" id="register">التسجيل</a></span>
+                        <span class="pull-right"><a href="javascript:{}">نسيت كلمة السر?</a></span>
                     </div>
 
                 </div>

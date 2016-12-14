@@ -77,6 +77,8 @@ namespace Khadmatcom
             RouteTable.Routes.MapPageRoute("banks-list", "financial/{Name}/banks", "~/admin-area/bank-data.aspx");
             RouteTable.Routes.MapPageRoute("online-list", "financial/online/requests", "~/admin-area/online.aspx");
             RouteTable.Routes.MapPageRoute("transactions-list", "transactions/{title}/{Key}/requests", "~/admin-area/transactions.aspx");
+            RouteTable.Routes.MapPageRoute("providers-rights-list", "financial/providers/rights", "~/admin-area/provider-rights.aspx");
+            RouteTable.Routes.MapPageRoute("shipping-action-list", "shipping/{Key}/requests", "~/admin-area/shipping.aspx");
 
             //404
             RouteTable.Routes.MapPageRoute("404", "error/404", "~/error/404.aspx");
@@ -146,8 +148,10 @@ namespace Khadmatcom
             RouteTable.Routes.MapPageRoute("provider-managment-loc", "{locale}/managment/providers/{Key}/provider-info", "~/admin-area/provider.aspx", false, defaultLocale, localeConstraints);
             RouteTable.Routes.MapPageRoute("banks-list-loc", "{locale}/financial/{Name}/banks", "~/admin-area/bank-data.aspx", false, defaultLocale, localeConstraints);
             RouteTable.Routes.MapPageRoute("online-list-loc", "{locale}/financial/online/requests", "~/admin-area/online.aspx", false, defaultLocale, localeConstraints);
-            RouteTable.Routes.MapPageRoute("transactions-list-loc", "transactions/{title}/{Key}/requests", "~/admin-area/transactions.aspx", false, defaultLocale, localeConstraints);
-
+            RouteTable.Routes.MapPageRoute("transactions-list-loc", "{locale}/transactions/{title}/{Key}/requests", "~/admin-area/transactions.aspx", false, defaultLocale, localeConstraints);
+            RouteTable.Routes.MapPageRoute("providers-rights-list-loc", "{locale}/financial/providers/rights", "~/admin-area/provider-rights.aspx", false, defaultLocale, localeConstraints);
+            RouteTable.Routes.MapPageRoute("shipping-action-list-loc", "{locale}/shipping/{Key}/requests", "~/admin-area/shipping.aspx", false, defaultLocale, localeConstraints);
+            
             //404
             RouteTable.Routes.MapPageRoute("404-loc", "{locale}/error/404", "~/error/404.aspx", false, defaultLocale, localeConstraints);
             #endregion

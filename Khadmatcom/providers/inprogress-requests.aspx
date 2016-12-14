@@ -241,7 +241,7 @@
         }
         function increaceRequestDurationAction(id) {
             alert(id);
-            var result=validateForm('#increase'+id, '<%= languageIso %>')
+            var result = validateForm('#increase' + id, '<%= languageIso %>');
             //do what you need here
             if (result) {
                 var userData = {

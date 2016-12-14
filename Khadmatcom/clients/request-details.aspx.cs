@@ -126,7 +126,7 @@ namespace Khadmatcom.clients
         private void SaveUploadedFile(FileUpload file, List<string> fileNames, List<string> errorsList)
         {
             string path = Server.MapPath("~/Attachments/");
-            if (fup1.HasFile)
+            if (file.HasFile)
             {
 
                 bool fileError = false;

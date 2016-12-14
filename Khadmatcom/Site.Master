@@ -221,7 +221,7 @@
                                 </div>
 
 
-                                <div class="panel <%= Roles.IsUserInRole("Providers")?"":"hidde" %>">
+                                <div class="panel <%= Roles.IsUserInRole("Providers")?"":"hidden" %>">
                                     <div class="accordion-heading ">
                                         <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#subMenuHedaer" href="#subMenu2" aria-expanded="false">خدماتى<i class="fa fa-2x">&nbsp;</i>
                                         </a>
@@ -243,7 +243,7 @@
 
                                 <div class="panel <%= Roles.IsUserInRole("Admins")?"":"hidden" %>">
                                     <div class="accordion-heading ">
-                                        <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#subMenuHedaer" href="#managmentright2" aria-expanded="false">لوحة التحكم<i class="fa fa-2x my-ser">&nbsp;</i>
+                                        <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#subMenuHedaer" href="#managmentright2" aria-expanded="false">لوحة التحكم<i class="fa fa-2x">&nbsp;</i>
                                         </a>
                                     </div>
                                     <div id="managmentright2" class="collapse" aria-expanded="false">
@@ -256,7 +256,7 @@
 
                                 <div class="panel <%= Roles.IsUserInRole("Admins")?"":"hidden" %>">
                                     <div class="accordion-heading ">
-                                        <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#subMenuHedaer" href="#managmentright3" aria-expanded="false">المالية<i class="fa fa-2x my-ser">&nbsp;</i>
+                                        <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#subMenuHedaer" href="#managmentright3" aria-expanded="false">المالية<i class="fa fa-2x">&nbsp;</i>
                                         </a>
                                     </div>
                                     <div id="managmentright3" class="collapse" aria-expanded="false">
@@ -272,12 +272,13 @@
                                             <%-- <a href="<%= GetLocalizedUrl("financial/الإنماء/banks") %>">الإنماء</a>
                                             <a href="<%= GetLocalizedUrl("financial/العربي_الوطني/banks") %>">العربي_الوطني</a>--%>
                                             <a href="<%= GetLocalizedUrl("financial/online/requests") %>">الدفع اون لاين</a>
+                                            <a href="<%= GetLocalizedUrl("financial/providers/rights") %>">مستحقات شركاء الخدمة</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="panel <%= Roles.IsUserInRole("Admins")?"":"hidden" %>">
                                     <div class="accordion-heading ">
-                                        <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#subMenuHedaer" href="#managmentright4" aria-expanded="false">العمليات<i class="fa fa-2x my-ser">&nbsp;</i>
+                                        <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#subMenuHedaer" href="#managmentright4" aria-expanded="false">العمليات<i class="fa fa-2x">&nbsp;</i>
                                         </a>
                                     </div>
                                     <div id="managmentright4" class="collapse" aria-expanded="false">
@@ -290,6 +291,22 @@
                                             <a href="<%= GetLocalizedUrl("transactions/refused/6/requests") %>">مرفوضة</a>
                                             <a href="<%= GetLocalizedUrl("transactions/canceled/7/requests") %>">ملغية</a>
                                             <a href="<%= GetLocalizedUrl("transactions/expired/8/requests") %>">منتهية الصلاحية</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel <%= Roles.IsUserInRole("Admins")?"":"hidden" %>">
+                                    <div class="accordion-heading ">
+                                        <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#subMenuHedaer" href="#shippingright4" aria-expanded="false">الشحن<i class="fa fa-2x">&nbsp;</i>
+                                        </a>
+                                    </div>
+                                    <div id="shippingright4" class="collapse" aria-expanded="false">
+                                        <div class="accordion-body clearfix">
+                                            <a href="<%= GetLocalizedUrl("shipping/new/requests") %>">جديدة</a>
+                                            <a href="<%= GetLocalizedUrl("shipping/SentToPostOffice/requests") %>">بإنتظار الإستلام</a>
+                                            <a href="<%= GetLocalizedUrl("shipping/ReceivedFromCustomer/requests") %>">بإنتظار التسليم لشريك الخدمة</a>
+                                            <a href="<%= GetLocalizedUrl("shipping/SentToPartner/requests") %>">بإنتظار الإستلام من شريك الخدمة</a>
+                                            <a href="<%= GetLocalizedUrl("shipping/ReceivedFromPartner/requests") %>">بإنتظار الإرسال للعميل</a>
+                                            <a href="<%= GetLocalizedUrl("shipping/SentToCutomer/requests") %>">محولة للعميل</a>
                                         </div>
                                     </div>
                                 </div>
@@ -631,6 +648,7 @@
                                         <%-- <a href="<%= GetLocalizedUrl("financial/الإنماء/banks") %>">الإنماء</a>
                                             <a href="<%= GetLocalizedUrl("financial/العربي_الوطني/banks") %>">العربي_الوطني</a>--%>
                                         <a href="<%= GetLocalizedUrl("financial/online/requests") %>">الدفع اون لاين</a>
+                                        <a href="<%= GetLocalizedUrl("financial/providers/rights") %>">مستحقات شركاء الخدمة</a>
                                     </div>
                                 </div>
                             </div>
@@ -649,6 +667,22 @@
                                         <a href="<%= GetLocalizedUrl("transactions/refused/6/requests") %>">مرفوضة</a>
                                         <a href="<%= GetLocalizedUrl("transactions/canceled/7/requests") %>">ملغية</a>
                                         <a href="<%= GetLocalizedUrl("transactions/expired/8/requests") %>">منتهية الصلاحية</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel <%= Roles.IsUserInRole("Admins")?"":"hidden" %>">
+                                <div class="accordion-heading ">
+                                    <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#accordion_managment" href="#shippingright" aria-expanded="false">الشحن<i class="fa fa-2x my-ser">&nbsp;</i>
+                                    </a>
+                                </div>
+                                <div id="shippingright" class="collapse" aria-expanded="false">
+                                    <div class="accordion-body clearfix">
+                                        <a href="<%= GetLocalizedUrl("shipping/new/requests") %>">جديدة</a>
+                                        <a href="<%= GetLocalizedUrl("shipping/SentToPostOffice/requests") %>">بإنتظار الإستلام</a>
+                                        <a href="<%= GetLocalizedUrl("shipping/ReceivedFromCustomer/requests") %>">بإنتظار التسليم لشريك الخدمة</a>
+                                        <a href="<%= GetLocalizedUrl("shipping/SentToPartner/requests") %>">بإنتظار الإستلام من شريك الخدمة</a>
+                                        <a href="<%= GetLocalizedUrl("shipping/ReceivedFromPartner/requests") %>">بإنتظار الإرسال للعميل</a>
+                                        <a href="<%= GetLocalizedUrl("shipping/SentToCutomer/requests") %>">محولة للعميل</a>
                                     </div>
                                 </div>
                             </div>
