@@ -175,7 +175,7 @@
 
                 <div class="dis-tc">
                     <a href="<%= GetLocalizedUrl("") %>">
-                        <img src='/images/logo.png' class="col-xs-2" /></a>
+                        <img src='/images/logo.png' class="col-xs-2" style="width:100px;" /></a>
                 </div>
 
                 <div class="dis-tc text-right" style="width: 100%;">
