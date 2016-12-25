@@ -93,7 +93,7 @@
                             </div>
                             </div>
 
-                     
+                       <div class="clearfix"></div>
                             <div class="L-button">
                                 <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success ">سعر الخدمة:<%# Item.CurrentPrice %>&nbsp;<span style="display: inline-block; float: left">ريال</span>&nbsp;  </button>
                                 &nbsp; 
