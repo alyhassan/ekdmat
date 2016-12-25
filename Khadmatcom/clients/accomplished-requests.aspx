@@ -98,10 +98,11 @@
                           
                             <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success pull-left">سعر الخدمةالنهائى:<%# Item.CurrentPrice %>&nbsp;<span style="display: inline-block; float: left">ريال</span>&nbsp;  </button>
                             &nbsp; 
-                   
+                          <div class="clearfix"></div>
                             <!-- attachement -->
                             <div class="dropdown pull-right col-md-3 col-xs-12 hidden">
                                 &nbsp;
+                              
                                 <button class="btn btn-sm btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     المرفقات
     <span class="caret"></span>
