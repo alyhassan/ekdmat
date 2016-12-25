@@ -89,7 +89,7 @@
                             </div> -->
 
                             </p>
-                           
+                           <div class="clearfix"></div>
                             <div class="L-button" id="">
                                 <a href="<%# GetLocalizedUrl(string.Format("clients/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt">إكمال الطلب</a>
                             </div>
