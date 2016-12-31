@@ -1775,3 +1775,5 @@ button[type="submit"].c-btn {
     margin: 0px !important;
 }
 .indicators { float:left;display:inline-block;}
+
+  .input-group-addon{background-color:transparent !important; border:none;}
