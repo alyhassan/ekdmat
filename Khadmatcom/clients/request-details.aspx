@@ -254,13 +254,13 @@
                     <div id="collapse503" class="collapse in" aria-expanded="false">
                         <div class="accordion-body clearfix validationEngineContainer" id="divServiceRequest">
                             <div class="col-md-12">
-                                <div class="col-md-6">
+                                <div class="col-md-6 col-sm-6 col-xs-6">
                                     <div class="form-group b-ac">
                                         <label class="clearfix">
                                             <input type="radio" name="cars" value="1" id="onLineOption" class="validate[required] " /><span>بطاقة الإتمان</span></label>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 col-sm-6 col-xs-6">
 
                                     <div class="form-group b-ac">
                                         <label class="clearfix">
