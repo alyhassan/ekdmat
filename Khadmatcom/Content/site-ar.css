@@ -1158,7 +1158,9 @@ button[type="submit"].c-btn {
         color: #1a548e;
     }
 
-
+   .blue {
+        color: #1a548e;
+    }
 
 .chuu .accordion-body {
     background: #fff;
@@ -1772,3 +1774,4 @@ button[type="submit"].c-btn {
     color: #428bca !important;
     margin: 0px !important;
 }
+.indicators { float:left;display:inline-block;}

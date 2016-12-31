@@ -74,6 +74,7 @@
                                     </div>
                                 </div>
                             </div>
+                              <div class="clearfix"></div>
                             <div class="L-button hidden" id="">
                                 <a href="<%# GetLocalizedUrl(string.Format("providers/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt">Edit</a>
                             </div>

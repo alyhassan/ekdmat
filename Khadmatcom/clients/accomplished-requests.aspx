@@ -53,7 +53,7 @@
                                     <ItemTemplate>
                                         <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                             <div class="input-group">
-                                                <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i><%# Item.RequestOption.Title %></label>:
+                                                <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left bluee" aria-hidden="true"></i><%# Item.RequestOption.Title %></label>:
                                                         &nbsp; 
                                                 <lable class=""><%# GetAnswer(Item.Value) %></lable>
                                             </div>
@@ -62,7 +62,7 @@
                                 </asp:Repeater>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left blue" aria-hidden="true"></i>مدة التنفيذ</label>
                                         :
                                                        &nbsp; <span class=""><%# Item.TotalDuration %> يوم</span>
                                     </div>
@@ -98,10 +98,11 @@
                           
                             <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success pull-left">سعر الخدمةالنهائى:<%# Item.CurrentPrice %>&nbsp;<span style="display: inline-block; float: left">ريال</span>&nbsp;  </button>
                             &nbsp; 
-                   
+                          <div class="clearfix"></div>
                             <!-- attachement -->
                             <div class="dropdown pull-right col-md-3 col-xs-12 hidden">
                                 &nbsp;
+                              
                                 <button class="btn btn-sm btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     المرفقات
     <span class="caret"></span>
