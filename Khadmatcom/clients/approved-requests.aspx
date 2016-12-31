@@ -60,7 +60,7 @@
                                 </asp:Repeater>
                             </div>
                             <div class="list-group L-container">
-                                <div class="col-md-6 pull-right blue">
+                                <div class="col-md-6 pull-right">
                                     <div class="input-group">
                                         <i class="fa fa-arrow-circle-o-left blue" aria-hidden="true"></i>&nbsp; 
                                      <label class="blue">مدة التنفيذ</label>:&nbsp; 
@@ -75,8 +75,8 @@
                                       </div>-->
 
                                     <div class="input-group">
-                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp; 
-                                <label>تعليق</label>:&nbsp; 
+                                        <i class="fa fa-pencil-square-o blue" aria-hidden="true"></i>&nbsp; 
+                                <label class="blue">تعليق</label>:&nbsp; 
                                 <span class=""><%# Item.Notes %></span>
                                     </div>
                                 </div>
