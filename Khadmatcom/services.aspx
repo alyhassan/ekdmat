@@ -82,6 +82,8 @@
             $('#ddlCount').change(function () {
                 $('#servicePrice').html(this.value * parseInt($('#hfServicePrice').val()));
             });
+
+            //calcluate service price option
         });
 
         function requestService(id, notes, price, options) {

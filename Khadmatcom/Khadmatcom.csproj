@@ -124,6 +124,7 @@
     <Content Include="admin-area\providers.aspx" />
     <Content Include="admin-area\shipping.aspx" />
     <Content Include="admin-area\transactions.aspx" />
+    <Content Include="App_Data\MailTemplates\forget-password.html" />
     <Content Include="App_Data\MailTemplates\join-request.html" />
     <Content Include="App_Data\MailTemplates\contact-us.html" />
     <Content Include="card-info.aspx" />
@@ -137,6 +138,7 @@
     <Content Include="images\logo_3.png" />
     <Content Include="images\rajhi.png" />
     <Content Include="images\Riyadh.png" />
+    <Content Include="forget-password.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="OnlinePayment\Pay.aspx" />
     <Content Include="OnlinePayment\process-payment.aspx" />
@@ -489,6 +491,13 @@
     </Compile>
     <Compile Include="category.aspx.designer.cs">
       <DependentUpon>category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forget-password.aspx.cs">
+      <DependentUpon>forget-password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forget-password.aspx.designer.cs">
+      <DependentUpon>forget-password.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
