@@ -51,7 +51,7 @@
                                     <ItemTemplate>
                                         <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                             <div class="input-group">
-                                                <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i><%# Item.RequestOption.Title %></label>:
+                                                <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left blue" aria-hidden="true"></i><%# Item.RequestOption.Title %></label>:
                                                  &nbsp;
                                                 <label><%# GetAnswer(Item.Value) %></label>
                                             </div>
@@ -60,10 +60,10 @@
                                 </asp:Repeater>
                             </div>
                             <div class="list-group L-container">
-                                <div class="col-md-6 pull-right">
+                                <div class="col-md-6 pull-right blue">
                                     <div class="input-group">
-                                        <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp; 
-                                     <label>مدة التنفيذ</label>:&nbsp; 
+                                        <i class="fa fa-arrow-circle-o-left blue" aria-hidden="true"></i>&nbsp; 
+                                     <label class="blue">مدة التنفيذ</label>:&nbsp; 
                                      <span class=""><%# Item.CurrentDuration %></span>&nbsp;<span>يوم</span>
                                     </div>
                                 </div>
