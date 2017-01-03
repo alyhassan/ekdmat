@@ -109,6 +109,7 @@ namespace Khadmatcom.clients
                     CurrentRequest.PaymentProviderName = ddlBanks.Value;
                     CurrentRequest.PaymentDate = DateTime.ParseExact(txtDate.Value, "dd/MM/yyyy", new System.Globalization.CultureInfo("en-GB")); // DateTime.Parse(txtDate.Value);
                     CurrentRequest.PaymentReferanceCode = txtRefNumber.Value;
+                    CurrentRequest.PartnerPaymentCode = txtBakAccountNum.Value;
                     CurrentRequest.StatusId = (int)RequestStatus.Paid;
                     _serviceRequests.UpdateServiceRequest(CurrentRequest);
                     RedirectAndNotify(GetLocalizedUrl("clients/services-requests/approved-requests"), "رجاءاَ قم بالإتصال بالإدارة للتأكد من وصول الحوالة.");
