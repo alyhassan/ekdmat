@@ -1717,3 +1717,4 @@ button[type="submit"].c-btn {
    .blue {
         color: #1a548e;
     }
+   .input-group-addon{background-color:transparent !important; border:none;}

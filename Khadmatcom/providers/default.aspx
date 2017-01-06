@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="row L2">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 pull-right;">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 pull-right">
                                         :تفاصيل الخدمة
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                                     <ItemTemplate>
                                         <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                             <div class="input-group">
-                                                <label><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.RequestOption.Title %></label>
+                                                <label  class="blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.RequestOption.Title %></label>
                                                 &nbsp;<label><%# GetAnswer(Item.Value) %></label>
                                             </div>
                                         </div>
@@ -74,14 +74,17 @@
 
                                         <input type="text" id="txtReason<%# Item.Id %>" class="validate[required] col-md-12 pull-right form-control" placeholder="تعليق" />
                                     </div>
-                                    <div class="form-group col-md-4 col-sm-4 col-xs-5 pull-right">
+                                    <div class="form-group col-md-6 col-sm-6 col-xs-6 pull-right">
                                         <label for="txtPrice<%# Item.Id %>" id="txtPriceLabel<%# Item.Id %>" class="  pull-right">سعر الخدمة</label>
-                                        <input type="number" id="txtPrice<%# Item.Id %>" class=" validate[required] hidden col-md-4 col-sm-4 col-xs-4 f pull-right form-control" value='<%# Item.RequestProviders.First(r=>r.ProviderId==CurrentUser.Id).Price %>' />
+                                        <input type="text" id="txtPrice<%# Item.Id %>" class=" validate[required] hidden col-md-4 col-sm-4 col-xs-4 f pull-right form-control" value='<%# Item.RequestProviders.First(r=>r.ProviderId==CurrentUser.Id).Price %>' />
                                     </div>
-                                    <div class="form-group col-md-4 col-sm-4 col-xs-5 pull-right">
-                                        <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>" class="pull-right">وقت التنفيذ المتوقع</label>
-                                        <input type="number" id="txtDuration<%# Item.Id %>" class=" validate[required] hidden col-md-4 col-sm-4 col-xs-4  pull-right form-control" value='' />
-                                        <%--<%# Item.Service.ServiceProviders.First(r=>r.MemberId==CurrentUser.Id).EstamaitedTime %>--%>
+                                    <div class="form-group col-md-6 col-sm-6 col-xs-6 pull-right">
+                                        <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>" class="pull-right col-md-12">وقت التنفيذ المتوقع</label>
+                                     <div class="col-md-12 input-group">  
+                                          <input type="text" id="txtDuration<%# Item.Id %>" class=" validate[required] hidden   pull-right form-control" value='' />
+                                       <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>" class="input-group-addon" style="background-color:transparent !important; border:none;">يوم</label>
+                                         </div>
+   <%--<%# Item.Service.ServiceProviders.First(r=>r.MemberId==CurrentUser.Id).EstamaitedTime %>--%>
                                     </div>
                                     <div class="form-group col-md-6 col-sm-12 col-xs-12 pull-right">
                                         <asp:Button Text="إرسال" OnClientClick="return takeRequestAction();" OnClick="OnClick" CssClass="btn btn-success" runat="server" CommandName="Update" CommandArgument="<%# Item.Id %>" />
