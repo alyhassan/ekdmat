@@ -54,7 +54,7 @@
                                     <ItemTemplate>
                                         <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                             <div class="input-group">
-                                                <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.RequestOption.Title %></label>
+                                                <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.RequestOption.Title %></label>
                                                 &nbsp;<label><%# GetAnswer(Item.Value) %></label>
                                             </div>
                                         </div>
@@ -62,21 +62,21 @@
                                 </asp:Repeater>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left blue" aria-hidden="true"></i>مدة التنفيذ</label>
                                         :
                                                        &nbsp; <span class=""><%# Item.TotalDuration %> يوم</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>طريقة الدفع</label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>طريقة الدفع</label>
                                         :
                                                        &nbsp; <span class=""><%# GetPaymentMethod(Item.PaymentMethod) %></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>تعليق </label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>تعليق </label>
                                         :
                                                        &nbsp; <span class=""><%# Item.Notes %></span>
                                     </div>
