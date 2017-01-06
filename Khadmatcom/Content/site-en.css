@@ -1718,3 +1718,13 @@ button[type="submit"].c-btn {
         color: #1a548e;
     }
    .input-group-addon{background-color:transparent !important; border:none;}
+   /* attach url*/
+.attach_url {
+        background-color: #ffffff !important;
+        float: right;
+        margin-left:5px !important;
+}
+.attach_url:hover{
+        background-color: #ffffff !important;
+        float: right; margin-left:5px !important;
+}
