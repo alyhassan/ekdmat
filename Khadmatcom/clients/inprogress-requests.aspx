@@ -52,7 +52,7 @@
                                     <ItemTemplate>
                                         <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                             <div class="input-group">
-                                                <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i><%# Item.RequestOption.Title %></label>:
+                                                <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left blue" aria-hidden="true"></i><%# Item.RequestOption.Title %></label>:
                                                         &nbsp; 
                                                 <lable class=""><%# GetAnswer(Item.Value) %></lable>
                                             </div>
@@ -62,27 +62,27 @@
                                 
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
                                         :
                                                        &nbsp; <span class=""><span class=""><%# Item.TotalDuration %> يوم</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>طريقة الدفع</label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left blue" aria-hidden="true"></i>طريقة الدفع</label>
                                         :
                                                        &nbsp; <span class=""><%# GetPaymentMethod(Item.PaymentMethod) %></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>تعليق </label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>تعليق </label>
                                         :
                                                        &nbsp; <span class=""><%# Item.Notes %></span>
                                     </div>
                                 </div>
                                         <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
-                                 <label class="list-group-item-heading pull-right"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>المرفقات</label>
+                                 <label class="list-group-item-heading pull-right blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>المرفقات</label>
                                 <asp:ListView runat="server" DataSource="<%# Item.Attachments.Where(x=>x.IsOutput==false) %>" ItemType="Khadmatcom.Data.Model.Attachment">
                                     <ItemTemplate>
                                         <a target="_blank" href='<%# string.Format("/Attachments/{0}", Item.Path)%>'>المرفق <%# Container.DataItemIndex+1 %></a>

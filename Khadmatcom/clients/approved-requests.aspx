@@ -51,7 +51,7 @@
                                     <ItemTemplate>
                                         <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                             <div class="input-group">
-                                                <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i><%# Item.RequestOption.Title %></label>:
+                                                <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left blue" aria-hidden="true"></i><%# Item.RequestOption.Title %></label>:
                                                  &nbsp;
                                                 <label><%# GetAnswer(Item.Value) %></label>
                                             </div>
@@ -62,8 +62,8 @@
                             <div class="list-group L-container">
                                 <div class="col-md-6 pull-right">
                                     <div class="input-group">
-                                        <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp; 
-                                     <label>مدة التنفيذ</label>:&nbsp; 
+                                        <i class="fa fa-arrow-circle-o-left blue" aria-hidden="true"></i>&nbsp; 
+                                     <label class="blue">مدة التنفيذ</label>:&nbsp; 
                                      <span class=""><%# Item.CurrentDuration %></span>&nbsp;<span>يوم</span>
                                     </div>
                                 </div>
@@ -75,8 +75,8 @@
                                       </div>-->
 
                                     <div class="input-group">
-                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp; 
-                                <label>تعليق</label>:&nbsp; 
+                                        <i class="fa fa-pencil-square-o blue" aria-hidden="true"></i>&nbsp; 
+                                <label class="blue">تعليق</label>:&nbsp; 
                                 <span class=""><%# Item.Notes %></span>
                                     </div>
                                 </div>
