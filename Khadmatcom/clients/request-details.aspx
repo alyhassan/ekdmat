@@ -42,7 +42,6 @@
             font-size: 1.0em;
             padding: 0px 15px;
         }
-       
     </style>
 
 </asp:Content>
@@ -59,15 +58,15 @@
         <div class="modal-body">
 
             <ul class="nav nav-tabs nav-arow myTab" id="ai">
-             <!--   <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse500">بيانات الخدمة</a></li> -->
+                <!--   <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse500">بيانات الخدمة</a></li> -->
                 <li class="active"><a data-toggle="collapse" data-parent="#accordion500" href="#collapse501">المرفقات</a></li>
                 <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse502">العنوان</a></li>
-                <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse503"> الدفع</a></li>
+                <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse503">الدفع</a></li>
                 <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse504">ملخص الطلب</a></li>
 
             </ul>
             <div class="clearfix"></div>
-            <button type="button" style="padding:3px;opacity:1; color:red;border-color:#2e6da2;border-width:2px;" class="btn btn-default disabled text-success pull-left"><span style="display:inline-block;">ريال</span> &nbsp;<span style="display:inline-block;">سعر الخدمة النهائى : <%= ServicePrice %> </span> </button>
+            <button type="button" style="padding: 3px; opacity: 1; color: red; border-color: #2e6da2; border-width: 2px;" class="btn btn-default disabled text-success pull-left"><span style="display: inline-block;">ريال</span> &nbsp;<span style="display: inline-block;">سعر الخدمة النهائى : <%= ServicePrice %> </span></button>
             <%--    <a class="accordion-toggle indicator collapsed" data-toggle="collapse" data-parent="#accordion500" href="#collapse500" aria-expanded="false">Characteristic of your services from the rest of institutions that provide the same services? <i class="indi fa fa-chevron-down"></i>
                         </a>--%>
             <div class="clearfix"></div>
@@ -147,7 +146,7 @@
                         <div class="accordion-heading">المرفقات <i class="indi fa fa-chevron-up"></i></div>
                     </div>
                     <div id="collapse501" class="collapse" aria-expanded="false">
-                        <div class="accordion-body clearfix"ب>
+                        <div class="accordion-body clearfix" ب>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>المرفق 1</label>
@@ -183,7 +182,7 @@
                 </div>
                 <div class="panel">
                     <div class="clearfix fal">
-                        <div class="accordion-heading"> العنوان<i class="indi fa fa-chevron-up"></i></div>
+                        <div class="accordion-heading">العنوان<i class="indi fa fa-chevron-up"></i></div>
                     </div>
                     <div id="collapse502" class="collapse" aria-expanded="false">
                         <div class="accordion-body clearfix">
@@ -249,7 +248,7 @@
                 </div>
                 <div class="panel">
                     <div class="clearfix fal">
-                        <div class="accordion-heading lanti200"> الدفع<i class="indi fa fa-chevron-down"></i></div>
+                        <div class="accordion-heading lanti200">الدفع<i class="indi fa fa-chevron-down"></i></div>
                     </div>
                     <div id="collapse503" class="collapse in" aria-expanded="false">
                         <div class="accordion-body clearfix validationEngineContainer" id="divServiceRequest">
@@ -269,85 +268,88 @@
                                 </div>
                             </div>
                             <div class="col-md-12 c-card" style="display: none;" id="c-card1">
-                                
-                                
-                                 <div class="form-group col-md-12 col-sm-12 col-xs-12 ">
+
+
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 ">
                                     <div class="text-center visa-img">
                                         <img class="img-responsive pull-right" src="/images/visa-bg.jpg" />
-                                       
+
                                         <%-- <select class="form-control validate[required]" name="paymentBrand" runat="server" ID="ddlPaymentBrand">
                                             <option value="VISA">Visa</option>
                                             <option value="MASTER">Master Card</option>
                                             <option value="AMEX">American Express</option>
                                         </select>--%>
                                     </div>
-                                     </div>
-                                 <div class="form-group col-md-6 col-sm-6 col-xs-12 pull-right">
-                                        <label dir="rtl">اسم حامل الكارت</label>
-                                        <input type="text" class="attach form-control" runat="server" id="txtCardHolder" />
-                                    </div>
+                                </div>
+                                <div class="form-group col-md-6 col-sm-6 col-xs-12 pull-right">
+                                    <label dir="rtl">اسم حامل الكارت</label>
+                                    <input type="text" class="attach form-control" runat="server" id="txtCardHolder" />
+                                </div>
 
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-12 pull-right">
-                                            <label dir="rtl">رقم الكارت</label>
-                                            <input type="text" class="attach validate[required] form-control" runat="server" id="txtCardNo" />
-                                             </div>
-                                          <div class="form-group col-md-6 col-sm-6 col-xs-6">
-                                            <label dir="rtl">CVV</label>
-                                            <input type="text" maxlength="3" class="attach validate[required] form-control" name="cars" value="" runat="server" id="txtCvv" />
-                                        </div>
-                               
-                               
-                                      <div class="form-group col-md-6 col-sm-6 col-xs-6 pull-right">
-                                        <label dir="rtl">تاريخ صلاحية الكارت</label>
-                                         <input type="text" name="txtExpiryDate" class="form-control" id="txtExpiryDate" runat="server" maxlength="5" placeholder="mm/yy"/>
-                                    </div>
-                                    
+                                <div class="form-group col-md-6 col-sm-6 col-xs-12 pull-right">
+                                    <label dir="rtl">رقم الكارت</label>
+                                    <input type="text" class="attach validate[required] form-control" runat="server" id="txtCardNo" />
+                                </div>
+                                <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                                    <label dir="rtl">CVV</label>
+                                    <input type="text" maxlength="3" class="attach validate[required] form-control" name="cars" value="" runat="server" id="txtCvv" />
+                                </div>
+
+
+                                <div class="form-group col-md-6 col-sm-6 col-xs-6 pull-right">
+                                    <label dir="rtl">تاريخ صلاحية الكارت</label>
+                                    <input type="text" name="txtExpiryDate" class="form-control" id="txtExpiryDate" runat="server" maxlength="5" placeholder="mm/yy" />
+                                </div>
+
                             </div>
                             <div class="col-md-12 c-card" style="display: none;" id="c-card2">
                                 <div class="col-md-12 col-sm-12 col-xs-12">
-                              <div class="form-group col-md-4 col-sm-4  col-xs-4 pull-right" >
-                                <img class="img-responsive " src="/images/rajhi.png" />
-                                  </div>
-                                <div class="form-group col-md-4  col-sm-4  col-xs-4 pull-right" >
-                                <img class="img-responsive " src="/images/Riyadh.png" />
+                                    <div class="form-group col-md-4 col-sm-4  col-xs-4 pull-right">
+                                        <img class="img-responsive " src="/images/rajhi.png" />
                                     </div>
-                                <div class="form-group col-md-4 col-sm-4  col-xs-4 pull-right" >
-                                <img  class="img-responsive" src="/images/Ahli.png" />
+                                    <div class="form-group col-md-4  col-sm-4  col-xs-4 pull-right">
+                                        <img class="img-responsive " src="/images/Riyadh.png" />
                                     </div>
+                                    <div class="form-group col-md-4 col-sm-4  col-xs-4 pull-right">
+                                        <img class="img-responsive" src="/images/Ahli.png" />
                                     </div>
-                                  <div class="col-md-6  col-sm-6 col-xs-6 form-group pull-right">
-                                            <label dir="rtl">رقم الحوالة(العملية)</label>
-                                            <input type="text" class="attach validate[required] form-control" runat="server" id="txtRefNumber" />
-                                        </div>
+                                </div>
+                                <div class="col-md-6  col-sm-6 col-xs-6 form-group pull-right">
+                                    <label dir="rtl">رقم الحوالة(العملية)</label>
+                                    <input type="text" class="attach validate[required] form-control" runat="server" id="txtRefNumber" />
+                                </div>
 
-                                  
-                                    
-                                    <div class="form-group col-md-6  col-sm-6 col-xs-6 pull-right" >
-                                        <label dir="rtl">تاريخ التحويل</label>
-                                        <input type="text" class="attach validate[required] datetimepicker form-control" id="txtDate" runat="server" maxlength="10" placeholder="dd/mm/yyyy" />
-                                    </div>
-                                    <%--<div class="form-group">
+                                <div class="col-md-6  col-sm-6 col-xs-6 form-group pull-right">
+                                    <label dir="rtl">رقم الحساب البنكي المحول منه</label>
+                                    <input type="text" class="attach validate[required] form-control" runat="server" id="txtBakAccountNum" />
+                                </div>
+
+                                <div class="form-group col-md-6  col-sm-6 col-xs-6 pull-right">
+                                    <label dir="rtl">تاريخ التحويل</label>
+                                    <input type="text" class="attach validate[required] datetimepicker form-control" id="txtDate" runat="server" maxlength="10" placeholder="dd/mm/yyyy" />
+                                </div>
+                                <%--<div class="form-group">
                                         <label>تاريخ التحويل</label>
                                         <input type="text" class="attach" />
                                     </div>--%>
-                               
-                               
-                                   
-                                      
 
-                                        <div class="col-md-6  col-sm-6 col-xs-6 form-group pull-right">
-                                            <label dir="rtl">البنك المحول اليه</label>
-                                            <select class="attach validate[required] form-control" runat="server" id="ddlBanks">
-                                                <option value="">اختر البنك</option>
-                                                <option value="1">الراجحي</option>
-                                                <option value="2">الأهلي</option>
-                                                <option value="3">الرياض</option>
-                                                <option value="8">سامبا </option>
 
-                                            </select>
-                                        </div>
-                                  
-                                
+
+
+
+                                <div class="col-md-6  col-sm-6 col-xs-6 form-group pull-right">
+                                    <label dir="rtl">البنك المحول اليه</label>
+                                    <select class="attach validate[required] form-control" runat="server" id="ddlBanks">
+                                        <option value="">اختر البنك</option>
+                                        <option value="1">الراجحي</option>
+                                        <option value="2">الأهلي</option>
+                                        <option value="3">الرياض</option>
+                                        <option value="8">سامبا </option>
+
+                                    </select>
+                                </div>
+
+
 
                             </div>
                             <div class="clearfix">&nbsp;</div>
@@ -356,22 +358,22 @@
                                     <tr>
                                         <td>
                                             <label dir="rtl">الإجمالى: </label>
-                                            <span class="rounded"><span style="display:inline-block;">ريال</span>&nbsp; <%= CurrentRequest.CurrentPrice.Value %> </span>
+                                            <span class="rounded"><span style="display: inline-block;">ريال</span>&nbsp; <%= CurrentRequest.CurrentPrice.Value %> </span>
                                         </td>
                                         <td>
                                             <label dir="rtl">تكلفة الشحن:</label>
-                                            <span class="ga"><span style="display:inline-block;">ريال</span>&nbsp; <%= ShippingPrice %></span>
+                                            <span class="ga"><span style="display: inline-block;">ريال</span>&nbsp; <%= ShippingPrice %></span>
                                         </td>
                                         <td>
                                             <label dir="rtl">قيمة الخدمة:</label>
-                                            <span class="ga"><span style="display:inline-block;">ريال</span>&nbsp; <%= ServicePrice %></span>
+                                            <span class="ga"><span style="display: inline-block;">ريال</span>&nbsp; <%= ServicePrice %></span>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
                             <div class="clearfix">&nbsp;</div>
                             <div class="col-md-12 form-group clearfix">
-                                <a data-toggle="collapse" data-parent="#accordion500" href="#collapse504" class="nxt clasic-btn">التالي</a><span>&nbsp; &nbsp; &nbsp;</span>
+                                <a data-toggle="collapse" data-parent="#accordion500" href="#collapse504" class="nxt clasic-btn" id="pay">التالي</a><span>&nbsp; &nbsp; &nbsp;</span> <%--onclick="return checkPaymentSection()"--%>
                                 <%--<a href="card-info.aspx" class="nxt s-cl clasic-btn">Pay Now</a>--%>
                                 <%-- <a data-toggle="collapse" data-parent="#accordion500" href="card-info.aspx" class="app-close s-cl clasic-btn">Pay Later</a>--%>
                                 <a data-toggle="collapse" data-parent="#accordion500" href="#collapse502" class="prv s-cl clasic-btn">السابق</a>
@@ -385,12 +387,12 @@
                     </div>
                     <div id="collapse504" class="collapse" aria-expanded="false">
                         <div class="accordion-body clearfix validationEngineContainer" id="submitServiceRequest">
-                            <div class="form-group col-md-12" style="min-height:50px;"></div>
+                            <div class="form-group col-md-12" style="min-height: 50px;"></div>
                             <div class="clearfix">&nbsp;</div>
                             <div class="col-md-12 form-group clearfix">
                                 <asp:LinkButton Text="إرسال" runat="server" CssClass="nxt s-cl clasic-btn" ID="btnSave" OnClick="btnSave_OnClick" OnClientClick="return checkPayment()" />
                                 <%--<a href="#" class="nxt s-cl clasic-btn">Proceed</a>--%>
-                                <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" class="prv s-cl clasic-btn">Previous</a>
+                                <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" class="prv s-cl clasic-btn">السابق</a>
                             </div>
                         </div>
                     </div>
@@ -468,6 +470,11 @@
             }return result;//result;
         }
 
+        //var paymentSection = false;
+
+      //  function checkPaymentSection() {
+       //     paymentSection=validateForm('#divServiceRequest', '<%# languageIso %>');
+      //  }
         function checkPayment() {
             var result = false;
             result=validateForm('#divServiceRequest', '<%# languageIso %>');
@@ -477,6 +484,8 @@
                 result = false;
                 payOnline();
             }
+          //  if (paymentSection != result)
+          //      return paymentSection;
             return result;
         }
         function payOnline() {

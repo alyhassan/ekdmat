@@ -333,7 +333,7 @@
         <div class="banner clearfix hidden-sm  hidden-xs">
             <div class="container clearfix hidden-sm  hidden-xs">
 
-                <div class="col-md-7 col-sm-12 col-xs-12 padLeftRight0 banner-right hidden-sm  hidden-xs hidden-md hidden-lg">
+                <div class="col-md-7 col-sm-12 col-xs-12 padLeftRight0 banner-right hidden-sm  hidden-xs">
                     <img src="/images/banner.jpg" alt="" class="pull-left" />
                 </div>
                 <div class="col-md-5 hidden-xs hidden-sm padLeftRight0 logo-img pull-right">
