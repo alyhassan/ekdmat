@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="row L2">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 pull-right;">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 pull-right">
                                         :تفاصيل الخدمة
                                     </div>
                                 </div>
@@ -53,7 +53,7 @@
                                     <ItemTemplate>
                                         <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                             <div class="input-group">
-                                                <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i><%# Item.RequestOption.Title %></label>
+                                                <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i><%# Item.RequestOption.Title %></label>
                                                 &nbsp;<label><%# GetAnswer(Item.Value) %></label>
                                             </div>
                                         </div>
@@ -61,14 +61,14 @@
                                 </asp:Repeater>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
                                         :
                                                        &nbsp; <span class=""><%# Item.TotalDuration %> يوم</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>تعليق </label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>تعليق </label>
                                         :
                                                        &nbsp; <span class=""><%# Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).RejectedReson %></span>
                                     </div>

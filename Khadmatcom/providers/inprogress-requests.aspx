@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="row L2">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 pull-right;">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 pull-right">
                                         :تفاصيل الخدمة
                                     </div>
                                 </div>
@@ -55,7 +55,7 @@
                                     <ItemTemplate>
                                         <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                             <div class="input-group">
-                                                <label><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.RequestOption.Title %></label>
+                                                <label class="blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.RequestOption.Title %></label>
                                                 &nbsp;<label><%# GetAnswer(Item.Value) %></label>
                                             </div>
                                         </div>
@@ -63,27 +63,27 @@
                                 </asp:Repeater>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
                                         :
                                                        &nbsp; <span class=""><span class=""><%# Item.TotalDuration %> يوم</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>طريقة الدفع</label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>طريقة الدفع</label>
                                         :
                                                        &nbsp; <span class=""><%# GetPaymentMethod(Item.PaymentMethod) %></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>تعليق </label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>تعليق </label>
                                         :
                                                        &nbsp; <span class=""><%# Item.Notes %></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
-                                  <label class="list-group-item-heading pull-right"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>المرفقات</label>
+                                  <label class="list-group-item-heading pull-right blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>المرفقات</label>
                                 <asp:ListView runat="server" DataSource="<%# Item.Attachments.Where(x=>x.IsOutput==false) %>" ItemType="Khadmatcom.Data.Model.Attachment">
                                     <ItemTemplate>
                                         <a target="_blank" href='<%# string.Format("/Attachments/{0}", Item.Path)%>'>المرفق <%# Container.DataItemIndex+1 %></a>
@@ -106,10 +106,12 @@
                                     <input type="button" class="btn btn-success btn-sm" value="تمديد الطلب" onclick="increaceDuration(<%# Item.Id %>);" />&nbsp;
 
                                 </div>
+                                <div class="clearfix"></div>
                                 <div class="input-group hidden validationEngineContainer increaseDiv" id="increase<%# Item.Id %>">
 
-                                    <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>">وقت التنفيذ الإضافي</label>
-                                    <input type="number" id="txtDuration<%# Item.Id %>" class=" validate[required]" value='' />
+                                    <!--<label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>">وقت التنفيذ الإضافي</label> !-->
+                                    <input type="text" id="txtDuration<%# Item.Id %>" class=" validate[required]" value='' placeholder="وقت التنفيذ الإضافي" />&nbsp;
+                                    <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>">يوم</label>&nbsp;&nbsp;
                                     <input type="button" class="btn btn-success btn-sm" value="إرسال" onclick="increaceRequestDurationAction(<%# Item.Id %>);" />
                                     <%--<asp:Button Text="إرسال" OnClientClick="return increaceRequestDurationAction(<%# Item.Id %>);" OnClick="OnClick" CssClass="btn btn-success btn-sm" runat="server" CommandName="Update" CommandArgument="<%# Item.Id %>" />--%>
                                 </div>

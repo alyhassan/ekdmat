@@ -31,7 +31,7 @@
                                 </div>
  <div class="clearfix"></div>
                                 <div class="row L2">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 pull-right;">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 pull-right">
                                       :تفاصيل الخدمة
                                       </div>
                                 </div>
@@ -52,7 +52,7 @@
                                             <ItemTemplate>
                                               <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                                     <div class="input-group">
-                                                        <label><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.RequestOption.Title %></label>
+                                                        <label class="blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.RequestOption.Title %></label>
                                                          &nbsp;<label><%# GetAnswer(Item.Value) %></label>
                                                     </div>
                                                 </div>
