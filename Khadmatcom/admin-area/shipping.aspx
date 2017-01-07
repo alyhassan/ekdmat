@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="shipping.aspx.cs" Inherits="Khadmatcom.admin_area.shipping" %>
+
 <%@ Import Namespace="Khadmatcom" %>
 <%@ Import Namespace="Khadmatcom.Data.Model" %>
+<%@ Import Namespace="Khadmatcom.Data.Infrastructure" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="/Content/carousel-css/owl.theme.css" />
     <link rel="stylesheet" type="text/css" href="/Content/carousel-css/owl.carousel.css" />
@@ -34,6 +36,7 @@
                                 <div class="L1">
                                     <span class="ni">اسم العميل: <span class="red"><%# Item.Client.FullName %></span> </span>
                                     <span>رقم الجوال: <span class="blue"><%# Item.Client.MobielNumber %></span> </span>
+                                    <span>رقم الجوال: <span class="blue"><%# Item.Client.City.LocalizedCities.First(l=>l.LanguageId==1025).Title %></span> </span>
                                 </div>
 
                                 <div class="clearfix"></div>
@@ -118,22 +121,22 @@
                             <div class="L-button" id="">
                                 <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success ">حالة الطلب:<%# (RequestStatus)Item.StatusId %>&nbsp;<span style="display: inline-block; float: left"></span>&nbsp;  </button>
                             </div>
-                            <br class="cleafix"/>
+                            <br class="cleafix" />
                             <div class='<%# Item.ShippingStatus> ShippingStatus.New?"":"hidden" %>'>
                                 <div class="L1">
-                                    
+
                                     <span>تاريخ اخر عملية شحن: <span class="blue"><%# Item.LastShippingStatusDate %></span> </span>
-                                   
+
                                 </div>
                             </div>
-                           
-                            <div  class='<%# Item.ShippingStatus< ShippingStatus.SentToCustomer?"input-group validationEngineContainer":"hidden" %>' id="ship<%# Item.Id %>">
-                                <input type="checkbox"  class='<%# Item.ShippingStatus== ShippingStatus.New?"checkbox":"hidden" %>' id="chkIsContacted"/>
-                                <Label for="chkIsContacted" class='<%# Item.ShippingStatus== ShippingStatus.New?"":"hidden" %>'>هل تم الإتصال بالعميل لتحديد موعد</Label>
+
+                            <div class='<%# Item.ShippingStatus< ShippingStatus.SentToCustomer?"input-group validationEngineContainer":"hidden" %>' id="ship<%# Item.Id %>">
+                                <input type="checkbox" class='<%# Item.ShippingStatus== ShippingStatus.New?"checkbox":"hidden" %>' id="chkIsContacted" />
+                                <label for="chkIsContacted" class='<%# Item.ShippingStatus== ShippingStatus.New?"":"hidden" %>'>هل تم الإتصال بالعميل لتحديد موعد</label>
                                 <input type="button" class="btn btn-danger  btn-sm" value="<%# GetShipButtonText(Item.ShippingStatus) %>" onclick="shipAction(<%# Item.Id %>);" />
 
                             </div>
-                          
+
                         </div>
                     </div>
                 </div>

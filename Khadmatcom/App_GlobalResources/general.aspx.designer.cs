@@ -61,11 +61,29 @@ namespace Resources.general {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to منفذة.
+        /// </summary>
+        internal static string Accomplished {
+            get {
+                return ResourceManager.GetString("Accomplished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Application.
         /// </summary>
         internal static string Application {
             get {
                 return ResourceManager.GetString("Application", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تمت الموافقة.
+        /// </summary>
+        internal static string Approved {
+            get {
+                return ResourceManager.GetString("Approved", resourceCulture);
             }
         }
         
@@ -93,6 +111,15 @@ namespace Resources.general {
         internal static string BuyFrom {
             get {
                 return ResourceManager.GetString("BuyFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ملغية.
+        /// </summary>
+        internal static string Canceled {
+            get {
+                return ResourceManager.GetString("Canceled", resourceCulture);
             }
         }
         
@@ -133,6 +160,15 @@ namespace Resources.general {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to منتهية الصلاحية.
+        /// </summary>
+        internal static string Expired {
+            get {
+                return ResourceManager.GetString("Expired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to الرئيسية.
         /// </summary>
         internal static string Home {
@@ -142,11 +178,29 @@ namespace Resources.general {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تحت التنفيذ.
+        /// </summary>
+        internal static string InProgress {
+            get {
+                return ResourceManager.GetString("InProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Insurance.
         /// </summary>
         internal static string Insurance {
             get {
                 return ResourceManager.GetString("Insurance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تحت التنفيذ.
+        /// </summary>
+        internal static string in_progress {
+            get {
+                return ResourceManager.GetString("in_progress", resourceCulture);
             }
         }
         
@@ -457,6 +511,15 @@ namespace Resources.general {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to جديدة.
+        /// </summary>
+        internal static string New {
+            get {
+                return ResourceManager.GetString("New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Offer.
         /// </summary>
         internal static string Offer {
@@ -466,11 +529,29 @@ namespace Resources.general {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to مدفوعة.
+        /// </summary>
+        internal static string Paid {
+            get {
+                return ResourceManager.GetString("Paid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to أفراد.
         /// </summary>
         internal static string personal {
             get {
                 return ResourceManager.GetString("personal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to مرفوضة.
+        /// </summary>
+        internal static string Refused {
+            get {
+                return ResourceManager.GetString("Refused", resourceCulture);
             }
         }
         

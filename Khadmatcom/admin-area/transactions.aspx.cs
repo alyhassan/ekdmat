@@ -11,7 +11,7 @@ namespace Khadmatcom.admin_area
 {
     public partial class transactions : PageBase
     {
-        private RequestStatus CurrentStatus;
+        protected RequestStatus CurrentStatus;
         private AdminServices adminServices;
         protected void Page_Load(object sender, EventArgs e)
         {
