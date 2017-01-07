@@ -176,7 +176,7 @@
                                         <input type="text" class="form-control validate[required]" runat="server" id="txtLicenceNo" placeholder="رقم الرخصة" />
                                     </div>
                                     <div class="form-group options col-md-4 col-sm-4 col-xs-12 o75 pull-right">
-                                        <textarea rows="5" runat="server" id="txtReason" class="form-control validate[required]" placeholder=">سبب التعديل"></textarea>
+                                        <textarea rows="5" runat="server" id="txtReason" class="form-control validate[required]" placeholder="سبب التعديل"></textarea>
                                     </div>
                                     <div class="form-group options col-md-4 col-sm-4 col-xs-12 pull-right o46">
                                         <select runat="server" id="ddlPortName" class="form-control validate[required]">

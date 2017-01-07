@@ -245,8 +245,9 @@ namespace Khadmatcom
         /// <param name="message">Notifier Message</param>
         /// <param name="title">Notifier Title (optional)</param>
         /// <param name="notificationType">Notification Type (Default is "Success")</param>
+        /// <param name="endResponse"></param>
         protected void RedirectAndNotify(string redirectUrl, string message,
-            string title = "", NotificationType notificationType = NotificationType.Success)
+            string title = "", NotificationType notificationType = NotificationType.Success, bool endResponse = false)
         {
             StringBuilder sb = new StringBuilder(redirectUrl);
             sb.AppendFormat("?msg={0}", HttpUtility.UrlEncode(message));
@@ -255,7 +256,7 @@ namespace Khadmatcom
                 sb.AppendFormat("&msgtitle={0}", HttpUtility.UrlEncode(title));
             }
             sb.AppendFormat("&msgtype={0}", (int)notificationType);
-            Response.Redirect(sb.ToString(), true);
+            Response.Redirect(sb.ToString(), endResponse);
         }
 
         #endregion

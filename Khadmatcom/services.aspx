@@ -93,7 +93,7 @@
             $('#servicePrice').html(price);
             $('#hfServicePrice').val(price);
             $("#p10").modal({ backdrop: 'static', show: true });
-
+            $('input:text').add('textarea').add('select').val('');
             $('.options').addClass('hidden');
             if (options != '') {
                 var x = options.split(",");
