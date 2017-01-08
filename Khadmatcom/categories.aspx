@@ -13,7 +13,6 @@
     <div id="main" class="tab-pane fade in active">
         <div id="" class="owl-demo owl-carousel owl-theme">
             <asp:ListView runat="server" ID="lvCategories" SelectMethod="GetCategories" ItemPlaceholderID="PlaceHolder1" GroupItemCount="12" ItemType="Khadmatcom.Services.Model.ServiceCategory">
-
                 <GroupTemplate>
                     <div class="item myTab">
                         <div class="clearfix Pslider P-slider">
@@ -25,10 +24,11 @@
                     <a href="<%# GetLocalizedUrl(string.Format("{0}/{1}/{2}/categories",sectionName,Item.UrlName,Item.Id)) %>" title="<%# Item.Name %>" class="">
                         <span class="top-span">خدمات</span>
                         <span class="bot-span"><%# Item.Name %></span>
-
                     </a>
-
                 </ItemTemplate>
+                <EmptyDataTemplate>
+                    <h3><span class="top-span">لا يوجد خدمات متاحة الان هنا</span></h3>
+                </EmptyDataTemplate>
             </asp:ListView>
         </div>
 

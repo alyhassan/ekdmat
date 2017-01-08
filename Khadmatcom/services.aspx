@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="services.aspx.cs" Inherits="Khadmatcom.services" %>
+
 <%@ Register Src="~/Controls/ucServiceRequest.ascx" TagPrefix="uc1" TagName="ucServiceRequest" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="/Content/carousel-css/owl.theme.css" />
@@ -33,6 +34,9 @@
                     </a>
 
                 </ItemTemplate>
+                <EmptyDataTemplate>
+                    <h3><span class="top-span">لا يوجد خدمات متاحة الان هنا</span></h3>
+                </EmptyDataTemplate>
             </asp:ListView>
         </div>
 
@@ -76,7 +80,7 @@
             $(".owl-next").text("");
 
             $('#ddlCount').on('change', function () {
-               //$('#servicePrice').html(this.value * parseInt($('#hfServicePrice').val()));
+                //$('#servicePrice').html(this.value * parseInt($('#hfServicePrice').val()));
             });
 
             $('#ddlCount').change(function () {
@@ -86,14 +90,15 @@
             //calcluate service price option
         });
 
-        function requestService(id, notes, price, options,cities) {
+        function requestService(id, notes, price, options, cities) {
+            $('input:text').add('textarea').add('select').val('');
             $('#hfServiceId').val(id);
             $('#ddlService').val(id);
             $('#lblNotes').html(notes);
             $('#servicePrice').html(price);
             $('#hfServicePrice').val(price);
             $("#p10").modal({ backdrop: 'static', show: true });
-            $('input:text').add('textarea').add('select').val('');
+
             $('.options').addClass('hidden');
             if (options != '') {
                 var x = options.split(",");
@@ -101,7 +106,7 @@
                     $('.o' + x[i]).removeClass('hidden');
                 }
             }
-           
+
             $('#ddlCities option').attr('disabled', 'disabled');
             $('#ddlCities option[value=""]').removeAttr('disabled');
             if (cities != '') {

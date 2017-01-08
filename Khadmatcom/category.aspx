@@ -29,6 +29,9 @@
                     </a>
 
                 </ItemTemplate>
+                <EmptyDataTemplate>
+                    <h3><span class="top-span">لا يوجد خدمات متاحة الان هنا</span></h3>
+                </EmptyDataTemplate>
             </asp:ListView>
         </div>
 
