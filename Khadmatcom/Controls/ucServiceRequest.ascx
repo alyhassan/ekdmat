@@ -73,7 +73,7 @@
                                                 <option value="">أختر مدينة</option>
                                                 <asp:Repeater runat="server" ItemType="Khadmatcom.Services.Model.City" SelectMethod="GetCities">
                                                     <ItemTemplate>
-                                                        <option value="<%# Item.CityId %>"><%# Item.Name %></option>
+                                                        <option disabled value="<%# Item.CityId %>"><%# Item.Name %></option>
                                                     </ItemTemplate>
                                                 </asp:Repeater>
                                             </select>

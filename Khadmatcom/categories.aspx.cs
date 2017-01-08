@@ -13,6 +13,7 @@ namespace Khadmatcom
     {
         private readonly ServicesServices _servicesServices;
         protected string sectionName = "";
+        private int typeId = 1;//2=personal 3=business
         public categories()
         {
              _servicesServices = new ServicesServices();
@@ -24,11 +25,26 @@ namespace Khadmatcom
         {
            if(string.IsNullOrEmpty(sectionName))
                 RedirectAndNotify(GetLocalizedUrl(""),"Invalid section name","Erorr",NotificationType.Error);
+           else
+           {
+               switch (sectionName)
+               {
+                    case "personal":
+                        typeId = 2;
+                        break;
+                    case "business":
+                        typeId = 3;
+                        break;
+                    default:
+                       typeId = 1;
+                        break;
+               }
+           }
         }
 
         public IQueryable<ServiceCategory> GetCategories()
         {
-            return _servicesServices.GetCategoriesList(LanguageId).AsQueryable();
+            return _servicesServices.GetCategoriesList(LanguageId).Where(s=>s.Sections.Contains(typeId.ToString())||s.Sections=="1").AsQueryable();
         }
     }
 }

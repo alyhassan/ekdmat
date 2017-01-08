@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
     <ul class="nav nav-tabs nav-arow myTab">
-        <li class="main alif"><a href="javascript:{}"><%= GetGlobalResourceObject("general.aspx","Home") %></a></li>
+        <li class="main alif"><a href="<%= GetLocalizedUrl(sectionName+"/categories") %>"><%= GetGlobalResourceObject("general.aspx","Home") %></a></li>
         <li class="sub  alif"><a class="anchor" href="<%= GetLocalizedUrl(sectionName+"/categories") %>"><%= GetGlobalResourceObject("general.aspx",sectionName) %></a></li>
         <li class="sub alif"><a class="anchor" href="<%= GetLocalizedUrl(string.Format("{0}/{1}/{2}/categories",sectionName,categoryUrlName,categoryId)) %>"><%= CategoryName %></a></li>
         <li class="sub active alif"><a href="javascript:{}"><%= SubcategoryName %></a></li>
@@ -25,7 +25,7 @@
                     </div>
                 </GroupTemplate>
                 <ItemTemplate>
-                    <a href="javascript:{}" onclick='requestService(<%# Item.Id %>,"<%# Item.Notes %>",<%# Item.EstamaitedCost %>,"<%# Item.Options.ToLower() %>")' title="<%# Item.Name %>" class="anchor">
+                    <a href="javascript:{}" onclick='requestService(<%# Item.Id %>,"<%# Item.Notes %>",<%# Item.EstamaitedCost %>,"<%# Item.Options.ToLower() %>","<%# Item.AvilableCities.ToLower() %>")' title="<%# Item.Name %>" class="anchor">
                         <!--href="#p10"-->
                         <span class="top-span"><%# GetGlobalResourceObject("general.aspx", Item.IdentityType) %></span>
                         <span class="bot-span"><%# Item.Name %></span>
@@ -86,7 +86,7 @@
             //calcluate service price option
         });
 
-        function requestService(id, notes, price, options) {
+        function requestService(id, notes, price, options,cities) {
             $('#hfServiceId').val(id);
             $('#ddlService').val(id);
             $('#lblNotes').html(notes);
@@ -99,6 +99,15 @@
                 var x = options.split(",");
                 for (var i = 0; i < x.length; i++) {
                     $('.o' + x[i]).removeClass('hidden');
+                }
+            }
+           
+            $('#ddlCities option').attr('disabled', 'disabled');
+            $('#ddlCities option[value=""]').removeAttr('disabled');
+            if (cities != '') {
+                var x = cities.split(",");
+                for (var i = 0; i < x.length; i++) {
+                    $('#ddlCities option[value="' + x[i] + '"]').removeAttr('disabled'); //.removeClass('hidden');
                 }
             }
         }
