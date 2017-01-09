@@ -31,10 +31,12 @@
                                     <span class="ni">رقم الطلب: <span class="red"><%# Item.Id %></span> </span>
                                     <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
                                     <span>نوعها:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
+                                    <span>العدد:<span class="blue"><%#Item.Count %></span> </span>
                                 </div>
                                 <div class="L1">
                                     <span class="ni">اسم العميل: <span class="red"><%# Item.Client.FullName %></span> </span>
                                     <span>رقم الجوال: <span class="blue"><%# Item.Client.MobielNumber %></span> </span>
+                                    <span>المدينة: <span class="blue"><%# Item.City1.LocalizedCities.First(l=>l.LanguageId==1025).Title %></span> </span>
                                     <span<%# Item.StatusId>=(int)RequestStatus.InProgress&&(Item.StatusId!=(int)RequestStatus.Refused||Item.StatusId!=(int)RequestStatus.Expired||Item.StatusId!=(int)RequestStatus.Canceled)?"":" class='hidden'" %>>رقم الحساب: <span class="blue"><%# Item.PaymentReferanceCode %></span>
                                     </span>
                                 </div>

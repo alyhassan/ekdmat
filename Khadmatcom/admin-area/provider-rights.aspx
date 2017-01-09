@@ -9,7 +9,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
     <ul class="nav nav-tabs nav-arow myTab">
         <li class="main alif"><a href="<%= GetLocalizedUrl("") %>"><%= GetGlobalResourceObject("general.aspx","Home") %></a></li>
-       <li class="sub active alif"><a href="javascript:{}">مستحقات شركائنا</a></li>
+        <li class="sub active alif"><a href="javascript:{}">مستحقات شركائنا</a></li>
     </ul>
     <div id="chuu-owl" class="chuu owl-carousel owl-theme">
         <asp:ListView runat="server" ID="lvServiceRequest" SelectMethod="GetServiceRequests" ItemPlaceholderID="PlaceHolder1" GroupItemCount="3" ItemType="Khadmatcom.Data.Model.ServiceRequest">
@@ -34,6 +34,7 @@
                                 <div class="L1">
                                     <span class="ni">اسم شريك الخدمة: <span class="red"><%# Item.CurrentProvider.HasValue? Item.Provider.FullName :"-" %></span> </span>
                                     <span>رقم الجوال: <span class="blue"><%# Item.CurrentProvider.HasValue?Item.Provider.MobielNumber :"-"%></span> </span>
+                                    <span>المدينة: <span class="blue"><%# Item.City1.LocalizedCities.First(l=>l.LanguageId==1025).Title %></span> </span>
                                 </div>
 
                                 <div class="clearfix"></div>
@@ -44,7 +45,6 @@
                                 </div>
                                 <div class="L3">
                                     <p>
-                                       
                                     </p>
                                 </div>
                             </div>
@@ -55,7 +55,7 @@
                     <div id="right<%# Item.Id %>" class="collapse" aria-expanded="false">
                         <div class="accordion-body clearfix" dir="rtl" style="direction: rtl;">
                             <div class="list-group L-container">
-                               <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
                                         <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
                                         :
@@ -110,21 +110,22 @@
                                 <div class="L1">
                                     <span class="ni">رقم الحوالة: <span class="red"><%# Item.PartnerPaymentCode %></span> </span>
                                     <span>تاريخ التحويل: <span class="blue"><%# Item.PartnerPaymentDate %></span> </span>
-                                   
+
                                 </div>
                             </div>
                             <div class='<%# string.IsNullOrEmpty(Item.PartnerPaymentCode)?"":"hidden" %>'>
-                            <div class="input-group" id="s<%# Item.Id %>">
+                                <div class="input-group" id="s<%# Item.Id %>">
 
-                                <input type="button" class="btn btn-danger  btn-sm" value="تأكيد التحويل" onclick="transfare(<%# Item.Id %>);" />
+                                    <input type="button" class="btn btn-danger  btn-sm" value="تأكيد التحويل" onclick="transfare(<%# Item.Id %>);" />
 
+                                </div>
+                                <div class="input-group hidden validationEngineContainer transfareDiv" id="transfare<%# Item.Id %>">
+
+                                    <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>">رقم التحويل</label>
+                                    <input type="number" id="txtDuration<%# Item.Id %>" class=" validate[required]" value='' />
+                                    <input type="button" class="btn btn-success btn-sm" value="تأكيد" onclick="transfareAction(<%# Item.Id %>);" />
+                                </div>
                             </div>
-                            <div class="input-group hidden validationEngineContainer transfareDiv" id="transfare<%# Item.Id %>">
-
-                                <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>">رقم التحويل</label>
-                                <input type="number" id="txtDuration<%# Item.Id %>" class=" validate[required]" value='' />
-                                <input type="button" class="btn btn-success btn-sm" value="تأكيد" onclick="transfareAction(<%# Item.Id %>);" />
-                            </div> </div>
                         </div>
                     </div>
                 </div>

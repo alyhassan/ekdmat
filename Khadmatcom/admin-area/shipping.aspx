@@ -36,7 +36,7 @@
                                 <div class="L1">
                                     <span class="ni">اسم العميل: <span class="red"><%# Item.Client.FullName %></span> </span>
                                     <span>رقم الجوال: <span class="blue"><%# Item.Client.MobielNumber %></span> </span>
-                                    <span>رقم الجوال: <span class="blue"><%# Item.Client.City.LocalizedCities.First(l=>l.LanguageId==1025).Title %></span> </span>
+                                    <span>المدينة: <span class="blue"><%# Item.City1.LocalizedCities.First(l=>l.LanguageId==1025).Title %></span> </span>
                                 </div>
 
                                 <div class="clearfix"></div>
