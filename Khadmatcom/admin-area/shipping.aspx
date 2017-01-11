@@ -38,7 +38,12 @@
                                     <span>رقم الجوال: <span class="blue"><%# Item.Client.MobielNumber %></span> </span>
                                     <span>المدينة: <span class="blue"><%# Item.City1.LocalizedCities.First(l=>l.LanguageId==1025).Title %></span> </span>
                                 </div>
-
+                                <div class="L1">
+                                    <span class="ni">اسم العميل: <span class="red"><%# Item.ShippingName %></span> </span>
+                                    <span>المدينة: <span class="blue"><%# Item.ShippingCity %></span> </span>
+                                    <span>العنوان: <span class="blue"><%# Item.ShippingAddress %></span> </span>
+                                    <span>رقم الجوال: <span class="blue"><%# Item.ShippingPhone %></span> </span>
+                                </div>
                                 <div class="clearfix"></div>
                                 <div class="row L2">
                                     <div class="col-md-12 col-sm-12 col-xs-12 pull-right;">

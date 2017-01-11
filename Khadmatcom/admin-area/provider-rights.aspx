@@ -35,7 +35,8 @@
                                     <span class="ni">اسم شريك الخدمة: <span class="red"><%# Item.CurrentProvider.HasValue? Item.Provider.FullName :"-" %></span> </span>
                                     <span>رقم الجوال: <span class="blue"><%# Item.CurrentProvider.HasValue?Item.Provider.MobielNumber :"-"%></span> </span>
                                     <span>المدينة: <span class="blue"><%# Item.City1.LocalizedCities.First(l=>l.LanguageId==1025).Title %></span> </span>
-                                </div>
+                                <span>المستحق عن الخدمة: <span class="blue"><%# GetPrice(Item) %></span> </span>
+                                     </div>
 
                                 <div class="clearfix"></div>
                                 <div class="row L2">
