@@ -83,10 +83,10 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
-                                  <label class="list-group-item-heading pull-right blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>المرفقات</label>
+                                  <label class="list-group-item-heading pull-right blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>المرفقات :</label>
                                 <asp:ListView runat="server" DataSource="<%# Item.Attachments.Where(x=>x.IsOutput==false) %>" ItemType="Khadmatcom.Data.Model.Attachment">
                                     <ItemTemplate>
-                                        <a target="_blank" href='<%# string.Format("/Attachments/{0}", Item.Path)%>'>المرفق <%# Container.DataItemIndex+1 %></a>
+                                        <a target="_blank" href='<%# string.Format("/Attachments/{0}", Item.Path)%>' class="attach_url">المرفق <%# Container.DataItemIndex+1 %></a>
                                     </ItemTemplate>
                                     <ItemSeparatorTemplate>, </ItemSeparatorTemplate>
                                 </asp:ListView>
