@@ -31,7 +31,7 @@
                                     <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
                                     <span>نوع الخدمة:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
                                 </div>
-                                <div class="L2">
+                                <div class="L2 blue">
                                     :التفاصيل
                                 </div>
                                 <div class="L3">
