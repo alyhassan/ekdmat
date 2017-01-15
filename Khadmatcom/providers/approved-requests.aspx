@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="row L2">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 pull-right">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 pull-right blue">
                                         :تفاصيل الخدمة
                                     </div>
                                 </div>
