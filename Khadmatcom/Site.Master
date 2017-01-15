@@ -284,7 +284,7 @@
                                     <div id="managmentright4" class="collapse" aria-expanded="false">
                                         <div class="accordion-body clearfix">
                                             <a href="<%= GetLocalizedUrl("transactions/new/1/requests") %>">جديدة</a>
-                                            <a href="<%= GetLocalizedUrl("transactions/approved/2/requests") %>">مؤكدة</a>
+                                            <a href="<%= GetLocalizedUrl("transactions/approved/2/requests") %>">تمت الموافقة</a>
                                             <a href="<%= GetLocalizedUrl("transactions/paid/3/requests") %>">مدفوعة</a>
                                             <a href="<%= GetLocalizedUrl("transactions/in-progress/4/requests") %>">تحت التنفيذ</a>
                                             <a href="<%= GetLocalizedUrl("transactions/accomplished/5/requests") %>">منفذ</a>
@@ -660,7 +660,7 @@
                                 <div id="transactionright" class="collapse" aria-expanded="false">
                                     <div class="accordion-body clearfix">
                                         <a href="<%= GetLocalizedUrl("transactions/new/1/requests") %>">جديدة</a>
-                                        <a href="<%= GetLocalizedUrl("transactions/approved/2/requests") %>">مؤكدة</a>
+                                        <a href="<%= GetLocalizedUrl("transactions/approved/2/requests") %>">تمت الموافقة</a>
                                         <a href="<%= GetLocalizedUrl("transactions/paid/3/requests") %>">مدفوعة</a>
                                         <a href="<%= GetLocalizedUrl("transactions/in-progress/4/requests") %>">تحت التنفيذ</a>
                                         <a href="<%= GetLocalizedUrl("transactions/accomplished/5/requests") %>">منفذ</a>

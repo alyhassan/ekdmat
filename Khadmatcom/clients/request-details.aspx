@@ -145,8 +145,8 @@
                     <div class="clearfix fal">
                         <div class="accordion-heading">المرفقات <i class="indi fa fa-chevron-up"></i></div>
                     </div>
-                    <div id="collapse501" class="collapse" aria-expanded="false">
-                        <div class="accordion-body clearfix" ب>
+                    <div id="collapse501" class="collapse in" aria-expanded="false">
+                        <div class="accordion-body clearfix">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>المرفق 1</label>
@@ -250,7 +250,7 @@
                     <div class="clearfix fal">
                         <div class="accordion-heading lanti200">الدفع<i class="indi fa fa-chevron-down"></i></div>
                     </div>
-                    <div id="collapse503" class="collapse in" aria-expanded="false">
+                    <div id="collapse503" class="collapse" aria-expanded="false">
                         <div class="accordion-body clearfix validationEngineContainer" id="divServiceRequest">
                             <div class="col-md-12">
                                 <div class="col-md-6 col-sm-6 col-xs-6">
@@ -387,8 +387,8 @@
                     </div>
                     <div id="collapse504" class="collapse" aria-expanded="false">
                         <div class="accordion-body clearfix validationEngineContainer" id="submitServiceRequest">
-                            <div class="form-group col-md-12" style="min-height: 50px;"></div>
-                            <div class="clearfix">&nbsp;</div>
+                            <div class="form-group col-md-12" style="min-height: 50px;"><%= Summary %></div>
+                            <div class="clearfix"></div>
                             <div class="col-md-12 form-group clearfix">
                                 <asp:LinkButton Text="إرسال" runat="server" CssClass="nxt s-cl clasic-btn" ID="btnSave" OnClick="btnSave_OnClick" OnClientClick="return checkPayment()" />
                                 <%--<a href="#" class="nxt s-cl clasic-btn">Proceed</a>--%>

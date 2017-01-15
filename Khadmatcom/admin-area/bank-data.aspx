@@ -31,10 +31,12 @@
                                     <span class="ni">رقم الطلب: <span class="red"><%# Item.Id %></span> </span>
                                     <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
                                     <span>نوعها:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
+                                 <span>العدد:<span class="blue"><%#Item.Count %></span> </span>
                                 </div>
                                 <div class="L1">
-                                    <span class="ni">اسم العميل: <span class="red"><%# Item.Client.FullName %></span> </span>
-                                    <span>رقم الجوال: <span class="blue"><%# Item.Client.MobielNumber %></span> </span>
+                                    <span class="ni">اسم شريك الخدمة: <span class="red"><%# Item.Provider.FullName %></span> </span>
+                                    <span>رقم الجوال: <span class="blue"><%# Item.Provider.MobielNumber %></span> </span>
+                                    <span>رقم الحساب: <span class="blue"><%# Item.Provider.BankAccountNumber %></span> </span>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="row L2">
@@ -55,24 +57,7 @@
                     <div id="right<%# Item.Id %>" class="collapse" aria-expanded="false">
                         <div class="accordion-body clearfix" dir="rtl" style="direction: rtl;">
                             <div class="list-group L-container">
-                                <asp:Repeater runat="server" ItemType="Khadmatcom.Data.Model.RequestsOptionsAnswer" DataSource='<%# Item.RequestsOptionsAnswers %>'>
-                                    <ItemTemplate>
-                                        <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
-                                            <div class="input-group">
-                                                <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.RequestOption.Title %></label>
-                                                &nbsp;<label><%# GetAnswer(Item.Value) %></label>
-                                            </div>
-                                        </div>
-                                    </ItemTemplate>
-                                </asp:Repeater>
-                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
-                                    <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
-                                        :
-                                                       &nbsp; <span class=""><%# Item.TotalDuration %> يوم</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                              <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
                                         <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>طريقة الدفع</label>
                                         :
@@ -81,25 +66,19 @@
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>اسم شريك الخدمة </label>
+                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>اسم العميل </label>
                                         :
-                                                       &nbsp; <span class=""><%# Item.Provider.FullName %></span>
+                                                       &nbsp; <span class=""><%# Item.Client.FullName %></span>
                                     </div>
                                 </div>
                                  <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
                                         <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الجوال </label>
                                         :
-                                                       &nbsp; <span class=""><%# Item.Provider.MobielNumber %></span>
+                                                       &nbsp; <span class=""><%# Item.Client.MobielNumber %></span>
                                     </div>
                                 </div>
-                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
-                                    <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الحساب </label>
-                                        :
-                                                       &nbsp; <span class=""><%# Item.Provider.BankAccountNumber %></span>
-                                    </div>
-                                </div>
+                                
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
                                         <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>اسم البنك </label>
@@ -112,6 +91,13 @@
                                         <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>تاريخ التحويل </label>
                                         :
                                                        &nbsp; <span class=""><%# Item.PaymentDate %></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                    <div class="input-group">
+                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الحساب المحول منه</label>
+                                        :
+                                                       &nbsp; <span class=""><%# Item.PaymentAccountNumber %></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">

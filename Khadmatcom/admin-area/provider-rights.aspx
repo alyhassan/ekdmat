@@ -9,8 +9,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
     <ul class="nav nav-tabs nav-arow myTab">
         <li class="main alif"><a href="<%= GetLocalizedUrl("") %>"><%= GetGlobalResourceObject("general.aspx","Home") %></a></li>
-        <li class="sub active alif"><a href="javascript:{}">خدمات مدفوعة اون لاين</a></li>
-        <li class="sub active alif"><a href="javascript:{}">خدمات مدفوعة اون لاين</a></li>
+        <li class="sub active alif"><a href="javascript:{}">مستحقات شركائنا</a></li>
     </ul>
     <div id="chuu-owl" class="chuu owl-carousel owl-theme">
         <asp:ListView runat="server" ID="lvServiceRequest" SelectMethod="GetServiceRequests" ItemPlaceholderID="PlaceHolder1" GroupItemCount="3" ItemType="Khadmatcom.Data.Model.ServiceRequest">
@@ -30,22 +29,23 @@
                                 <div class="L1">
                                     <span class="ni">رقم الطلب: <span class="red"><%# Item.Id %></span> </span>
                                     <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
-                                    <span>نوعها:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
+                                    <span>العدد:<span class="blue"><%#Item.Count %></span> </span>
                                 </div>
                                 <div class="L1">
                                     <span class="ni">اسم العميل: <span class="red"><%# Item.Client.FullName %></span> </span>
                                     <span>رقم الجوال: <span class="blue"><%# Item.Client.MobielNumber %></span> </span>
+                                    <span>المدينة: <span class="blue"><%# Item.City1.LocalizedCities.First(l=>l.LanguageId==1025).Title %></span> </span>
+                                    <span>المستحق عن الخدمة: <span class="blue"><%# GetPrice(Item).ToCurrency() %></span> </span>
                                 </div>
 
                                 <div class="clearfix"></div>
                                 <div class="row L2">
                                     <div class="col-md-12 col-sm-12 col-xs-12 pull-right;">
-                                        :تفاصيل الخدمة
+                                        <span class="ni"><span class="red"></span></span>
                                     </div>
                                 </div>
                                 <div class="L3">
                                     <p>
-                                        <%# Item.Details %>
                                     </p>
                                 </div>
                             </div>
@@ -56,25 +56,6 @@
                     <div id="right<%# Item.Id %>" class="collapse" aria-expanded="false">
                         <div class="accordion-body clearfix" dir="rtl" style="direction: rtl;">
                             <div class="list-group L-container">
-                                <asp:Repeater runat="server" ItemType="Khadmatcom.Data.Model.RequestsOptionsAnswer" DataSource='<%# Item.RequestsOptionsAnswers %>'>
-                                    <ItemTemplate>
-                                        <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
-                                            <div class="input-group">
-                                                <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.RequestOption.Title %></label>
-                                                &nbsp;<label><%# GetAnswer(Item.Value) %></label>
-                                            </div>
-                                        </div>
-                                    </ItemTemplate>
-                                </asp:Repeater>
-
-
-                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
-                                    <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
-                                        :
-                                                       &nbsp; <span class=""><%# Item.TotalDuration %> يوم</span>
-                                    </div>
-                                </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
                                         <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>طريقة الدفع</label>
@@ -86,58 +67,50 @@
                                     <div class="input-group">
                                         <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>اسم شريك الخدمة </label>
                                         :
-                                                       &nbsp; <span class=""><%# Item.CurrentProvider.HasValue? Item.Provider.FullName :"-"%></span>
+                                                       &nbsp; <span class=""><%#Item.CurrentProvider.HasValue? Item.Provider.FullName :"-" %></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
                                         <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الجوال </label>
                                         :
-                                                       &nbsp; <span class=""><%# Item.CurrentProvider.HasValue?Item.Provider.MobielNumber :"-" %></span>
+                                                       &nbsp; <span class=""><%#  Item.CurrentProvider.HasValue?Item.Provider.MobielNumber :"-" %></span>
                                     </div>
+
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الحساب </label>
+                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>رقم الحساب</label>
                                         :
                                                        &nbsp; <span class=""><%# Item.CurrentProvider.HasValue?Item.Provider.BankAccountNumber :"-" %></span>
                                     </div>
                                 </div>
 
-                                <hr />
-                                <asp:Repeater runat="server" ItemType="Khadmatcom.Data.Model.RequestProvider" DataSource='<%# Item.RequestProviders %>'>
-                                    <ItemTemplate>
-                                        <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
-                                            <div class="input-group">
-                                                <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.User.FullName%></label>
-                                                &nbsp;<label><%# (RequestStatus)Item.Status %></label><label><%# Item.ExpiryTime %></label>
-                                            </div>
-                                        </div>
-                                    </ItemTemplate>
-                                </asp:Repeater>
+
                             </div>
                             <div class="L-button" id="">
                                 <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success ">حالة الطلب:<%# (RequestStatus)Item.StatusId %>&nbsp;<span style="display: inline-block; float: left"></span>&nbsp;  </button>
                             </div>
                             <div class='<%# string.IsNullOrEmpty(Item.PartnerPaymentCode)?"hidden":"" %>'>
                                 <div class="L1">
-                                    <span class="ni">رقم التحويل: <span class="red"><%# Item.PartnerPaymentCode %></span> </span>
+                                    <span class="ni">رقم الحوالة: <span class="red"><%# Item.PartnerPaymentCode %></span> </span>
                                     <span>تاريخ التحويل: <span class="blue"><%# Item.PartnerPaymentDate %></span> </span>
-                                   
+
                                 </div>
                             </div>
                             <div class='<%# string.IsNullOrEmpty(Item.PartnerPaymentCode)?"":"hidden" %>'>
-                            <div class="input-group" id="s<%# Item.Id %>">
+                                <div class="input-group" id="s<%# Item.Id %>">
 
-                                <input type="button" class="btn btn-danger  btn-sm" value="تأكيد التحويل" onclick="transfare(<%# Item.Id %>);" />
+                                    <input type="button" class="btn btn-danger  btn-sm" value="تأكيد التحويل" onclick="transfare(<%# Item.Id %>);" />
 
+                                </div>
+                                <div class="input-group hidden validationEngineContainer transfareDiv" id="transfare<%# Item.Id %>">
+
+                                    <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>">رقم التحويل</label>
+                                    <input type="number" id="txtDuration<%# Item.Id %>" class=" validate[required]" value='' />
+                                    <input type="button" class="btn btn-success btn-sm" value="تأكيد" onclick="transfareAction(<%# Item.Id %>);" />
+                                </div>
                             </div>
-                            <div class="input-group hidden validationEngineContainer transfareDiv" id="transfare<%# Item.Id %>">
-
-                                <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>">رقم التحويل</label>
-                                <input type="number" id="txtDuration<%# Item.Id %>" class=" validate[required]" value='' />
-                                <input type="button" class="btn btn-success btn-sm" value="تأكيد" onclick="transfareAction(<%# Item.Id %>);" />
-                            </div> </div>
                         </div>
                     </div>
                 </div>

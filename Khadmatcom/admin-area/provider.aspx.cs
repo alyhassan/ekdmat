@@ -184,7 +184,7 @@ namespace Khadmatcom.admin_area
                     }
                 }
                 _userServices.UpdateAndSave();
-                Notify("تم الحفظ");
+                RedirectAndNotify(Request.RawUrl,"تم الحفظ");
             }
             catch(Exception ex)
             {

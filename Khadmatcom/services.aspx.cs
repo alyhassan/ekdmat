@@ -19,6 +19,7 @@ namespace Khadmatcom
         protected int categoryId ;
         protected string CategoryName;
         protected string SubcategoryName = "";
+        private int typeId = 1;//2=personal 3=business
         public services()
         {
             TryGetRouteParameter("Section", out sectionName);
@@ -37,12 +38,28 @@ namespace Khadmatcom
         {
             if (string.IsNullOrEmpty(sectionName))
                 RedirectAndNotify(GetLocalizedUrl(""), "Invalid section name", "Erorr", NotificationType.Error);
-            ucServiceRequest.CurrentUser = CurrentUser;
+            else
+            {
+                switch (sectionName)
+                {
+                    case "personal":
+                        typeId = 2;
+                        break;
+                    case "business":
+                        typeId = 3;
+                        break;
+                    default:
+                        typeId = 1;
+                        break;
+                }
+                ucServiceRequest.CurrentUser = CurrentUser;
+            }
+           
         }
 
         public IQueryable<Service> GetServices()
         {
-            var services= _servicesServices.GetServicesList(LanguageId, subcategoryId.Value).AsQueryable();
+            var services= _servicesServices.GetServicesList(LanguageId, subcategoryId.Value).Where(s=>s.ServiceTypeId==typeId||s.ServiceTypeId==1).AsQueryable();
             ucServiceRequest.PageServices = services;
             hfServiceTypeName.Value = string.Format("{0} - {1}", CategoryName, SubcategoryName);
             return services;

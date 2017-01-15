@@ -81,8 +81,17 @@
                                                        &nbsp; <span class=""><%# Item.Notes %></span>
                                     </div>
                                 </div>
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                    <label class="pull-right blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>المرفقات :</label>&nbsp;
+                            <asp:ListView runat="server" DataSource="<%# Item.Attachments.Where(x=>x.IsOutput) %>" ItemType="Khadmatcom.Data.Model.Attachment">
+                                <ItemTemplate>
+                                    <a class="attach_url" target="_blank" href='<%# string.Format("/Attachments/{0}", Item.Path)%>'>المرفق <%# Container.DataItemIndex+1 %></a>
+                                </ItemTemplate>
+                                <ItemSeparatorTemplate>, </ItemSeparatorTemplate>
+                            </asp:ListView>
+                                </div>
                             </div>
-                              <div class="clearfix"></div>
+                            <div class="clearfix"></div>
                             <div class="L-button" id="">
                                 <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success ">سعر الخدمة:<%# Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).Price %>&nbsp;<span style="display: inline-block; float: left">ريال</span>&nbsp;  </button>
                                 <a href="<%# GetLocalizedUrl(string.Format("providers/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt hidden">Edit</a>

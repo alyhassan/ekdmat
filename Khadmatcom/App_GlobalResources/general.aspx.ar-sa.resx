@@ -273,4 +273,28 @@
   <data name="Transletion" xml:space="preserve">
     <value>ترجمة</value>
   </data>
+  <data name="Accomplished" xml:space="preserve">
+    <value>منفذة</value>
+  </data>
+  <data name="Approved" xml:space="preserve">
+    <value>تمت الموافقة</value>
+  </data>
+  <data name="Canceled" xml:space="preserve">
+    <value>ملغية</value>
+  </data>
+  <data name="Expired" xml:space="preserve">
+    <value>منتهية الصلاحية</value>
+  </data>
+  <data name="InProgress" xml:space="preserve">
+    <value>تحت التنفيذ</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>جديدة</value>
+  </data>
+  <data name="Paid" xml:space="preserve">
+    <value>مدفوعة</value>
+  </data>
+  <data name="Refused" xml:space="preserve">
+    <value>مرفوضة</value>
+  </data>
 </root>
