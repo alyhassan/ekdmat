@@ -150,24 +150,24 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>المرفق 1</label>
-                                    <input type="file" class="attach form-control hidden" />
+                                    <input type="file" class="form-control hidden" />
                                     <asp:FileUpload ID="fup1" runat="server" CssClass="attach form-control" />
                                 </div>
                                 <div class="form-group">
                                     <label>المرفق 2</label>
-                                    <input type="file" class="attach form-control hidden" />
+                                    <input type="file" class="form-control hidden" />
                                     <asp:FileUpload ID="fup2" runat="server" CssClass="attach form-control" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>المرفق 3</label>
-                                    <input type="file" class="attach form-control hidden" />
+                                    <input type="file" class="form-control hidden" />
                                     <asp:FileUpload ID="fup3" runat="server" CssClass="attach form-control" />
                                 </div>
                                 <div class="form-group">
                                     <label>المرفق 4</label>
-                                    <input type="file" class="attach form-control hidden" />
+                                    <input type="file" class="form-control hidden" />
                                     <asp:FileUpload ID="fup4" runat="server" CssClass="attach form-control" />
                                 </div>
                             </div>

@@ -1773,16 +1773,15 @@ button[type="submit"].c-btn {
     padding: 0px !important;
     color: #428bca !important;
     margin: 0px !important;
+     background-color: #ffffff !important;
+        float: right;
+        margin:0px 5px 0px 5px !important;
 }
 .indicators { float:left;display:inline-block;}
 
   .input-group-addon{background-color:transparent !important; border:none;}
      /* attach url*/
-.attach_url {
-        background-color: #ffffff !important;
-        float: right;
-        margin-left:5px !important;
-}
+
 .attach_url:hover{
         background-color: #ffffff !important;
         float: right; margin-left:5px !important;

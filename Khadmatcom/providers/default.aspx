@@ -31,9 +31,18 @@
                                     <span class="ni">رقم الطلب: <span class="red"><%# Item.Id %></span> </span>
                                     <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
                                     <span>نوعها:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
-                                    <span>الوقت المتبقي للرد:<br />
-                                        <span class="blue countDownContainer pull-left" time='<%# string.Format("{0:yyy/MM/dd hh:mm:ss}",Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime) %>' dir="rtl"><%# string.Format("{0:dd MMM yyyy HH:mm}",Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime) %></span> </span>
-                                </div>
+                                   <div class="clearfix"></div>
+                                <div class="L1">
+                                     <span class="pull-right"> : الوقت المتبقي للرد </span>
+                                         <style>
+                                             .colorDefinition {
+    background: transparent  !important;
+    border-color:transparent !important;width:auto;font-size:13px !important;
+}
+                                         </style>
+                                        <span class="blue countDownContainer pull-right" time='<%# string.Format("{0:yyy/MM/dd hh:mm:ss}",Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime) %>' dir="rtl"><%# string.Format("{0:dd MMM yyyy HH:mm}",Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime) %></span> 
+                               </div>
+                                     </div>
                                 <div class="clearfix"></div>
                                 <div class="row L2">
                                     <div class="col-md-12 col-sm-12 col-xs-12 pull-right blue">
@@ -83,7 +92,7 @@
                                         <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>" class="pull-right col-md-12">وقت التنفيذ المتوقع</label>
                                         <div class="col-md-12 input-group">
                                             <input type="text" id="txtDuration<%# Item.Id %>" class=" validate[required] hidden   pull-right form-control" value='' />
-                                            <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>" class="input-group-addon" style="background-color: transparent !important; border: none;">يوم</label>
+                                            <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>" class="input-group-addon hidden" style="background-color: transparent !important; border: none;">يوم</label>
                                         </div>
                                         <%--<%# Item.Service.ServiceProviders.First(r=>r.MemberId==CurrentUser.Id).EstamaitedTime %>--%>
                                     </div>
