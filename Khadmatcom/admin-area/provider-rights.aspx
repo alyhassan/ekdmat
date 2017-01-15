@@ -32,16 +32,16 @@
                                     <span>العدد:<span class="blue"><%#Item.Count %></span> </span>
                                 </div>
                                 <div class="L1">
-                                    <span class="ni">اسم شريك الخدمة: <span class="red"><%# Item.CurrentProvider.HasValue? Item.Provider.FullName :"-" %></span> </span>
-                                    <span>رقم الجوال: <span class="blue"><%# Item.CurrentProvider.HasValue?Item.Provider.MobielNumber :"-"%></span> </span>
+                                    <span class="ni">اسم العميل: <span class="red"><%# Item.Client.FullName %></span> </span>
+                                    <span>رقم الجوال: <span class="blue"><%# Item.Client.MobielNumber %></span> </span>
                                     <span>المدينة: <span class="blue"><%# Item.City1.LocalizedCities.First(l=>l.LanguageId==1025).Title %></span> </span>
-                                <span>المستحق عن الخدمة: <span class="blue"><%# GetPrice(Item) %></span> </span>
-                                     </div>
+                                    <span>المستحق عن الخدمة: <span class="blue"><%# GetPrice(Item).ToCurrency() %></span> </span>
+                                </div>
 
                                 <div class="clearfix"></div>
                                 <div class="row L2">
                                     <div class="col-md-12 col-sm-12 col-xs-12 pull-right;">
-                                        <span class="ni">رقم الحساب : <span class="red"><%# Item.CurrentProvider.HasValue?Item.Provider.BankAccountNumber :"-"%></span> </span>
+                                        <span class="ni"><span class="red"></span></span>
                                     </div>
                                 </div>
                                 <div class="L3">
@@ -58,13 +58,6 @@
                             <div class="list-group L-container">
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
-                                        :
-                                                       &nbsp; <span class=""><%# Item.TotalDuration %> يوم</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
-                                    <div class="input-group">
                                         <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>طريقة الدفع</label>
                                         :
                                                        &nbsp; <span class=""><%# GetPaymentMethod(Item.PaymentMethod) %></span>
@@ -72,37 +65,28 @@
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>اسم العميل </label>
+                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>اسم شريك الخدمة </label>
                                         :
-                                                       &nbsp; <span class=""><%# Item.Client.FullName%></span>
+                                                       &nbsp; <span class=""><%#Item.CurrentProvider.HasValue? Item.Provider.FullName :"-" %></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
                                         <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الجوال </label>
                                         :
-                                                       &nbsp; <span class=""><%# Item.Client.MobielNumber  %></span>
+                                                       &nbsp; <span class=""><%#  Item.CurrentProvider.HasValue?Item.Provider.MobielNumber :"-" %></span>
                                     </div>
+
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الحساب </label>
+                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>رقم الحساب</label>
                                         :
-                                                       &nbsp; <span class=""><%# Item.PaymentReferanceCode  %></span>
+                                                       &nbsp; <span class=""><%# Item.CurrentProvider.HasValue?Item.Provider.BankAccountNumber :"-" %></span>
                                     </div>
                                 </div>
 
-                                <hr />
-                                <asp:Repeater runat="server" ItemType="Khadmatcom.Data.Model.RequestProvider" DataSource='<%# Item.RequestProviders %>'>
-                                    <ItemTemplate>
-                                        <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
-                                            <div class="input-group">
-                                                <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.User.FullName%></label>
-                                                &nbsp;<label><%# (RequestStatus)Item.Status %></label><label><%# Item.ExpiryTime %></label>
-                                            </div>
-                                        </div>
-                                    </ItemTemplate>
-                                </asp:Repeater>
+
                             </div>
                             <div class="L-button" id="">
                                 <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success ">حالة الطلب:<%# (RequestStatus)Item.StatusId %>&nbsp;<span style="display: inline-block; float: left"></span>&nbsp;  </button>

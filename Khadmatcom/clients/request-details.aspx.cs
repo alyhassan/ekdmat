@@ -19,6 +19,7 @@ namespace Khadmatcom.clients
         protected ServiceRequest CurrentRequest;
         protected decimal ServicePrice = 0;
         protected decimal ShippingPrice = 30;
+        protected string Summary = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             string encruptedIdValue = "";
@@ -49,6 +50,7 @@ namespace Khadmatcom.clients
                 txtShippingPhone.Value = CurrentRequest.ShippingPhone;
                 txtShippingName.Value = CurrentRequest.ShippingName;
             }
+            Summary = string.Format("عزيزيى العميل<br> ({0})<br> شكرا لكم لاختياركم خدمات كوم...<br>لقد قمت بطلب خدمة({1}) <br>والتي تبلغ قيمتها ({2} ريال) <br>ولإكمال الطلب نرجو الضغط عل زر الإرسال وللألغاء اضغط إلغاء<br> كم ونود إحاطتكم علما انه فى حال دفع قيمة الخدمة عن طريق الفيزا او الماستر كارد سيتم احتساب رسوم إضافية قدرها 2.5% من قبل البنك", CurrentUser.FullName,CurrentRequest.Service.LocalizedServices.First(l=>l.LanguageId==LanguageId).Title,CurrentRequest.CurrentPrice);
         }
 
         public request_details()
@@ -109,7 +111,7 @@ namespace Khadmatcom.clients
                     CurrentRequest.PaymentProviderName = ddlBanks.Value;
                     CurrentRequest.PaymentDate = DateTime.ParseExact(txtDate.Value, "dd/MM/yyyy", new System.Globalization.CultureInfo("en-GB")); // DateTime.Parse(txtDate.Value);
                     CurrentRequest.PaymentReferanceCode = txtRefNumber.Value;
-                    CurrentRequest.PartnerPaymentCode = txtBakAccountNum.Value;
+                    CurrentRequest.PaymentAccountNumber = txtBakAccountNum.Value;
                     CurrentRequest.StatusId = (int)RequestStatus.Paid;
                     _serviceRequests.UpdateServiceRequest(CurrentRequest);
                     RedirectAndNotify(GetLocalizedUrl("clients/services-requests/approved-requests"), "رجاءاَ قم بالإتصال بالإدارة للتأكد من وصول الحوالة.");

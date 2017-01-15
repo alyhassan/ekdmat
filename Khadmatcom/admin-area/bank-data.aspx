@@ -57,24 +57,7 @@
                     <div id="right<%# Item.Id %>" class="collapse" aria-expanded="false">
                         <div class="accordion-body clearfix" dir="rtl" style="direction: rtl;">
                             <div class="list-group L-container">
-                                <asp:Repeater runat="server" ItemType="Khadmatcom.Data.Model.RequestsOptionsAnswer" DataSource='<%# Item.RequestsOptionsAnswers %>'>
-                                    <ItemTemplate>
-                                        <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
-                                            <div class="input-group">
-                                                <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.RequestOption.Title %></label>
-                                                &nbsp;<label><%# GetAnswer(Item.Value) %></label>
-                                            </div>
-                                        </div>
-                                    </ItemTemplate>
-                                </asp:Repeater>
-                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
-                                    <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
-                                        :
-                                                       &nbsp; <span class=""><%# Item.TotalDuration %> يوم</span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                              <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
                                         <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>طريقة الدفع</label>
                                         :
@@ -108,6 +91,13 @@
                                         <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>تاريخ التحويل </label>
                                         :
                                                        &nbsp; <span class=""><%# Item.PaymentDate %></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                    <div class="input-group">
+                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الحساب المحول منه</label>
+                                        :
+                                                       &nbsp; <span class=""><%# Item.PaymentAccountNumber %></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">

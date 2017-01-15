@@ -5,6 +5,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="/Content/carousel-css/owl.theme.css" />
     <link rel="stylesheet" type="text/css" href="/Content/carousel-css/owl.carousel.css" />
+    <link href="/Content/jquery.countdownTimer.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
     <ul class="nav nav-tabs nav-arow myTab">
@@ -31,7 +32,7 @@
                                     <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
                                     <span>نوعها:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
                                     <span>الوقت المتبقي للرد:<br />
-                                        <span class="blue" dir="ltr"><%# string.Format("{0:dd MMM yyyy HH:mm}",Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime) %></span> </span>
+                                        <span class="blue countDownContainer pull-left" time='<%# string.Format("{0:yyy/MM/dd hh:mm:ss}",Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime) %>' dir="rtl"><%# string.Format("{0:dd MMM yyyy HH:mm}",Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime) %></span> </span>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="row L2">
@@ -54,7 +55,7 @@
                                     <ItemTemplate>
                                         <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                             <div class="input-group">
-                                                <label  class="blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.RequestOption.Title %></label>
+                                                <label class="blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.RequestOption.Title %></label>
                                                 &nbsp;<label><%# GetAnswer(Item.Value) %></label>
                                             </div>
                                         </div>
@@ -80,11 +81,11 @@
                                     </div>
                                     <div class="form-group col-md-6 col-sm-6 col-xs-6 pull-right">
                                         <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>" class="pull-right col-md-12">وقت التنفيذ المتوقع</label>
-                                     <div class="col-md-12 input-group">  
-                                          <input type="text" id="txtDuration<%# Item.Id %>" class=" validate[required] hidden   pull-right form-control" value='' />
-                                       <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>" class="input-group-addon" style="background-color:transparent !important; border:none;">يوم</label>
-                                         </div>
-   <%--<%# Item.Service.ServiceProviders.First(r=>r.MemberId==CurrentUser.Id).EstamaitedTime %>--%>
+                                        <div class="col-md-12 input-group">
+                                            <input type="text" id="txtDuration<%# Item.Id %>" class=" validate[required] hidden   pull-right form-control" value='' />
+                                            <label for="txtDuration<%# Item.Id %>" id="txtDurationLabel<%# Item.Id %>" class="input-group-addon" style="background-color: transparent !important; border: none;">يوم</label>
+                                        </div>
+                                        <%--<%# Item.Service.ServiceProviders.First(r=>r.MemberId==CurrentUser.Id).EstamaitedTime %>--%>
                                     </div>
                                     <div class="form-group col-md-6 col-sm-12 col-xs-12 pull-right">
                                         <asp:Button Text="إرسال" OnClientClick="return takeRequestAction();" OnClick="OnClick" CssClass="btn btn-success" runat="server" CommandName="Update" CommandArgument="<%# Item.Id %>" />
@@ -108,6 +109,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="js" runat="server">
     <script src="/Scripts/carousel-js/owl.carousel.js"></script>
     <script src="/Scripts/carousel-js/owl.carousel.min.js"></script>
+    <script src="/Scripts/jquery.countdownTimer.js"></script>
     <script type="text/javascript">
         var id;
         var state;
@@ -195,7 +197,13 @@
             $(".owl-next").addClass("fa-chevron-right");
             $(".owl-next").text("");
 
-
+            //count down timer
+            $('.countDownContainer').each(function(){
+                var i = $(this);
+                var down = i.attr("time");
+                i.countdowntimer({dateAndTime:down,size:'sm',regexpMatchFormat:"([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})",regexpReplaceWith:'$1<sup>ايام</sup> / $2<sup>ساعة</sup> / $3<sup>دقيقة</sup> / $4<sup>ثانية</sup>'});
+            });
+            //
 
         });
     </script>

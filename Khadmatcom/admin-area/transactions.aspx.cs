@@ -33,5 +33,31 @@ namespace Khadmatcom.admin_area
             return adminServices.GetTransactions().AsQueryable();
         }
 
+        public decimal GetPrice(ServiceRequest CurrentRequest)
+        {
+            var method = CurrentRequest.Service.ShippingMethods;
+            decimal ServicePrice = 0;
+            decimal ShippingPrice = 30;
+            switch (method)
+            {
+                case ShippingMethods.None:
+                    ShippingPrice = 0;
+                    break;
+                case ShippingMethods.OneWay:
+                    ShippingPrice = 30;
+                    break;
+                case ShippingMethods.TwoWays:
+                    ShippingPrice = ShippingPrice * 2;
+                    break;
+                default:
+                    ShippingPrice = 0;
+                    break;
+            }
+            if (CurrentRequest.CurrentPrice.HasValue) ServicePrice = CurrentRequest.CurrentPrice.Value - ShippingPrice;
+            var provider = adminServices.GetProvider(CurrentRequest.ServiceId, CurrentRequest.CurrentProvider.Value);
+            if (provider == null) return 0;
+            return ServicePrice;
+        }
+
     }
 }
