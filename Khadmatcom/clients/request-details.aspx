@@ -186,12 +186,20 @@
                     </div>
                     <div id="collapse502" class="collapse" aria-expanded="false">
                         <div class="accordion-body clearfix">
-                            <div class="col-md-6">
-                                <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="form-group pull-right col-md-6">
                                     <label>اسم المرسل اليه</label>
                                     <input type="text" class="attach form-control" runat="server" id="txtShippingName" />
                                 </div>
-                                <div class="form-group">
+                                 <div class="form-group pull-right col-md-6">
+                                    <label>العنوان</label>
+                                    <input type="text" class="attach form-control" runat="server" id="txtShippingAddress" />
+                                </div>
+                                   <div class="form-group pull-right col-md-6">
+                                    <label>رقم الجوال</label>
+                                    <input type="text" class="attach form-control" runat="server" id="txtShippingPhone" />
+                                </div>
+                                <div class="form-group pull-right col-md-6">
                                     <label>المدينة</label>
                                     <select class="form-control validate[required]" id="ddlCities" onchange="$('#hfCityId').val($('#ddlCities').val());">
                                         <option value="">أختر محافظة</option>
@@ -210,28 +218,7 @@
                                 </div>
 
                             </div>
-                            <div class="col-md-6">
-                                 <div class="form-group pull-right">
-                                    <label>العنوان</label>
-                                    <input type="text" class="attach form-control" runat="server" id="txtShippingAddress" />
-                                </div>
-                                <div class="form-group">
-                                    <label>رقم الجوال</label>
-                                    <input type="text" class="attach form-control" runat="server" id="txtShippingPhone" />
-                                </div>
-                               
-                                <%--  <div class="form-group">
-                                    <label>Region</label>
-                                    <select class="attach">
-                                        <option>Choose</option>
-                                        <option>2</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Telephone number</label>
-                                    <input type="text" class="attach" />
-                                </div>--%>
-                            </div>
+                          
                             <div class="clearfix">&nbsp;</div>
                             <div class="form-group col-md-12">
                                 <label class="checkbox form-label">
