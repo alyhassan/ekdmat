@@ -143,7 +143,7 @@
                 -->
                 <div class="panel">
                     <div class="clearfix fal">
-                        <div class="accordion-heading">المرفقات <i class="indi fa fa-chevron-up"></i></div>
+                       <a data-toggle="collapse" data-parent="#accordion500" href="#collapse501" aria-expanded="true"> <div class="accordion-heading" >المرفقات <i class="indi fa fa-chevron-up"></i></div></a>
                     </div>
                     <div id="collapse501" class="collapse in" aria-expanded="false">
                         <div class="accordion-body clearfix">
@@ -182,7 +182,7 @@
                 </div>
                 <div class="panel">
                     <div class="clearfix fal">
-                        <div class="accordion-heading">العنوان<i class="indi fa fa-chevron-up"></i></div>
+                        <a data-toggle="collapse" data-parent="#accordion500" href="#collapse502" aria-expanded="true">  <div class="accordion-heading">العنوان<i class="indi fa fa-chevron-up"></i></div></a>
                     </div>
                     <div id="collapse502" class="collapse" aria-expanded="false">
                         <div class="accordion-body clearfix">
@@ -236,7 +236,7 @@
                 </div>
                 <div class="panel">
                     <div class="clearfix fal">
-                        <div class="accordion-heading lanti200">الدفع<i class="indi fa fa-chevron-down"></i></div>
+                       <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" aria-expanded="true">   <div class="accordion-heading">الدفع<i class="indi fa fa-chevron-up"></i></div></a>
                     </div>
                     <div id="collapse503" class="collapse" aria-expanded="false">
                         <div class="accordion-body clearfix validationEngineContainer" id="divServiceRequest">
@@ -371,7 +371,7 @@
                 </div>
                 <div class="panel">
                     <div class="clearfix fal">
-                        <div class="accordion-heading">ملخص الطلب <i class="indi fa fa-chevron-up"></i></div>
+                       <a data-toggle="collapse" data-parent="#accordion500" href="#collapse504" aria-expanded="true">   <div class="accordion-heading">ملخص الطلب <i class="indi fa fa-chevron-up"></i></div></a>
                     </div>
                     <div id="collapse504" class="collapse" aria-expanded="false">
                         <div class="accordion-body clearfix validationEngineContainer" id="submitServiceRequest">
