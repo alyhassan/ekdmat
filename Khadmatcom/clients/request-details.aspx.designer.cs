@@ -58,15 +58,6 @@ namespace Khadmatcom.clients {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtShippingName;
         
         /// <summary>
-        /// txtShippingPhone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtShippingPhone;
-        
-        /// <summary>
         /// txtShippingAddress control.
         /// </summary>
         /// <remarks>
@@ -74,6 +65,15 @@ namespace Khadmatcom.clients {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtShippingAddress;
+        
+        /// <summary>
+        /// txtShippingPhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtShippingPhone;
         
         /// <summary>
         /// txtCardHolder control.

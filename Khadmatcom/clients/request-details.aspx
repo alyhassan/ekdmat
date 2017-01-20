@@ -211,14 +211,15 @@
 
                             </div>
                             <div class="col-md-6">
+                                 <div class="form-group pull-right">
+                                    <label>العنوان</label>
+                                    <input type="text" class="attach form-control" runat="server" id="txtShippingAddress" />
+                                </div>
                                 <div class="form-group">
                                     <label>رقم الجوال</label>
                                     <input type="text" class="attach form-control" runat="server" id="txtShippingPhone" />
                                 </div>
-                                <div class="form-group">
-                                    <label>العنوان</label>
-                                    <input type="text" class="attach form-control" runat="server" id="txtShippingAddress" />
-                                </div>
+                               
                                 <%--  <div class="form-group">
                                     <label>Region</label>
                                     <select class="attach">
