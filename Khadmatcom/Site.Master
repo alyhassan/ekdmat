@@ -334,16 +334,16 @@
             <div class="container clearfix hidden-sm  hidden-xs">
 
                 <div class="col-md-7 col-sm-12 col-xs-12 padLeftRight0 banner-right hidden-sm  hidden-xs">
-                    <img src="/images/banner.jpg" alt="" class="pull-left" />
+                    <img src="/images/banner.png" alt="" class="pull-left" />
                 </div>
                 <div class="col-md-5 hidden-xs hidden-sm padLeftRight0 logo-img pull-right">
                     <a href="<%= GetLocalizedUrl("") %>">
-                        <img src='/images/logo.png' /></a>
-                </div>
-
+                        <img src='/images/logo.png' style="width:100px" />
+</a>
 
             </div>
         </div>
+            </div>
         <div class="visible-sm visible-xs" style="margin-top: 70px;"></div>
         <div class="container clearfix hidden">
 

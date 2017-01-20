@@ -137,7 +137,7 @@ header {
 
 .banner {
     background: url(/images/head-bg.jpg) top right no-repeat #1a548e;
-    min-height: 110px;
+    max-height: 110px;
     margin-top: 38px;
 }
 

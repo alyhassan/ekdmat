@@ -2,12 +2,15 @@
 $(document).ready(function () {
 
     function toggleChevron(e) {
+     
         $(e.target)
+        
             .prev('.accordion-heading')
             .find(".indi")
            .toggleClass('fa-chevron-up fa-chevron-down')
-         .toggleClass('accordion-active');
-
+         .toggleClass('accordion-active')
+        
+         
 
         //.toggleClass('L-button');
 
