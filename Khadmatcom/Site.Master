@@ -1,5 +1,4 @@
 ﻿<%@ Master ViewStateMode="Enabled" EnableViewState="true" Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Khadmatcom.Site" %>
-
 <%@ Register Src="~/Controls/uclogin.ascx" TagPrefix="uc1" TagName="uclogin" %>
 
 <!DOCTYPE html>
