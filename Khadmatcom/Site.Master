@@ -334,7 +334,7 @@
             <div class="container clearfix">
 
                 <div class="col-md-7 col-sm-12 col-xs-12 padLeftRight0 banner-right">
-                    <img src="/images/banner.png" alt="" class="pull-left" />
+                    <img src="/images/banner.png" alt="" class="pull-left img-responsive" />
                 </div>
                 <div class="col-md-5 hidden-xs hidden-sm padLeftRight0 logo-img pull-right">
                     <a href="<%= GetLocalizedUrl("") %>">
@@ -345,15 +345,18 @@
         </div>
             </div>
         <div class="visible-sm visible-xs" style="margin-top: 70px;"></div>
-        <div class="container clearfix hidden">
+        <div class="container clearfix visible-sm visible-xs">
 
-            <div class="col-md-6 col-md-offset-3">
+             <div class="col-md-12 col-sm-12 col-xs-12 padLeftRight0 banner-right">
+                    <img src="/images/banner.png" alt="e-khadmat" class="pull-left img-responsive" style="width:100%;" />
+                </div>
+          <!--  <div class="col-md-6 col-md-offset-3">
                 <div class="input-append span12">
                     <input type="text" class="form-control" placeholder="Search" />
                     <button type="submit" class="bn"><i class="fa fa-search"></i></button>
                     <%--icon-search--%>
                 </div>
-            </div>
+            </div>-->
 
 
 
