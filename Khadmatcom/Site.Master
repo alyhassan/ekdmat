@@ -343,7 +343,7 @@
             </div>
         </div>
             </div>
-        <div class="visible-sm visible-xs" style="margin-top: 70px;"></div>
+        <div class="visible-sm visible-xs" style="margin-top: 60px;"></div>
         <div class="container clearfix visible-sm visible-xs">
 
              <div class="col-md-12 col-sm-12 col-xs-12 padLeftRight0 banner-right">
@@ -361,7 +361,7 @@
 
         </div>
 
-        <div class="container clearfix main-content">
+        <div class="container clearfix main-content" style="margin-top:0px !important;">
 
             <!--Left -->
             <div class="col-xs-12 col-sm-12 visible-xs visible-sm rightdiv">
