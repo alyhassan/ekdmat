@@ -136,7 +136,9 @@
             //do what you need here
             if (result) {
                 var userData = {
-                    id: id
+                    id: id,
+                    dummy:false,
+                    x:0
                     };
                 $.getJSON("/api/Khadmatcom/ConfirmRequest", userData, function (res) {
                     showLoading();
