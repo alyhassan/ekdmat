@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading;
+using System.Web;
 using System.Web.Configuration;
 using System.Web.Security;
 using Khadmatcom.Services.Services;
@@ -55,6 +56,19 @@ namespace Khadmatcom
         public void Notify(string message, string title = "", NotificationType notificationType = NotificationType.Success)
         {
             ((MasterBase)this.Page.Master).ShowNotifier(message, title, notificationType);
+        }
+
+        protected void RedirectAndNotify(string redirectUrl, string message,
+          string title = "", NotificationType notificationType = NotificationType.Success, bool endResponse = false)
+        {
+            StringBuilder sb = new StringBuilder(redirectUrl);
+            sb.AppendFormat("?msg={0}", HttpUtility.UrlEncode(message));
+            if (!string.IsNullOrEmpty(title))
+            {
+                sb.AppendFormat("&msgtitle={0}", HttpUtility.UrlEncode(title));
+            }
+            sb.AppendFormat("&msgtype={0}", (int)notificationType);
+            Response.Redirect(sb.ToString(), endResponse);
         }
 
         protected string GetLocalizedUrl(string path)

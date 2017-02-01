@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading;
 using System.Web;
@@ -43,11 +44,11 @@ namespace Khadmatcom.admin_area
                 try
                 {
                     adminServices.ConfirmRequest(id);
-                    RedirectAndNotify(Request.RawUrl,"تم تأكيد لدفع للطلب");
+                    RedirectAndNotify(Request.RawUrl, "تم تأكيد لدفع للطلب");
                 }
                 catch (Exception)
                 {
-                    RedirectAndNotify(Request.RawUrl, "خطا اثناء عملية التاكيد حاول لاحقا","",NotificationType.Error);
+                    RedirectAndNotify(Request.RawUrl, "خطا اثناء عملية التاكيد حاول لاحقا", "", NotificationType.Error);
                     throw;
                 }
 
@@ -58,5 +59,18 @@ namespace Khadmatcom.admin_area
         {
 
         }
+
+        //public string GetGregorian(int y,int m,int d)
+        //{
+        //    var hijri = new UmAlQuraCalendar();
+        //    var cal = new GregorianCalendar();
+
+        //    var hijriDate = new DateTime(y, m, d, hijri);
+        //    ////var y = cal.GetYear(hijriDate);
+        //    ////var m = cal.GetMonth(hijriDate);
+        //    ////var d = cal.GetDayOfMonth(hijriDate);
+        //    return string.Format("{0}/{1}/{2}", cal.GetYear(hijriDate), cal.GetMonth(hijriDate), cal.GetDayOfMonth(hijriDate));
+        //   // return  DateTime.ParseExact(date, "dd/MM/yyyy hh:mm tt",CultureInfo.InvariantCulture);
+        //}
     }
 }

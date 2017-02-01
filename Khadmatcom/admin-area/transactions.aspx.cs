@@ -54,9 +54,10 @@ namespace Khadmatcom.admin_area
                     break;
             }
             if (CurrentRequest.CurrentPrice.HasValue) ServicePrice = CurrentRequest.CurrentPrice.Value - ShippingPrice;
-            var provider = adminServices.GetProvider(CurrentRequest.ServiceId, CurrentRequest.CurrentProvider.Value);
-            if (provider == null) return 0;
-            return ServicePrice;
+            ServiceProvider provider = null;
+            if (CurrentRequest.CurrentProvider.HasValue&& CurrentRequest.CurrentProvider.Value>0)
+                provider = adminServices.GetProvider(CurrentRequest.ServiceId, CurrentRequest.CurrentProvider.Value);
+            return provider == null ? 0 : ServicePrice;
         }
 
     }

@@ -90,7 +90,7 @@
                                     <div class="input-group">
                                         <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>تاريخ التحويل </label>
                                         :
-                                                       &nbsp; <span class=""><%# Item.PaymentDate %></span>
+                                                       &nbsp; <span class=""><%# string.Format("{0}/{1}/{2}",Item.PaymentDate.Value.Year,Item.PaymentDate.Value.Month.ToString("00"),Item.PaymentDate.Value.Day.ToString("00")) %></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">

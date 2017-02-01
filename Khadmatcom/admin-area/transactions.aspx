@@ -63,7 +63,7 @@
                 <div id="right<%# Item.Id %>" class="collapse" aria-expanded="false">
                     <div class="accordion-body clearfix" dir="rtl" style="direction: rtl;">
                         <div class="list-group L-container">
-                            <%--<asp:Repeater runat="server" ItemType="Khadmatcom.Data.Model.RequestsOptionsAnswer" DataSource='<%# Item.RequestsOptionsAnswers %>'>
+                            <asp:Repeater runat="server" ItemType="Khadmatcom.Data.Model.RequestsOptionsAnswer" DataSource='<%# Item.RequestsOptionsAnswers %>'>
                                 <ItemTemplate>
                                     <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                         <div class="input-group">
@@ -72,9 +72,9 @@
                                         </div>
                                     </div>
                                 </ItemTemplate>
-                            </asp:Repeater>--%>
+                            </asp:Repeater>
+                            <div <%# Item.StatusId>=(int)RequestStatus.Paid&&(Item.StatusId!=(int)RequestStatus.Refused||Item.StatusId!=(int)RequestStatus.Expired||Item.StatusId!=(int)RequestStatus.Canceled)?"":"class='hidden'" %>>
 
-                            <div <%# Item.StatusId>=(int)RequestStatus.InProgress&&(Item.StatusId!=(int)RequestStatus.Refused||Item.StatusId!=(int)RequestStatus.Expired||Item.StatusId!=(int)RequestStatus.Canceled)?"":"class='hidden'" %>>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
                                         <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>السعر النهائي</label>
@@ -89,6 +89,10 @@
                                                        &nbsp; <span class=""><%# Item.TotalDuration %> يوم</span>
                                     </div>
                                 </div>
+                            </div>
+                            <div <%# Item.StatusId>=(int)RequestStatus.InProgress&&(Item.StatusId!=(int)RequestStatus.Refused||Item.StatusId!=(int)RequestStatus.Expired||Item.StatusId!=(int)RequestStatus.Canceled)?"":"class='hidden'" %>>
+
+
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
                                         <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>طريقة الدفع</label>
@@ -114,16 +118,21 @@
                                 <hr />
 
                             </div>
-                            <asp:Repeater runat="server" ItemType="Khadmatcom.Data.Model.RequestProvider" DataSource='<%# Item.RequestProviders %>'>
+                            <div>
+                                <asp:Repeater runat="server" ItemType="Khadmatcom.Data.Model.RequestProvider" DataSource='<%# Item.RequestProviders %>'>
                                 <ItemTemplate>
                                     <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                         <div class="input-group">
                                             <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.User.FullName%></label>
-                                            &nbsp;<label><%# (RequestStatus)Item.Status %></label><label><%# Item.ExpiryTime %></label><label><br /><label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>تعليق: </label><%# Item.RejectedReson %></label>
+                                            &nbsp;<label><%# (RequestStatus)Item.Status %></label><br/><label><%# Item.ExpiryTime %></label><label><br class="clearfix" /><br />
+                                                <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>تعليق: </label>
+                                                <%# Item.RejectedReson %></label>
                                         </div>
                                     </div>
                                 </ItemTemplate>
                             </asp:Repeater>
+                            </div>
+                            
 
                             <%--المرفقات--%>
                             <div <%# Item.StatusId>=(int)RequestStatus.InProgress&&(Item.StatusId!=(int)RequestStatus.Refused||Item.StatusId!=(int)RequestStatus.Expired||Item.StatusId!=(int)RequestStatus.Canceled)?"":"class='hidden'" %>>
