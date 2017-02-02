@@ -84,7 +84,12 @@
             });
 
             $('#ddlCount').change(function () {
+                if ($('#hfServicePrice').val() == "0")
+                    $('#servicePrice').html('غير محدد');
+                else
                 $('#servicePrice').html(this.value * parseInt($('#hfServicePrice').val()));
+                
+                
             });
 
             //calcluate service price option
@@ -95,7 +100,9 @@
             $('#hfServiceId').val(id);
             $('#ddlService').val(id);
             $('#lblNotes').html(notes);
-            $('#servicePrice').html(price);
+            if (price > 0)
+                $('#servicePrice').html(price);
+            else $('#servicePrice').html('غير محدد');
             $('#hfServicePrice').val(price);
             $("#p10").modal({ backdrop: 'static', show: true });
 

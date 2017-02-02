@@ -77,7 +77,7 @@ namespace Khadmatcom.Controls
 
                 request.AddRequest(requestData);
                 InitializeCulture();
-                Notify("تم طلب الخدمة");
+                RedirectAndNotify(Request.RawUrl,"تم طلب الخدمة");
             }
             catch (Exception ex)
             {

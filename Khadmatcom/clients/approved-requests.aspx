@@ -91,7 +91,8 @@
                             </p>
                            <div class="clearfix"></div>
                             <div class="L-button" id="">
-                                <a href="<%# GetLocalizedUrl(string.Format("clients/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt">إكمال الطلب</a>
+                                <a href="<%# GetLocalizedUrl(string.Format("clients/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>"  class='<%# Item.Service.SkipPayment?"hidden":"editt" %>'>إكمال الطلب</a>
+                                 <input type="button" class='<%# Item.Service.SkipPayment?"btn btn-success  btn-sm":"hidden" %>' value="تم التأكيد" onclick="approveRequest(<%# Item.Id %>);" />
                             </div>
                             <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success pull-left">سعر الخدمة : <%# Item.CurrentPrice %> <span style="display: inline-block;">ريال</span> </button>
 
@@ -129,5 +130,31 @@
 
 
         });
+
+        function approveRequest(id) {
+            var result = validateForm('#increase' + id, '<%= languageIso %>');
+            //do what you need here
+            if (result) {
+                var userData = {
+                    id: id,
+                    dummy:false,
+                    x:0
+                    };
+                $.getJSON("/api/Khadmatcom/ConfirmRequest", userData, function (res) {
+                    showLoading();
+                    if (res) {
+                        hideLoading();
+                        toastr.success("تم تأكيد طلبك", "شكرا لك");
+                       }
+                    else {
+                        result = false;
+                        hideLoading();
+                        toastr.error("هناك خطأ  أثناء تأكيد طلبك...فضلا حاول لاحقا.", "خطأ"); 
+                    }
+                });
+
+            }
+            return result;
+        }
     </script>
 </asp:Content>

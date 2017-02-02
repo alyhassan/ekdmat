@@ -35,7 +35,7 @@
                                     <span class="ni">اسم العميل: <span class="red"><%# Item.Client.FullName %></span> </span>
                                     <span>رقم الجوال: <span class="blue"><%# Item.Client.MobielNumber %></span> </span>
                                     <span>المدينة: <span class="blue"><%# Item.City1.LocalizedCities.First(l=>l.LanguageId==1025).Title %></span> </span>
-                                    <span>المستحق عن الخدمة: <span class="blue"><%# GetPrice(Item).ToCurrency() %></span> </span>
+                                   
                                 </div>
 
                                 <div class="clearfix"></div>
@@ -85,7 +85,13 @@
                                                        &nbsp; <span class=""><%# Item.CurrentProvider.HasValue?Item.Provider.BankAccountNumber :"-" %></span>
                                     </div>
                                 </div>
-
+                               <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                    <div class="input-group">
+                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>المستحق عن الخدمة</label>
+                                        :
+                                                       &nbsp; <span class=""><%# GetPrice(Item).ToCurrency() %></span>
+                                    </div>
+                                </div>  
 
                             </div>
                             <div class="L-button" id="">
