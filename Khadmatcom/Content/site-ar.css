@@ -1776,7 +1776,7 @@ button[type="submit"].c-btn {
         float: right;
         margin:0px 5px 0px 5px !important;
 }
-.indicators { float:left;display:inline-block;}
+.indicators { float:left;display:inline-block; color:red;}
 
   .input-group-addon{background-color:transparent !important; border:none;}
      /* attach url*/

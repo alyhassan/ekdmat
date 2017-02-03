@@ -203,13 +203,13 @@
                                     </div>
                                     <div id="subMenu" class="collapse" aria-expanded="false">
                                         <div class="accordion-body clearfix">
-                                            <a href="<%= GetLocalizedUrl("clients/services-requests/new-requests") %>">طلبات جديدة <span class="indicators">(<%= ClientNew %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("clients/services-requests/approved-requests") %>">طلبات بإنتظار الدفع<span class="indicators">(<%= ClientApproved %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("clients/services-requests/inprogress-requests") %>">طلبات تحت العمل<span class="indicators">(<%= ClientInProgress %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("clients/services-requests/finished-requests") %>">طلبات منفذة<span class="indicators">(<%= ClinetAccomplished %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("clients/services-requests/refused-requests") %>">طلبات مرفوضة<span class="indicators">(<%= ClientRefused %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("clients/services-requests/canceled-requests") %>">طلبات ملغاة<span class="indicators">(<%= ClientCanceled %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("clients/services-requests/expired-requests") %>">طلبات منتهية المدة<span class="indicators">(<%= ClientExpired %>)</span></a>
+                                            <a href="<%= GetLocalizedUrl("clients/services-requests/new-requests") %>">طلبات جديدة <span class="indicators text-danger">(<%= ClientNew %>)</span></a>
+                                            <a href="<%= GetLocalizedUrl("clients/services-requests/approved-requests") %>">طلبات بإنتظار الدفع<span class="indicators text-danger">(<%= ClientApproved %>)</span></a>
+                                            <a href="<%= GetLocalizedUrl("clients/services-requests/inprogress-requests") %>">طلبات تحت العمل<span class="indicators text-danger">(<%= ClientInProgress %>)</span></a>
+                                            <a href="<%= GetLocalizedUrl("clients/services-requests/finished-requests") %>">طلبات منفذة<span class="indicators text-danger">(<%= ClinetAccomplished %>)</span></a>
+                                            <a href="<%= GetLocalizedUrl("clients/services-requests/refused-requests") %>">طلبات مرفوضة<span class="indicators text-danger">(<%= ClientRefused %>)</span></a>
+                                            <a href="<%= GetLocalizedUrl("clients/services-requests/canceled-requests") %>">طلبات ملغاة<span class="indicators text-danger">(<%= ClientCanceled %>)</span></a>
+                                            <a href="<%= GetLocalizedUrl("clients/services-requests/expired-requests") %>">طلبات منتهية المدة<span class="indicators text-danger">(<%= ClientExpired %>)</span></a>
                                             <%-- <a href="javascript:{}">Govt Services </a>
                                         <a href="javascript:{}">GOSI Services</a>
                                         <a href="javascript:{}">IT Services</a>
@@ -227,13 +227,13 @@
                                     </div>
                                     <div id="subMenu2" class="collapse" aria-expanded="false">
                                         <div class="accordion-body clearfix">
-                                            <a href="<%= GetLocalizedUrl("providers/services-requests/new-requests") %>">خدمات جديدة<span class="indicators">(<%= ProviderNew %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("providers/services-requests/approved-requests") %>">خدمات بإنتظار الدفع<span class="indicators">(<%= ProviderApproved %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("providers/services-requests/inprogress-requests") %>">خدمات تحت العمل<span class="indicators">(<%= ProviderInProgress %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("providers/services-requests/finished-requests") %>">خدمات منفذة<span class="indicators">(<%= ProviderAccomplished %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("providers/services-requests/refused-requests") %>">خدمات مرفوضة<span class="indicators">(<%= ProviderRefused %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("providers/services-requests/canceled-requests") %>">خدمات ملغاة<span class="indicators">(<%= ProviderCanceled %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("providers/services-requests/expired-requests") %>">خدمات منتهية المدة<span class="indicators">(<%= ProviderExpired %>)</span></a>
+                                            <a href="<%= GetLocalizedUrl("providers/services-requests/new-requests") %>">خدمات جديدة<span class="indicators text-danger">(<%= ProviderNew %>)</span></a>
+                                            <a href="<%= GetLocalizedUrl("providers/services-requests/approved-requests") %>">خدمات بإنتظار الدفع<span class="indicators text-danger">(<%= ProviderApproved %>)</span></a>
+                                            <a href="<%= GetLocalizedUrl("providers/services-requests/inprogress-requests") %>">خدمات تحت العمل<span class="indicators text-danger">(<%= ProviderInProgress %>)</span></a>
+                                            <a href="<%= GetLocalizedUrl("providers/services-requests/finished-requests") %>">خدمات منفذة<span class="indicators text-danger">(<%= ProviderAccomplished %>)</span></a>
+                                            <a href="<%= GetLocalizedUrl("providers/services-requests/refused-requests") %>">خدمات مرفوضة<span class="indicators text-danger">(<%= ProviderRefused %>)</span></a>
+                                            <a href="<%= GetLocalizedUrl("providers/services-requests/canceled-requests") %>">خدمات ملغاة<span class="indicators text-danger">(<%= ProviderCanceled %>)</span></a>
+                                            <a href="<%= GetLocalizedUrl("providers/services-requests/expired-requests") %>">خدمات منتهية المدة<span class="indicators text-danger">(<%= ProviderExpired %>)</span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -587,13 +587,13 @@
                                 <a href="javascript:{}">IT Services</a>
                                 <a href="javascript:{}">Computer Services</a>
                                 <a href="javascript:{}">Software Services </a>--%>
-                                        <a href="<%= GetLocalizedUrl("clients/services-requests/new-requests") %>">طلبات جديدة<span class="indicators">(<%= ClientNew %>)</span></a>
-                                        <a href="<%= GetLocalizedUrl("clients/services-requests/approved-requests") %>">طلبات بإنتظار الدفع<span class="indicators">(<%= ClientApproved %>)</span></a>
-                                        <a href="<%= GetLocalizedUrl("clients/services-requests/inprogress-requests") %>">طلبات تحت العمل<span class="indicators">(<%= ClientInProgress %>)</span></a>
-                                        <a href="<%= GetLocalizedUrl("clients/services-requests/finished-requests") %>">طلبات منفذة<span class="indicators">(<%= ClinetAccomplished %>)</span></a>
-                                        <a href="<%= GetLocalizedUrl("clients/services-requests/refused-requests") %>">طلبات مرفوضة<span class="indicators">(<%= ClientRefused %>)</span></a>
-                                        <a href="<%= GetLocalizedUrl("clients/services-requests/canceled-requests") %>">طلبات ملغاة<span class="indicators">(<%= ClientCanceled %>)</span></a>
-                                        <a href="<%= GetLocalizedUrl("clients/services-requests/expired-requests") %>">طلبات منتهية المدة<span class="indicators">(<%= ClientExpired %>)</span></a>
+                                        <a href="<%= GetLocalizedUrl("clients/services-requests/new-requests") %>">طلبات جديدة<span class="indicators text-danger">(<%= ClientNew %>)</span></a>
+                                        <a href="<%= GetLocalizedUrl("clients/services-requests/approved-requests") %>">طلبات بإنتظار الدفع<span class="indicators text-danger">(<%= ClientApproved %>)</span></a>
+                                        <a href="<%= GetLocalizedUrl("clients/services-requests/inprogress-requests") %>">طلبات تحت العمل<span class="indicators text-danger">(<%= ClientInProgress %>)</span></a>
+                                        <a href="<%= GetLocalizedUrl("clients/services-requests/finished-requests") %>">طلبات منفذة<span class="indicators text-danger">(<%= ClinetAccomplished %>)</span></a>
+                                        <a href="<%= GetLocalizedUrl("clients/services-requests/refused-requests") %>">طلبات مرفوضة<span class="indicators text-danger">(<%= ClientRefused %>)</span></a>
+                                        <a href="<%= GetLocalizedUrl("clients/services-requests/canceled-requests") %>">طلبات ملغاة<span class="indicators text-danger">(<%= ClientCanceled %>)</span></a>
+                                        <a href="<%= GetLocalizedUrl("clients/services-requests/expired-requests") %>">طلبات منتهية المدة<span class="indicators text-danger">(<%= ClientExpired %>)</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -606,13 +606,13 @@
                                 </div>
                                 <div id="requestsright" class="collapse" aria-expanded="false">
                                     <div class="accordion-body clearfix">
-                                        <a href="<%= GetLocalizedUrl("providers/services-requests/new-requests") %>">خدمات جديدة<span class="indicators">(<%= ProviderNew %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("providers/services-requests/approved-requests") %>">خدمات بإنتظار الدفع<span class="indicators">(<%= ProviderApproved %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("providers/services-requests/inprogress-requests") %>">خدمات تحت العمل<span class="indicators">(<%= ProviderInProgress %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("providers/services-requests/finished-requests") %>">خدمات منفذة<span class="indicators">(<%= ProviderAccomplished %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("providers/services-requests/refused-requests") %>">خدمات مرفوضة<span class="indicators">(<%= ProviderRefused %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("providers/services-requests/canceled-requests") %>">خدمات ملغاة<span class="indicators">(<%= ProviderCanceled %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("providers/services-requests/expired-requests") %>">خدمات منتهية المدة<span class="indicators">(<%= ProviderExpired %>)</span></a>
+                                        <a href="<%= GetLocalizedUrl("providers/services-requests/new-requests") %>">خدمات جديدة<span class="indicators text-danger">(<%= ProviderNew %>)</span></a>
+                                            <a href="<%= GetLocalizedUrl("providers/services-requests/approved-requests") %>">خدمات بإنتظار الدفع<span class="indicators text-danger">(<%= ProviderApproved %>)</span></a>
+                                            <a href="<%= GetLocalizedUrl("providers/services-requests/inprogress-requests") %>">خدمات تحت العمل<span class="indicators text-danger">(<%= ProviderInProgress %>)</span></a>
+                                            <a href="<%= GetLocalizedUrl("providers/services-requests/finished-requests") %>">خدمات منفذة<span class="indicators text-danger">(<%= ProviderAccomplished %>)</span></a>
+                                            <a href="<%= GetLocalizedUrl("providers/services-requests/refused-requests") %>">خدمات مرفوضة<span class="indicators text-danger">(<%= ProviderRefused %>)</span></a>
+                                            <a href="<%= GetLocalizedUrl("providers/services-requests/canceled-requests") %>">خدمات ملغاة<span class="indicators text-danger">(<%= ProviderCanceled %>)</span></a>
+                                            <a href="<%= GetLocalizedUrl("providers/services-requests/expired-requests") %>">خدمات منتهية المدة<span class="indicators text-danger">(<%= ProviderExpired %>)</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -714,7 +714,7 @@
                 <ul class="clearfix">
                     <li><a href="<%= GetSocialLinkUrl("TwitterPage") %>" target="_blank"><i class="fa fa-2x fa-twitter-square"></i></a></li>
                     <li><a href="<%= GetSocialLinkUrl("FacebookPage") %>" target="_blank"><i class="fa fa-2x fa-facebook-square"></i></a></li>
-                    <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank"><i class="fa fa-2x fa-plus-square"></i></a></li>
+                    <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank"><i class="fa fa-2x fa-share-alt-square"></i></a></li>
                     <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank"><i class="fa fa-2x fa-instagram" aria-hidden="true"></i></a></li>
                     <%--<li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank"><i class="fa fa-2x fa-google-plus-square"></i></a></li>
                         <li><a href="javascript:{}" target="_blank"><i class="fa fa-2x fa-linkedin-square"></i></a></li>--%>
@@ -750,7 +750,7 @@
             <ul class="clearfix">
                 <li><a href="<%= GetSocialLinkUrl("TwitterPage") %>" target="_blank">Twitter   <i class="fa fa-twitter"></i></a></li>
                 <li><a href="<%= GetSocialLinkUrl("FacebookPage") %>" target="_blank">Facebook <i class="fa fa-facebook"></i></a></li>
-                <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank">كن شريكآ<i class="fa fa-address-card"></i></a></li>
+                <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank">كن شريكآ<i class="fa fa-share-alt-square"></i></a></li>
                 <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank">انستقرام<i class="fa fa-instagram" aria-hidden="true""></i></a></li>
 
                 <%--
