@@ -750,7 +750,7 @@
             <ul class="clearfix">
                 <li><a href="<%= GetSocialLinkUrl("TwitterPage") %>" target="_blank">Twitter   <i class="fa fa-twitter"></i></a></li>
                 <li><a href="<%= GetSocialLinkUrl("FacebookPage") %>" target="_blank">Facebook <i class="fa fa-facebook"></i></a></li>
-                <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank">كن شريكآ<i class="fa fa-plus"></i></a></li>
+                <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank">كن شريكآ<i class="fa fa-address-card"></i></a></li>
                 <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank">انستقرام<i class="fa fa-instagram" aria-hidden="true""></i></a></li>
 
                 <%--
