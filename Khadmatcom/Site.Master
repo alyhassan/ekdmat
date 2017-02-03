@@ -796,22 +796,25 @@
                     </div>
                     <div class="modal-body">
                         <p class="col-md-12 col-sm-12">عزيزى الزائر فضلا املا النموذج التالى وسيقوم واحد من مسؤلى خدمة العملاء لدينا بإجابتكم فى اقرب وقت ممكن.</p>
-                        <div class="clearfix login-body validationEngineContainer" id="ContactUs">
-                            <div class="col-md-6 col-sm-12 col-xs-12  padLeftRight0 l-left">
-                                <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  form-group">
+                     <div class="clearfix"></div>
+                           
+                        <div class=" login-body validationEngineContainer" id="ContactUs" style="padding:10px;">
+                            <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-12 form-group">
                                     <div class="clearfix error text-center">Username or Password are incorrect</div>
                                     <label class="form-label">البريد الإلكتروني</label>
                                     <input type="text" class="form-control validate[required,custom[email]]" id="txtContactEmail" placeholder="" />
                                 </div>
-                                <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  form-group">
+                                <div class="col-md-12 form-group">
                                     <label class="form-label">الإسم</label>
                                     <input type="text" class="form-control validate[required]" id="txtContactName" placeholder="" />
                                 </div>
-                                <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 form-group">
+                                <div class="col-md-12 form-group">
                                     <label class="form-label">رقم الهاتف / الجوال</label>
                                     <input type="text" class="form-control  validate[required]" id="txtPhone" placeholder="" />
                                 </div>
-                                <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  form-group">
+                                <div class="col-md-12 form-group">
                                     <label class="form-label">العنوان</label>
                                     <select class="form-control  validate[required]" id="ddlSubject">
                                         <option value="">اختر اى من التالى</option>
@@ -822,20 +825,23 @@
                                 </div>
 
                             </div>
-                            <div class="col-md-6 col-sm-12 col-xs-12 padLeftRight0 l-right">
-                                <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 form-group">
+                        </div>
+                             <div class="clearfix"></div>
+                             <div class="row">
+                                   <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-12 form-group">
                                     <label class="form-label">مضمون الرسالة</label>
                                     <textarea class="form-control validate[required]" id="txtMessage" rows="8"></textarea>
                                 </div>
 
-                                <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 form-group text-center">
+                                <div class="col-md-12 form-group text-center">
                                     <button type="reset" name="Cancel" title="Cancel" class="c-btn" data-dismiss="modal">إلغاء</button>
                                     <button type="button" title="أرسل" onclick="SendMessage()" class="c-btn">أرسل</button>
                                 </div>
 
 
                             </div>
-
+</div>
 
                         </div>
 
