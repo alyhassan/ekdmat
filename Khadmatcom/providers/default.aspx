@@ -45,11 +45,11 @@
                                      </div>
                                 <div class="clearfix"></div>
                                 <div class="row L2">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 pull-right blue">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 pull-right">
                                         :تفاصيل الخدمة
                                     </div>
                                 </div>
-                                <div class="L3">
+                                <div class="L3 blue">
                                     <p>
                                         <%# Item.Details %>
                                     </p>
