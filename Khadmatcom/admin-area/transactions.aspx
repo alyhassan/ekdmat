@@ -38,7 +38,7 @@
                                     <span class="ni">اسم العميل: <span class="red"><%# Item.Client.FullName %></span> </span>
                                     <span>رقم الجوال: <span class="blue"><%# Item.Client.MobielNumber %></span> </span>
                                     <span>المدينة: <span class="blue"><%# Item.City1.LocalizedCities.First(l=>l.LanguageId==1025).Title %></span> </span>
-                                    <span<%# Item.StatusId>=(int)RequestStatus.InProgress&&(Item.StatusId!=(int)RequestStatus.Refused||Item.StatusId!=(int)RequestStatus.Expired||Item.StatusId!=(int)RequestStatus.Canceled)?"":" class='hidden'" %>>رقم الحساب: <span class="blue"><%# Item.PaymentReferanceCode %></span>
+                                    <span <%# Item.StatusId>=(int)RequestStatus.InProgress&&(Item.StatusId!=(int)RequestStatus.Refused||Item.StatusId!=(int)RequestStatus.Expired||Item.StatusId!=(int)RequestStatus.Canceled)?"":" class='hidden'" %>><span style="display:inline-block;">رقم الحساب: </span><span class="blue" style="display:inline-block;"><%# Item.PaymentReferanceCode %></span>
                                     </span>
                                 </div>
 
@@ -49,7 +49,7 @@
                                         :تفاصيل الخدمة
                                     </div>
                                 </div>
-                                <div class="L3">
+                                <div class="L3 blue">
                                     <p>
                                         <%# Item.Details %>
                                     </p>

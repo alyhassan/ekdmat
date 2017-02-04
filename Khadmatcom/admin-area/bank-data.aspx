@@ -44,7 +44,7 @@
                                         :تفاصيل الخدمة
                                     </div>
                                 </div>
-                                <div class="L3">
+                                <div class="L3 blue">
                                     <p>
                                         <%# Item.Details %>
                                     </p>
