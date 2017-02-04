@@ -1174,7 +1174,7 @@ button[type="submit"].c-btn {
     }
 
 .L1, .L2, .L3 {
-    margin-bottom: 3px;
+    margin-bottom: 3px;direction:rtl;
 }
 
     .L1 .ni {

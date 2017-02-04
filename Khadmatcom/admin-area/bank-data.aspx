@@ -34,9 +34,9 @@
                                  <span>العدد:<span class="blue"><%#Item.Count %></span> </span>
                                 </div>
                                 <div class="L1">
-                                    <span class="ni">اسم شريك الخدمة: <span class="red"><%# Item.Provider.FullName %></span> </span>
-                                    <span>رقم الجوال: <span class="blue"><%# Item.Provider.MobielNumber %></span> </span>
-                                    <span>رقم الحساب: <span class="blue"><%# Item.Provider.BankAccountNumber %></span> </span>
+                                    <span class="ni">اسم شريك الخدمة:<span class="red"><%# Item.Provider.FullName %></span> </span>
+                                    <span>رقم الجوال: <span class="blue" style="display:inline-block;"><%# Item.Provider.MobielNumber %></span> </span>
+                                    <span>  رقم الحساب : <span class="blue"><%# Item.Provider.BankAccountNumber %></span> </span>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="row L2">
@@ -59,50 +59,50 @@
                             <div class="list-group L-container">
                               <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>طريقة الدفع</label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>طريقة الدفع</label>
                                         :
                                                        &nbsp; <span class=""><%# GetPaymentMethod(Item.PaymentMethod) %></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>اسم العميل </label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>اسم العميل </label>
                                         :
                                                        &nbsp; <span class=""><%# Item.Client.FullName %></span>
                                     </div>
                                 </div>
                                  <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الجوال </label>
-                                        :
+                                        <label class="list-group-item-heading blue"><span style="display:inline-block;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الجوال :</span></label>
+                                      
                                                        &nbsp; <span class=""><%# Item.Client.MobielNumber %></span>
                                     </div>
                                 </div>
                                 
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>اسم البنك </label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>اسم البنك </label>
                                         :
                                                        &nbsp; <span class=""><%# ((Banks) int.Parse(Item.PaymentProviderName)).ToString().Replace("_"," ") %></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>تاريخ التحويل </label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>تاريخ التحويل </label>
                                         :
                                                        &nbsp; <span class=""><%# string.Format("{0}/{1}/{2}",Item.PaymentDate.Value.Year,Item.PaymentDate.Value.Month.ToString("00"),Item.PaymentDate.Value.Day.ToString("00")) %></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الحساب المحول منه</label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الحساب المحول منه</label>
                                         :
                                                        &nbsp; <span class=""><%# Item.PaymentAccountNumber %></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الحوالة(العملية) </label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الحوالة(العملية) </label>
                                         :
                                                        &nbsp; <span class=""><%# Item.PaymentReferanceCode %></span>
                                     </div>
