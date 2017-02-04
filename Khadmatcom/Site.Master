@@ -344,7 +344,7 @@
         </div>
             </div>
         <div class="visible-sm visible-xs" style="margin-top: 60px;"></div>
-        <div class="container clearfix visible-sm visible-xs">
+        <div class="container-fluied clearfix visible-sm visible-xs">
 
              <div class="col-md-12 col-sm-12 col-xs-12 padLeftRight0 banner-right">
                     <img src="/images/banner.png" alt="e-khadmat" class="pull-left img-responsive" style="width:100%;" />

@@ -169,18 +169,19 @@
                     if (res) {
                         setTimeout(function() {
                             //do what you need here
-                            hideLoading();
+                        
                             toastr.success("تم تنفيذ أمرك", "شكرا لك", {timeOut: 60000,rtl:true,closeButton:true,positionClass:'toast-top-center'});
                             clearFormData('#txtPrice'+id);
                             clearFormData('#txtReason'+id);
                             clearFormData('#txtDuration'+id);
                         }, 4000);
-                        
+                       
                     }
                     else {
-                        hideLoading();
+                      
                         toastr.error("هناك خطأ  أثناء إرسال أمرك...فضلا حاول لاحقا.", "خطأ", {timeOut: 60000,rtl:true,closeButton:true,positionClass:'toast-top-center'}); hideLoading();
                     }
+                    hideLoading();
                 });
 
             }
