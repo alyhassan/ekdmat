@@ -1785,3 +1785,6 @@ button[type="submit"].c-btn {
         background-color: #ffffff !important;
         float: right; margin-left:5px !important;
 }
+.text-red {
+    color:red;
+}
