@@ -45,11 +45,11 @@
                                      </div>
                                 <div class="clearfix"></div>
                                 <div class="row L2">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 pull-right blue">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 pull-right">
                                         :تفاصيل الخدمة
                                     </div>
                                 </div>
-                                <div class="L3">
+                                <div class="L3 blue">
                                     <p>
                                         <%# Item.Details %>
                                     </p>
@@ -169,18 +169,19 @@
                     if (res) {
                         setTimeout(function() {
                             //do what you need here
-                            hideLoading();
+                        
                             toastr.success("تم تنفيذ أمرك", "شكرا لك", {timeOut: 60000,rtl:true,closeButton:true,positionClass:'toast-top-center'});
                             clearFormData('#txtPrice'+id);
                             clearFormData('#txtReason'+id);
                             clearFormData('#txtDuration'+id);
                         }, 4000);
-                        
+                       
                     }
                     else {
-                        hideLoading();
+                      
                         toastr.error("هناك خطأ  أثناء إرسال أمرك...فضلا حاول لاحقا.", "خطأ", {timeOut: 60000,rtl:true,closeButton:true,positionClass:'toast-top-center'}); hideLoading();
                     }
+                    hideLoading();
                 });
 
             }

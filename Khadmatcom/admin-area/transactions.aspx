@@ -38,7 +38,7 @@
                                     <span class="ni">اسم العميل: <span class="red"><%# Item.Client.FullName %></span> </span>
                                     <span>رقم الجوال: <span class="blue"><%# Item.Client.MobielNumber %></span> </span>
                                     <span>المدينة: <span class="blue"><%# Item.City1.LocalizedCities.First(l=>l.LanguageId==1025).Title %></span> </span>
-                                    <span<%# Item.StatusId>=(int)RequestStatus.InProgress&&(Item.StatusId!=(int)RequestStatus.Refused||Item.StatusId!=(int)RequestStatus.Expired||Item.StatusId!=(int)RequestStatus.Canceled)?"":" class='hidden'" %>>رقم الحساب: <span class="blue"><%# Item.PaymentReferanceCode %></span>
+                                    <span <%# Item.StatusId>=(int)RequestStatus.InProgress&&(Item.StatusId!=(int)RequestStatus.Refused||Item.StatusId!=(int)RequestStatus.Expired||Item.StatusId!=(int)RequestStatus.Canceled)?"":" class='hidden'" %>><span style="display:inline-block;">رقم الحساب: </span><span class="blue" style="display:inline-block;"><%# Item.PaymentReferanceCode %></span>
                                     </span>
                                 </div>
 
@@ -49,7 +49,7 @@
                                         :تفاصيل الخدمة
                                     </div>
                                 </div>
-                                <div class="L3">
+                                <div class="L3 blue">
                                     <p>
                                         <%# Item.Details %>
                                     </p>
@@ -67,7 +67,7 @@
                                 <ItemTemplate>
                                     <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                         <div class="input-group">
-                                            <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.RequestOption.Title %></label>
+                                            <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.RequestOption.Title %></label>
                                             &nbsp;<label><%# GetAnswer(Item.Value) %></label>
                                         </div>
                                     </div>
@@ -77,14 +77,14 @@
 
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>السعر النهائي</label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>السعر النهائي</label>
                                         :
                                                        &nbsp; <span class=""><%# GetPrice(Item).ToCurrency("ريال") %> </span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
                                         :
                                                        &nbsp; <span class=""><%# Item.TotalDuration %> يوم</span>
                                     </div>
@@ -95,14 +95,14 @@
 
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>طريقة الدفع</label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>طريقة الدفع</label>
                                         :
                                                        &nbsp; <span class=""><%# GetPaymentMethod(Item.PaymentMethod) %></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>اسم شريك الخدمة </label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>اسم شريك الخدمة </label>
                                         :
                                                        &nbsp; <span class=""><%# Item.CurrentProvider.HasValue? Item.Provider.FullName :"-"%></span>
                                     </div>
@@ -110,7 +110,7 @@
 
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الجوال </label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الجوال </label>
                                         :
                                                        &nbsp; <span class=""><%# Item.CurrentProvider.HasValue?Item.Provider.MobielNumber :"-" %></span>
                                     </div>
@@ -124,9 +124,13 @@
                                     <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                         <div class="input-group">
                                             <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.User.FullName%></label>
-                                            &nbsp;<label><%# (RequestStatus)Item.Status %></label><br/><label><%# Item.ExpiryTime %></label><label><br class="clearfix" /><br />
-                                                <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>تعليق: </label>
-                                                <%# Item.RejectedReson %></label>
+                                            &nbsp;<label><%# (RequestStatus)Item.Status %></label><br/><label><%# Item.ExpiryTime %></label>
+                                         <div class="clearfix" ></div>
+                                                <div class="input-group">
+                                                <label class="list-group-item-heading blue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>تعليق: </label>
+                                              <span> <%# Item.RejectedReson %></span> 
+
+                                               </div>
                                         </div>
                                     </div>
                                 </ItemTemplate>

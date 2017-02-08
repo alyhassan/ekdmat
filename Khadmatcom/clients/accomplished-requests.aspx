@@ -31,10 +31,10 @@
                                     <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
                                     <span>نوعها:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
                                 </div>
-                                <div class="L2 blue">
+                                <div class="L2">
                                     :التفاصيل
                                 </div>
-                                <div class="L3">
+                                <div class="L3 blue">
                                     <p>
                                         <%# Item.Details %>
                                     </p>

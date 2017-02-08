@@ -1174,7 +1174,7 @@ button[type="submit"].c-btn {
     }
 
 .L1, .L2, .L3 {
-    margin-bottom: 3px;
+    margin-bottom: 3px;direction:rtl;
 }
 
     .L1 .ni {
@@ -1776,7 +1776,7 @@ button[type="submit"].c-btn {
         float: right;
         margin:0px 5px 0px 5px !important;
 }
-.indicators { float:left;display:inline-block;}
+.indicators { float:left;display:inline-block; color:red;}
 
   .input-group-addon{background-color:transparent !important; border:none;}
      /* attach url*/
@@ -1784,4 +1784,7 @@ button[type="submit"].c-btn {
 .attach_url:hover{
         background-color: #ffffff !important;
         float: right; margin-left:5px !important;
+}
+.text-red {
+    color:red;
 }

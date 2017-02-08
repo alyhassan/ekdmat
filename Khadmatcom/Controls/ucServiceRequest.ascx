@@ -26,7 +26,7 @@
                                 <div class="price_custom">
                                    
                                        <div>
-                                           سعر الخدمة المبدئى(ريال)
+                                           <span style="display:inline-block;">سعر الخدمة المبدئى</span><span style="display:inline-block;">(ريال)</span>
                                         </div>
                                         <div class="custom_font_blue">
                                             <span id="servicePrice" style="display:inline-block;"></span>
@@ -627,8 +627,8 @@
                             <div class="accordion-body clearfix">
                                 <div class="row ">
                                     <%-- <div class="form-group  col-md-2 col-sm-6 col-xs-12 pull-right">--%>
-                                    <div class="form-group  col-md-12 col-sm-12 col-xs-12 pull-right" style="margin-right: 35px; color: #4070a0;">
-                                        <span id="lblNotes"></span>
+                                    <div class="form-group  col-md-12 col-sm-12 col-xs-12 pull-right" style="margin-right: 10px; color: #4070a0;">
+                                        <div id="lblNotes"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12 hidden">

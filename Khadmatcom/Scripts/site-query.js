@@ -334,4 +334,3 @@ function PlayVideo() {
     $(".iframeVideoHome").attr('src', 'https://www.youtube.com/embed/XGSy3_Czz8k' + '?rel=0&autoplay=1');
 
 }
-

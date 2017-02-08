@@ -372,10 +372,10 @@
     }
 
     .clasic-btn {
-        float: none;
+        float: right;
         background-size: 100% 100%;
         margin-left: auto !important;
-        margin-right: auto !important;
+        margin-right: 5px !important;
         margin-bottom: 10px !important;
         width: 130px;
         height: 40px;
