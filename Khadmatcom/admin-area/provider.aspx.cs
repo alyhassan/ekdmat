@@ -215,5 +215,30 @@ namespace Khadmatcom.admin_area
                 }
             }
         }
+
+        protected void OnItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Delete")
+            {
+                try
+                {
+                    //CurrentProvider.ServiceProviders.Remove(
+                    //    CurrentProvider.ServiceProviders.FirstOrDefault(
+                    //        x => x.Id == int.Parse(e.CommandArgument.ToString())));
+                    //_userServices.UpdateAndSave();
+                    _userServices.DeleteServiceFromUser(int.Parse(e.CommandArgument.ToString()));
+                    Notify("تم الحذف");
+                }
+                catch(Exception ex)
+                {
+                   Notify("حدث خطأ أثناء اخر عملية فضلا حاول لاحقا", "", NotificationType.Error);
+                }
+            }
+        }
+
+        public void Delete()
+        {
+            
+        }
     }
 }
