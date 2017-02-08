@@ -35,6 +35,7 @@ namespace Khadmatcom.clients
                     break;
                 case ShippingMethods.OneWay:
                     ShippingPrice = 30;
+                    CurrentRequest.ShippingStatus = ShippingStatus.SentToPartner;
                     break;
                 case ShippingMethods.TwoWays:
                     ShippingPrice = ShippingPrice * 2;
@@ -113,6 +114,7 @@ namespace Khadmatcom.clients
                     CurrentRequest.PaymentReferanceCode = txtRefNumber.Value;
                     CurrentRequest.PaymentAccountNumber = txtBakAccountNum.Value;
                     CurrentRequest.StatusId = (int)RequestStatus.Paid;
+                    
                     _serviceRequests.UpdateServiceRequest(CurrentRequest);
                     RedirectAndNotify(GetLocalizedUrl("clients/services-requests/approved-requests"), "رجاءاَ قم بالإتصال بالإدارة للتأكد من وصول الحوالة.");
                     break;
@@ -172,14 +174,14 @@ namespace Khadmatcom.clients
         {
             if (!string.IsNullOrEmpty(txtShippingAddress.Value))
                 CurrentRequest.ShippingAddress = txtShippingAddress.Value;
-            if (!string.IsNullOrEmpty(txtShippingName.Value))
-                CurrentRequest.ShippingPhone = txtShippingName.Value;
+            if (!string.IsNullOrEmpty(txtShippingPhone.Value))
+                CurrentRequest.ShippingPhone = txtShippingPhone.Value;
             if (!string.IsNullOrEmpty(txtShippingPhone.Value))
                 CurrentRequest.ShippingName = txtShippingName.Value;
-            if (!string.IsNullOrEmpty(Request.Form["ddlCities"]))
+            if (!string.IsNullOrEmpty(Request.Form["hfCityId"]))
             {
                 int cityId;
-                if (int.TryParse("", out cityId))
+                if (int.TryParse(Request.Form["hfCityId"], out cityId))
                     CurrentRequest.ShippingCity = cityId;
             }
         }

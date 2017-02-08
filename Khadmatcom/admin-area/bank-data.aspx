@@ -113,7 +113,7 @@
                                 <input type="button" class="btn btn-danger  btn-sm" value="تم التاكيد" onclick="return confirmRequest(<%# Item.Id %>);" />
                             </div>
                             <div class="L-button" id="">
-                                <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success ">سعر الخدمة:<%# Item.RequestProviders.First(x=>x.ProviderId==Item.CurrentProvider).Price %>&nbsp;<span style="display: inline-block; float: left">ريال</span>&nbsp;  </button>
+                                <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success ">سعر الخدمة:<%# Item.CurrentPrice %>&nbsp;<span style="display: inline-block; float: left">ريال</span>&nbsp;  </button>
                             </div>
 
                         </div>

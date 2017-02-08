@@ -201,7 +201,8 @@
                                 </div>
                                 <div class="form-group pull-right col-md-6">
                                     <label>المدينة</label>
-                                    <select class="form-control validate[required]" id="ddlCities" onchange="$('#hfCityId').val($('#ddlCities').val());">
+                                    <input type="hidden" id="hfCityId" name="hfCityId" value="" />  
+                                    <select  class="form-control validate[required]" id="ddlCities" onchange="$('#hfCityId').val($('#ddlCities').val());">
                                         <option value="">أختر محافظة</option>
                                         <asp:Repeater runat="server" ItemType="Khadmatcom.Services.Model.Region" SelectMethod="GetRegions">
                                             <ItemTemplate>

@@ -297,4 +297,13 @@
   <data name="Refused" xml:space="preserve">
     <value>مرفوضة</value>
   </data>
+  <data name="Package1Year" xml:space="preserve">
+    <value>باقة سنة</value>
+  </data>
+  <data name="Package3Months" xml:space="preserve">
+    <value>باقة 3 شهور</value>
+  </data>
+  <data name="Package6Months" xml:space="preserve">
+    <value>باقة 6 شهور</value>
+  </data>
 </root>

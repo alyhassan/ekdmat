@@ -60,6 +60,32 @@ namespace Khadmatcom.admin_area
 
         }
 
+        public decimal GetPrice(ServiceRequest CurrentRequest)
+        {
+            var method = CurrentRequest.Service.ShippingMethods;
+            decimal ServicePrice = 0;
+            decimal ShippingPrice = 30;
+            switch (method)
+            {
+                case ShippingMethods.None:
+                    ShippingPrice = 0;
+                    break;
+                case ShippingMethods.OneWay:
+                    ShippingPrice = 30;
+                    break;
+                case ShippingMethods.TwoWays:
+                    ShippingPrice = ShippingPrice * 2;
+                    break;
+                default:
+                    ShippingPrice = 0;
+                    break;
+            }
+            if (CurrentRequest.CurrentPrice.HasValue) ServicePrice = CurrentRequest.CurrentPrice.Value - ShippingPrice;
+            ServiceProvider provider = null;
+            if (CurrentRequest.CurrentProvider.HasValue && CurrentRequest.CurrentProvider.Value > 0)
+                provider = adminServices.GetProvider(CurrentRequest.ServiceId, CurrentRequest.CurrentProvider.Value);
+            return provider == null ? 0 : ServicePrice;
+        }
         //public string GetGregorian(int y,int m,int d)
         //{
         //    var hijri = new UmAlQuraCalendar();

@@ -33,7 +33,7 @@ namespace Khadmatcom.Controls
         public IQueryable<City> GetCities()
         {
 
-            return _areasServices.GetCities(LanguageId).AsQueryable();
+            return _areasServices.GetCities(LanguageId).Where(c=>c.Shown).AsQueryable();
         }
         public IQueryable<Service> GetServices()
         {
