@@ -300,4 +300,13 @@
   <data name="Refused" xml:space="preserve">
     <value>مرفوضة</value>
   </data>
+  <data name="Package1Year" xml:space="preserve">
+    <value>1 Year Pakage</value>
+  </data>
+  <data name="Package3Months" xml:space="preserve">
+    <value>3 Months Pakage</value>
+  </data>
+  <data name="Package6Months" xml:space="preserve">
+    <value>6 Months Pakage</value>
+  </data>
 </root>

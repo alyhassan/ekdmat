@@ -39,8 +39,10 @@
                 </EmptyDataTemplate>
             </asp:ListView>
         </div>
+        
 
     </div>
+
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="footer" runat="server">
     <uc1:ucServiceRequest runat="server" ID="ucServiceRequest" />
@@ -100,6 +102,7 @@
             $('#hfServiceId').val(id);
             $('#ddlService').val(id);
             $('#lblNotes').html(notes);
+            $('#hfOptions').val(options);
             if (price > 0)
                 $('#servicePrice').html(price);
             else $('#servicePrice').html('غير محدد');
@@ -110,6 +113,7 @@
             if (options != '') {
                 var x = options.split(",");
                 for (var i = 0; i < x.length; i++) {
+                    //show option
                     $('.o' + x[i]).removeClass('hidden');
                 }
             }

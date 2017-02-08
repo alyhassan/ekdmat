@@ -464,6 +464,7 @@
     <Compile Include="API\KhadmatcomAdminController.cs" />
     <Compile Include="API\KhadmatcomController.cs" />
     <Compile Include="API\NewsletterController.cs" />
+    <Compile Include="AppCode\ExceptionUtility.cs" />
     <Compile Include="App_GlobalResources\general.aspx.ar-sa.designer.cs">
       <DependentUpon>general.aspx.ar-sa.resx</DependentUpon>
       <AutoGen>True</AutoGen>

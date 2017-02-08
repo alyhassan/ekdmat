@@ -686,7 +686,7 @@
         </div>
     </div>
 
-
+    <asp:HiddenField ID="hfOptions" runat="server" ClientIDMode="Static" />
 </div>
 <script>
     function buildSummary() {
@@ -709,6 +709,17 @@
     function NextStep() {
         var  result = validateForm('#collapse500', '<%= System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName.ToLower() %>');
         if (result) {
+            var optionsList=$('#hfOptions').val();
+            if (optionsList != '') {
+                var x = optionsList.split(",");
+                for (var i = 0; i < x.length; i++) {
+                    //show option
+                    var temp=  $('.o' + x[i]+' input').val();
+                    if (temp != '') {
+                        //alert($('.o' + x[i]+' input').attr('type'));
+                    }
+                }
+            }
             return result;
             result = <%= Membership.GetUser()!=null%>;
             if (result==true) {

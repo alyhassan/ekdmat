@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Web;
+using System.Web.Http;
 using System.Web.Routing;
 using Microsoft.AspNet.FriendlyUrls;
 
@@ -12,6 +13,7 @@ namespace Khadmatcom
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.Ignore("{resource}.axd/{*pathInfo}");
+           // routes.MapHttpRoute("404-PageNotFound","{*url}",new {controller = "StaticContent",});
 
             RouteValueDictionary defaultLocale = new RouteValueDictionary { { "locale", "ar" } };
             RouteValueDictionary localeConstraints = new RouteValueDictionary { { "locale", "en|ar" } };

@@ -529,6 +529,33 @@ namespace Resources.general {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1 Year Pakage.
+        /// </summary>
+        internal static string Package1Year {
+            get {
+                return ResourceManager.GetString("Package1Year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 3 Months Pakage.
+        /// </summary>
+        internal static string Package3Months {
+            get {
+                return ResourceManager.GetString("Package3Months", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 6 Months Pakage.
+        /// </summary>
+        internal static string Package6Months {
+            get {
+                return ResourceManager.GetString("Package6Months", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to مدفوعة.
         /// </summary>
         internal static string Paid {
