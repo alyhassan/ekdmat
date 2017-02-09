@@ -707,6 +707,10 @@
     }
 
     function NextStep() {
+
+        $("#txtCompanyName").validationEngine('validate');
+
+
         var  result = validateForm('#collapse500', '<%= System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName.ToLower() %>');
         if (result) {
             var optionsList=$('#hfOptions').val();
@@ -743,4 +747,9 @@
     //$('#ddlCities').change(function () {
     //    $('#hfCityId').val($('#ddlCities').val());
     //});
+
+    //validate request detail form
+
+    
+
 </script>
