@@ -98,7 +98,44 @@
                 </div>
 
                 <div class="col-md-10 col-md-offset-1 form-group<%= _id.HasValue?"":" hidden" %>">
-                    <asp:Repeater OnItemCommand="OnItemCommand" runat="server" SelectMethod="GetProviderServices" ItemType="Khadmatcom.Data.Model.ServiceProvider">
+                    <h1><a href='javascript:{}' onclick="$('#hfState').val(0);showModel('#addService')"><i class="fa fa-plus-circle">&nbsp;</i></a>الخدمات المشترك بها</h1>
+
+                    <table dir="rtl" class="table table-responsive">
+                        <tr dir="rtl">
+                            <th>م</th>
+                            <th>اسم الخدمة
+                            </th>
+                            <th>السعر المبدئي
+                            </th>
+                            <th>وقت التنفيذ المبدئي
+                            </th>
+                            <th>المدينة
+                            </th>
+                            <th>عمولة الموقع
+                            </th>
+                            <th>شريك أساسي</th>
+                            <th></th>
+                        </tr>
+                        <asp:ListView runat="server" SelectMethod="GetProviderServices" DeleteMethod="Delete" ItemType="Khadmatcom.Data.Model.ServiceProvider" OnItemCommand="OnItemCommand">
+                            <ItemTemplate>
+                                <tr dir="rtl">
+                                    <td><%# Container.DataItemIndex+1 %></td>
+                                    <td><%# (Item.Service.LocalizedServices==null)?"":Item.Service.LocalizedServices.First(l=>l.LanguageId==LanguageId).Title %></td>
+                                    <td><%# Item.EstamaitedCost %></td>
+                                    <td><%# Item.EstamaitedTime %></td>
+                                    <td><%# Item.City.Name %></td>
+                                    <td><%# Item.SiteCommission %>%</td>
+                                    <td>
+                                        <input type="checkbox" <%# Item.IsMain?"checked":"" %> disabled="disabled" /></td>
+                                    <td>
+                                        <a href='javascript:{}' onclick="editService('#addService',<%# Item.Id %>,<%# Item.EstamaitedCost %>,<%# Item.EstamaitedTime %>,<%# Item.SiteCommission %>,<%# Item.ServiceId %>,<%# Item.CityId %>,<%# Item.IsMain.ToString().ToLower() %>)"><i class="fa fa-edit">&nbsp; تعديل</i></a>
+                                        <asp:LinkButton Text="حذف" CommandName="Delete" CommandArgument="<%# Item.Id %>" OnClientClick="return confirm('هل انت متاكد من الحذف؟')" runat="server" CssClass="fa fa-remove" />
+                                    </td>
+                                </tr>
+                            </ItemTemplate>
+                        </asp:ListView>
+                    </table>
+                    <%--<asp:Repeater OnItemCommand="OnItemCommand" runat="server" SelectMethod="GetProviderServices" ItemType="Khadmatcom.Data.Model.ServiceProvider">
                         <HeaderTemplate>
                             <h1><a href='javascript:{}' onclick="$('#hfState').val(0);showModel('#addService')"><i class="fa fa-plus-circle">&nbsp;</i></a>الخدمات المشترك بها</h1>
 
@@ -138,7 +175,7 @@
                         <FooterTemplate>
                             </table>
                         </FooterTemplate>
-                    </asp:Repeater>
+                    </asp:Repeater>--%>
                     <asp:Button Text="تحديث" runat="server" ID="btnUpdate" CssClass="btn my-btn btn-block" OnClientClick="return validateForm('#providerForm', 'ar');" OnClick="btnUpdate_OnClick" />
 
                 </div>
