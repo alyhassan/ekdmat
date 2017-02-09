@@ -3,9 +3,10 @@
 body {
     margin: 0px;
     padding: 0px;
-    font-family: ArgaamPlus;
+    font-family: 'ArgaamPlus' !important;
     text-align: right;
     font-weight: 400;
+      font-style: normal;
     /*direction: rtl;*/
     font-size: 15px;
     background: #edeff1 url(/images/body-bg.png);
@@ -16,7 +17,7 @@ a {
 }
 
 header {
-    background: url(/images/top-slic.jpg) bottom repeat-x #f1f1f1;
+    background: url(/images/top-slic.jpg) bottom repeat-x #f1f1f1 ;
     height: 38px;
     position: fixed;
     width: 100%;
