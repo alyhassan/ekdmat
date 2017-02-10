@@ -122,6 +122,13 @@
                                         </div>
                                     </ItemTemplate>
                                 </asp:Repeater>
+
+                                   <div class='<%# Item.ShippingStatus< ShippingStatus.SentToCustomer?"validationEngineContainer":"hidden" %> col-md-12 pull-right' id="ship<%# Item.Id %>">
+                                <input type="checkbox"  class='<%# Item.ShippingStatus== ShippingStatus.New?"checkbox":"hidden" %>' id="chkIsContacted" style="display:inline-block;" />
+                                <label for="chkIsContacted" class='<%# Item.ShippingStatus== ShippingStatus.New?"":"hidden" %>'>هل تم الإتصال بالعميل لتحديد موعد</label>
+                               
+
+                            </div>
                             </div>
                             <div class="L-button" id="">
                                  <input type="button" class="btn btn-danger  btn-sm" value="<%# GetShipButtonText(Item.ShippingStatus) %>" onclick="shipAction(<%# Item.Id %>);" />
@@ -136,12 +143,7 @@
                                 </div>
                             </div>
 
-                            <div class='<%# Item.ShippingStatus< ShippingStatus.SentToCustomer?"input-group validationEngineContainer":"hidden" %> col-md-6 pull-right' id="ship<%# Item.Id %>">
-                                <input type="checkbox"  class='<%# Item.ShippingStatus== ShippingStatus.New?"checkbox":"hidden" %>' id="chkIsContacted" style="display:inline-block;" />
-                                <label for="chkIsContacted" class='<%# Item.ShippingStatus== ShippingStatus.New?"":"hidden" %>'>هل تم الإتصال بالعميل لتحديد موعد</label>
-                               
-
-                            </div>
+                         
 
                         </div>
                     </div>
