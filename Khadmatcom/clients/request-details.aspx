@@ -148,22 +148,22 @@
                     <div id="collapse501" class="collapse" aria-expanded="false">
                         <div class="accordion-body clearfix">
                             <div class="row">
-                                <div class=" col-md-6  col-sm-6 form-group">
+                                <div class=" col-md-6  col-sm-6 form-group pull-right">
                                     <label>المرفق 1</label>
                                     <input type="file" class="form-control hidden" />
                                     <asp:FileUpload ID="fup1" runat="server" CssClass="attach form-control" />
                                 </div>
-                               <div class=" col-md-6  col-sm-6 form-group">
+                               <div class=" col-md-6  col-sm-6 form-group pull-right">
                                     <label>المرفق 2</label>
                                     <input type="file" class="form-control hidden" />
                                     <asp:FileUpload ID="fup2" runat="server" CssClass="attach form-control" />
                                 </div>
-                                <div class=" col-md-6  col-sm-6 form-group">
+                                <div class=" col-md-6  col-sm-6 form-group pull-right">
                                     <label>المرفق 3</label>
                                     <input type="file" class="form-control hidden" />
                                     <asp:FileUpload ID="fup3" runat="server" CssClass="attach form-control" />
                                 </div>
-                              <div class=" col-md-6  col-sm-6 form-group">
+                              <div class=" col-md-6  col-sm-6 form-group pull-right">
                                     <label>المرفق 4</label>
                                     <input type="file" class="form-control hidden" />
                                     <asp:FileUpload ID="fup4" runat="server" CssClass="attach form-control" />
