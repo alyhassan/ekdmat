@@ -67,7 +67,7 @@
                                     <ItemTemplate>
                                         <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                             <div class="input-group">
-                                                <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.RequestOption.Title %></label>
+                                                <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.RequestOption.Title %></label>
                                                 &nbsp;<label><%# GetAnswer(Item.Value) %></label>
                                             </div>
                                         </div>
@@ -77,35 +77,35 @@
 
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>مدة التنفيذ</label>
                                         :
                                                        &nbsp; <span class=""><%# Item.TotalDuration %> يوم</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>طريقة الدفع</label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>طريقة الدفع</label>
                                         :
                                                        &nbsp; <span class=""><%# GetPaymentMethod(Item.PaymentMethod) %></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>اسم شريك الخدمة </label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>اسم شريك الخدمة </label>
                                         :
                                                        &nbsp; <span class=""><%# Item.CurrentProvider.HasValue? Item.Provider.FullName :"-"%></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الجوال </label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الجوال </label>
                                         :
                                                        &nbsp; <span class=""><%# Item.CurrentProvider.HasValue?Item.Provider.MobielNumber :"-" %></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الحساب </label>
+                                        <label class="list-group-item-heading blue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الحساب </label>
                                         :
                                                        &nbsp; <span class=""><%# Item.CurrentProvider.HasValue?Item.Provider.BankAccountNumber :"-" %></span>
                                     </div>
@@ -116,7 +116,7 @@
                                     <ItemTemplate>
                                         <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                             <div class="input-group">
-                                                <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.User.FullName%></label>
+                                                <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>&nbsp;<%# Item.User.FullName%></label>
                                                 &nbsp;<label><%# (RequestStatus)Item.Status %></label><label><%# Item.ExpiryTime %></label>
                                             </div>
                                         </div>
@@ -124,6 +124,7 @@
                                 </asp:Repeater>
                             </div>
                             <div class="L-button" id="">
+                                 <input type="button" class="btn btn-danger  btn-sm" value="<%# GetShipButtonText(Item.ShippingStatus) %>" onclick="shipAction(<%# Item.Id %>);" />
                                 <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success ">حالة الطلب:<%# (RequestStatus)Item.StatusId %>&nbsp;<span style="display: inline-block; float: left"></span>&nbsp;  </button>
                             </div>
                             <br class="cleafix" />
@@ -135,10 +136,10 @@
                                 </div>
                             </div>
 
-                            <div class='<%# Item.ShippingStatus< ShippingStatus.SentToCustomer?"input-group validationEngineContainer":"hidden" %>' id="ship<%# Item.Id %>">
-                                <input type="checkbox" class='<%# Item.ShippingStatus== ShippingStatus.New?"checkbox":"hidden" %>' id="chkIsContacted" />
+                            <div class='<%# Item.ShippingStatus< ShippingStatus.SentToCustomer?"input-group validationEngineContainer":"hidden" %> col-md-6 pull-right' id="ship<%# Item.Id %>">
+                                <input type="checkbox"  class='<%# Item.ShippingStatus== ShippingStatus.New?"checkbox":"hidden" %>' id="chkIsContacted" style="display:inline-block;" />
                                 <label for="chkIsContacted" class='<%# Item.ShippingStatus== ShippingStatus.New?"":"hidden" %>'>هل تم الإتصال بالعميل لتحديد موعد</label>
-                                <input type="button" class="btn btn-danger  btn-sm" value="<%# GetShipButtonText(Item.ShippingStatus) %>" onclick="shipAction(<%# Item.Id %>);" />
+                               
 
                             </div>
 
