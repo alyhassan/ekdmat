@@ -48,6 +48,18 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="HyperPayClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\HyperPayClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Khadmatcom.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Khadmatcom.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Khadmatcom.Services, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Khadmatcom.Services.dll</HintPath>
+    </Reference>
     <Reference Include="MailChimp, Version=1.1.87.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MailChimp.NET.1.1.87.0\lib\net35\MailChimp.dll</HintPath>
       <Private>True</Private>
@@ -68,6 +80,10 @@
     <Reference Include="ServiceStack.Text, Version=3.9.71.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ServiceStack.Text.3.9.71\lib\net35\ServiceStack.Text.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="ServstonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ServstonLibrary.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -728,24 +744,6 @@
   <ItemGroup>
     <Folder Include="Attachments\" />
     <Folder Include="Properties\PublishProfiles\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\HyperPayClient\HyperPayClient.csproj">
-      <Project>{75305c4a-786e-4179-abe8-2975d59875f0}</Project>
-      <Name>HyperPayClient</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Khadmatcom.Data\Khadmatcom.Data.csproj">
-      <Project>{0a817b92-4e5e-497d-956b-16046022f967}</Project>
-      <Name>Khadmatcom.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Khadmatcom.Services\Khadmatcom.Services.csproj">
-      <Project>{2a685e3b-67b8-47ec-b08f-a34648b76881}</Project>
-      <Name>Khadmatcom.Services</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ServstonLibrary\ServstonLibrary.csproj">
-      <Project>{409e4d78-1c60-4e01-b9b0-dbd82e3f6c8a}</Project>
-      <Name>ServstonLibrary</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_LocalResources\register.aspx.resx" />
