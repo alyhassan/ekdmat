@@ -470,8 +470,8 @@
             var onLineOption = false;
             onLineOption = $('#onLineOption').is(':checked');//$('#onLineOption').attr('checked') == "checked";
             if (result && onLineOption) {
-                result = false;
-                payOnline();
+                //result = false;
+                //payOnline();
             }
           //  if (paymentSection != result)
           //      return paymentSection;

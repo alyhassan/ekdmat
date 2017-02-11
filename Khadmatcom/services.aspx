@@ -16,6 +16,7 @@
 
     <div id="main" class="tab-pane fade in active">
         <asp:HiddenField ID="hfServiceTypeName" runat="server" />
+         <asp:HiddenField ID="hfPriceLise" ClientIDMode="Static" runat="server" Value="0" />
         <div id="" class="owl-demo owl-carousel owl-theme">
             <asp:ListView runat="server" ID="lvCategories" SelectMethod="GetServices" ItemPlaceholderID="PlaceHolder1" GroupItemCount="12" ItemType="Khadmatcom.Services.Model.Service">
                 <GroupTemplate>
@@ -26,7 +27,7 @@
                     </div>
                 </GroupTemplate>
                 <ItemTemplate>
-                    <a href="javascript:{}" onclick='requestService(<%# Item.Id %>,"<%# Item.Notes %>",<%# Item.EstamaitedCost %>,"<%# Item.Options.ToLower() %>","<%# Item.AvilableCities.ToLower() %>")' title="<%# Item.Name %>" class="anchor">
+                    <a href="javascript:{}" onclick='requestService(<%# Item.Id %>,"<%# Item.Notes %>","<%# Item.EstamaitedCost %>","<%# Item.Options.ToLower() %>","<%# Item.AvilableCities.ToLower() %>")' title="<%# Item.Name %>" class="anchor">
                         <!--href="#p10"-->
                         <span class="top-span"><%# GetGlobalResourceObject("general.aspx", Item.IdentityType) %></span>
                         <span class="bot-span"><%# Item.Name %></span>
@@ -93,11 +94,18 @@
                 
                 
             });
+            $('#ddlCities').change(function () {
+               $('#hfServicePrice').val($('#hfPriceLise').val().split(",")[$('#ddlCities').index() - 1]);
 
+            });
             //calcluate service price option
         });
 
-        function requestService(id, notes, price, options, cities) {
+        function requestService(id, notes, priceList, options, cities) {
+            var price = 0;
+            if (priceList != '')
+                price = priceList.split(",")[0];
+            $('#hfPriceLise').val(priceList);
             $('input:text').add('textarea').add('select').val('');
             $('#hfServiceId').val(id);
             $('#ddlService').val(id);

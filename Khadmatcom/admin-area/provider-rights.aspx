@@ -78,6 +78,13 @@
                                     </div>
 
                                 </div>
+                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                    <div class="input-group">
+                                        <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>اسم البنك</label>
+                                        :
+                                                       &nbsp; <span class=""><%# Item.CurrentProvider.HasValue?(Item.Provider.BankAccountType.HasValue?Item.Provider.BankAccountType.Value.ToString():"") :"-" %></span>
+                                    </div>
+                                </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
                                         <label class="list-group-item-heading"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>رقم الحساب</label>

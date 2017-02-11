@@ -17,7 +17,7 @@ $(document).ready(function () {
     }
     $('#accordion,#accordion01,#accordion02, #accordion2, #accordion3, #accordion4, #accordion5,#accordion500').on('hidden.bs.collapse', toggleChevron);
     $('#accordion,#accordion01,#accordion02, #accordion2, #accordion3, #accordion4, #accordion5,#accordion500').on('shown.bs.collapse', toggleChevron);
-
+    $("#accordion500").on('show.bs.collapse', NextStep);
 
     function toggleHas(f) {
         $(f.target)
@@ -131,7 +131,7 @@ $(document).ready(function () {
     $('.nxt').click(function () {
 
         if ($("#ai li:last").hasClass('active')) {
-            $('.nxt').attr('disabled', true)
+            $('.nxt').attr('disabled', true);
 
         }
 

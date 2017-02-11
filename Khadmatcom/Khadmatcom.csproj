@@ -17,10 +17,10 @@
     <AssemblyName>Khadmatcom</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
+    <IISExpressSSLPort>44343</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
     <TargetFrameworkProfile />
     <UseGlobalApplicationHostFile />
     <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
@@ -125,6 +125,7 @@
     <Content Include="admin-area\shipping.aspx" />
     <Content Include="admin-area\transactions.aspx" />
     <Content Include="App_Data\MailTemplates\forget-password.html" />
+    <Content Include="App_Data\MailTemplates\index.html" />
     <Content Include="App_Data\MailTemplates\join-request.html" />
     <Content Include="App_Data\MailTemplates\contact-us.html" />
     <Content Include="card-info.aspx" />
