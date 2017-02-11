@@ -20,7 +20,7 @@ namespace Khadmatcom
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
 
-        void Application_Error(object sender, EventArgs e)
+        void Application_Error2(object sender, EventArgs e)
         {
             //Exception TheError = Server.GetLastError();
             //Server.ClearError();
