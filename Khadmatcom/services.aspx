@@ -98,7 +98,8 @@
                $('#hfServicePrice').val($('#hfPriceLise').val().split(",")[$('#ddlCities').index() - 1]);
 
             });
-            //calcluate service price option
+
+            $("#accordion500").on('show.bs.collapse', NextStep);
         });
 
         function requestService(id, notes, priceList, options, cities) {
