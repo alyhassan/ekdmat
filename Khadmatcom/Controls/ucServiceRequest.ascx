@@ -728,7 +728,7 @@
                     if (optionsList != '') {
                         var x = optionsList.split(",");
                         var c = '7,8,56,62'.split(',');
-var value = 0;
+                        var value = 0;
                         for (var i = 0; i < x.length; i++) {
                             //show option
                             var oId = x[i];
@@ -739,12 +739,12 @@ var value = 0;
                                 if (cType) {
                                     if (cType === 'checkbox') {
                                         if (cOption.prop("checked") == true) {
-                                            value =value+ $('#O' + oId + 'Value').text();
+                                            value =value+ parseInt($('#O' + oId + 'Value').text());
                                         }
                                     }
                                     if (cType === 'text') {
                                         if (cOption.val() !== '') {
-                                            value =value+ $('#O' + oId + 'Value').text();
+                                            value =value+ parseInt($('#O' + oId + 'Value').text());
                                         }
                                     }
                                    
@@ -752,21 +752,21 @@ var value = 0;
                             }
                         } 
                         //do price calcluation
-                        if (value > 0) {
-                            var count = $('#ddlCount').value;
+                        if (value != 0) {
+                            var count = $('#ddlCount').val();
 
                             var currentPrice = $('#hfServicePrice').val();
                             if (currentPrice == "0")
                                 $('#servicePrice').html('غير محدد');
                             else {
-                                $('#servicePrice').html((count * parseInt($('#hfServicePrice').val())+ (value * count)));
+                               $('#servicePrice').html((count * parseInt($('#hfServicePrice').val())+ (value * parseInt(count))));
                             }
                                 
                         }
                         
                     }
                     //return result;
-                    result = <%= Membership.GetUser()!=null%>;
+                    result = <%= (Membership.GetUser()!=null).ToString().ToLower()%>;
                     if (result == true) {
                         if ($("#ai li:last").hasClass('active')) {
                             $('.nxt').attr('disabled', true);
