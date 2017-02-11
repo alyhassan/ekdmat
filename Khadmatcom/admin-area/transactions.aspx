@@ -46,7 +46,7 @@
                                 <div<%# Item.StatusId>=(int)RequestStatus.New&&(Item.StatusId!=(int)RequestStatus.Refused||Item.StatusId!=(int)RequestStatus.Expired||Item.StatusId!=(int)RequestStatus.Canceled)?"":" class='hidden'" %>>
                                 <div class="row L2">
                                     <div class="col-md-12 col-sm-12 col-xs-12 pull-right;">
-                                        :تفاصيل الخدمة
+                                        تفاصيل الخدمة :
                                     </div>
                                 </div>
                                 <div class="L3 blue">
