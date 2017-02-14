@@ -30,6 +30,7 @@
                                     <span class="ni">رقم الطلب: <span class="red"><%# Item.Id %></span> </span>
                                     <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
                                     <span>نوع الخدمة:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
+                                    <span>العدد:<span class="blue"><%# Item.Count%></span> </span>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="row L2">
@@ -83,24 +84,24 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
-                                  <label class="list-group-item-heading pull-right blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>المرفقات :</label>
-                                <asp:ListView runat="server" DataSource="<%# Item.Attachments.Where(x=>x.IsOutput==false) %>" ItemType="Khadmatcom.Data.Model.Attachment">
-                                    <ItemTemplate>
-                                        <a target="_blank" href='<%# string.Format("/Attachments/{0}", Item.Path)%>' class="attach_url">المرفق <%# Container.DataItemIndex+1 %></a>
-                                    </ItemTemplate>
-                                    <ItemSeparatorTemplate>, </ItemSeparatorTemplate>
-                                </asp:ListView>
-                                    </div>
+                                    <label class="list-group-item-heading pull-right blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>المرفقات :</label>
+                                    <asp:ListView runat="server" DataSource="<%# Item.Attachments.Where(x=>x.IsOutput==false) %>" ItemType="Khadmatcom.Data.Model.Attachment">
+                                        <ItemTemplate>
+                                            <a target="_blank" href='<%# string.Format("/Attachments/{0}", Item.Path)%>' class="attach_url">المرفق <%# Container.DataItemIndex+1 %></a>
+                                        </ItemTemplate>
+                                        <ItemSeparatorTemplate>, </ItemSeparatorTemplate>
+                                    </asp:ListView>
+                                </div>
                             </div>
-                           
-                        <div class="clearfix"></div>
+
+                            <div class="clearfix"></div>
                             <div class="L-button" id="">
                                 <div class="L-button">
-                                <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success ">سعر الخدمة:<%# Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).Price %>&nbsp;<span style="display: inline-block; float: left">ريال</span>&nbsp;  </button>
-                                &nbsp; 
-                            </div>
+                                    <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success ">سعر الخدمة:<%# Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).Price %>&nbsp;<span style="display: inline-block; float: left">ريال</span>&nbsp;  </button>
+                                    &nbsp; 
+                                </div>
                                 <div class="input-group" id="s<%# Item.Id %>">
-                                  
+
                                     <input type="hidden" id="hasAttachment<%# Item.Id %>" value="<%# Item.Service.HasAttachment? 1:0 %>" />
                                     <input type="button" class="btn btn-danger  btn-sm" value="إنهاء الطلب" onclick="finishRequest(<%# Item.Id %>);" />&nbsp;
                                     <input type="button" class="btn btn-success btn-sm" value="تمديد الطلب" onclick="increaceDuration(<%# Item.Id %>);" />&nbsp;

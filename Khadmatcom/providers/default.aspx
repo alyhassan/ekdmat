@@ -6,6 +6,14 @@
     <link rel="stylesheet" type="text/css" href="/Content/carousel-css/owl.theme.css" />
     <link rel="stylesheet" type="text/css" href="/Content/carousel-css/owl.carousel.css" />
     <link href="/Content/jquery.countdownTimer.css" rel="stylesheet" />
+    <style>
+        .colorDefinition {
+            background: transparent !important;
+            border-color: transparent !important;
+            width: auto;
+            font-size: 13px !important;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
     <ul class="nav nav-tabs nav-arow myTab">
@@ -31,18 +39,13 @@
                                     <span class="ni">رقم الطلب: <span class="red"><%# Item.Id %></span> </span>
                                     <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
                                     <span>نوعها:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
-                                   <div class="clearfix"></div>
-                                <div class="L1">
-                                     <span class="pull-right"> : الوقت المتبقي للرد </span>
-                                         <style>
-                                             .colorDefinition {
-    background: transparent  !important;
-    border-color:transparent !important;width:auto;font-size:13px !important;
-}
-                                         </style>
-                                        <span class="blue countDownContainer pull-right" time='<%# string.Format("{0:yyy/MM/dd hh:mm:ss}",Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime) %>' dir="rtl"><%# string.Format("{0:dd MMM yyyy HH:mm}",Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime) %></span> 
-                               </div>
-                                     </div>
+                                    <span>العدد:<span class="blue"><%# Item.Count%></span> </span>
+                                    <div class="clearfix"></div>
+                                    <div class="L1">
+                                        <span class="pull-right">: الوقت المتبقي للرد </span>
+                                        <span class="blue countDownContainer pull-right" time='<%# string.Format("{0:yyy/MM/dd hh:mm:ss}",Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime) %>' dir="rtl"><%# string.Format("{0:dd MMM yyyy HH:mm}",Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime) %></span>
+                                    </div>
+                                </div>
                                 <div class="clearfix"></div>
                                 <div class="row L2">
                                     <div class="col-md-12 col-sm-12 col-xs-12 pull-right">

@@ -28,8 +28,9 @@
                             <div class="L-container">
                                 <div class="L1">
                                     <span class="ni blue">رقم الطلب: <span class="red"><%# Item.Id %></span> </span>
-                                    <span blue>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
-                                    <span blue>نوعها:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
+                                    <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
+                                    <span>نوعها:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
+                                    <span>العدد:<span class="blue"><%# Item.Count%></span> </span>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="row L2">
@@ -60,7 +61,7 @@
                                         </div>
                                     </ItemTemplate>
                                 </asp:Repeater>
-                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
                                         <label class="list-group-item-heading blue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>سبب الرفض </label>
                                         :

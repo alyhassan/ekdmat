@@ -30,6 +30,7 @@
                                     <span class="ni">رقم الطلب: <span class="red"><%# Item.Id %></span> </span>
                                     <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
                                     <span>نوع الخدمة:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
+                                    <span>العدد:<span class="blue"><%# Item.Count%></span> </span>
                                 </div>
                                 <div class="L2">
                                     :تفاصيل الخدمة
@@ -91,8 +92,8 @@
                             </p>
                            <div class="clearfix"></div>
                             <div class="L-button" id="">
-                                <a href="<%# GetLocalizedUrl(string.Format("clients/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>"  class='<%# Item.Service.SkipPayment?"hidden":"editt" %>'>إكمال الطلب</a>
-                                 <input type="button" class='<%# Item.Service.SkipPayment?"btn btn-success  btn-sm":"hidden" %>' value="تم التأكيد" onclick="approveRequest(<%# Item.Id %>);" />
+                                <a href="<%# GetLocalizedUrl(string.Format("clients/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class='<%# Item.Service.SkipPayment?"hidden":"editt" %>'>إكمال الطلب</a>
+                                <input type="button" class='<%# Item.Service.SkipPayment?"btn btn-success  btn-sm":"hidden" %>' value="تم التأكيد" onclick="approveRequest(<%# Item.Id %>);" />
                             </div>
                             <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success pull-left">سعر الخدمة : <%# Item.CurrentPrice %> <span style="display: inline-block;">ريال</span> </button>
 
@@ -139,13 +140,13 @@
                     id: id,
                     dummy:false,
                     x:0
-                    };
+                };
                 $.getJSON("/api/Khadmatcom/ConfirmRequest", userData, function (res) {
                     showLoading();
                     if (res) {
                         hideLoading();
                         toastr.success("تم تأكيد طلبك", "شكرا لك");
-                       }
+                    }
                     else {
                         result = false;
                         hideLoading();

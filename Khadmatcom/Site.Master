@@ -1000,9 +1000,7 @@
                     });
 
                 }
-
-
-            }
+                }
 
         </script>
         <asp:ContentPlaceHolder ID="js" runat="server">

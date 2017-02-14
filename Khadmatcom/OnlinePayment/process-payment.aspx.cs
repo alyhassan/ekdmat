@@ -35,7 +35,7 @@ namespace Khadmatcom.OnlinePayment
             {
                 url = GetLocalizedUrl("clients/services-requests/approved-requests");
                 message = "حدث خطأ اثناء عملية الدفع رجاءاَ قم بالإتصال بالإدارة.";
-                notificationType = NotificationType.Success;
+                notificationType = NotificationType.Error;
             }
 
             RedirectAndNotify(url, message, "", notificationType);

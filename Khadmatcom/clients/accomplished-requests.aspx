@@ -30,6 +30,7 @@
                                     <span class="ni">رقم الطلب: <span class="red"><%# Item.Id %></span> </span>
                                     <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
                                     <span>نوعها:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
+                                    <span>العدد:<span class="blue"><%# Item.Count%></span> </span>
                                 </div>
                                 <div class="L2">
                                     :التفاصيل
@@ -81,21 +82,21 @@
                                                        &nbsp; <span class=""><%# Item.Notes %></span>
                                     </div>
                                 </div>
-                                  <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
-                                  <label class="pull-right blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>المرفقات :</label>&nbsp;
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                    <label class="pull-right blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>المرفقات :</label>&nbsp;
                             <asp:ListView runat="server" DataSource="<%# Item.Attachments.Where(x=>x.IsOutput) %>" ItemType="Khadmatcom.Data.Model.Attachment">
                                 <ItemTemplate>
                                     <a class="attach_url" target="_blank" href='<%# string.Format("/Attachments/{0}", Item.Path)%>'>المرفق <%# Container.DataItemIndex+1 %></a>
                                 </ItemTemplate>
                                 <ItemSeparatorTemplate>, </ItemSeparatorTemplate>
                             </asp:ListView>
-</div>
+                                </div>
                             </div>
                             <div class="L-button hidden" id="">
                                 <a href="<%# GetLocalizedUrl(string.Format("clients/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt">Edit</a>
                             </div>
-                            <br class="clearfix"/>
-                          
+                            <br class="clearfix" />
+
                             <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success pull-left">سعر الخدمةالنهائى:<%# Item.CurrentPrice %>&nbsp;<span style="display: inline-block; float: left">ريال</span>&nbsp;  </button>
                             &nbsp; 
                           <div class="clearfix"></div>
