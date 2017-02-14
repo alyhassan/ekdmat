@@ -477,7 +477,7 @@
                         <ItemTemplate>
                             <div class="panel">
                                 <div class="accordion-heading ">
-                                    <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#accordion" href="#collapse<%# Item.Id %>" aria-expanded="false"><%# Item.Title %> <i class="indi fa fa-chevron-up"></i>
+                                    <a class="accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#accordion" href="#collapse_<%# Item.Id %>" aria-expanded="false"><%# Item.Title %> <i class="indi fa fa-chevron-up"></i>
                                     </a>
                                 </div>
                                 <div id="collapse_<%# Item.Id %>" class="collapse" aria-expanded="false">
