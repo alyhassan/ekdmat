@@ -217,6 +217,12 @@ namespace Khadmatcom
             return key != null ? key.Value : "";
         }
 
+        protected string GetKeyValue(string name)
+        {
+            SettingServices settingServices = new SettingServices();
+            return settingServices.GetKeyValue(name,2);
+        }
+
         protected void ddlLanguages_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             // get the url of other language flags

@@ -57,7 +57,7 @@
                     </span>
                     </li>
                     <li><a href="#p9" data-toggle="modal" class="my-mark"><%= GetGlobalResourceObject("general.aspx","lblFaq") %><i>&nbsp;</i></a></li>
-                    <li><a href="#p8" data-toggle="modal" class="contact-btn" data-backdrop="static"><span class="visible-xs">أتصل بنا</span>0545545133<i>&nbsp;</i></a>
+                    <li><a href="#p8" data-toggle="modal" class="contact-btn" data-backdrop="static"><span class="visible-xs">أتصل بنا</span><%= GetKeyValue("Telephone") %><i>&nbsp;</i></a>
                     </li>
                 </ul>
 
@@ -116,7 +116,7 @@
                     </span>
                     </li>
                     <li><a href="#p9" data-toggle="modal" class="my-mark"><%= GetGlobalResourceObject("general.aspx","lblFaq") %><i>&nbsp;</i></a></li>
-                    <li><a href="#p8" data-toggle="modal" class="contact-btn" data-backdrop="static"><span>أتصل بنا</span>0545545133<i>&nbsp;</i></a>
+                    <li><a href="#p8" data-toggle="modal" class="contact-btn" data-backdrop="static"><span>أتصل بنا</span><%= GetKeyValue("Telephone") %><i>&nbsp;</i></a>
                     </li>
                 </ul>
                 <asp:LoginView ID="LoginView2" runat="server">
@@ -735,7 +735,7 @@
 
                     <span class="foot-ab"><%= GetGlobalResourceObject("general.aspx","lblRightsReserved") %>  <%= DateTime.Today.Year %> &copy;</span>
                     <a href="#">The privacy of your services</a>
-                    <a href="#p8" data-toggle="modal" class="footer-cn">0545545133<i>&nbsp;</i></a>
+                    <a href="#p8" data-toggle="modal" class="footer-cn"><%= GetKeyValue("Telephone") %><i>&nbsp;</i></a>
                 </div>
             </div>
 
@@ -847,7 +847,9 @@
 
                     </div>
                     <div class="modal-footer">
-                        <p>او يمكنك الإتصال والتواصل : <span>0545545133</span></p>
+                        <p>او يمكنك الإتصال والتواصل : <span>
+<a href='tel:<%= GetKeyValue("Telephone") %>'><%= GetKeyValue("Telephone") %></a>
+</span></p>
                     </div>
                 </div>
                 <!-- /.modal-content -->

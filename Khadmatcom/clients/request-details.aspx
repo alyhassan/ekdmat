@@ -43,7 +43,38 @@
             padding: 0px 15px;
         }
     </style>
+    <script src="/Scripts/jquery-2.2.3.min.js"></script>
+    <script>function payOnline() {
+                var amount = <%=Convert.ToDouble(CurrentRequest.CurrentPrice.Value)*1.025%>;
+            var transactionId= <%= CurrentRequest.Id %>;
+            var userIp= '<%= Servston.Utilities.GetCurrentClientIPAddress() %>';
 
+            var userData = {
+                amount: amount,
+                transactionId: transactionId,
+                attempt: 1,
+                userIp: userIp
+            };
+            $.getJSON("/api/Khadmatcom/Checkout", userData, function (res) {
+                showLoading();
+                if (res&&res.length> 1) {
+                    hideLoading();
+                    <%-- var script = document.createElement("script");
+                    script.setAttribute("type", "text/javascript");
+                    script.setAttribute("src", "<%= HyperPayClient.MerchantConfiguration.Config.Url+"v1/paymentWidgets.js?checkoutId="%>"+res);
+                    document.getElementsByTagName("head")[0].appendChild(script);--%>
+                    $('#onLinePaymentModal').on('shown.bs.modal', function() { //correct here use 'shown.bs.modal' event which comes in bootstrap3
+                        $(this).find('iframe').attr('src', '<%= HyperPayClient.MerchantConfiguration.Config.AmaUrl %>'+"?cid="+res);
+                    });
+                    $("#onLinePaymentModal").modal({backdrop: 'static',show:true});
+                }
+                else {
+                    hideLoading();
+                    toastr.error("هناك خطأ  أثناء إرسال طلبك...فضلا حاول لاحقا.", "خطأ"); hideLoading();
+                }
+            });
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
     <ul class="nav nav-tabs nav-arow myTab">
@@ -224,13 +255,7 @@
                             </div>
 
                             <div class="clearfix">&nbsp;</div>
-                            <div class="form-group col-md-12">
-                                <label class="checkbox form-label">
-                                    <input type="checkbox" name="remember" value="1" class="validate[required]" />
-                                    <span style="padding-left: 20px;">أوافق على  <a href="javascript:{}">سياسة إستخدام الموقع</a></span>
-
-                                </label>
-                            </div>
+                           
                             <div class="col-md-12 form-group">
                                 <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" class="nxt clasic-btn">التالي</a><span>&nbsp; &nbsp; &nbsp;</span>
                                 <a data-toggle="collapse" data-parent="#accordion500" href="#collapse501" class="prv s-cl clasic-btn">السابق</a>
@@ -381,12 +406,19 @@
                             <div class="accordion-heading">ملخص الطلب <i class="indi fa fa-chevron-up"></i></div>
                         </a>
                     </div>
-                    <div id="collapse504" class="collapse" aria-expanded="false">
-                        <div class="accordion-body clearfix validationEngineContainer" check="false" id="submitServiceRequest">
+                    <div id="collapse504" class="collapse validationEngineContainer" aria-expanded="false">
+                        <div class="accordion-body clearfix" check="true" id="submitServiceRequest">
                             <div class="form-group col-md-12" style="min-height: 50px;"><%= Summary %></div>
+                             <div class="form-group col-md-12">
+                                <label class="checkbox form-label">
+                                    <input type="checkbox"  class="validate[required]" />
+                                    <span>أوافق على  <a class="btn-link" href="javascript:{}">سياسة إستخدام الموقع</a></span>
+
+                                </label>
+                            </div>
                             <div class="clearfix"></div>
                             <div class="col-md-12 form-group clearfix">
-                                <asp:LinkButton Text="إرسال" runat="server" CssClass="nxt s-cl clasic-btn" ID="btnSave" OnClick="btnSave_OnClick" OnClientClick="return checkPayment()" />
+                                <asp:LinkButton Text="إرسال" runat="server" CssClass="nxt s-cl clasic-btn" ID="btnSave" OnClick="btnSave_OnClick" OnClientClick="return valdit()" />
                                 <%--<a href="#" class="nxt s-cl clasic-btn">Proceed</a>--%>
                                 <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" class="prv s-cl clasic-btn">السابق</a>
                             </div>
@@ -503,35 +535,5 @@
                 //      return paymentSection;
                 return result;
             }
-            function payOnline() {
-                var amount = <%=Convert.ToDouble(CurrentRequest.CurrentPrice.Value)*1.025%>;
-            var transactionId= <%= CurrentRequest.Id %>;
-            var userIp= '<%= Servston.Utilities.GetCurrentClientIPAddress() %>';
-
-            var userData = {
-                amount: amount,
-                transactionId: transactionId,
-                attempt: 1,
-                userIp: userIp
-            };
-            $.getJSON("/api/Khadmatcom/Checkout", userData, function (res) {
-                showLoading();
-                if (res&&res.length> 1) {
-                    hideLoading();
-                    <%-- var script = document.createElement("script");
-                    script.setAttribute("type", "text/javascript");
-                    script.setAttribute("src", "<%= HyperPayClient.MerchantConfiguration.Config.Url+"v1/paymentWidgets.js?checkoutId="%>"+res);
-                    document.getElementsByTagName("head")[0].appendChild(script);--%>
-                    $('#onLinePaymentModal').on('shown.bs.modal', function() { //correct here use 'shown.bs.modal' event which comes in bootstrap3
-                        $(this).find('iframe').attr('src', '<%= HyperPayClient.MerchantConfiguration.Config.AmaUrl %>'+"?cid="+res);
-                    });
-                    $("#onLinePaymentModal").modal({backdrop: 'static',show:true});
-                }
-                else {
-                    hideLoading();
-                    toastr.error("هناك خطأ  أثناء إرسال طلبك...فضلا حاول لاحقا.", "خطأ"); hideLoading();
-                }
-            });
-        }
     </script>
 </asp:Content>

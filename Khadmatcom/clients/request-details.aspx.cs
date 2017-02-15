@@ -52,7 +52,9 @@ namespace Khadmatcom.clients
                 txtShippingName.Value = CurrentRequest.ShippingName;
             }
             Summary = string.Format("عزيزيى العميل<br> <span class='text-red'>({0})</span><br> شكرا لكم لاختياركم خدمات كوم...<br>  <span class='text-red'>({1}) </span > لقد قمت بطلب خدمة<br><span class='text-red'> ({2} ريال) </span> والتي تبلغ قيمتها<br>ولإكمال الطلب نرجو الضغط عل زر الإرسال وللألغاء اضغط إلغاء<br> كم ونود إحاطتكم علما انه فى حال دفع قيمة الخدمة عن طريق الفيزا او الماستر كارد سيتم احتساب رسوم إضافية قدرها 2.5% من قبل البنك", CurrentUser.FullName, CurrentRequest.Service.LocalizedServices.First(l => l.LanguageId == LanguageId).Title, CurrentRequest.CurrentPrice);
+
         }
+
 
         public request_details()
         {
@@ -107,9 +109,7 @@ namespace Khadmatcom.clients
                         // payId = _return["id"];
                         // CurrentRequest.PaymentReferanceCode = payId;
                         // fire the javascript function to pay online payOnline()
-                        //Response.Write("<script>payOnline();</script>");
-                        //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "payOnline", "payOnline()", true);
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "script", "doSomthing(payOnline())", true);
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "script", "payOnline();", true);
                     }
                     break;
                 case "2"://transfare payment...set to in progress if saved
