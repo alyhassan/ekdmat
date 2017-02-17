@@ -124,12 +124,12 @@ namespace Khadmatcom.API
 
         [HttpGet]
         [ActionName("UpdateProviderRequest")]
-        public bool UpdateProviderRequest(int userId, int id, int status, string reason, decimal price,int duration=0)
+        public bool UpdateProviderRequest(int userId, int id, int status, string reason, decimal price, int duration = 0)
         {
             try
             {
                 ServiceRequests _serviceRequests = new ServiceRequests();
-                _serviceRequests.UpdateProviderRequest(id, userId, status, reason, price,duration);
+                _serviceRequests.UpdateProviderRequest(id, userId, status, reason, price, duration);
                 return true;
             }
             catch (Exception ex)
@@ -143,12 +143,37 @@ namespace Khadmatcom.API
 
         [HttpGet]
         [ActionName("IncreaseProviderRequest")]
-        public bool IncreaseProviderRequest(int id,  int duration)
+        public bool IncreaseProviderRequest(int id, int duration)
         {
             try
             {
                 ServiceRequests _serviceRequests = new ServiceRequests();
-                _serviceRequests.IncreaceRequestDuration(id,  duration);
+                _serviceRequests.IncreaceRequestDuration(id, duration);
+                // send notification to the first provider
+
+                var request = _serviceRequests.GetRequest(id);
+                var client = _serviceRequests.GetRequest(id).Client;
+                Dictionary<string, string> keysValues = new Dictionary<string, string>
+                {
+                    {"name", client.FullName},
+                    {"no", id.ToString()},
+                    {"ServiceName", request.Service.Name}
+                };
+
+                string replyToAddress = WebConfigurationManager.AppSettings["ContactUsEmail"];
+                string adminEmail = WebConfigurationManager.AppSettings["AdminEmail"];
+                string siteMasterEmail = WebConfigurationManager.AppSettings["SiteMasterEmail"];
+                try
+                {
+                    Servston.MailManager.SendMail("client/request-time.html", keysValues,
+                        "تم الاستجابة على طلبكم ببوابة خدماتكم",
+                        client.Email, adminEmail, replyToAddress, new List<string>() { siteMasterEmail });
+
+                }
+                catch (Exception ex)
+                {
+                }
+
                 return true;
             }
             catch (Exception ex)
@@ -167,6 +192,32 @@ namespace Khadmatcom.API
             {
                 ServiceRequests _serviceRequests = new ServiceRequests();
                 _serviceRequests.CloseProviderRequest(id);
+                // send notification to the first provider
+
+                var request = _serviceRequests.GetRequest(id);
+                var client = _serviceRequests.GetRequest(id).Client;
+                Dictionary<string, string> keysValues = new Dictionary<string, string>
+                {
+                    {"name", client.FullName},
+                    {"no", id.ToString()},
+                    {"duration", request.CurrentDuration.ToString()},
+                    {"ServiceName", request.Service.Name}
+                };
+
+                string replyToAddress = WebConfigurationManager.AppSettings["ContactUsEmail"];
+                string adminEmail = WebConfigurationManager.AppSettings["AdminEmail"];
+                string siteMasterEmail = WebConfigurationManager.AppSettings["SiteMasterEmail"];
+                try
+                {
+                    Servston.MailManager.SendMail("client/request-finished.html", keysValues,
+                        "تم الاستجابة على طلبكم ببوابة خدماتكم",
+                        client.Email, adminEmail, replyToAddress, new List<string>() { siteMasterEmail });
+
+                }
+                catch (Exception ex)
+                {
+                }
+
                 return true;
             }
             catch (Exception ex)
@@ -179,7 +230,7 @@ namespace Khadmatcom.API
 
         [HttpGet]
         [ActionName("ConfirmRequest")]
-        public bool ConfirmRequest(int id,bool dummy,int x)
+        public bool ConfirmRequest(int id, bool dummy, int x)
         {
             try
             {
@@ -194,6 +245,6 @@ namespace Khadmatcom.API
 
             }
         }
-        
+
     }
 }

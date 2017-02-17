@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -17,7 +18,7 @@ namespace Khadmatcom.Controls
     {
         private readonly AreasServices _areasServices;
         private readonly ServicesServices _servicesServices;
-
+        private IQueryable<City> cities;
         public IQueryable<Service> PageServices { get; set; }
 
 
@@ -33,7 +34,8 @@ namespace Khadmatcom.Controls
         public IQueryable<City> GetCities()
         {
 
-            return _areasServices.GetCities(LanguageId).Where(c=>c.Shown).AsQueryable();
+            cities = _areasServices.GetCities(LanguageId).Where(c => c.Shown).AsQueryable();
+            return cities;
         }
         public IQueryable<Service> GetServices()
         {
@@ -77,7 +79,30 @@ namespace Khadmatcom.Controls
 
                 request.AddRequest(requestData);
                 InitializeCulture();
-                RedirectAndNotify(Request.RawUrl,"تم طلب الخدمة");
+
+                //send notifications
+                Dictionary<string, string> keysValues = new Dictionary<string, string>
+                {
+                    { "name", CurrentUser.FullName},
+                    { "no", requestData.Id.ToString()},
+                    { "city", GetCities().First(x=>x.CityId==requestData.CityId).Name},
+                    { "ServiceName", GetServices().First(x=>x.Id==int.Parse(hfServiceId.Value)).Name}
+                };
+
+                string replyToAddress = WebConfigurationManager.AppSettings["ContactUsEmail"];
+                string adminEmail = WebConfigurationManager.AppSettings["AdminEmail"];
+                string siteMasterEmail = WebConfigurationManager.AppSettings["SiteMasterEmail"];
+                try
+                {
+                    Servston.MailManager.SendMail("client/new-request.html", keysValues, "طلب خدمة جديد ببوابة خدماتكم",
+                        CurrentUser.Email, adminEmail, replyToAddress, new List<string>() { siteMasterEmail });
+
+                }
+                catch (Exception ex)
+                {
+                }
+                //finsh session
+                RedirectAndNotify(Request.RawUrl, "تم طلب الخدمة");
             }
             catch (Exception ex)
             {
@@ -85,7 +110,7 @@ namespace Khadmatcom.Controls
                 InitializeCulture();
                 //if (ex.InnerException != null)
                 //    Notify(ex.InnerException.Message, "حدث خطأ أثناء الطلب", NotificationType.Error);
-                Notify("فضلا حاول فى وقت لاحق","حدث خطأ أثناء الطلب",NotificationType.Error);
+                Notify("فضلا حاول فى وقت لاحق", "حدث خطأ أثناء الطلب", NotificationType.Error);
             }
         }
 
