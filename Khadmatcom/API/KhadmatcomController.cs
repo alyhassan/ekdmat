@@ -165,9 +165,28 @@ namespace Khadmatcom.API
                 string siteMasterEmail = WebConfigurationManager.AppSettings["SiteMasterEmail"];
                 try
                 {
+                    //send email
                     Servston.MailManager.SendMail("client/request-time.html", keysValues,
-                        "تم الاستجابة على طلبكم ببوابة خدماتكم",
+                        "تم تمدير مدة تنفيذ طلبكم ببوابة خدماتكم",
                         client.Email, adminEmail, replyToAddress, new List<string>() { siteMasterEmail });
+
+
+                    Servston.SMS smsManager = new Servston.SMS();
+                    //send sms to client
+                    string sms =
+                       string.Format(
+                           "تمديد مدة تنفيذ طلبكم رقم {0} الخاص ب  {1} بمدة {2}",
+                           id, request.Service.Name, duration);
+                    if (!string.IsNullOrEmpty(request.Client.MobielNumber) && request.Client.MobielNumber.Length > 10)
+                        smsManager.Send(request.Client.MobielNumber, sms);
+
+                    //send sms to admins
+                    sms =
+                        string.Format(
+                            "تمديد مدة تنفيذ طلب رقم {0} الخاص بشريك الخدمة {1} بمدة {2}",
+                            id, request.Provider.CompanyName, duration);
+
+                    smsManager.SendToAdmin(sms);
 
                 }
                 catch (Exception ex)
@@ -212,6 +231,17 @@ namespace Khadmatcom.API
                     Servston.MailManager.SendMail("client/request-finished.html", keysValues,
                         "تم الاستجابة على طلبكم ببوابة خدماتكم",
                         client.Email, adminEmail, replyToAddress, new List<string>() { siteMasterEmail });
+                    if (!string.IsNullOrEmpty(request.Client.MobielNumber) &&
+                        request.Client.MobielNumber.Length > 10)
+                    {
+                        string sms =
+                            string.Format(
+                                "عميلنا العزيز نفيدكم انه تم الإنتهاء من تنفيذ طلبكم رقم {0} شكرا لكم لإستخدامكم خدمات كوم.",
+                                request.Service.Name);
+
+                        Servston.SMS smsManager = new Servston.SMS();
+                        smsManager.Send(request.Client.MobielNumber, sms);
+                    }
 
                 }
                 catch (Exception ex)

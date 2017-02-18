@@ -121,6 +121,14 @@ namespace Khadmatcom.clients
                     CurrentRequest.StatusId = (int)RequestStatus.Paid;
 
                     _serviceRequests.UpdateServiceRequest(CurrentRequest);
+
+                    //send sms to admin
+                    string sms =
+                        string.Format(
+                            "تحويل بنكي جديد على طلب رقم {0} الخاص بخدمة {1} بقيمة {2}",
+                            CurrentRequest.Id, CurrentRequest.Service.Name,CurrentRequest.CurrentPrice);
+                    Servston.SMS smsManager = new Servston.SMS();
+                    smsManager.SendToAdmin(sms);
                     RedirectAndNotify(GetLocalizedUrl("clients/services-requests/approved-requests"), "رجاءاَ قم بالإتصال بالإدارة للتأكد من وصول الحوالة.");
                     break;
                 default:
