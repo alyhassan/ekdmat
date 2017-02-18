@@ -21,7 +21,7 @@ namespace Khadmatcom
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-
+            //un comment if you need to modify scheduler
             // Trigger the job to run now, and then every 40 seconds
             //ITrigger trigger = TriggerBuilder.Create().WithIdentity("myTrigger", "group1").StartNow().WithSimpleSchedule(x => x.WithIntervalInSeconds(40).RepeatForever()).Build();
 
