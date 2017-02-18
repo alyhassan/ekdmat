@@ -322,14 +322,19 @@
                             </div>
                             <div class="col-md-12 c-card" style="display: none;" id="c-card2">
                                 <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <div class="form-group col-md-4 col-sm-4  col-xs-4 pull-right">
+                                  <!--  <div class="form-group col-md-4 col-sm-4  col-xs-4 pull-right">
                                         <img class="img-responsive " src="/images/rajhi.png" />
-                                    </div>
-                                    <div class="form-group col-md-4  col-sm-4  col-xs-4 pull-right">
+                                    </div> -->
+                                    <div class="form-group col-md-6  col-sm-6  col-xs-4 pull-right">
                                         <img class="img-responsive " src="/images/Riyadh.png" />
+                                          <div class="clearfix"></div>
+                                       <div> SA7620000002972435129940</div> 
+                                      
                                     </div>
-                                    <div class="form-group col-md-4 col-sm-4  col-xs-4 pull-right">
+                                    <div class="form-group col-md-6 col-sm-6  col-xs-4 pull-right">
                                         <img class="img-responsive" src="/images/Ahli.png" />
+                                          <div class="clearfix"></div>
+                                           <div>Sa6510000025368437000107</div>  
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-6 form-group pull-right">
