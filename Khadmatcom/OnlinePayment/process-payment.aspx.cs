@@ -6,6 +6,7 @@ using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Khadmatcom.Services;
+using Khadmatcom.Services.Services;
 
 namespace Khadmatcom.OnlinePayment
 {
@@ -48,10 +49,10 @@ namespace Khadmatcom.OnlinePayment
                 {
                     //send to client
                     Servston.MailManager.SendMail("client/request-approved.html", keysValues, "بوابة خدماتكم",
-                        request.Client.Email, adminEmail, replyToAddress, new List<string>() { siteMasterEmail });
+                        UserManger.GetEmail(request.Client.UserId.Value), adminEmail, replyToAddress, new List<string>() { siteMasterEmail });
                     //send to client
                     Servston.MailManager.SendMail("provider/request-approved.html", keysValues, "بوابة خدماتكم",
-                       request.Provider.Email, adminEmail, replyToAddress, new List<string>() { siteMasterEmail });
+                       UserManger.GetEmail(request.Provider.UserId.Value), adminEmail, replyToAddress, new List<string>() { siteMasterEmail });
 
 
                     //send sms to the client

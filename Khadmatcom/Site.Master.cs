@@ -121,7 +121,7 @@ namespace Khadmatcom
             {
                 ddlLanguages.SelectedValue = Request.Form[ddlLanguages.UniqueID];
                 mainCss.Href = $"/Content/site-{ ddlLanguages.SelectedValue}.css";
-                string culture = "ar-SA";
+                string culture = "ar-EG";
                 if (ddlLanguages.SelectedValue == "en")
                     culture = "en-GB";
                 Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(culture);

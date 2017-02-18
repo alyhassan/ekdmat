@@ -412,7 +412,7 @@
                              <div class="form-group col-md-12">
                                 <label class="checkbox form-label">
                                     <input type="checkbox"  class="validate[required]" />
-                                    <span>أوافق على  <a class="btn-link" href="javascript:{}">سياسة إستخدام الموقع</a></span>
+                                    <span>أوافق على  <a class="btn-link" href='<%= GetLocalizedUrl("info/use-agreement") %>' target="_blank">سياسة إستخدام الموقع</a></span>
 
                                 </label>
                             </div>

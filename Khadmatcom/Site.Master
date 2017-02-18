@@ -22,6 +22,7 @@
     <meta property="og:site_name" content="بوابة خدمات كوم" />
     <meta property="og:description" content="الأقرب إليك" />
     <!-- /open graph -->
+    
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
     <link href="~/Content/site-ar.css" rel="stylesheet" runat="server" />
@@ -35,7 +36,7 @@
             margin-top: 20px;
         }
     </style>
-    <script src="http://v4-alpha.getbootstrap.com/assets/js/vendor/tether.min.js"></script>
+    <%--<script src="https://v4-alpha.getbootstrap.com/assets/js/vendor/tether.min.js"></script>--%>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
       <script src="/Scripts/html5shiv.js"></script>  

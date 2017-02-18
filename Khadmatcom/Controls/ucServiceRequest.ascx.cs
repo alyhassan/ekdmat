@@ -44,12 +44,12 @@ namespace Khadmatcom.Controls
 
         protected void btnProceed_OnClick(object sender, EventArgs e)
         {
-            string culture = "en-GB";
-            Page.Culture = Page.UICulture = culture;
-            Page.LCID = new System.Globalization.CultureInfo(culture).LCID;
-            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(culture);
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(culture);
-            SetLoogedUserInfo();
+            //string culture = "en-GB";
+            //Page.Culture = Page.UICulture = culture;
+            //Page.LCID = new System.Globalization.CultureInfo(culture).LCID;
+            //System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(culture);
+            //System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(culture);
+            //SetLoogedUserInfo();
             try
             {
                 ServiceRequests request = new ServiceRequests();
@@ -78,7 +78,7 @@ namespace Khadmatcom.Controls
                 //attachment
 
                 request.AddRequest(requestData);
-                InitializeCulture();
+                //InitializeCulture();
 
                 //send notifications
                 Dictionary<string, string> keysValues = new Dictionary<string, string>
@@ -107,7 +107,7 @@ namespace Khadmatcom.Controls
             catch (Exception ex)
             {
                 Server.ClearError();
-                InitializeCulture();
+                //InitializeCulture();
                 //if (ex.InnerException != null)
                 //    Notify(ex.InnerException.Message, "حدث خطأ أثناء الطلب", NotificationType.Error);
                 Notify("فضلا حاول فى وقت لاحق", "حدث خطأ أثناء الطلب", NotificationType.Error);

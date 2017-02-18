@@ -12,6 +12,7 @@ using System.Web.Configuration;
 using System.Web.Http;
 using Khadmatcom.Services;
 using HyperPayClient;
+using Khadmatcom.Services.Services;
 
 namespace Khadmatcom.API
 {
@@ -167,8 +168,8 @@ namespace Khadmatcom.API
                 {
                     //send email
                     Servston.MailManager.SendMail("client/request-time.html", keysValues,
-                        "تم تمدير مدة تنفيذ طلبكم ببوابة خدماتكم",
-                        client.Email, adminEmail, replyToAddress, new List<string>() { siteMasterEmail });
+                        "تم تمديد مدة تنفيذ طلبكم ببوابة خدماتكم",
+                       UserManger.GetEmail(client.UserId.Value) , adminEmail, replyToAddress, new List<string>() { siteMasterEmail });
 
 
                     Servston.SMS smsManager = new Servston.SMS();
@@ -230,7 +231,7 @@ namespace Khadmatcom.API
                 {
                     Servston.MailManager.SendMail("client/request-finished.html", keysValues,
                         "تم الاستجابة على طلبكم ببوابة خدماتكم",
-                        client.Email, adminEmail, replyToAddress, new List<string>() { siteMasterEmail });
+                       UserManger.GetEmail(client.UserId.Value), adminEmail, replyToAddress, new List<string>() { siteMasterEmail });
                     if (!string.IsNullOrEmpty(request.Client.MobielNumber) &&
                         request.Client.MobielNumber.Length > 10)
                     {

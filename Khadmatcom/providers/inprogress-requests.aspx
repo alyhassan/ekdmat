@@ -256,6 +256,7 @@
                         hideLoading();
                         toastr.success("تم تنفيذ طلبك", "شكرا لك");
                         clearFormData('#txtDuration'+id);
+                        location.reload();
                     }
                     else {
                         result = false;
