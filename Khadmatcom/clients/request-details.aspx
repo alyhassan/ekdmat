@@ -325,16 +325,16 @@
                                   <!--  <div class="form-group col-md-4 col-sm-4  col-xs-4 pull-right">
                                         <img class="img-responsive " src="/images/rajhi.png" />
                                     </div> -->
-                                    <div class="form-group col-md-6  col-sm-6  col-xs-4 pull-right">
-                                        <img class="img-responsive " src="/images/Riyadh.png" />
+                                    <div class="form-group col-md-6  col-sm-6  col-xs-12 pull-right text-center">
+                                        <img class="img-responsive " src="/images/Riyadh.png"  style="width:300px;margin:auto;"/>
                                           <div class="clearfix"></div>
-                                       <div> SA7620000002972435129940</div> 
+                                       <div class="col-md-12 text-info" style="font-size: 18px;"><strong> SA7620000002972435129940</strong></div> 
                                       
                                     </div>
-                                    <div class="form-group col-md-6 col-sm-6  col-xs-4 pull-right">
-                                        <img class="img-responsive" src="/images/Ahli.png" />
+                                    <div class="form-group col-md-6 col-sm-6  col-xs-12 pull-right text-center">
+                                        <img class="img-responsive" src="/images/Ahli.png" style="width:300px;margin:auto;" />
                                           <div class="clearfix"></div>
-                                           <div>Sa6510000025368437000107</div>  
+                                             <div class="col-md-12 text-info" style="font-size: 18px;"><strong>Sa6510000025368437000107</strong></div>  
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-6 form-group pull-right">
