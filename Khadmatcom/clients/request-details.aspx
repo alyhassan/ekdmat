@@ -178,7 +178,7 @@
                             <div class="accordion-heading">المرفقات <i class="indi fa fa-chevron-up"></i></div>
                         </a>
                     </div>
-                    <div id="collapse501" class="collapse" aria-expanded="false">
+                    <div id="collapse501" class="collapse" aria-expanded="false"  check="false">
                         <div class="accordion-body clearfix">
                             <div class="row">
                                 <div class=" col-md-6  col-sm-6 form-group pull-right">
@@ -406,12 +406,12 @@
                             <div class="accordion-heading">ملخص الطلب <i class="indi fa fa-chevron-up"></i></div>
                         </a>
                     </div>
-                    <div id="collapse504" class="collapse validationEngineContainer" aria-expanded="false">
-                        <div class="accordion-body clearfix" check="true" id="submitServiceRequest">
+                    <div id="collapse504" class="collapse validationEngineContainer" check="true" aria-expanded="false">
+                        <div class="accordion-body clearfix" id="submitServiceRequest">
                             <div class="form-group col-md-12" style="min-height: 50px;"><%= Summary %></div>
                              <div class="form-group col-md-12">
                                 <label class="checkbox form-label">
-                                    <input type="checkbox"  class="validate[required]" />
+                                    <input type="checkbox"  class="validate[required]" id="chkAgree" checked="checked" />
                                     <span>أوافق على  <a class="btn-link" href='<%= GetLocalizedUrl("info/use-agreement") %>' target="_blank">سياسة إستخدام الموقع</a></span>
 
                                 </label>
@@ -488,6 +488,7 @@
 
         function valdit() {
             var check = $('#accordion500 .in').attr('check');
+            
             var doCheck = $('#hfChecked').val();
             if (check == 'false') {
                 $('#hfChecked').val('0');
@@ -495,7 +496,7 @@
             } else {
                 if (doCheck == '0') {
                     var id = $('#accordion500 .in').attr("id");
-                    var result = validateForm('#' + id, '<%= System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName.ToLower() %>');
+                   var result = validateForm('#' + id, '<%= System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName.ToLower() %>');
                     return result;
                 }
                 return true;

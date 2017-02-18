@@ -100,7 +100,7 @@
                 if ($('#hfServicePrice').val() == "0")
                     $('#servicePrice').html('غير محدد');
                 else
-                    $('#servicePrice').html(this.value * parseInt($('#hfServicePrice').val()));
+                    $('#servicePrice').html(parseInt($('#hfServicePrice').val()));
 
             });
 
