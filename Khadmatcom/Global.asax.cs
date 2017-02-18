@@ -7,6 +7,8 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
+using Khadmatcom.AppCode;
+//using Quartz;
 
 namespace Khadmatcom
 {
@@ -18,6 +20,17 @@ namespace Khadmatcom
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+
+            // Trigger the job to run now, and then every 40 seconds
+            //ITrigger trigger = TriggerBuilder.Create().WithIdentity("myTrigger", "group1").StartNow().WithSimpleSchedule(x => x.WithIntervalInSeconds(40).RepeatForever()).Build();
+
+            // Trigger the job to run now, and then every 6 hour
+            //ITrigger trigger = TriggerBuilder.Create().WithIdentity("myTrigger", "group1").StartNow().WithSimpleSchedule(x => x.WithIntervalInHours(6).RepeatForever()).Build();
+
+            //JobScheduler.Start(trigger);
+
+            JobScheduler.Start();
         }
 
         void Application_Error(object sender, EventArgs e)
