@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="request-details.aspx.cs" Inherits="Khadmatcom.clients.request_details" %>
-
 <%@ Import Namespace="Khadmatcom.Services" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
