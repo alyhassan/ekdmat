@@ -30,6 +30,7 @@
                                     <span class="ni">رقم الطلب: <span class="red"><%# Item.Id %></span> </span>
                                     <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
                                     <span>نوع الخدمة:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
+                                    <span>العدد:<span class="blue"><%# Item.Count%></span> </span>
                                 </div>
                                 <div class="L2">
                                     :التفاصيل

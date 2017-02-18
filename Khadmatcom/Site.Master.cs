@@ -121,7 +121,7 @@ namespace Khadmatcom
             {
                 ddlLanguages.SelectedValue = Request.Form[ddlLanguages.UniqueID];
                 mainCss.Href = $"/Content/site-{ ddlLanguages.SelectedValue}.css";
-                string culture = "ar-SA";
+                string culture = "ar-EG";
                 if (ddlLanguages.SelectedValue == "en")
                     culture = "en-GB";
                 Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(culture);
@@ -215,6 +215,12 @@ namespace Khadmatcom
             SettingServices settingServices = new SettingServices();
             var key = settingServices.GetSocailKey(name);
             return key != null ? key.Value : "";
+        }
+
+        protected string GetKeyValue(string name)
+        {
+            SettingServices settingServices = new SettingServices();
+            return settingServices.GetKeyValue(name,2);
         }
 
         protected void ddlLanguages_OnSelectedIndexChanged(object sender, EventArgs e)

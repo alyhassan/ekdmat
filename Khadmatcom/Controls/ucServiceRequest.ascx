@@ -712,6 +712,23 @@
 
 
     function NextStep() {
+       var result = <%= (Membership.GetUser()!=null).ToString().ToLower()%>;
+                    //if (result == true) {
+                    //    if ($("#ai li:last").hasClass('active')) {
+                    //        $('.nxt').attr('disabled', true);
+
+                    //    } else {
+                    //        $("#ai").find('.active').removeClass('active').next().addClass('active');
+                    //        //$("#all").find('.active').removeClass('active').next().addClass('active');
+
+                    //        //$('.active').removeClass('active').next().addClass('active');
+                    //        //$('.active').removeClass('active').next().addClass('active');
+
+
+                    //    }
+        //}
+        if (result === 'false')
+            return result;
         var check = $('#accordion500 .in').attr('check');
         var doCheck = $('#hfChecked').val();
         if (check == 'false') {
@@ -720,9 +737,9 @@
         } else {
             if (doCheck == '0'){
                 var id = $('#accordion500 .in').attr("id");
-                var result = validateForm('#' + id, '<%= System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName.ToLower() %>');
+                result = validateForm('#' + id, '<%= System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName.ToLower() %>');
 
-                if (result) {
+                if (result==='true') {
                     $('#hfChecked').val('1');
                     var optionsList = $('#hfOptions').val();
                     if (optionsList != '') {
@@ -766,21 +783,7 @@
                         
                     }
                     //return result;
-                    result = <%= (Membership.GetUser()!=null).ToString().ToLower()%>;
-                    if (result == true) {
-                        if ($("#ai li:last").hasClass('active')) {
-                            $('.nxt').attr('disabled', true);
-
-                        } else {
-                            $("#ai").find('.active').removeClass('active').next().addClass('active');
-                            //$("#all").find('.active').removeClass('active').next().addClass('active');
-
-                            //$('.active').removeClass('active').next().addClass('active');
-                            //$('.active').removeClass('active').next().addClass('active');
-
-
-                        }
-                    }
+                    
                     return result;
                 }
                 return result;

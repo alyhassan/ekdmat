@@ -51,8 +51,10 @@ namespace Khadmatcom.clients
                 txtShippingPhone.Value = CurrentRequest.ShippingPhone;
                 txtShippingName.Value = CurrentRequest.ShippingName;
             }
-            Summary = string.Format("عزيزيى العميل<br> <span class='text-red'>({0})</span><br> شكرا لكم لاختياركم خدمات كوم...<br>  <span class='text-red'>({1}) </span > لقد قمت بطلب خدمة<br><span class='text-red'> ({2} ريال) </span> والتي تبلغ قيمتها<br>ولإكمال الطلب نرجو الضغط عل زر الإرسال وللألغاء اضغط إلغاء<br> كم ونود إحاطتكم علما انه فى حال دفع قيمة الخدمة عن طريق الفيزا او الماستر كارد سيتم احتساب رسوم إضافية قدرها 2.5% من قبل البنك", CurrentUser.FullName,CurrentRequest.Service.LocalizedServices.First(l=>l.LanguageId==LanguageId).Title,CurrentRequest.CurrentPrice);
+            Summary = string.Format("عزيزيى العميل<br> <span class='text-red'>({0})</span><br> شكرا لكم لاختياركم خدمات كوم...<br>  <span class='text-red'>({1}) </span > لقد قمت بطلب خدمة<br><span class='text-red'> ({2} ريال) </span> والتي تبلغ قيمتها<br>ولإكمال الطلب نرجو الضغط عل زر الإرسال وللألغاء اضغط إلغاء<br> كم ونود إحاطتكم علما انه فى حال دفع قيمة الخدمة عن طريق الفيزا او الماستر كارد سيتم احتساب رسوم إضافية قدرها 2.5% من قبل البنك", CurrentUser.FullName, CurrentRequest.Service.LocalizedServices.First(l => l.LanguageId == LanguageId).Title, CurrentRequest.CurrentPrice);
+
         }
+
 
         public request_details()
         {
@@ -97,15 +99,17 @@ namespace Khadmatcom.clients
                 case "1"://online payment
                     CurrentRequest.PaymentMethod = 1;
                     _serviceRequests.UpdateServiceRequest(CurrentRequest);
-                    PaymentManager paymentManager = new PaymentManager();
-                    string brand = hfCardBrand.Value.Length > 1 ? hfCardBrand.Value : "";
-                    if (brand == "mastercard") brand = "MASTER";
+                    //PaymentManager paymentManager = new PaymentManager();
+                    //string brand = hfCardBrand.Value.Length > 1 ? hfCardBrand.Value : "";
+                    //if (brand == "mastercard") brand = "MASTER";
                     if (CurrentRequest.CurrentPrice != null)
                     {
                         // paymentManager.Checkout(CurrentRequest.CurrentPrice.Value, CurrentRequest.Id.ToString(),1,Servston.Utilities.GetCurrentClientIPAddress());
-                        var _return = paymentManager.Pay(CurrentRequest.CurrentPrice.Value, CurrentRequest.Id.ToString(), txtCardNo.Value, txtCardHolder.Value, txtExpiryDate.Value.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries)[0], "20" + txtExpiryDate.Value.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries)[1], txtCvv.Value, 1, Servston.Utilities.GetCurrentClientIPAddress(), brand.ToUpper());
-                        payId = _return["id"];
-                        CurrentRequest.PaymentReferanceCode = payId;
+                        //var _return = paymentManager.Pay(CurrentRequest.CurrentPrice.Value, CurrentRequest.Id.ToString(), txtCardNo.Value, txtCardHolder.Value, txtExpiryDate.Value.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries)[0], "20" + txtExpiryDate.Value.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries)[1], txtCvv.Value, 1, Servston.Utilities.GetCurrentClientIPAddress(), brand.ToUpper());
+                        // payId = _return["id"];
+                        // CurrentRequest.PaymentReferanceCode = payId;
+                        // fire the javascript function to pay online payOnline()
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "script", "payOnline();", true);
                     }
                     break;
                 case "2"://transfare payment...set to in progress if saved
@@ -115,8 +119,16 @@ namespace Khadmatcom.clients
                     CurrentRequest.PaymentReferanceCode = txtRefNumber.Value;
                     CurrentRequest.PaymentAccountNumber = txtBakAccountNum.Value;
                     CurrentRequest.StatusId = (int)RequestStatus.Paid;
-                    
+
                     _serviceRequests.UpdateServiceRequest(CurrentRequest);
+
+                    //send sms to admin
+                    string sms =
+                        string.Format(
+                            "تحويل بنكي جديد على طلب رقم {0} الخاص بخدمة {1} بقيمة {2}",
+                            CurrentRequest.Id, CurrentRequest.Service.Name,CurrentRequest.CurrentPrice);
+                    Servston.SMS smsManager = new Servston.SMS();
+                    smsManager.SendToAdmin(sms);
                     RedirectAndNotify(GetLocalizedUrl("clients/services-requests/approved-requests"), "رجاءاَ قم بالإتصال بالإدارة للتأكد من وصول الحوالة.");
                     break;
                 default:

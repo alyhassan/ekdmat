@@ -95,7 +95,12 @@
                 
             });
             $('#ddlCities').change(function () {
-               $('#hfServicePrice').val($('#hfPriceLise').val().split(",")[$('#ddlCities').index() - 1]);
+                $('#ddlCount').val('');
+                $('#hfServicePrice').val($('#hfPriceLise').val().split(",")[$('#ddlCities')[0].selectedIndex - 1]);
+                if ($('#hfServicePrice').val() == "0")
+                    $('#servicePrice').html('غير محدد');
+                else
+                    $('#servicePrice').html(parseInt($('#hfServicePrice').val()));
 
             });
 

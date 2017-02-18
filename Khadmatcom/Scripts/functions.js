@@ -220,3 +220,7 @@ function getWeather(city, format, daysCount, localTime, apikey) {
         }
     });
 }
+
+function doSomthing(functionName) {
+    functionName;
+}

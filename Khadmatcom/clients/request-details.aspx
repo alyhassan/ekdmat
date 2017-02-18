@@ -42,7 +42,38 @@
             padding: 0px 15px;
         }
     </style>
+    <script src="/Scripts/jquery-2.2.3.min.js"></script>
+    <script>function payOnline() {
+                var amount = <%=Convert.ToDouble(CurrentRequest.CurrentPrice.Value)*1.025%>;
+            var transactionId= <%= CurrentRequest.Id %>;
+            var userIp= '<%= Servston.Utilities.GetCurrentClientIPAddress() %>';
 
+            var userData = {
+                amount: amount,
+                transactionId: transactionId,
+                attempt: 1,
+                userIp: userIp
+            };
+            $.getJSON("/api/Khadmatcom/Checkout", userData, function (res) {
+                showLoading();
+                if (res&&res.length> 1) {
+                    hideLoading();
+                    <%-- var script = document.createElement("script");
+                    script.setAttribute("type", "text/javascript");
+                    script.setAttribute("src", "<%= HyperPayClient.MerchantConfiguration.Config.Url+"v1/paymentWidgets.js?checkoutId="%>"+res);
+                    document.getElementsByTagName("head")[0].appendChild(script);--%>
+                    $('#onLinePaymentModal').on('shown.bs.modal', function() { //correct here use 'shown.bs.modal' event which comes in bootstrap3
+                        $(this).find('iframe').attr('src', '<%= HyperPayClient.MerchantConfiguration.Config.AmaUrl %>'+"?cid="+res);
+                    });
+                    $("#onLinePaymentModal").modal({backdrop: 'static',show:true});
+                }
+                else {
+                    hideLoading();
+                    toastr.error("هناك خطأ  أثناء إرسال طلبك...فضلا حاول لاحقا.", "خطأ"); hideLoading();
+                }
+            });
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
     <ul class="nav nav-tabs nav-arow myTab">
@@ -142,9 +173,11 @@
                 -->
                 <div class="panel">
                     <div class="clearfix fal">
-                       <a data-toggle="collapse" data-parent="#accordion500" href="#collapse501" aria-expanded="false"> <div class="accordion-heading" >المرفقات <i class="indi fa fa-chevron-up"></i></div></a>
+                        <a data-toggle="collapse" data-parent="#accordion500" href="#collapse501" aria-expanded="false">
+                            <div class="accordion-heading">المرفقات <i class="indi fa fa-chevron-up"></i></div>
+                        </a>
                     </div>
-                    <div id="collapse501" class="collapse" aria-expanded="false">
+                    <div id="collapse501" class="collapse" aria-expanded="false"  check="false">
                         <div class="accordion-body clearfix">
                             <div class="row">
                                 <div class=" col-md-6  col-sm-6 form-group pull-right">
@@ -152,7 +185,7 @@
                                     <input type="file" class="form-control hidden" />
                                     <asp:FileUpload ID="fup1" runat="server" CssClass="attach form-control" />
                                 </div>
-                               <div class=" col-md-6  col-sm-6 form-group pull-right">
+                                <div class=" col-md-6  col-sm-6 form-group pull-right">
                                     <label>المرفق 2</label>
                                     <input type="file" class="form-control hidden" />
                                     <asp:FileUpload ID="fup2" runat="server" CssClass="attach form-control" />
@@ -162,13 +195,13 @@
                                     <input type="file" class="form-control hidden" />
                                     <asp:FileUpload ID="fup3" runat="server" CssClass="attach form-control" />
                                 </div>
-                              <div class=" col-md-6  col-sm-6 form-group pull-right">
+                                <div class=" col-md-6  col-sm-6 form-group pull-right">
                                     <label>المرفق 4</label>
                                     <input type="file" class="form-control hidden" />
                                     <asp:FileUpload ID="fup4" runat="server" CssClass="attach form-control" />
                                 </div>
                             </div>
-                            
+
                             <div class="clearfix">&nbsp;</div>
                             <div class="col-md-12 form-group">
                                 <a data-toggle="collapse" data-parent="#accordion500" href="#collapse502" class="nxt clasic-btn">التالي</a><span>&nbsp; &nbsp; &nbsp;</span>
@@ -180,27 +213,29 @@
                 </div>
                 <div class="panel">
                     <div class="clearfix fal">
-                        <a data-toggle="collapse" data-parent="#accordion500" href="#collapse502" aria-expanded="false">  <div class="accordion-heading">العنوان<i class="indi fa fa-chevron-up"></i></div></a>
+                        <a data-toggle="collapse" data-parent="#accordion500" href="#collapse502" aria-expanded="false">
+                            <div class="accordion-heading">العنوان<i class="indi fa fa-chevron-up"></i></div>
+                        </a>
                     </div>
-                    <div id="collapse502" class="collapse" aria-expanded="false">
+                    <div id="collapse502" class="collapse validationEngineContainer" aria-expanded="false" check="true">
                         <div class="accordion-body clearfix">
                             <div class="col-md-12">
                                 <div class="form-group pull-right col-md-6">
                                     <label>اسم المرسل اليه</label>
                                     <input type="text" class="attach form-control" runat="server" id="txtShippingName" />
                                 </div>
-                                 <div class="form-group pull-right col-md-6">
+                                <div class="form-group pull-right col-md-6">
                                     <label>العنوان</label>
                                     <input type="text" class="attach form-control" runat="server" id="txtShippingAddress" />
                                 </div>
-                                   <div class="form-group pull-right col-md-6">
+                                <div class="form-group pull-right col-md-6">
                                     <label>رقم الجوال</label>
                                     <input type="text" class="attach form-control" runat="server" id="txtShippingPhone" />
                                 </div>
                                 <div class="form-group pull-right col-md-6">
                                     <label>المدينة</label>
-                                    <input type="hidden" id="hfCityId" name="hfCityId" value="" />  
-                                    <select  class="form-control validate[required]" id="ddlCities" onchange="$('#hfCityId').val($('#ddlCities').val());">
+                                    <input type="hidden" id="hfCityId" name="hfCityId" value="" />
+                                    <select class="form-control validate[required]" id="ddlCities" onchange="$('#hfCityId').val($('#ddlCities').val());">
                                         <option value="">أختر محافظة</option>
                                         <asp:Repeater runat="server" ItemType="Khadmatcom.Services.Model.Region" SelectMethod="GetRegions">
                                             <ItemTemplate>
@@ -217,15 +252,9 @@
                                 </div>
 
                             </div>
-                          
-                            <div class="clearfix">&nbsp;</div>
-                            <div class="form-group col-md-12">
-                                <label class="checkbox form-label">
-                                    <input type="checkbox" name="remember" value="1" class="validate[required]" />
-                                    <span style="padding-left: 20px;">أوافق على سياسة إستخدام الموقع </span>
 
-                                </label>
-                            </div>
+                            <div class="clearfix">&nbsp;</div>
+                           
                             <div class="col-md-12 form-group">
                                 <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" class="nxt clasic-btn">التالي</a><span>&nbsp; &nbsp; &nbsp;</span>
                                 <a data-toggle="collapse" data-parent="#accordion500" href="#collapse501" class="prv s-cl clasic-btn">السابق</a>
@@ -235,9 +264,11 @@
                 </div>
                 <div class="panel">
                     <div class="clearfix fal">
-                       <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" aria-expanded="false">   <div class="accordion-heading">الدفع<i class="indi fa fa-chevron-up"></i></div></a>
+                        <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" aria-expanded="false">
+                            <div class="accordion-heading">الدفع<i class="indi fa fa-chevron-up"></i></div>
+                        </a>
                     </div>
-                    <div id="collapse503" class="collapse" aria-expanded="false">
+                    <div id="collapse503" class="collapse validationEngineContainer" aria-expanded="false" check="true">
                         <div class="accordion-body clearfix validationEngineContainer" id="divServiceRequest">
                             <div class="col-md-12">
                                 <div class="col-md-6 col-sm-6 col-xs-6">
@@ -268,22 +299,22 @@
                                         </select>--%>
                                     </div>
                                 </div>
-                                <div class="form-group col-md-6 col-sm-6 col-xs-12 pull-right">
+                                <div class="form-group col-md-6 col-sm-6 col-xs-12 pull-right hidden">
                                     <label dir="rtl">اسم حامل الكارت</label>
                                     <input type="text" class="attach form-control" runat="server" id="txtCardHolder" />
                                 </div>
 
-                                <div class="form-group col-md-6 col-sm-6 col-xs-12 pull-right">
+                                <div class="form-group col-md-6 col-sm-6 col-xs-12 pull-right hidden">
                                     <label dir="rtl">رقم الكارت</label>
                                     <input type="text" class="attach validate[required] form-control" runat="server" id="txtCardNo" />
                                 </div>
-                                <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                                <div class="form-group col-md-6 col-sm-6 col-xs-6 hidden">
                                     <label dir="rtl">CVV</label>
                                     <input type="text" maxlength="3" class="attach validate[required] form-control" name="cars" value="" runat="server" id="txtCvv" />
                                 </div>
 
 
-                                <div class="form-group col-md-6 col-sm-6 col-xs-6 pull-right">
+                                <div class="form-group col-md-6 col-sm-6 col-xs-6 pull-right hidden">
                                     <label dir="rtl">تاريخ صلاحية الكارت</label>
                                     <input type="text" name="txtExpiryDate" class="form-control" id="txtExpiryDate" runat="server" maxlength="5" placeholder="mm/yy" />
                                 </div>
@@ -370,14 +401,23 @@
                 </div>
                 <div class="panel">
                     <div class="clearfix fal">
-                       <a data-toggle="collapse" data-parent="#accordion500" href="#collapse504" aria-expanded="false">   <div class="accordion-heading">ملخص الطلب <i class="indi fa fa-chevron-up"></i></div></a>
+                        <a data-toggle="collapse" data-parent="#accordion500" href="#collapse504" aria-expanded="false">
+                            <div class="accordion-heading">ملخص الطلب <i class="indi fa fa-chevron-up"></i></div>
+                        </a>
                     </div>
-                    <div id="collapse504" class="collapse" aria-expanded="false">
-                        <div class="accordion-body clearfix validationEngineContainer" id="submitServiceRequest">
+                    <div id="collapse504" class="collapse validationEngineContainer" check="true" aria-expanded="false">
+                        <div class="accordion-body clearfix" id="submitServiceRequest">
                             <div class="form-group col-md-12" style="min-height: 50px;"><%= Summary %></div>
+                             <div class="form-group col-md-12">
+                                <label class="checkbox form-label">
+                                    <input type="checkbox"  class="validate[required]" id="chkAgree" checked="checked" />
+                                    <span>أوافق على  <a class="btn-link" href='<%= GetLocalizedUrl("info/use-agreement") %>' target="_blank">سياسة إستخدام الموقع</a></span>
+
+                                </label>
+                            </div>
                             <div class="clearfix"></div>
                             <div class="col-md-12 form-group clearfix">
-                                <asp:LinkButton Text="إرسال" runat="server" CssClass="nxt s-cl clasic-btn" ID="btnSave" OnClick="btnSave_OnClick" OnClientClick="return checkPayment()" />
+                                <asp:LinkButton Text="إرسال" runat="server" CssClass="nxt s-cl clasic-btn" ID="btnSave" OnClick="btnSave_OnClick" OnClientClick="return valdit()" />
                                 <%--<a href="#" class="nxt s-cl clasic-btn">Proceed</a>--%>
                                 <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" class="prv s-cl clasic-btn">السابق</a>
                             </div>
@@ -400,6 +440,7 @@
 
                 </div>
                 <div class="modal-footer">
+                    <small>ونود إحاطتكم علما انه فى حال دفع قيمة الخدمة عن طريق الفيزا او الماستر كارد سيتم احتساب رسوم إضافية قدرها 2.5% من قبل البنك</small>
                     <button type="button" class="btn btn-default pull-left hidden" data-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -408,12 +449,14 @@
         <!-- /.modal-dialog -->
     </div>
     <asp:HiddenField ID="hfCardBrand" runat="server" />
+    <asp:HiddenField ID="hfChecked" runat="server" Value="0" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="js" runat="server">
     <script src="/Scripts/jquery.creditCardValidator.js"></script>
     <script>
         var defaultClasses = 'attach validate[required]';
         $(document).ready(function () {
+            $("#accordion500").on('show.bs.collapse', valdit);
             $("#txtExpiryDate").mask("99/99");    
             // $('input#txtCardNo').validateCreditCard(function(result) {
             //   $("#hfCardBrand").val(result.card_type == null ? '-' : result.card_type.name);
@@ -442,9 +485,26 @@
             });
         });
 
+        function valdit() {
+            var check = $('#accordion500 .in').attr('check');
+            
+            var doCheck = $('#hfChecked').val();
+            if (check == 'false') {
+                $('#hfChecked').val('0');
+                return true;
+            } else {
+                if (doCheck == '0') {
+                    var id = $('#accordion500 .in').attr("id");
+                   var result = validateForm('#' + id, '<%= System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName.ToLower() %>');
+                    return result;
+                }
+                return true;
+            }
+        }
+
         function ValditPaymentSection() {
-            var result = false;
-            result=validateForm('#divServiceRequest', '<%# languageIso %>');
+                var result = false;
+                result=validateForm('#divServiceRequest', '<%# languageIso %>');
             if(result)
             {
                 var cardResult = $('input#txtCardNo').validateCreditCard({ accept: ['visa', 'mastercard'] });//
@@ -456,61 +516,24 @@
                 return result;//result;
             }return result;//result;
         }
+       
+            //var paymentSection = false;
 
-        //var paymentSection = false;
-
-      //  function checkPaymentSection() {
-       //     paymentSection=validateForm('#divServiceRequest', '<%# languageIso %>');
-      //  }
-        function checkPayment() {
-            var result = false;
-            result=validateForm('#divServiceRequest', '<%# languageIso %>');
-            var onLineOption = false;
-            onLineOption = $('#onLineOption').is(':checked');//$('#onLineOption').attr('checked') == "checked";
-            if (result && onLineOption) {
-                //result = false;
-                //payOnline();
+            //  function checkPaymentSection() {
+            //     paymentSection=validateForm('#divServiceRequest', '<%# languageIso %>');
+            //  }
+            function checkPayment() {
+                var result = false;
+                result=validateForm('#divServiceRequest', '<%# languageIso %>');
+                var onLineOption = false;
+                onLineOption = $('#onLineOption').is(':checked');//$('#onLineOption').attr('checked') == "checked";
+                if (result && onLineOption) {
+                    //result = false;
+                    //payOnline();
+                }
+                //  if (paymentSection != result)
+                //      return paymentSection;
+                return result;
             }
-          //  if (paymentSection != result)
-          //      return paymentSection;
-            return result;
-        }
-        function payOnline() {
-            var amount = <%= CurrentRequest.CurrentPrice.Value%>;
-            var transactionId= <%= CurrentRequest.Id %>;
-            var userIp= '<%= Servston.Utilities.GetCurrentClientIPAddress() %>';
-
-            var userData = {
-                amount: amount,
-                transactionId: transactionId,
-                attempt: 1,
-                userIp: userIp
-            };
-            $.getJSON("/api/Khadmatcom/Checkout", userData, function (res) {
-                showLoading();
-                if (res&&res.length> 1) {
-                    hideLoading();
-                    <%-- var script = document.createElement("script");
-                    script.setAttribute("type", "text/javascript");
-                    script.setAttribute("src", "<%= HyperPayClient.MerchantConfiguration.Config.Url+"v1/paymentWidgets.js?checkoutId="%>"+res);
-                    document.getElementsByTagName("head")[0].appendChild(script);--%>
-
-                    //$('#onLinePaymentModal').find('iframe').attr('src', '<%= HyperPayClient.MerchantConfiguration.Config.AmaUrl %>'+"?cid="+res+ '&rel=0');
-                    
-                    
-                    $('#onLinePaymentModal').on('shown.bs.modal', function() { //correct here use 'shown.bs.modal' event which comes in bootstrap3
-                        // $(".iframePayment").attr('src', '<%= HyperPayClient.MerchantConfiguration.Config.AmaUrl %>'+"?cid="+res+ '&rel=0');
-                        
-                        $(this).find('iframe').attr('src', '<%= HyperPayClient.MerchantConfiguration.Config.AmaUrl %>'+"?cid="+res);
-                    });
-                    $("#onLinePaymentModal").modal({backdrop: 'static',show:true});
-                    //$().show();
-                }
-                else {
-                    hideLoading();
-                    toastr.error("هناك خطأ  أثناء إرسال طلبك...فضلا حاول لاحقا.", "خطأ"); hideLoading();
-                }
-            });
-        }
     </script>
 </asp:Content>

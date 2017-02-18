@@ -12,6 +12,7 @@ using System.Web.Configuration;
 using System.Web.Http;
 using Khadmatcom.Services;
 using HyperPayClient;
+using Khadmatcom.Services.Services;
 
 namespace Khadmatcom.API
 {
@@ -124,12 +125,12 @@ namespace Khadmatcom.API
 
         [HttpGet]
         [ActionName("UpdateProviderRequest")]
-        public bool UpdateProviderRequest(int userId, int id, int status, string reason, decimal price,int duration=0)
+        public bool UpdateProviderRequest(int userId, int id, int status, string reason, decimal price, int duration = 0)
         {
             try
             {
                 ServiceRequests _serviceRequests = new ServiceRequests();
-                _serviceRequests.UpdateProviderRequest(id, userId, status, reason, price,duration);
+                _serviceRequests.UpdateProviderRequest(id, userId, status, reason, price, duration);
                 return true;
             }
             catch (Exception ex)
@@ -143,12 +144,56 @@ namespace Khadmatcom.API
 
         [HttpGet]
         [ActionName("IncreaseProviderRequest")]
-        public bool IncreaseProviderRequest(int id,  int duration)
+        public bool IncreaseProviderRequest(int id, int duration)
         {
             try
             {
                 ServiceRequests _serviceRequests = new ServiceRequests();
-                _serviceRequests.IncreaceRequestDuration(id,  duration);
+                _serviceRequests.IncreaceRequestDuration(id, duration);
+                // send notification to the first provider
+
+                var request = _serviceRequests.GetRequest(id);
+                var client = _serviceRequests.GetRequest(id).Client;
+                Dictionary<string, string> keysValues = new Dictionary<string, string>
+                {
+                    {"name", client.FullName},
+                    {"no", id.ToString()},
+                    {"ServiceName", request.Service.Name}
+                };
+
+                string replyToAddress = WebConfigurationManager.AppSettings["ContactUsEmail"];
+                string adminEmail = WebConfigurationManager.AppSettings["AdminEmail"];
+                string siteMasterEmail = WebConfigurationManager.AppSettings["SiteMasterEmail"];
+                try
+                {
+                    //send email
+                    Servston.MailManager.SendMail("client/request-time.html", keysValues,
+                        "تم تمديد مدة تنفيذ طلبكم ببوابة خدماتكم",
+                       UserManger.GetEmail(client.UserId.Value) , adminEmail, replyToAddress, new List<string>() { siteMasterEmail });
+
+
+                    Servston.SMS smsManager = new Servston.SMS();
+                    //send sms to client
+                    string sms =
+                       string.Format(
+                           "تمديد مدة تنفيذ طلبكم رقم {0} الخاص ب  {1} بمدة {2}",
+                           id, request.Service.Name, duration);
+                    if (!string.IsNullOrEmpty(request.Client.MobielNumber) && request.Client.MobielNumber.Length > 10)
+                        smsManager.Send(request.Client.MobielNumber, sms);
+
+                    //send sms to admins
+                    sms =
+                        string.Format(
+                            "تمديد مدة تنفيذ طلب رقم {0} الخاص بشريك الخدمة {1} بمدة {2}",
+                            id, request.Provider.CompanyName, duration);
+
+                    smsManager.SendToAdmin(sms);
+
+                }
+                catch (Exception ex)
+                {
+                }
+
                 return true;
             }
             catch (Exception ex)
@@ -167,6 +212,43 @@ namespace Khadmatcom.API
             {
                 ServiceRequests _serviceRequests = new ServiceRequests();
                 _serviceRequests.CloseProviderRequest(id);
+                // send notification to the first provider
+
+                var request = _serviceRequests.GetRequest(id);
+                var client = _serviceRequests.GetRequest(id).Client;
+                Dictionary<string, string> keysValues = new Dictionary<string, string>
+                {
+                    {"name", client.FullName},
+                    {"no", id.ToString()},
+                    {"duration", request.CurrentDuration.ToString()},
+                    {"ServiceName", request.Service.Name}
+                };
+
+                string replyToAddress = WebConfigurationManager.AppSettings["ContactUsEmail"];
+                string adminEmail = WebConfigurationManager.AppSettings["AdminEmail"];
+                string siteMasterEmail = WebConfigurationManager.AppSettings["SiteMasterEmail"];
+                try
+                {
+                    Servston.MailManager.SendMail("client/request-finished.html", keysValues,
+                        "تم الاستجابة على طلبكم ببوابة خدماتكم",
+                       UserManger.GetEmail(client.UserId.Value), adminEmail, replyToAddress, new List<string>() { siteMasterEmail });
+                    if (!string.IsNullOrEmpty(request.Client.MobielNumber) &&
+                        request.Client.MobielNumber.Length > 10)
+                    {
+                        string sms =
+                            string.Format(
+                                "عميلنا العزيز نفيدكم انه تم الإنتهاء من تنفيذ طلبكم رقم {0} شكرا لكم لإستخدامكم خدمات كوم.",
+                                request.Service.Name);
+
+                        Servston.SMS smsManager = new Servston.SMS();
+                        smsManager.Send(request.Client.MobielNumber, sms);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                }
+
                 return true;
             }
             catch (Exception ex)
@@ -179,7 +261,7 @@ namespace Khadmatcom.API
 
         [HttpGet]
         [ActionName("ConfirmRequest")]
-        public bool ConfirmRequest(int id,bool dummy,int x)
+        public bool ConfirmRequest(int id, bool dummy, int x)
         {
             try
             {
@@ -194,6 +276,6 @@ namespace Khadmatcom.API
 
             }
         }
-        
+
     }
 }

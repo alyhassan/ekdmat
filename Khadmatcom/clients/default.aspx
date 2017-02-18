@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/Content/carousel-css/owl.carousel.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
-<ul class="nav nav-tabs nav-arow myTab">
+    <ul class="nav nav-tabs nav-arow myTab">
         <li class="main alif"><a href="<%= GetLocalizedUrl("") %>"><%= GetGlobalResourceObject("general.aspx","Home") %></a></li>
         <li class="sub active alif"><a href="javascript:{}">طلبات جديدة</a></li>
     </ul>
@@ -27,10 +27,11 @@
                         <a class="clearfix accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#accordion4" href='#right<%# Item.Id %>' aria-expanded="false">
 
                             <div class="L-container">
-                               <div class="L1">
+                                <div class="L1">
                                     <span class="ni">رقم الطلب: <span class="red"><%# Item.Id %></span> </span>
-                                   <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
+                                    <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
                                     <span>نوع الخدمة:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
+                                    <span>العدد:<span class="blue"><%# Item.Count%></span> </span>
                                 </div>
                                 <div class="L2">
                                     :تفاصيل الخدمة
@@ -46,18 +47,19 @@
 
                     </div>
                     <div id="right<%# Item.Id %>" class="collapse" aria-expanded="false">
-                        <div class="accordion-body clearfix" dir="rtl" style="direction: rtl;" >
+                        <div class="accordion-body clearfix" dir="rtl" style="direction: rtl;">
                             <div class="list-group L-container">
                                 <asp:Repeater runat="server" ItemType="Khadmatcom.Data.Model.RequestsOptionsAnswer" DataSource='<%# Item.RequestsOptionsAnswers %>'>
-                                            <ItemTemplate>
-                                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
-                                                    <div class="input-group">
-                                                         <label  class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left blue" aria-hidden="true"></i> <%# Item.RequestOption.Title %></label>:
-                                                         &nbsp; <label ><%# GetAnswer(Item.Value) %></label>
-                                                    </div>
-                                                </div>
-                                            </ItemTemplate>
-                                        </asp:Repeater>
+                                    <ItemTemplate>
+                                        <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                            <div class="input-group">
+                                                <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left blue" aria-hidden="true"></i><%# Item.RequestOption.Title %></label>:
+                                                         &nbsp;
+                                                <label><%# GetAnswer(Item.Value) %></label>
+                                            </div>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:Repeater>
                             </div>
                             <div class="L-button hidden" id="">
                                 <a href="<%# GetLocalizedUrl(string.Format("clients/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt">Edit</a>

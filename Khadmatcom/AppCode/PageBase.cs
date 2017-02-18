@@ -88,7 +88,7 @@ namespace Khadmatcom
             string domain = Request.Url.GetComponents(UriComponents.Path, UriFormat.SafeUnescaped);
             string language;
             string[] fragments = domain.Split(new char[] { '/' });
-            string culture = "ar-SA";
+            string culture = "ar-EG";
             int fragmentIndex = 0;
             if (Request.RawUrl.Contains("/www"))
                 fragmentIndex = 1;
@@ -100,7 +100,7 @@ namespace Khadmatcom
             switch (language)
             {
                 case "ar":
-                    culture = "ar-SA";
+                    culture = "ar-EG";
                     languageIso = "ar";
                     break;
                 case "en":
@@ -108,7 +108,7 @@ namespace Khadmatcom
                     languageIso = "en";
                     break;
                 default:
-                    culture = "ar-SA";
+                    culture = "ar-EG";
                     languageIso = "ar";
                     break;
             }
