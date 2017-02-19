@@ -406,7 +406,7 @@
                             <div class="accordion-heading">ملخص الطلب <i class="indi fa fa-chevron-up"></i></div>
                         </a>
                     </div>
-                    <div id="collapse504" class="collapse validationEngineContainer" check="true" aria-expanded="false">
+                    <div id="collapse504" class="collapse validationEngineContainer" check="false" aria-expanded="false">
                         <div class="accordion-body clearfix" id="submitServiceRequest">
                             <div class="form-group col-md-12" style="min-height: 50px;"><%= Summary %></div>
                              <div class="form-group col-md-12">
