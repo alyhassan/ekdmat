@@ -51,7 +51,7 @@ namespace Khadmatcom.clients
                 txtShippingPhone.Value = CurrentRequest.ShippingPhone;
                 txtShippingName.Value = CurrentRequest.ShippingName;
             }
-            Summary = string.Format("عزيزيى العميل<br> <span class='text-red'>({0})</span><br> شكرا لكم لاختياركم خدمات كوم...<br>  <span class='text-red'>({1}) </span > لقد قمت بطلب خدمة<br><span class='text-red'> ({2} ريال) </span> والتي تبلغ قيمتها<br>ولإكمال الطلب نرجو الضغط عل زر الإرسال وللألغاء اضغط إلغاء<br> كم ونود إحاطتكم علما انه فى حال دفع قيمة الخدمة عن طريق الفيزا او الماستر كارد سيتم احتساب رسوم إضافية قدرها 2.5% من قبل البنك", CurrentUser.FullName, CurrentRequest.Service.LocalizedServices.First(l => l.LanguageId == LanguageId).Title, CurrentRequest.CurrentPrice);
+            Summary = string.Format("<span style='display:inline-block;float:right;'><span class='blue'> :عزيزيى </span></span><span style='display:inline-block;' class='text-red'>{0}</span><br>   <span class='blue'>لقد قمت بطلب خدمة :<span class='text-red'>{1}</span></span>   <br> <span class='blue'>والتي تبلغ قيمتها :<span class='text-red'> {2} ريال </span></span> <br> <span class='blue'>ولاكمال الطلب نرجو الضغط على زر إرسال <br>  شكرا لكم لاختياركم خدمات كوم </span>", CurrentUser.FullName,CurrentRequest.Service.LocalizedServices.First(l=>l.LanguageId==LanguageId).Title,CurrentRequest.CurrentPrice);
 
         }
 
