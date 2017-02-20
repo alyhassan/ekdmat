@@ -568,7 +568,7 @@ footer a {
         margin-top: 3px;
         display: block;
         color: #000;
-        text-decoration: none !important;
+        text-decoration: none;
         transition: all 0.3s;
         border-bottom: solid 1px #fff;
     }
@@ -1788,4 +1788,14 @@ button[type="submit"].c-btn {
 }
 .text-red {
     color:red;
+}
+.privacy ,.privacy:hover {
+    padding: 0px !important;
+    margin-top: 0px !important;
+    display: inline !important;
+    color: #1a548e !important;
+    text-decoration: underline !important;
+    transition:none;
+            padding-left: 0px !important;
+            background:none !important;
 }

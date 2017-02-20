@@ -412,11 +412,14 @@
                     </div>
                     <div id="collapse504" class="collapse validationEngineContainer" check="true" aria-expanded="false">
                         <div class="accordion-body clearfix" id="submitServiceRequest">
-                            <div class="form-group col-md-12" style="min-height: 50px;"><%= Summary %></div>
+                            <div class="form-group col-md-12" style="min-height: 50px;"><!--<%= Summary %> -->
+
+                                <span style='display:inline-block;float:right;'><span class='blue'> :عزيزيى </span></span><span style='display:inline-block;' class='text-red'>#0#</span><br>   <span class='blue'><span  style="float:right;">:لقد قمت بطلب خدمة </span><span class='text-red'>#1#</span></span>   <br><span class='blue'>والتي تبلغ قيمتها:<span class='text-red'> #2# ريال </span></span> <br> <span class='blue'>ولاكمال الطلب نرجو الضغط على زر إرسال<br>شكرا لكم لاختياركم خدمات كوم</span>
+                            </div>
                              <div class="form-group col-md-12">
                                 <label class="checkbox form-label">
                                     <input type="checkbox"  class="validate[required]" id="chkAgree" checked="checked" />
-                                    <span>أوافق على  <a class="btn-link" href='<%= GetLocalizedUrl("info/use-agreement") %>' target="_blank">سياسة إستخدام الموقع</a></span>
+                                    <span>أوافق على  <a class="privacy" href='<%= GetLocalizedUrl("info/use-agreement") %>' target="_blank">سياسة إستخدام الموقع</a></span>
 
                                 </label>
                             </div>
