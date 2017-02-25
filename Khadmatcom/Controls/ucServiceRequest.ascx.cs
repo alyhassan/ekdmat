@@ -407,6 +407,282 @@ namespace Khadmatcom.Controls
                 case 96:
                     answer = txtDurationByMonths.Value;
                     break;
+                case 97:
+                    answer = ddlCompany8000.Value;
+                    break;
+                case 98:
+                    answer = ddlCompany3000.Value;
+                    break;
+                case 99:
+                    answer =ddlAirportsName.Value;
+                    break;
+                case 100:
+                    answer = ddlIqamaType.Value;
+                    break;
+                case 101:
+                    answer = ddlLicenceType.Value;
+                    break;
+                case 102:
+                    answer = chkNeedCommarceReviews.Checked.ToString();
+                    break;
+                case 103:
+                    answer = chkNeedBaldyaReviews.Checked.ToString();
+                    break;
+                case 104:
+                    answer = chkMore40.Checked.ToString();
+                    break;
+                case 105:
+                    answer = chkInIndustrailSection.Checked.ToString();
+                    break;
+                case 106:
+                    answer = chkElectronic.Checked.ToString();
+                    break;
+                case 107:
+                    answer = ddlSex.Value;
+                    break;
+                case 108:
+                    answer = ddlContractType.Value;
+                    break;
+                case 109:
+                    answer = ddlKhazan.Value;
+                    break;
+                case 110:
+                    answer = ckhHasFood.Checked.ToString();
+                    break;
+                case 111:
+                    answer = ddlCompanyType.Value;
+                    break;
+                case 112:
+                    answer = chkBankRejection.Checked.ToString();
+                    break;
+                case 113:
+                    answer = txtLoanReason.Value;
+                    break;
+                case 114:
+                    answer = ddlLoanType.Value;
+                    break;
+                case 115:
+                    answer = txtLoanAmount.Value;
+                    break;
+                case 116:
+                    answer = ddlTsreahaType.Value;
+                    break;
+                case 118:
+                    answer = chkImport.Checked.ToString();
+                    break;
+                case 120:
+                    answer = chkBadrom.Checked.ToString();
+                    break;
+                //case 119:
+                    //answer = chkGadwa.Checked.ToString();
+                    //break;
+                //case 117:
+                    //answer = chkGadwa.Checked.ToString();
+                    //break;
+                case 121:
+                    answer = chkSabaha.Checked.ToString();
+                    break;
+                case 122:
+                    answer = txtUserName.Value;
+                    break;
+                case 123:
+                    answer = txtPassword.Value;
+                    break;
+                case 124:
+                    answer = txtSize.Value;
+                    break;
+                case 125:
+                    answer = chkCompany.Checked.ToString();
+                    break;
+                case 126:
+                    answer = chk1Item.Checked.ToString();
+                    break;
+                case 127:
+                    answer = chkGadwa.Checked.ToString();
+                    break;
+                case 128:
+                    answer = chk5Years.Checked.ToString();
+                    break;
+                case 129:
+                    answer = txtWH.Value;
+                    break;
+                case 130:
+                    answer = txtWeight.Value;
+                    break;
+                case 131:
+                    answer = txtSamaka.Value;
+                    break;
+                case 132:
+                    answer = txtQuantity.Value;
+                    break;
+                case 133:
+                    answer = chkMore15.Checked.ToString();
+                    break;
+                case 134:
+                    answer = chkAds.Checked.ToString();
+                    break;
+                case 135:
+                    answer = txtPagesCount.Value;
+                    break;
+                //case 136:
+                    //answer = chkGadwa.Checked.ToString();
+                   // break;
+                //case 137:
+                    //answer = chkGadwa.Checked.ToString();
+                    //break;
+                case 138:
+                    answer = txtHieght.Value;
+                    break;
+                case 139:
+                    answer = txtDesignSize.Value;
+                    break;
+                case 140:
+                    answer = txtDuration.Value;
+                    break;
+                case 141:
+                    answer = txtResearchName.Value;
+                    break;
+                case 142:
+                    answer = txtFinishDate.Value;
+                    break;
+                case 143:
+                    answer = txtProjectSubject.Value;
+                    break;
+                case 144:
+                    answer = txtMarketName.Value;
+                    break;
+                case 145:
+                    answer = txtIqamaNo.Value;
+                    break;
+                case 146:
+                    answer = ddlAdviceType.Value;
+                    break;
+                case 147:
+                    answer = chkGadwa.Checked.ToString();
+                    break;
+                case 148:
+                    answer = chk5Years.Checked.ToString();
+                    break;
+                //case 149:
+                    //answer = chkSteam.Checked.ToString();
+                    //break;
+                case 150:
+                    answer = chkSteam.Checked.ToString();
+                    break;
+                case 151:
+                    answer = txtHairTall.Value;
+                    break;
+                case 152:
+                    answer = txtLevelNo.Value;
+                    break;
+                //case 153:
+                    //answer =ddlAirportsName.Value;
+                    //break;
+                //case 154:
+                    //answer = chkGadwa.Checked.ToString();
+                    //break;
+                case 155:
+                    answer = txtQa3aName.Value;
+                    break;
+                case 156:
+                    answer = txtBuilddingAge.Value;
+                    break;
+                case 157:
+                    answer = txtTarget.Value;
+                    break;
+                case 158:
+                    answer = txtBudget.Value;
+                    break;
+                case 159:
+                    answer = ddlAdsType.Value;
+                    break;
+                case 160:
+                    answer = txtCampanDuration.Value;
+                    break;
+                case 161:
+                    answer = chkMarketingDesign.Checked.ToString();
+                    break;
+                case 162:
+                    answer = ddlVideoTypes.Value;
+                    break;
+                case 163:
+                    answer = txtContainerNo.Value;
+                    break;
+                case 164:
+                    answer =txtContainersCount.Value;
+                    break;
+                case 165:
+                    answer = chkUserName.Checked.ToString();
+                    break;
+                case 166:
+                    answer = chkTableat.Checked.ToString();
+                    break;
+                case 167:
+                    answer = txtWakealName.Value;
+                    break;
+                case 168:
+                    answer = txtActivityName.Value;
+                    break;
+                //case 169:
+                    //answer = chkGadwa.Checked.ToString();
+                    //break;
+                case 170:
+                    answer = chkStructure.Checked.ToString();
+                    break;
+                case 171:
+                    answer = chk1Band.Checked.ToString();
+                    break;
+                case 172:
+                    answer = chkOld.Checked.ToString();
+                    break;
+                //case 173:
+                    //answer = chkGadwa.Checked.ToString();
+                    //break;
+                //case 174:
+                //    answer = chkGadwa.Checked.ToString();
+                //    break;
+                case 175:
+                    answer = txtBaldayaName.Value;
+                    break;
+                case 176:
+                    answer = ddlCompanyRank.Value;
+                    break;
+                case 177:
+                    answer = chkTasneef.Checked.ToString();
+                    break;
+                case 178:
+                    answer = chkKsaContract.Checked.ToString();
+                    break;
+                //case 179:
+                //    answer = chkGadwa.Checked.ToString();
+                //    break;
+                case 180:
+                    answer = txtFileType.Value;
+                    break;
+                case 181:
+                    answer = txtPrintType.Value;
+                    break;
+                case 182:
+                    answer = txtUniName.Value;
+                    break;
+                case 183:
+                    answer = txtCopiesCount.Value;
+                    break;
+                case 184:
+                    answer = ddlTagleedType.Value;
+                    break;
+                case 185:
+                    answer = txtTagleedColor.Value;
+                    break;
+                case 186:
+                    answer = txtStabnCount.Value;
+                    break;
+                case 187:
+                    answer = txtDrawingCount.Value;
+                    break;
+                case 188:
+                    answer = txtBookSubject.Value;
+                    break;
                 default:
                     answer = "undifened";
                     break;

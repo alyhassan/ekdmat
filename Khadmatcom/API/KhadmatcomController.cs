@@ -158,7 +158,7 @@ namespace Khadmatcom.API
                 {
                     {"name", client.FullName},
                     {"no", id.ToString()},
-                    {"ServiceName", request.Service.Name}
+                    {"ServiceName", request.Service.LocalizedServices.First(l => l.LanguageId == 3073).Title}
                 };
 
                 string replyToAddress = WebConfigurationManager.AppSettings["ContactUsEmail"];
@@ -177,7 +177,7 @@ namespace Khadmatcom.API
                     string sms =
                        string.Format(
                            "تمديد مدة تنفيذ طلبكم رقم {0} الخاص ب  {1} بمدة {2}",
-                           id, request.Service.Name, duration);
+                           id, request.Service.LocalizedServices.First(l => l.LanguageId == 3073).Title, duration);
                     if (!string.IsNullOrEmpty(request.Client.MobielNumber) && request.Client.MobielNumber.Length > 10)
                         smsManager.Send(request.Client.MobielNumber, sms);
 
@@ -221,7 +221,7 @@ namespace Khadmatcom.API
                     {"name", client.FullName},
                     {"no", id.ToString()},
                     {"duration", request.CurrentDuration.ToString()},
-                    {"ServiceName", request.Service.Name}
+                    {"ServiceName", request.Service.LocalizedServices.First(l => l.LanguageId == 3073).Title}
                 };
 
                 string replyToAddress = WebConfigurationManager.AppSettings["ContactUsEmail"];
@@ -238,7 +238,7 @@ namespace Khadmatcom.API
                         string sms =
                             string.Format(
                                 "عميلنا العزيز نفيدكم انه تم الإنتهاء من تنفيذ طلبكم رقم {0} شكرا لكم لإستخدامكم خدمات كوم.",
-                                request.Service.Name);
+                                request.Service.LocalizedServices.First(l => l.LanguageId == 3073).Title);
 
                         Servston.SMS smsManager = new Servston.SMS();
                         smsManager.Send(request.Client.MobielNumber, sms);

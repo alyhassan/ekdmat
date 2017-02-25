@@ -489,8 +489,8 @@
     <Compile Include="AppCode\ExceptionUtility.cs" />
     <Compile Include="AppCode\Jobs.cs" />
     <Compile Include="AppCode\JobScheduler.cs" />
-    <Compile Include="App_GlobalResources\general.aspx.ar-sa.designer.cs">
-      <DependentUpon>general.aspx.ar-sa.resx</DependentUpon>
+    <Compile Include="App_GlobalResources\general.aspx.ar-eg.designer.cs">
+      <DependentUpon>general.aspx.ar-eg.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -781,9 +781,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_GlobalResources\general.aspx.ar-sa.resx">
+    <Content Include="App_GlobalResources\general.aspx.ar-eg.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>general.aspx.ar-sa.designer.cs</LastGenOutput>
+      <LastGenOutput>general.aspx.ar-eg.designer.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

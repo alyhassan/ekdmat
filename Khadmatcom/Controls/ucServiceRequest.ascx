@@ -104,7 +104,7 @@
                                         <div class="clearfix"></div>
 
                                         <div class="form-group col-md-4 col-sm-4 col-xs-12 o1 options pull-right">
-                                            <input type="text" class="form-control" runat="server" id="txtManagerName" placeholder="إسم المدير" />
+                                            <input type="text" class="form-control" runat="server" id="txtManagerName" placeholder="الإسم" />
                                         </div>
                                         <div class="form-group o2 options col-md-4 col-sm-4 col-xs-12 col-md-6 col-sm-6 col-xs-12 pull-right">
 
@@ -125,10 +125,17 @@
                                         </div>
                                         <div class="form-group o4 options col-md-4 col-sm-4 col-xs-12 pull-right">
 
-                                            <input type="text" class="form-control" runat="server" id="txtManagerPhone" placeholder="رقم جوال مدير المحتوى" />
+                                            <input type="text" class="form-control" runat="server" id="txtManagerPhone" placeholder="رقم جوال" />
                                         </div>
-
-
+                                        <div class="form-group col-md-4 col-sm-4 col-xs-12 o155 options pull-right">
+                                            <input type="text" class="form-control" runat="server" id="txtQa3aName" placeholder="أسم القاعة" />
+                                        </div>
+                                        <div class="form-group col-md-4 col-sm-4 col-xs-12 o167 options pull-right">
+                                            <input type="text" class="form-control" runat="server" id="txtWakealName" placeholder="أسم وكيل الشحن" />
+                                        </div>
+                                        <div class="form-group col-md-4 col-sm-4 col-xs-12 o185 options pull-right">
+                                            <input type="text" class="form-control" runat="server" id="txtTagleedColor" placeholder="لون التجليد" />
+                                        </div>
 
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o17 pull-right">
                                             <input type="text" class="form-control" runat="server" id="txtCarModel" placeholder="الموديل" />
@@ -139,6 +146,7 @@
                                                 <option value="">أختر نوع النشاط</option>
                                                 <option value="مقاولات">مقاولات</option>
                                                 <option value="تجارى">تجارى</option>
+                                                <option value="صناعي">صناعي</option>
                                             </select>
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o20 pull-right">
@@ -218,7 +226,7 @@
                                             <input type="text" class="form-control" runat="server" id="txtAssest" placeholder="رأس المال" />
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o27 pull-right">
-                                            <textarea class="form-control" runat="server" id="txtPartnerInfo" placeholder="اسماء الشركاء ومقدار حصصهم" rows="5"></textarea>
+                                            <textarea class="form-control" runat="server" id="txtPartnerInfo" placeholder="النشاط" rows="5"></textarea>
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o49 pull-right">
                                             <input type="text" class="form-control" runat="server" id="txtEmployeesCount" placeholder="عدد الموظفين بالمنشأة" />
@@ -346,11 +354,221 @@
 
                                             <input type="text" class="form-control" runat="server" id="txtDurationByMonths" placeholder="المدة بالاشهر" />
                                         </div>
-
-
-
-
-
+                                        <div class="form-group options  col-md-6 pull-right o106">
+                                            <span id="O106Value" class="hidden">2000</span>
+                                            <label for="chkElectronic">هل ترغب بتنفيذ الخدمة ألكترونيآ وكذلك مراجعة الجهة المعنية </label>
+                                            <input type="checkbox" id="chkElectronic" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o110">
+                                            <span id="O110Value" class="hidden">400</span>
+                                            <label for="ckhHasFood">هل تحتوي البضاعة علي مواد غذائية </label>
+                                            <input type="checkbox" id="ckhHasFood" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o112">
+                                            <label for="chkBankRejection">هل لديك ورقة أعتراض من البنك </label>
+                                            <input type="checkbox" id="chkBankRejection" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o120">
+                                            <label for="chkBadrom">هل يوجد بدروم </label>
+                                            <input type="checkbox" id="chkBadrom" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o121">
+                                            <label for="chkSabaha">هل يوجد حمام سباحة </label>
+                                            <input type="checkbox" id="chkSabaha" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o125">
+                                            <span id="O125Value" class="hidden">10000</span>
+                                            <label for="chkCompany">هل عملت الشركة</label>
+                                            <input type="checkbox" id="chkCompany" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o126">
+                                            <span id="O126Value" class="hidden">-1500</span>
+                                            <label for="chk1Item">تعديل بند واحد فقط</label>
+                                            <input type="checkbox" id="chk1Item" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o134">
+                                            <label for="chkAds">هل تتوفر لديكم التصاميم الأعلانية </label>
+                                            <input type="checkbox" id="chkAds" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o148">
+                                            <label for="chk5Years">هل يتوفر لديكم خطة تطوير لمدة خمس سنوات</label>
+                                            <input type="checkbox" id="chk5Years" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o148">
+                                            <label for="chkOld">هل سبق وقمتم بعمل ميزانية سابقة لدي مكتب محاسبي</label>
+                                            <input type="checkbox" id="chkOld" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o150">
+                                            <span id="O150Value" class="hidden">150</span>
+                                            <label for="chkSteam">هل ترغب فى تنظيف البشرة مع البخار</label>
+                                            <input type="checkbox" id="chkSteam" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o161">
+                                            <label for="chkMarketingDesign">هل تتوفر لديكم التصاميم التسويقية</label>
+                                            <input type="checkbox" id="chkMarketingDesign" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o166">
+                                            <label for="chkTableat">هل تحتوي الحاوية علي طبليات</label>
+                                            <input type="checkbox" id="chkTableat" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o1170">
+                                            <label for="chkStructure">هل يوجد لدي المنشأة هيكل تنظيمي</label>
+                                            <input type="checkbox" id="chkStructure" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o171">
+                                            <label for="chk1Band">هل ترغب بتعديل بند واحد </label>
+                                            <input type="checkbox" id="chk1Band" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o172">
+                                            <span id="O172Value" class="hidden">1500</span>
+                                            <label for="chkEdit">هل تم التعديل في العقد سابقآ</label>
+                                            <input type="checkbox" id="chkEdit" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o177">
+                                            <label for="chkTasneef">هل لديك تصنيف ببلدك</label>
+                                            <input type="checkbox" id="chkTasneef" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o178">
+                                            <label for="chkKsaContract">هل لديكم مشاريع موقعة بالسعودية </label>
+                                            <input type="checkbox" id="chkKsaContract" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o102">
+                                            <span id="O102Value" class="hidden">1000</span>
+                                            <label for="chkNeedCommarceReviews">إذا كان الترخيص يتطلب مراجعة وزارة التجارة هل ترغب ان نقوم بمراجعتها </label>
+                                            <input type="checkbox" id="chkNeedCommarceReviews" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o103">
+                                            <span id="O103Value" class="hidden">2500</span>
+                                            <label for="chkNeedBaldyaReviews">إذا كان الترخيص يتطلب مراجعة البلدية والدفاع المدني هل ترغب ان نقوم بمراجعتها </label>
+                                            <input type="checkbox" id="chkNeedBaldyaReviews" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o104">
+                                            <span id="O104Value" class="hidden">35000</span>
+                                            <label for="chkMedcert">هل عرض الشارع اكبر من 40م</label>
+                                            <input type="checkbox" id="chkMore40" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o105">
+                                            <span id="O105Value" class="hidden">80000</span>
+                                            <label for="chkMedcert">هل المصنع المطلوب تصميمة يقع ضمن نطاق المدن الصناعية</label>
+                                            <input type="checkbox" id="chkInIndustrailSection" runat="server" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o118">
+                                            <label for="chkMedcert">هل سبق وان قمتم بأي عملية استيراد </label>
+                                            <input type="checkbox" id="chkImport" runat="server"  class="validate[required]"/>
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o133">
+                                            <label for="chkMedcert">يشترط أن لاتقل ميزانية الحملة عن 15000</label>
+                                            <input type="checkbox" id="chkMore15" runat="server" class="validate[required]" />
+                                        </div>
+                                        <div class="form-group options  col-md-6 pull-right o165">
+                                            <label for="chkMedcert">هل لديكم أسم مستخدم للتفاويض الألكترونية علي موقع مصلحة الجمارك</label>
+                                            <input type="checkbox" id="chkUserName" runat="server" class="validate[required]" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o113 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtLoanReason" placeholder="سبب الدين " />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o115 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtLoanAmount" placeholder="قيمة الدين " />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o122 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtUserName" placeholder="أسم المستخدم " />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o123 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtPassword" placeholder="كلمة المرور" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o124 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtSize" placeholder="مساحة العقار" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o129 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtWH" placeholder="الطول X العرض" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o130 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtWeight" placeholder="الوزن" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o31 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtSamaka" placeholder="السماكة" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o132 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtQuantity" placeholder="الكمية" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o135 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtPagesCount" placeholder="عدد الصفحات" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o138 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtHieght" placeholder="الأرتفاع بالمتر" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o139 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtDesignSize" placeholder="مقاسات التصميم " />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o140 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtDuration" placeholder="مدة المقطع" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o141 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtResearchName" placeholder="عنوان البحث" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o142 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtEndDate" placeholder="تاريخ التسليم " />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o143 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtProjectSubject" placeholder="عنوان المشروع" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o144 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtMarketName" placeholder="أسم المتجر" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o145 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtIqamaNo" placeholder="رقم الأقامة" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o151 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtHairTall" placeholder="طول الشعر" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o152 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtLevelNo" placeholder="عدد الأدوار" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o156 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtBuilddingAge" placeholder="عمر العقار" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o157 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtTarget" placeholder="الفئة المستهدفة" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o158 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtBudget" placeholder="الميزانية الشهرية" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o160 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtCampanDuration" placeholder="مدة الحملة" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o163 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtContainerNo" placeholder="رقم الكونتينر" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o164 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtContainersCount" placeholder="عدد الكونتينرات" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o168 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtActivityName" placeholder="النشاط التجاري" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o175 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtBaldayaName" placeholder="أسم البلدية " />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o180 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtFileType" placeholder="نوع الملف" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o181 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtPrintType" placeholder="نوع الطباعة" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o182 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtUniName" placeholder="أسم الجامعه" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o183 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtCopiesCount" placeholder="عدد النسخ" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o186 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtStabnCount" placeholder="عدد الأستبانات" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o187 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtDrawingCount" placeholder="عدد الرسومات الهندسية" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o188 pull-right">
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtBookSubject" placeholder="الموضوع" />
+                                        </div>
                                         <div class="form-group options  col-md-6 pull-right o13">
                                             <label for="chkMedcert">هل لديك شهادة ثانوية</label>
                                             <input type="checkbox" id="chkMedcert" runat="server" />
@@ -499,6 +717,136 @@
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o93 pull-right">
                                             <input type="text" class="form-control" runat="server" id="txtBusCount" placeholder="عدد الباصات المتوفرة" />
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 pull-right o99">
+                                            <select runat="server" id="ddlAirportsName" class="form-control validate[required]">
+                                                <option value="">اختر أسم المطار</option>
+                                                <option value="مطار الملك عبدالعزيز">مطار الملك عبدالعزيز</option>
+                                                <option value="مطار الملك خالد">مطار الملك خالد</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 pull-right o97">
+                                            <select runat="server" id="ddlCompany8000" class="form-control">
+                                                <option value="">اختر نوع المنشأة</option>
+                                                <option value="شركة" cost="8000">شركة</option>
+                                                <option value="مؤسسة" cost="0">مؤسسة</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 pull-right o98">
+                                            <select runat="server" id="ddlCompany3000" class="form-control">
+                                                <option value="">اختر نوع المنشأة</option>
+                                                <option value="شركة" cost="3000">شركة</option>
+                                                <option value="مؤسسة" cost="0">مؤسسة</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 pull-right o100">
+                                            <select runat="server" id="ddlIqamaType" class="form-control">
+                                                <option value="">نوع الإقامة</option>
+                                                <option value="أفراد" cost="0">أفراد</option>
+                                                <option value="مهني" cost="300">مهني</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 pull-right o101">
+                                            <select runat="server" id="ddlLicenceType" class="form-control">
+                                                <option value="">نوع الترخيص</option>
+                                                <option value="جديد" cost="0">جديد</option>
+                                                <option value="تجديد" cost="0">تجديد</option>
+                                                <option value="نقل" cost="0">نقل</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 pull-right o107">
+                                            <select runat="server" id="ddlSex" class="form-control">
+                                                <option value="">الجنس</option>
+                                                <option value="نسائي" cost="3000">نسائي</option>
+                                                <option value="رجالي" cost="0">رجالي</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 pull-right o108">
+                                            <select runat="server" id="ddlContractType" class="form-control validate[required]">
+                                                <option value="">نوع العقد</option>
+                                                <option value="شراكة" cost="0">شراكة</option>
+                                                <option value="تسويق" cost="0">تسويق</option>
+                                                <option value="شراء" cost="0">شراء</option>
+                                                <option value="بيع" cost="0">بيع</option>
+                                                <option value="توظيف" cost="0">توظيف</option>
+                                                <option value="تجاري" cost="0">تجاري</option>
+                                                <option value="أخري" cost="0">أخري</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 pull-right o109">
+                                            <select runat="server" id="ddlKhazan" class="form-control">
+                                                <option value="">مكان الخزان</option>
+                                                <option value="أرضي" cost="350">أرضي</option>
+                                                <option value="علوي" cost="0">علوي</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 pull-right o111">
+                                            <select runat="server" id="ddlCompanyType2" class="form-control">
+                                                <option value="">نوع الشركة</option>
+                                                <option value="مؤسسة" cost="0">مؤسسة</option>
+                                                <option value="شركة" cost="500">شركة</option>
+                                                <option value="شركة مختلطة" cost="1000">شركة مختلطة</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 pull-right o114 validate[required]">
+                                            <select runat="server" id="ddlLoanType" class="form-control">
+                                                <option value="">نوع الدين</option>
+                                                <option value="شيك" cost="0">شيك</option>
+                                                <option value="كمبيالة" cost="0">كمبيالة</option>
+                                                <option value="سندات إستلام" cost="0">سندات إستلام</option>
+                                                <option value="عقد" cost="0">عقد</option>
+                                                <option value="تقسيط" cost="0">تقسيط</option>
+                                                <option value="فواتير" cost="0">فواتير</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 pull-right o116 validate[required]">
+                                            <select runat="server" id="ddlTsreahaType" class="form-control">
+                                                <option value="">نوع التسرحة</option>
+                                                <option value="تسريحة طالعة" cost="0">تسريحة طالعة</option>
+                                                <option value="تسريحة نازلة" cost="0">تسريحة نازلة</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 pull-right o146">
+                                            <select runat="server" id="ddlAdviceType" class="form-control">
+                                                <option value="">نوع الإستشارة</option>
+                                                <option value="مختصرة" cost="0">مختصرة</option>
+                                                <option value="تفصيلية" cost="15">تفصيلية</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 pull-right o162">
+                                            <select runat="server" id="ddlVideoTypes" class="form-control validate[required]">
+                                                <option value="">نوع الفيديو</option>
+                                                <option value="عادي" cost="0">عادي</option>
+                                                <option value="2D" cost="0">2D</option>
+                                                <option value="3D" cost="0">3D</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 pull-right o159">
+                                            <select runat="server" id="ddlAdsType" class="form-control validate[required]">
+                                                <option value="">نوع الإعلان</option>
+                                                <option value="نصي" cost="0">نصي</option>
+                                                <option value="صوري" cost="0">صوري</option>
+                                                <option value="فيديو" cost="0">فيديو</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 pull-right o184">
+                                            <select runat="server" id="ddlTagleedType" class="form-control">
+                                                <option value="">نوع الإقامة</option>
+                                                <option value="عادي" cost="0">عادي</option>
+                                                <option value="فاخر" cost="0">فاخر</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 pull-right o176">
+                                            <select runat="server" id="ddlCompanyRank" class="form-control">
+                                                <option value="">درجة التصنيف</option>
+                                                <option value="غير مصنف" cost="0">غير مصنف</option>
+                                                <option value="تصنيف اول" cost="0">تصنيف اول</option>
+                                                <option value="تصنيف ثاني" cost="0">تصنيف ثاني</option>
+                                                <option value="تصنيف ثالث" cost="0">تصنيف ثالث</option>
+                                                <option value="تصنيف رابع" cost="0">تصنيف رابع</option>
+                                                <option value="تصنيف خامس" cost="0">تصنيف خامس</option>
+                                            </select>
                                         </div>
 
                                         <!--<div class="col-md-6 col-xs-12 form-group arabic-r">-->
@@ -661,7 +1009,7 @@
                         <div id="collapse504" class="collapse" aria-expanded="false" check="false">
                             <div class="accordion-body clearfix">
                                 <div class="col-md-12 form-group clearfix ">
-                                    <ul class="cleafix" dir="rtl" style="margin-top: 10px;color:#4a78a6;">
+                                    <ul class="cleafix" dir="rtl" style="margin-top: 10px; color: #4a78a6;">
                                         <li class="col-md-6 col-sm-6 pull-right"><strong class="blue">أسم صاحب الطلب: </strong><span><%= CurrentUser==null?"طلب خدمة":CurrentUser.FullName %></span></li>
                                         <li class="col-md-6 col-sm-6"><strong class="blue">نوع الخدمة: </strong><span id="summaryCategory"></span></li>
                                         <li class="col-md-6 col-sm-6 pull-right"><strong class="blue">اسم الخدمة: </strong><span id="summaryService"></span></li>
@@ -712,20 +1060,20 @@
 
 
     function NextStep() {
-       var result = <%= (Membership.GetUser()!=null).ToString().ToLower()%>;
-                    //if (result == true) {
-                    //    if ($("#ai li:last").hasClass('active')) {
-                    //        $('.nxt').attr('disabled', true);
+        var result = <%= (Membership.GetUser()!=null).ToString().ToLower()%>;
+        //if (result == true) {
+        //    if ($("#ai li:last").hasClass('active')) {
+        //        $('.nxt').attr('disabled', true);
 
-                    //    } else {
-                    //        $("#ai").find('.active').removeClass('active').next().addClass('active');
-                    //        //$("#all").find('.active').removeClass('active').next().addClass('active');
+        //    } else {
+        //        $("#ai").find('.active').removeClass('active').next().addClass('active');
+        //        //$("#all").find('.active').removeClass('active').next().addClass('active');
 
-                    //        //$('.active').removeClass('active').next().addClass('active');
-                    //        //$('.active').removeClass('active').next().addClass('active');
+        //        //$('.active').removeClass('active').next().addClass('active');
+        //        //$('.active').removeClass('active').next().addClass('active');
 
 
-                    //    }
+        //    }
         //}
         if (result === 'false')
             return result;
@@ -744,15 +1092,16 @@
                     var optionsList = $('#hfOptions').val();
                     if (optionsList != '') {
                         var x = optionsList.split(",");
-                        var c = '7,8,56,62'.split(',');
+                        var c = '7,8,56,62,97,98,100,102,103,104,105,106,107,109,110,111,125,126,146,150,172'.split(',');
                         var value = 0;
                         for (var i = 0; i < x.length; i++) {
                             //show option
                             var oId = x[i];
                             if (jQuery.inArray(oId, c) >= 0) {
                                 var cOption = $('.o' + oId + ' input');
-                                var cType = cOption.attr('type');
                                 
+                                var cType = cOption.attr('type');
+                                //check input
                                 if (cType) {
                                     if (cType === 'checkbox') {
                                         if (cOption.prop("checked") == true) {
@@ -765,6 +1114,11 @@
                                         }
                                     }
                                    
+                                } else {//check select
+                                    var cSelectOption = $('.o' + oId + ' select');
+                                    var selectedValue = cSelectOption.val();
+                                    if(selectedValue!='')
+                                        value =value+ parseInt($('.o' + oId + ' select option[value="' + selectedValue + '"]').Attr('cost'));
                                 }
                             }
                         } 
@@ -776,7 +1130,7 @@
                             if (currentPrice == "0")
                                 $('#servicePrice').html('غير محدد');
                             else {
-                               $('#servicePrice').html((count * parseInt($('#hfServicePrice').val())+ (value * parseInt(count))));
+                                $('#servicePrice').html((count * parseInt($('#hfServicePrice').val())+ (value * parseInt(count))));
                             }
                                 
                         }

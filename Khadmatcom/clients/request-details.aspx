@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="request-details.aspx.cs" Inherits="Khadmatcom.clients.request_details" %>
+
 <%@ Import Namespace="Khadmatcom.Services" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -44,20 +45,20 @@
     </style>
     <script src="/Scripts/jquery-2.2.3.min.js"></script>
     <script>function payOnline() {
-                var amount = <%=Convert.ToDouble(CurrentRequest.CurrentPrice.Value)*1.025%>;
-            var transactionId= <%= CurrentRequest.Id %>;
-            var userIp= '<%= Servston.Utilities.GetCurrentClientIPAddress() %>';
+    var amount = <%=Convert.ToDouble(CurrentRequest.CurrentPrice.Value)*1.025%>;
+    var transactionId= <%= CurrentRequest.Id %>;
+    var userIp= '<%= Servston.Utilities.GetCurrentClientIPAddress() %>';
 
-            var userData = {
-                amount: amount,
-                transactionId: transactionId,
-                attempt: 1,
-                userIp: userIp
-            };
-            $.getJSON("/api/Khadmatcom/Checkout", userData, function (res) {
-                showLoading();
-                if (res&&res.length> 1) {
-                    hideLoading();
+    var userData = {
+        amount: amount,
+        transactionId: transactionId,
+        attempt: 1,
+        userIp: userIp
+    };
+    $.getJSON("/api/Khadmatcom/Checkout", userData, function (res) {
+        showLoading();
+        if (res&&res.length> 1) {
+            hideLoading();
                     <%-- var script = document.createElement("script");
                     script.setAttribute("type", "text/javascript");
                     script.setAttribute("src", "<%= HyperPayClient.MerchantConfiguration.Config.Url+"v1/paymentWidgets.js?checkoutId="%>"+res);
@@ -177,7 +178,7 @@
                             <div class="accordion-heading">المرفقات <i class="indi fa fa-chevron-up"></i></div>
                         </a>
                     </div>
-                    <div id="collapse501" class="collapse" aria-expanded="false"  check="false">
+                    <div id="collapse501" class="collapse" aria-expanded="false" check="false">
                         <div class="accordion-body clearfix">
                             <div class="row">
                                 <div class=" col-md-6  col-sm-6 form-group pull-right">
@@ -254,7 +255,7 @@
                             </div>
 
                             <div class="clearfix">&nbsp;</div>
-                           
+
                             <div class="col-md-12 form-group">
                                 <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" class="nxt clasic-btn">التالي</a><span>&nbsp; &nbsp; &nbsp;</span>
                                 <a data-toggle="collapse" data-parent="#accordion500" href="#collapse501" class="prv s-cl clasic-btn">السابق</a>
@@ -272,7 +273,7 @@
                         <div class="accordion-body clearfix validationEngineContainer" id="divServiceRequest">
                             <div class="col-md-12">
                                 <div class="col-md-6 col-sm-6 col-xs-6">
-                                    <div class="form-group b-ac">
+                                    <div class="form-group b-ac hidden">
                                         <label class="clearfix">
                                             <input type="radio" name="cars" value="1" id="onLineOption" class="validate[required] " /><span>بطاقة الإتمان</span></label>
                                     </div>
@@ -322,19 +323,19 @@
                             </div>
                             <div class="col-md-12 c-card" style="display: none;" id="c-card2">
                                 <div class="col-md-12 col-sm-12 col-xs-12">
-                                  <!--  <div class="form-group col-md-4 col-sm-4  col-xs-4 pull-right">
+                                    <!--  <div class="form-group col-md-4 col-sm-4  col-xs-4 pull-right">
                                         <img class="img-responsive " src="/images/rajhi.png" />
                                     </div> -->
                                     <div class="form-group col-md-6  col-sm-6  col-xs-12 pull-right text-center">
-                                        <img class="img-responsive " src="/images/Riyadh.png"  style="width:300px;margin:auto;"/>
-                                          <div class="clearfix"></div>
-                                       <div class="col-md-12 text-info" style="font-size: 18px;"><strong> SA7620000002972435129940</strong></div> 
-                                      
+                                        <img class="img-responsive " src="/images/Riyadh.png" style="width: 300px; margin: auto;" />
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-12 text-info" style="font-size: 18px;"><strong>SA7620000002972435129940</strong></div>
+
                                     </div>
                                     <div class="form-group col-md-6 col-sm-6  col-xs-12 pull-right text-center">
-                                        <img class="img-responsive" src="/images/Ahli.png" style="width:300px;margin:auto;" />
-                                          <div class="clearfix"></div>
-                                             <div class="col-md-12 text-info" style="font-size: 18px;"><strong>Sa6510000025368437000107</strong></div>  
+                                        <img class="img-responsive" src="/images/Ahli.png" style="width: 300px; margin: auto;" />
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-12 text-info" style="font-size: 18px;"><strong>Sa6510000025368437000107</strong></div>
                                     </div>
                                 </div>
                                 <div class="col-md-6  col-sm-6 col-xs-6 form-group pull-right">
@@ -364,11 +365,10 @@
                                     <label dir="rtl">البنك المحول اليه</label>
                                     <select class="attach validate[required] form-control" runat="server" id="ddlBanks">
                                         <option value="">اختر البنك</option>
-                                        <option value="1">الراجحي</option>
+                                        <%--<option value="1">الراجحي</option>--%>
                                         <option value="2">الأهلي</option>
                                         <option value="3">الرياض</option>
-                                        <option value="8">سامبا </option>
-
+                                        <%--<option value="8">سامبا </option>--%>
                                     </select>
                                 </div>
 
@@ -412,13 +412,20 @@
                     </div>
                     <div id="collapse504" class="collapse validationEngineContainer" check="false" aria-expanded="false">
                         <div class="accordion-body clearfix" id="submitServiceRequest">
-                            <div class="form-group col-md-12" style="min-height: 50px;"><!--<%= Summary %> -->
+                            <div class="form-group col-md-12" style="min-height: 50px;">
+                                <!--<%= Summary %> -->
 
-                                <span style='display:inline-block;float:right;'><span class='blue'> :عزيزيى </span></span><span style='display:inline-block;' class='text-red'>#0#</span><br>   <span class='blue'><span  style="float:right;">:لقد قمت بطلب خدمة </span><span class='text-red'>#1#</span></span>   <br><span class='blue'>والتي تبلغ قيمتها:<span class='text-red'> #2# ريال </span></span> <br> <span class='blue'>ولاكمال الطلب نرجو الضغط على زر إرسال<br>شكرا لكم لاختياركم خدمات كوم</span>
+                                <span style='display: inline-block; float: right;'><span class='blue'>:عزيزيى </span></span><span style='display: inline-block;' class='text-red'><%= CurrentUser.FullName %></span><br>
+                                <span class='blue'><span style="float: right;">:لقد قمت بطلب خدمة </span><span class='text-red'><%= CurrentRequest.Service.LocalizedServices.First(l=>l.LanguageId==LanguageId).Title %></span></span>
+                                <br>
+                                <span class='blue'>والتي تبلغ قيمتها:<span class='text-red'> <%= CurrentRequest.CurrentPrice.Value %> ريال </span></span>
+                                <br>
+                                <span class='blue'>ولاكمال الطلب نرجو الضغط على زر إرسال<br>
+                                    شكرا لكم لاختياركم خدمات كوم</span>
                             </div>
-                             <div class="form-group col-md-12">
+                            <div class="form-group col-md-12">
                                 <label class="checkbox form-label">
-                                    <input type="checkbox"  class="validate[required]" id="chkAgree" checked="checked" />
+                                    <input type="checkbox" class="validate[required]" id="chkAgree" checked="checked" />
                                     <span>أوافق على  <a class="privacy" href='<%= GetLocalizedUrl("info/use-agreement") %>' target="_blank">سياسة إستخدام الموقع</a></span>
 
                                 </label>
@@ -503,7 +510,7 @@
             } else {
                 if (doCheck == '0') {
                     var id = $('#accordion500 .in').attr("id");
-                   var result = validateForm('#' + id, '<%= System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName.ToLower() %>');
+                    var result = validateForm('#' + id, '<%= System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName.ToLower() %>');
                     return result;
                 }
                 return true;
@@ -511,28 +518,28 @@
         }
 
         function ValditPaymentSection() {
-                var result = false;
-                result=validateForm('#divServiceRequest', '<%# languageIso %>');
-            if(result)
-            {
-                var cardResult = $('input#txtCardNo').validateCreditCard({ accept: ['visa', 'mastercard'] });//
-                var cardType = cardResult.card_type == null ? '-' : cardResult.card_type.name;
-                if(cardType  !== '-')$('input#txtCardNo').addClass(cardType);
-                $("#hfCardBrand").val(cardType);
+            var result = false;
+            result=validateForm('#divServiceRequest', '<%# languageIso %>');
+                if(result)
+                {
+                    var cardResult = $('input#txtCardNo').validateCreditCard({ accept: ['visa', 'mastercard'] });//
+                    var cardType = cardResult.card_type == null ? '-' : cardResult.card_type.name;
+                    if(cardType  !== '-')$('input#txtCardNo').addClass(cardType);
+                    $("#hfCardBrand").val(cardType);
                 
-                result = cardResult.valid;
-                return result;//result;
-            }return result;//result;
-        }
+                    result = cardResult.valid;
+                    return result;//result;
+                }return result;//result;
+            }
        
             //var paymentSection = false;
 
             //  function checkPaymentSection() {
             //     paymentSection=validateForm('#divServiceRequest', '<%# languageIso %>');
-            //  }
-            function checkPayment() {
-                var result = false;
-                result=validateForm('#divServiceRequest', '<%# languageIso %>');
+        //  }
+        function checkPayment() {
+            var result = false;
+            result=validateForm('#divServiceRequest', '<%# languageIso %>');
                 var onLineOption = false;
                 onLineOption = $('#onLineOption').is(':checked');//$('#onLineOption').attr('checked') == "checked";
                 if (result && onLineOption) {

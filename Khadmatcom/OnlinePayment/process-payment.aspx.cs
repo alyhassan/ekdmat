@@ -39,7 +39,7 @@ namespace Khadmatcom.OnlinePayment
                     {
                         { "name",request.Client.FullName },
                         { "no", request.Id.ToString()},
-                        { "ServiceName", request.Service.Name}
+                        { "ServiceName", request.Service.LocalizedServices.First(l => l.LanguageId == 3073).Title}
                     };
 
                 string replyToAddress = WebConfigurationManager.AppSettings["ContactUsEmail"];
@@ -72,7 +72,7 @@ namespace Khadmatcom.OnlinePayment
                     {
                         { "name",request.Provider.FullName },
                         { "no", request.Id.ToString()},
-                        { "ServiceName", request.Service.Name}
+                        { "ServiceName", request.Service.LocalizedServices.First(l => l.LanguageId == 3073).Title}
                     };
 
                     if (!string.IsNullOrEmpty(request.Provider.MobielNumber) &&
@@ -82,7 +82,7 @@ namespace Khadmatcom.OnlinePayment
                         string sms =
                         string.Format(
                             "شريكنا العزيز تم تأكيد طلب خدمة{0} من قبل العميل يمكنكم البدء بتنفيذ الخدمة",
-                             request.Service.Name);
+                             request.Service.LocalizedServices.First(l => l.LanguageId == 3073).Title);
                         Servston.SMS smsManager = new Servston.SMS();
                         smsManager.Send(request.Provider.MobielNumber, sms);
                     }

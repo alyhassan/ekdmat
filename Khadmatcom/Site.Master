@@ -1,4 +1,5 @@
 ﻿<%@ Master ViewStateMode="Enabled" EnableViewState="true" Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Khadmatcom.Site" %>
+
 <%@ Register Src="~/Controls/uclogin.ascx" TagPrefix="uc1" TagName="uclogin" %>
 
 <!DOCTYPE html>
@@ -22,7 +23,7 @@
     <meta property="og:site_name" content="بوابة خدمات كوم" />
     <meta property="og:description" content="الأقرب إليك" />
     <!-- /open graph -->
-    
+
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
     <link href="~/Content/site-ar.css" rel="stylesheet" runat="server" />
@@ -35,62 +36,95 @@
         .main-content {
             margin-top: 20px;
         }
-            @media only screen and (max-width: 480px) {
-  .touch .modal .modal-body {
-   /* max-height: none; */
-    -webkit-overflow-scrolling: touch;
-  }
-}
-        @media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px)  { 
-           .touch .modal .modal-body {
-   /* max-height: none; */
-    -webkit-overflow-scrolling: touch;
-  }
 
-           @media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait) { 
-
-               .touch .modal .modal-body {
-   /* max-height: none; */
-    -webkit-overflow-scrolling: touch;
-  }
-           }
-
+        @media only screen and (max-width: 480px) {
+            .touch .modal .modal-body {
+                /* max-height: none; */
+                -webkit-overflow-scrolling: touch;
+            }
         }
+
+        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+            .touch .modal .modal-body {
+                /* max-height: none; */
+                -webkit-overflow-scrolling: touch;
+            }
+
+            @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+
+                .touch .modal .modal-body {
+                    /* max-height: none; */
+                    -webkit-overflow-scrolling: touch;
+                }
+            }
+        }
+
         @media (max-width: 480px) {
 
-        .modal {
-            height: 500px; /* Set a default max height of the modal (adjusted later)*/
-            position: fixed; /* Display modal in the centre of your screen */
-            overflow-y: scroll; /*  Ensure that the modal is scroll-able */
-            -webkit-overflow-scrolling: touch; /* Avoid having to use 2 finger scroll on iOS    */
+            .modal {
+                height: 500px; /* Set a default max height of the modal (adjusted later)*/
+                position: fixed; /* Display modal in the centre of your screen */
+                overflow-y: scroll; /*  Ensure that the modal is scroll-able */
+                -webkit-overflow-scrolling: touch; /* Avoid having to use 2 finger scroll on iOS    */
+            }
+
+                .modal.fade.in {
+                    top: 5px; /* Use more screen real estate */
+                }
+
+            .modal-body {
+                /* Increase the max height of the modal body to try & avoid both it,
+             * and the modal container having scroll bars which results in odd behavior */
+                max-height: 2400px;
+            }
         }
-        .modal.fade.in{
-            top: 5px; /* Use more screen real estate */
-        }
-        .modal-body{
-            /* Increase the max height of the modal body to try & avoid both it,
-             * and the modal container having scroll bars which results in odd behavior */ 
-            max-height: 2400px; 
-        }   
-    }
-         /* Now adjust the height so it handles various screen sizes & orientations */
-    /* You could make this as granular as you like, or have it more granular at common screen sizes
+        /* Now adjust the height so it handles various screen sizes & orientations */
+        /* You could make this as granular as you like, or have it more granular at common screen sizes
      * but it should start at the height we set on .modal (i.e. 500px) & work down */
-    @media (max-width: 480px) and (max-height: 500px){.modal{ height: 450px}}
-    @media (max-width: 480px) and (max-height: 450px){.modal{ height: 400px}}
-    @media (max-width: 480px) and (max-height: 400px){.modal{ height: 350px}}
-    @media (max-width: 480px) and (max-height: 350px){.modal{ height: 300px}}
-    @media (max-width: 480px) and (max-height: 300px){.modal{ height: 250px}}
-    @media (max-width: 480px) and (max-height: 250px){.modal{ height: 200px}}
-    @media (max-width: 480px) and (max-height: 200px){.modal{ height: 150px}}
+        @media (max-width: 480px) and (max-height: 500px) {
+            .modal {
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 480px) and (max-height: 450px) {
+            .modal {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 480px) and (max-height: 400px) {
+            .modal {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 480px) and (max-height: 350px) {
+            .modal {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) and (max-height: 300px) {
+            .modal {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) and (max-height: 250px) {
+            .modal {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) and (max-height: 200px) {
+            .modal {
+                height: 150px;
+            }
+        }
     </style>
     <!-- iphone only -->
-    <link media="only screen and (max-device-width: 480px)" href="~/Content/iphone-device.css" type= "text/css" rel="stylesheet"/>
+    <link media="only screen and (max-device-width: 480px)" href="~/Content/iphone-device.css" type="text/css" rel="stylesheet" />
 
     <%--<script src="https://v4-alpha.getbootstrap.com/assets/js/vendor/tether.min.js"></script>--%>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
@@ -320,13 +354,13 @@ and (orientation : portrait) {
                                             <a href="<%= GetLocalizedUrl("financial/الراجحي/banks") %>">الراجحي</a>
                                             <a href="<%= GetLocalizedUrl("financial/الأهلي/banks") %>">الأهلي</a>
                                             <a href="<%= GetLocalizedUrl("financial/الرياض/banks") %>">الرياض</a>
-                                            <%--  <a href="<%= GetLocalizedUrl("financial/ساب/banks") %>">ساب</a>
+                                            <a href="<%= GetLocalizedUrl("financial/ساب/banks") %>">ساب</a>
                                             <a href="<%= GetLocalizedUrl("financial/السعودي_الفرنسي/banks") %>">السعودي الفرنسي</a>
                                             <a href="<%= GetLocalizedUrl("financial/السعودي_للإستثمار/banks") %>">السعودي للإستثمار</a>
-                                            <a href="<%= GetLocalizedUrl("financial/البلاد/banks") %>">البلاد</a>--%>
+                                            <a href="<%= GetLocalizedUrl("financial/البلاد/banks") %>">البلاد</a>
                                             <a href="<%= GetLocalizedUrl("financial/سامبا/banks") %>">سامبا</a>
-                                            <%-- <a href="<%= GetLocalizedUrl("financial/الإنماء/banks") %>">الإنماء</a>
-                                            <a href="<%= GetLocalizedUrl("financial/العربي_الوطني/banks") %>">العربي_الوطني</a>--%>
+                                            <a href="<%= GetLocalizedUrl("financial/الإنماء/banks") %>">الإنماء</a>
+                                            <a href="<%= GetLocalizedUrl("financial/العربي_الوطني/banks") %>">العربي_الوطني</a>
                                             <a href="<%= GetLocalizedUrl("financial/online/requests") %>">الدفع اون لاين</a>
                                             <a href="<%= GetLocalizedUrl("financial/providers/rights") %>">مستحقات شركاء الخدمة</a>
                                         </div>
@@ -394,19 +428,19 @@ and (orientation : portrait) {
                 </div>
                 <div class="col-md-5 hidden-xs hidden-sm padLeftRight0 logo-img pull-right">
                     <a href="<%= GetLocalizedUrl("") %>">
-                        <img src='/images/logo.png' style="width:127px;margin-top: -7px;" />
-</a>
+                        <img src='/images/logo.png' style="width: 127px; margin-top: -7px;" />
+                    </a>
 
+                </div>
             </div>
         </div>
-            </div>
         <div class="visible-sm visible-xs" style="margin-top: 60px;"></div>
         <div class="container-fluied clearfix visible-sm visible-xs">
 
-             <div class="col-md-12 col-sm-12 col-xs-12 padLeftRight0 banner-right">
-                    <img src="/images/banner.png" alt="e-khadmat" class="pull-left img-responsive" style="width:100%;" />
-                </div>
-          <!--  <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-12 col-sm-12 col-xs-12 padLeftRight0 banner-right">
+                <img src="/images/banner.png" alt="e-khadmat" class="pull-left img-responsive" style="width: 100%;" />
+            </div>
+            <!--  <div class="col-md-6 col-md-offset-3">
                 <div class="input-append span12">
                     <input type="text" class="form-control" placeholder="Search" />
                     <button type="submit" class="bn"><i class="fa fa-search"></i></button>
@@ -418,7 +452,7 @@ and (orientation : portrait) {
 
         </div>
 
-        <div class="container clearfix main-content" style="margin-top:0px !important;">
+        <div class="container clearfix main-content" style="margin-top: 0px !important;">
 
             <!--Left -->
             <div class="col-xs-12 col-sm-12 visible-xs visible-sm rightdiv">
@@ -664,12 +698,12 @@ and (orientation : portrait) {
                                 <div id="requestsright" class="collapse" aria-expanded="false">
                                     <div class="accordion-body clearfix">
                                         <a href="<%= GetLocalizedUrl("providers/services-requests/new-requests") %>">خدمات جديدة<span class="indicators text-danger">(<%= ProviderNew %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("providers/services-requests/approved-requests") %>">خدمات بإنتظار الدفع<span class="indicators text-danger">(<%= ProviderApproved %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("providers/services-requests/inprogress-requests") %>">خدمات تحت العمل<span class="indicators text-danger">(<%= ProviderInProgress %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("providers/services-requests/finished-requests") %>">خدمات منفذة<span class="indicators text-danger">(<%= ProviderAccomplished %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("providers/services-requests/refused-requests") %>">خدمات مرفوضة<span class="indicators text-danger">(<%= ProviderRefused %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("providers/services-requests/canceled-requests") %>">خدمات ملغاة<span class="indicators text-danger">(<%= ProviderCanceled %>)</span></a>
-                                            <a href="<%= GetLocalizedUrl("providers/services-requests/expired-requests") %>">خدمات منتهية المدة<span class="indicators text-danger">(<%= ProviderExpired %>)</span></a>
+                                        <a href="<%= GetLocalizedUrl("providers/services-requests/approved-requests") %>">خدمات بإنتظار الدفع<span class="indicators text-danger">(<%= ProviderApproved %>)</span></a>
+                                        <a href="<%= GetLocalizedUrl("providers/services-requests/inprogress-requests") %>">خدمات تحت العمل<span class="indicators text-danger">(<%= ProviderInProgress %>)</span></a>
+                                        <a href="<%= GetLocalizedUrl("providers/services-requests/finished-requests") %>">خدمات منفذة<span class="indicators text-danger">(<%= ProviderAccomplished %>)</span></a>
+                                        <a href="<%= GetLocalizedUrl("providers/services-requests/refused-requests") %>">خدمات مرفوضة<span class="indicators text-danger">(<%= ProviderRefused %>)</span></a>
+                                        <a href="<%= GetLocalizedUrl("providers/services-requests/canceled-requests") %>">خدمات ملغاة<span class="indicators text-danger">(<%= ProviderCanceled %>)</span></a>
+                                        <a href="<%= GetLocalizedUrl("providers/services-requests/expired-requests") %>">خدمات منتهية المدة<span class="indicators text-danger">(<%= ProviderExpired %>)</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -699,13 +733,13 @@ and (orientation : portrait) {
                                         <a href="<%= GetLocalizedUrl("financial/الراجحي/banks") %>">الراجحي</a>
                                         <a href="<%= GetLocalizedUrl("financial/الأهلي/banks") %>">الأهلي</a>
                                         <a href="<%= GetLocalizedUrl("financial/الرياض/banks") %>">الرياض</a>
-                                        <%-- <a href="<%= GetLocalizedUrl("financial/ساب/banks") %>">ساب</a>
-                                            <a href="<%= GetLocalizedUrl("financial/السعودي_الفرنسي/banks") %>">السعودي الفرنسي</a>
-                                            <a href="<%= GetLocalizedUrl("financial/السعودي_للإستثمار/banks") %>">السعودي للإستثمار</a>
-                                            <a href="<%= GetLocalizedUrl("financial/البلاد/banks") %>">البلاد</a>--%>
+                                        <a href="<%= GetLocalizedUrl("financial/ساب/banks") %>">ساب</a>
+                                        <a href="<%= GetLocalizedUrl("financial/السعودي_الفرنسي/banks") %>">السعودي الفرنسي</a>
+                                        <a href="<%= GetLocalizedUrl("financial/السعودي_للإستثمار/banks") %>">السعودي للإستثمار</a>
+                                        <a href="<%= GetLocalizedUrl("financial/البلاد/banks") %>">البلاد</a>
                                         <a href="<%= GetLocalizedUrl("financial/سامبا/banks") %>">سامبا</a>
-                                        <%-- <a href="<%= GetLocalizedUrl("financial/الإنماء/banks") %>">الإنماء</a>
-                                            <a href="<%= GetLocalizedUrl("financial/العربي_الوطني/banks") %>">العربي_الوطني</a>--%>
+                                        <a href="<%= GetLocalizedUrl("financial/الإنماء/banks") %>">الإنماء</a>
+                                        <a href="<%= GetLocalizedUrl("financial/العربي_الوطني/banks") %>">العربي_الوطني</a>
                                         <a href="<%= GetLocalizedUrl("financial/online/requests") %>">الدفع اون لاين</a>
                                         <a href="<%= GetLocalizedUrl("financial/providers/rights") %>">مستحقات شركاء الخدمة</a>
                                     </div>
@@ -808,7 +842,7 @@ and (orientation : portrait) {
                 <li><a href="<%= GetSocialLinkUrl("TwitterPage") %>" target="_blank">Twitter   <i class="fa fa-twitter"></i></a></li>
                 <li><a href="<%= GetSocialLinkUrl("FacebookPage") %>" target="_blank">Facebook <i class="fa fa-facebook"></i></a></li>
                 <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank">كن شريكآ<i class="fa fa-share-alt-square"></i></a></li>
-                <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank">انستقرام<i class="fa fa-instagram" aria-hidden="true""></i></a></li>
+                <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank">انستقرام<i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 
                 <%--
                     <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank">أنضم لفريق العمل <i class="fa fa-google-plus"></i></a></li> 
@@ -853,60 +887,62 @@ and (orientation : portrait) {
                     </div>
                     <div class="modal-body">
                         <p class="col-md-12 col-sm-12">عزيزى الزائر فضلا املا النموذج التالى وسيقوم واحد من مسؤلى خدمة العملاء لدينا بإجابتكم فى اقرب وقت ممكن.</p>
-                     <div class="clearfix"></div>
-                           
-                        <div class=" login-body validationEngineContainer" id="ContactUs" style="padding:10px;">
+                        <div class="clearfix"></div>
+
+                        <div class=" login-body validationEngineContainer" id="ContactUs" style="padding: 10px;">
                             <div class="row">
-                            <div class="col-md-6 col-sm-12 col-xs-12 pull-right">
-                                <div class="col-md-12 form-group">
-                                    <div class="clearfix error text-center">Username or Password are incorrect</div>
-                                    <label class="form-label">البريد الإلكتروني</label>
-                                    <input type="text" class="form-control validate[required,custom[email]]" id="txtContactEmail" placeholder="" />
-                                </div>
-                                <div class="col-md-12 form-group">
-                                    <label class="form-label">الإسم</label>
-                                    <input type="text" class="form-control validate[required]" id="txtContactName" placeholder="" />
-                                </div>
-                                <div class="col-md-12 form-group">
-                                    <label class="form-label">رقم الهاتف / الجوال</label>
-                                    <input type="text" class="form-control  validate[required]" id="txtPhone" placeholder="" />
-                                </div>
-                                <div class="col-md-12 form-group">
-                                    <label class="form-label">العنوان</label>
-                                    <select class="form-control  validate[required]" id="ddlSubject">
-                                        <option value="">اختر اى من التالى</option>
-                                        <option value="إستفسار">إستفسار</option>
-                                        <option value="مقترح">مقترح</option>
-                                        <option value="تواصل">تواصل</option>
-                                    </select>
+                                <div class="col-md-6 col-sm-12 col-xs-12 pull-right">
+                                    <div class="col-md-12 form-group">
+                                        <div class="clearfix error text-center">Username or Password are incorrect</div>
+                                        <label class="form-label">البريد الإلكتروني</label>
+                                        <input type="text" class="form-control validate[required,custom[email]]" id="txtContactEmail" placeholder="" />
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        <label class="form-label">الإسم</label>
+                                        <input type="text" class="form-control validate[required]" id="txtContactName" placeholder="" />
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        <label class="form-label">رقم الهاتف / الجوال</label>
+                                        <input type="text" class="form-control  validate[required]" id="txtPhone" placeholder="" />
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        <label class="form-label">العنوان</label>
+                                        <select class="form-control  validate[required]" id="ddlSubject">
+                                            <option value="">اختر اى من التالى</option>
+                                            <option value="إستفسار">إستفسار</option>
+                                            <option value="مقترح">مقترح</option>
+                                            <option value="تواصل">تواصل</option>
+                                        </select>
+                                    </div>
+
                                 </div>
 
+
+
+                                <div class="col-md-6 col-sm-12 col-xs-12 pull-left">
+                                    <div class="col-md-12 form-group">
+                                        <label class="form-label">مضمون الرسالة</label>
+                                        <textarea class="form-control validate[required]" id="txtMessage" rows="8"></textarea>
+                                    </div>
+
+                                    <div class="col-md-12 form-group text-center">
+                                        <button type="reset" name="Cancel" title="Cancel" class="c-btn" data-dismiss="modal">إلغاء</button>
+                                        <button type="button" title="أرسل" onclick="SendMessage()" class="c-btn">أرسل</button>
+                                    </div>
+
+
+                                </div>
                             </div>
-                    
-                           
-                         
-                                   <div class="col-md-6 col-sm-12 col-xs-12 pull-left">
-                                <div class="col-md-12 form-group">
-                                    <label class="form-label">مضمون الرسالة</label>
-                                    <textarea class="form-control validate[required]" id="txtMessage" rows="8"></textarea>
-                                </div>
-
-                                <div class="col-md-12 form-group text-center">
-                                    <button type="reset" name="Cancel" title="Cancel" class="c-btn" data-dismiss="modal">إلغاء</button>
-                                    <button type="button" title="أرسل" onclick="SendMessage()" class="c-btn">أرسل</button>
-                                </div>
-
-
-                            </div>
-</div>
 
                         </div>
 
                     </div>
                     <div class="modal-footer">
-                        <p>او يمكنك الإتصال والتواصل : <span>
-<a href='tel:<%= GetKeyValue("Telephone") %>'><%= GetKeyValue("Telephone") %></a>
-</span></p>
+                        <p>
+                            او يمكنك الإتصال والتواصل : <span>
+                                <a href='tel:<%= GetKeyValue("Telephone") %>'><%= GetKeyValue("Telephone") %></a>
+                            </span>
+                        </p>
                     </div>
                 </div>
                 <!-- /.modal-content -->
@@ -1059,7 +1095,7 @@ and (orientation : portrait) {
                     });
 
                 }
-                }
+            }
 
         </script>
         <asp:ContentPlaceHolder ID="js" runat="server">
