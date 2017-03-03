@@ -130,8 +130,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="js" runat="server">
-    <script src="/Scripts/carousel-js/owl.carousel.js"></script>
-    <script src="/Scripts/carousel-js/owl.carousel.min.js"></script>
+   <script src="/Scripts/carousel-js/owl.carousel.min.js"></script>
     <script type="text/javascript">
 
         function confirmRequest(id) {

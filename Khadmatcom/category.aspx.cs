@@ -49,7 +49,20 @@ namespace Khadmatcom
 
         public IQueryable<ServiceSubcategory> GetSubcategories()
         {
-            return _servicesServices.GetSubcategoriesList(LanguageId, categoryId.Value).Where(s => s.Sections.Contains(typeId.ToString()) || s.Sections == "1").AsQueryable();
+            IQueryable<ServiceSubcategory> list;
+            switch (sectionName)
+            {
+                case "personal":
+                    list = _servicesServices.GetSubcategoriesList(LanguageId).Where(s => s.HasPersonalServices).AsQueryable();
+                    break;
+                case "business":
+                    list = _servicesServices.GetSubcategoriesList(LanguageId).Where(s => s.HasBusinessServices).AsQueryable();
+                    break;
+                default:
+                    list = _servicesServices.GetSubcategoriesList(LanguageId).Where(s => s.HasPersonalServices || s.HasPersonalServices).AsQueryable();
+                    break;
+            }
+            return  _servicesServices.GetSubcategoriesList(LanguageId, categoryId.Value).Where(s => s.Sections.Contains(typeId.ToString()) || s.Sections == "1").AsQueryable();
         }
     }
 }

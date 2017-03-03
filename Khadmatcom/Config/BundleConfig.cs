@@ -18,6 +18,7 @@ namespace Khadmatcom
                 "~/scripts/bootstrap.js",
                 "~/scripts/tether.js",
                 "~/scripts/jquery.validationEngine.js",
+                "~/scripts/jquery.validationEngine-ar.js",
                 "~/scripts/toastr.min.js",
                 "~/scripts/jquery.blockUI.min.js",
                 "~/scripts/jquery.magnific-popup.min.js",

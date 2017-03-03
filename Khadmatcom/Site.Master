@@ -13,7 +13,8 @@
     <meta name="description" content="Site Description Goes Here" />
     <meta name="keywords" content="Site Keywords Goes Here" />
     <link rel="shortcut icon" type="" href="/images/logo.ico" />
-    <!-- //TODO: Add analytics code -->
+   <meta http-equiv="Cache-control" content="public">
+     <!-- //TODO: Add analytics code -->
 
     <!-- open graph -->
     <meta property="og:title" content="خدمات كوم" />
@@ -25,8 +26,8 @@
     <!-- /open graph -->
 
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
-    <link href="~/Content/site-ar.css" rel="stylesheet" runat="server" />
+    <%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
+    <link href="~/Content/site-ar.css" rel="stylesheet" runat="server" />--%>
     <!-- sherif -->
     <link href="~/Content/Bootstrap.FontAwsome.css" rel="stylesheet" runat="server" />
     <!-- sherif -->
@@ -132,6 +133,19 @@
       <script src="/Scripts/html5shiv.js"></script>  
         <script src="/Scripts/respond.js"></script>
     <![endif]-->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments);
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g;
+            m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-92709705-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -806,7 +820,7 @@
                     <li><a href="<%= GetSocialLinkUrl("TwitterPage") %>" target="_blank"><i class="fa fa-2x fa-twitter-square"></i></a></li>
                     <li><a href="<%= GetSocialLinkUrl("FacebookPage") %>" target="_blank"><i class="fa fa-2x fa-facebook-square"></i></a></li>
                     <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank"><i class="fa fa-2x fa-share-alt-square"></i></a></li>
-                    <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank"><i class="fa fa-2x fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="<%= GetSocialLinkUrl("InestgramPage") %>" target="_blank"><i class="fa fa-2x fa-instagram" aria-hidden="true"></i></a></li>
                     <%--<li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank"><i class="fa fa-2x fa-google-plus-square"></i></a></li>
                         <li><a href="javascript:{}" target="_blank"><i class="fa fa-2x fa-linkedin-square"></i></a></li>--%>
                     <li class="dis-hide"><a data-toggle="modal" href="#p8" target="_blank"><i class="fa fa-2x fa-envelope-square"></i></a></li>
@@ -842,7 +856,7 @@
                 <li><a href="<%= GetSocialLinkUrl("TwitterPage") %>" target="_blank">Twitter   <i class="fa fa-twitter"></i></a></li>
                 <li><a href="<%= GetSocialLinkUrl("FacebookPage") %>" target="_blank">Facebook <i class="fa fa-facebook"></i></a></li>
                 <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank">كن شريكآ<i class="fa fa-share-alt-square"></i></a></li>
-                <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank">انستقرام<i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="<%= GetSocialLinkUrl("InestgramPage") %>" target="_blank">انستقرام<i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 
                 <%--
                     <li><a href="<%= GetLocalizedUrl("service-provider/join-request") %>" target="_blank">أنضم لفريق العمل <i class="fa fa-google-plus"></i></a></li> 
@@ -1052,7 +1066,7 @@
         <asp:PlaceHolder runat="server">
             <%: Scripts.Render("~/bundles/masterjs") %>
         </asp:PlaceHolder>
-        <script src='<%= string.Format("/Scripts/jquery.validationEngine-{0}.js", IsoName) %>'></script>
+        <%--<script src='<%= string.Format("/Scripts/jquery.validationEngine-{0}.js", IsoName) %>'></script>--%>
         <%--<script>
             $(document).ready(function () {
                 // Replace weather API_Key with domain specific one

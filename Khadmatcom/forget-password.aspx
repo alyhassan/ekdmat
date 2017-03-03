@@ -23,7 +23,7 @@
 
                 </div>
             </div>
-            <div class="clearfix login-body validationEngineContainer" id="registerForm2">
+            <%--<div class="clearfix login-body validationEngineContainer" id="registerForm2">
                 <div class="col-md-10 col-md-offset-1 form-group">
                     
                     <label class="form-label">رقم الهاتف</label>
@@ -33,8 +33,7 @@
                     
                     <label class="form-label">الرسالة</label>
                     <textarea id="txtMessage" class="form-control  validate[required]" rows="3" runat="server"></textarea>
-                     <%--<input type="email" class="form-control  validate[required,custom[email]]" required="required" placeholder="" runat="server" id="Email2" />--%>
-                </div>
+                     </div>
                 <div class="col-md-10 col-md-offset-1 form-group display-lab">
                     <label id="gl" class="fa fa-close"></label>
                 </div>
@@ -42,7 +41,7 @@
                     <asp:Button Text="ارسل" runat="server" ID="Button1" CssClass="btn my-btn btn-block" OnClientClick="return validateForm('#registerForm2', 'ar');" OnClick="btnSend_OnClick" />
                  
                 </div>
-                </div>
+                </div>--%>
         </div>
 
 

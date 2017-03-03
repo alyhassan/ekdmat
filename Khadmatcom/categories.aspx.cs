@@ -44,7 +44,20 @@ namespace Khadmatcom
 
         public IQueryable<ServiceCategory> GetCategories()
         {
-            return _servicesServices.GetCategoriesList(LanguageId).Where(s=>s.Sections.Contains(typeId.ToString())||s.Sections=="1").AsQueryable();
+            IQueryable<ServiceCategory> list;
+            switch (sectionName)
+            {
+                case "personal":
+                    list= _servicesServices.GetCategoriesList(LanguageId).Where(s => s.HasPersonalServices).AsQueryable();
+                    break;
+                case "business":
+                    list = _servicesServices.GetCategoriesList(LanguageId).Where(s => s.HasBusinessServices).AsQueryable();
+                    break;
+                default:
+                    list = _servicesServices.GetCategoriesList(LanguageId).Where(s => s.HasPersonalServices|| s.HasPersonalServices).AsQueryable();
+                    break;
+            }
+            return list;// _servicesServices.GetCategoriesList(LanguageId).Where(s=>s.Sections.Contains(typeId.ToString())||s.Sections=="1").AsQueryable();
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Khadmatcom
         {
             UserServices userServices = new UserServices();
             string _out = userServices.UpdateUser(CurrentUser.Id, txtName.Value,
-                   txtMobileNumber.Value, short.Parse(ddlGroup.Value));
+                   txtMobileNumber.Value, short.Parse(ddlGroup.Value),CurrentUser.IdentityType);
             if (string.IsNullOrEmpty(_out))
                 Notify("تم تحديث البيانات بنجاح", "", NotificationType.Success);
             else

@@ -155,6 +155,7 @@
     <Content Include="category.aspx" />
     <Content Include="Content\cridet-card.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\iphone-device.css" />
     <Content Include="Content\jquery.countdownTimer.css" />
     <Content Include="images\Ahli.png" />
     <Content Include="images\credit.png" />
