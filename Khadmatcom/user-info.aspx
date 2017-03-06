@@ -10,18 +10,18 @@
             <div class="clearfix login-body validationEngineContainer" id="registerForm">
                 <div class="col-md-10 col-md-offset-1 form-group">
                    <label class="form-label">الإسم</label>
-                    <input type="text" class="form-control  validate[required]" required="required" placeholder="" runat="server" id="txtName" />
+                    <input type="text" class="form-control  validate[required]" required="required" placeholder="ادخل الاسم" runat="server" id="txtName" />
                 </div>
                 <div class="col-md-10 col-md-offset-1 form-group">
                     <div class="clearfix error text-center">Error or Successful message</div>
                     <label class="form-label">البريد الإلكترونى</label>
-                    <input type="email" class="form-control  validate[required,custom[email]]" disabled="True" required="required" placeholder="" runat="server" id="txtEmail" />
+                    <input type="email" class="form-control  validate[required,custom[email]]" disabled="True" required="required" placeholder="ادخل البريد الإلكتروني" runat="server" id="txtEmail" />
                 </div>
 
                 <!--Personal-->
                 <div class="col-md-10 col-md-offset-1 form-group">
                     <label class="form-label">رقم الجوال:</label>
-                    <input type="text" class="form-control validate[required]" required="required"  placeholder="" runat="server" id="txtMobileNumber" />
+                    <input type="text" class="form-control validate[required]" required="required"  placeholder="أدخل رقم الجوال مثل 966545545133" runat="server" id="txtMobileNumber" />
                 </div>
 
                 <div class="col-md-10 col-md-offset-1 form-group">

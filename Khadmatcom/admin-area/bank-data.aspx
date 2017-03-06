@@ -25,18 +25,17 @@
                 <div class="panel">
                     <div class="accordion-heading">
                         <a class="clearfix accordion-toggle collapsed indicator" data-toggle="collapse" data-parent="#accordion4" href='#right<%# Item.Id %>' aria-expanded="false">
-
                             <div class="L-container">
                                 <div class="L1">
                                     <span class="ni">رقم الطلب: <span class="red"><%# Item.Id %></span> </span>
                                     <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
                                     <span>نوعها:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
-                                 <span>العدد:<span class="blue"><%#Item.Count %></span> </span>
+                                    <span>العدد:<span class="blue"><%#Item.Count %></span> </span>
                                 </div>
                                 <div class="L1">
                                     <span class="ni">اسم شريك الخدمة:<span class="red"><%# Item.Provider.FullName %></span> </span>
-                                    <span>رقم الجوال: <span class="blue" style="display:inline-block;"><%# Item.Provider.MobielNumber %></span> </span>
-                                    <span>  رقم الحساب : <span class="blue"><%# Item.Provider.BankAccountNumber %></span> </span>
+                                    <span>رقم الجوال: <span class="blue" style="display: inline-block;"><%# Item.Provider.MobielNumber %></span> </span>
+                                    <span>رقم الحساب : <span class="blue"><%# Item.Provider.BankAccountNumber %></span> </span>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="row L2">
@@ -50,14 +49,12 @@
                                     </p>
                                 </div>
                             </div>
-
                         </a>
-
                     </div>
                     <div id="right<%# Item.Id %>" class="collapse" aria-expanded="false">
                         <div class="accordion-body clearfix" dir="rtl" style="direction: rtl;">
                             <div class="list-group L-container">
-                              <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
                                         <label class="list-group-item-heading blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>طريقة الدفع</label>
                                         :
@@ -71,14 +68,13 @@
                                                        &nbsp; <span class=""><%# Item.Client.FullName %></span>
                                     </div>
                                 </div>
-                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
-                                        <label class="list-group-item-heading blue"><span style="display:inline-block;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الجوال :</span></label>
-                                      
-                                                       &nbsp; <span class=""><%# Item.Client.MobielNumber %></span>
+                                        <label class="list-group-item-heading blue"><span style="display: inline-block;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>رقم الجوال :</span></label>
+
+                                        &nbsp; <span class=""><%# Item.Client.MobielNumber %></span>
                                     </div>
                                 </div>
-                                
                                 <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
                                     <div class="input-group">
                                         <label class="list-group-item-heading blue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>اسم البنك </label>
@@ -115,42 +111,34 @@
                             <div class="L-button" id="">
                                 <button type="button" style="padding: 3px; opacity: 1; color: green;" class="btn btn-default disabled text-success ">سعر الخدمة:<%# Item.CurrentPrice %>&nbsp;<span style="display: inline-block; float: left">ريال</span>&nbsp;  </button>
                             </div>
-
                         </div>
                     </div>
                 </div>
-
             </ItemTemplate>
         </asp:ListView>
-
-
-
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="js" runat="server">
-   <script src="/Scripts/carousel-js/owl.carousel.min.js"></script>
+    <script src="/Scripts/carousel-js/owl.carousel.min.js"></script>
     <script type="text/javascript">
 
         function confirmRequest(id) {
-           var a = confirm("هل انت متاكد؟");
+            var a = confirm("هل انت متاكد؟");
             if (a == true) {
-           
                 var userData = {
                     id: id,dummy:false,x:0
-
                 };
-
                 $.getJSON("/api/Khadmatcom/ConfirmRequest", userData, function (res) {
                     showLoading();
                     if (res) {
-                        setTimeout(function () {
-                            //do what you need here
-                            hideLoading();
-                            toastr.success("تم تأكيد الطلب", "شكرا لك", { timeOut: 60000, rtl: true, closeButton: true, positionClass: 'toast-top-center' });
-
-                        }, 4000);
+                        hideLoading();
+                        toastr.success("تم تأكيد الطلب", "شكرا لك", {  rtl: true, closeButton: true, positionClass: 'toast-top-center' });
+                        goog_report_conversion();
+                        //setTimeout(function () {
+                        //do what you need here
+                        //}, 4000);
 
                     }
                     else {
@@ -161,25 +149,46 @@
         }
         $(document).ready(function () {
             $("#chuu-owl").owlCarousel({
-
                 navigation: true, // Show next and prev buttons
                 slideSpeed: 300,
                 paginationSpeed: 400,
                 singleItem: true
             });
-
-
-
+            
             $(".owl-prev").addClass("fa");
             $(".owl-prev").addClass("fa-chevron-left");
             $(".owl-prev").text("");
-
             $(".owl-next").addClass("fa");
             $(".owl-next").addClass("fa-chevron-right");
             $(".owl-next").text("");
-
-
-
         });
+    </script>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        goog_snippet_vars = function() {
+            var w = window;
+            w.google_conversion_id = 877484289;
+            w.google_conversion_label = "HpXHCKKwhW8QgbK1ogM";
+            w.google_remarketing_only = false;
+        }
+        // DO NOT CHANGE THE CODE BELOW.
+        goog_report_conversion = function(url) {
+            goog_snippet_vars();
+            window.google_conversion_forma t = "3";
+            var opt = new Object();
+            opt.onload_callback = function() {
+                if (typeof(url) != 'undefined') {
+                    window.location = url;
+                }
+            }
+            var conv_handler = window['google_trackConversion '];
+            if (typeof(conv_handler) == 'function') {
+                conv_handler(opt);
+            }
+        }
+        /* ]]> */
+    </script>
+    <script type="text/javascript"
+        src="//www.googleadservices.co m/pagead/conversion_async.js">
     </script>
 </asp:Content>

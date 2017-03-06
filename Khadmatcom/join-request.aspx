@@ -27,7 +27,7 @@
 
                 <div class="col-md-10 col-md-offset-1 form-group">
                     <label class="form-label">رقم الجوال</label>
-                    <input type="text" class="form-control col-md-10 validate[required]" onkeypress="return isNumber(event)" id="txtPhoneNumber" placeholder="5234567" />
+                    <input type="text" class="form-control col-md-10 validate[required]" onkeypress="return isNumber(event)" id="txtPhoneNumber" placeholder="966545545133" />
                 </div>
                 <div class="col-md-10 col-md-offset-1 form-group">
                     <label class="form-label">المدينة</label>

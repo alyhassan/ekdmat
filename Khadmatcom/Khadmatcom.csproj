@@ -389,9 +389,6 @@
     <Content Include="clients\web.config" />
     <Content Include="providers\web.config" />
     <Content Include="admin-area\web.config" />
-    <None Include="job_scheduling_data_2_0.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.3.js" />
     <Content Include="Scripts\jquery-2.2.3.min.js" />

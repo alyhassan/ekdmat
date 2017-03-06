@@ -328,7 +328,7 @@
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o38 pull-right">
                                             <input type="text" class="form-control" runat="server" id="txtVisitTime" placeholder="وقت الزيارة" />
                                         </div>
-                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o85 pull-right">
+                                        <div class="form-group options col-md-4 col-sm-4 col-xs-12 o58 pull-right">
                                             <input type="text" class="form-control validate[required]" runat="server" id="txtApartmentCount" placeholder="عدد الشقق" />
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 pull-right">
@@ -390,7 +390,7 @@
                                             <label for="chkAds">هل تتوفر لديكم التصاميم الأعلانية </label>
                                             <input type="checkbox" id="chkAds" runat="server" />
                                         </div>
-                                        <div class="form-group options  col-md-6 pull-right o148">
+                                        <div class="form-group options  col-md-6 pull-right o128">
                                             <label for="chk5Years">هل يتوفر لديكم خطة تطوير لمدة خمس سنوات</label>
                                             <input type="checkbox" id="chk5Years" runat="server" />
                                         </div>

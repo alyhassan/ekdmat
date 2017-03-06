@@ -996,3 +996,39 @@ Stack Trace:
    at System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
    at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
 
+********** 03/03/2017 10:09:36 م **********
+Exception Type: System.Web.Caching.TableNotEnabledForNotificationException
+Exception: The 'RequestOptions' table in the database 'Khadmatcom_sa' is not enabled for SQL cache notification.
+
+Please make sure the table exists, and the table name used for cache dependency matches exactly the table name used in cache notification registration.
+
+To enable a table for SQL cache notification, please use SqlCacheDependencyAdmin.EnableTableForNotifications method, or the command line tool aspnet_regsql. To use the tool, please run 'aspnet_regsql.exe -?' for more information.
+
+To get a list of enabled tables in the database, please use SqlCacheDependencyManager.GetTablesEnabledForNotifications method, or the command line tool aspnet_regsql.exe.
+Source: http://localhost:57702/personal/servgov/MinistryofCommerce/1/services
+Stack Trace: 
+   at System.Web.Caching.SqlCacheDependencyManager.EnsureTableIsRegisteredAndPolled(String database, String table)
+   at System.Web.Caching.SqlCacheDependency.GetDependKey(String database, String tableName)
+   at System.Web.Caching.SqlCacheDependency..ctor(String databaseEntryName, String tableName)
+   at Khadmatcom.Data.Repositories.ServiceRepository.GetAll(Int32 languageId) in C:\Users\USER\Documents\Visual Studio 2015\Projects\Khadmatcom\Khadmatcom.Data\Repositories\ServiceRepository.cs:line 43
+   at Khadmatcom.Data.Repositories.ServiceRepository.Get(Int32 id, Int32 languageId) in C:\Users\USER\Documents\Visual Studio 2015\Projects\Khadmatcom\Khadmatcom.Data\Repositories\ServiceRepository.cs:line 64
+   at Khadmatcom.Services.ServicesServices.GetService(Int32 languageId, Int32 id) in C:\Users\USER\Documents\Visual Studio 2015\Projects\Khadmatcom\Khadmatcom.Services\Services\ServicesServices.cs:line 203
+   at Khadmatcom.Services.ServicesServices.<>c__DisplayClass9_0.<GetSubcategoriesList>b__2(Service x) in C:\Users\USER\Documents\Visual Studio 2015\Projects\Khadmatcom\Khadmatcom.Services\Services\ServicesServices.cs:line 105
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Khadmatcom.Services.ServicesServices.<>c__DisplayClass9_0.<GetSubcategoriesList>b__0(LocalizedServiceSubcategory a) in C:\Users\USER\Documents\Visual Studio 2015\Projects\Khadmatcom\Khadmatcom.Services\Services\ServicesServices.cs:line 96
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at Khadmatcom.Services.ServicesServices.GetSubcategoriesList(Int32 languageId) in C:\Users\USER\Documents\Visual Studio 2015\Projects\Khadmatcom\Khadmatcom.Services\Services\ServicesServices.cs:line 96
+   at Khadmatcom.services..ctor() in C:\Users\USER\Documents\Visual Studio 2015\Projects\Khadmatcom\Khadmatcom\services.aspx.cs:line 31
+   at ASP.services_aspx..ctor() in c:\Users\USER\AppData\Local\Temp\Temporary ASP.NET Files\root\036d9bfc\4a35f9cb\App_Web_xgxw0beq.3.cs:line 0
+   at __ASP.FastObjectFactory_app_web_xgxw0beq.Create_ASP_services_aspx() in c:\Users\USER\AppData\Local\Temp\Temporary ASP.NET Files\root\036d9bfc\4a35f9cb\App_Web_xgxw0beq.12.cs:line 0
+   at System.Web.Compilation.BuildResultCompiledType.CreateInstance()
+   at System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   at System.Web.Routing.PageRouteHandler.GetHttpHandler(RequestContext requestContext)
+   at System.Web.Routing.UrlRoutingModule.PostResolveRequestCache(HttpContextBase context)
+   at System.Web.Routing.UrlRoutingModule.OnApplicationPostResolveRequestCache(Object sender, EventArgs e)
+   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+

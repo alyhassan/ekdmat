@@ -11,7 +11,7 @@ namespace Khadmatcom
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect(GetLocalizedUrl("personal/categories"),true);
+            Response.Redirect(GetLocalizedUrl("business/categories"),true);
             //RedirectAndNotify(GetLocalizedUrl("personal/categories"), "اهلا وسهلا بك ايه الزائر", "تم تحويلك ", NotificationType.Info);
         }
 

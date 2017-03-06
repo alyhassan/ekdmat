@@ -33,7 +33,7 @@
                 <!--Personal-->
                 <div class="col-md-10 col-md-offset-1 form-group">
                     <label class="form-label">رقم الجوال:</label>
-                    <input type="text" class="form-control validate[required]" required="required"  placeholder="" runat="server" id="txtMobileNumber" />
+                    <input type="text" class="form-control validate[required]" required="required"  placeholder="فضلا ادخل رقم الجوال كالتالي 966545545133" runat="server" id="txtMobileNumber" />
                 </div>
 
                 <div class="col-md-10 col-md-offset-1 form-group">
@@ -57,7 +57,7 @@
                 <div class="col-md-10 col-md-offset-1 form-group">
                     <label class="checkbox form-label">
                         <input type="checkbox" name="remember" class="validate[required]" />
-                        <span style="padding-left: 20px;"><a title="إتفاقية الإستخدام" href="javascript:{}">أوافق على سياسة إستخدام الموقع</a> </span>
+                        <span style="padding-left: 20px;"><a title="إتفاقية الإستخدام" href="<%= GetLocalizedUrl("info/use-agreement") %>">أوافق على سياسة إستخدام الموقع</a> </span>
 
                     </label>
                 </div>
