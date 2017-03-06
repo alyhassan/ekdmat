@@ -57,7 +57,7 @@
                 <div class="col-md-10 col-md-offset-1 form-group">
                     <label class="checkbox form-label">
                         <input type="checkbox" name="remember" class="validate[required]" />
-                        <span style="padding-left: 20px;"><a title="إتفاقية الإستخدام" href="<%= GetLocalizedUrl("info/use-agreement") %>">أوافق على سياسة إستخدام الموقع</a> </span>
+                        <span style="padding-left: 20px;"><a title="إتفاقية الإستخدام" target="_blank" href="<%= GetLocalizedUrl("info/use-agreement") %>">أوافق على سياسة إستخدام الموقع</a> </span>
 
                     </label>
                 </div>
@@ -69,7 +69,7 @@
                 </div>
 
                 <div class="col-md-10 col-md-offset-1 form-group clearfix">
-                    <span class="alreadya"><a href="#p7" data-toggle="modal">Already have an account?</a></span>
+                    <span class="alreadya"><a href="#p7" data-toggle="modal">لديك حساب لدينا بالفعل?</a></span>
 
                 </div>
             </div>
