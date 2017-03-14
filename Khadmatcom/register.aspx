@@ -33,7 +33,7 @@
                 <!--Personal-->
                 <div class="col-md-10 col-md-offset-1 form-group">
                     <label class="form-label">رقم الجوال:</label>
-                    <input type="text" class="form-control validate[required]" required="required"  placeholder="فضلا ادخل رقم الجوال كالتالي 966545545133" runat="server" id="txtMobileNumber" />
+                    <input type="text" class="form-control validate[required]" required="required"  placeholder="فضلا ادخل رقم الجوال كالتالي ×××××××××966" runat="server" id="txtMobileNumber" />
                 </div>
 
                 <div class="col-md-10 col-md-offset-1 form-group">

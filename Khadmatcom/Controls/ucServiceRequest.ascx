@@ -265,7 +265,7 @@
                                             <input type="text" class="form-control validate[required]" runat="server" id="txtAge" placeholder="متوسط العمر" />
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o69 pull-right">
-                                            <input type="text" class="form-control validate[required]" runat="server" id="txtSuggested" placeholder="نوع المنتج" />
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtSuggested" placeholder="الميزانية المقترحة" />
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o83 pull-right">
                                             <input type="text" class="form-control validate[required]" runat="server" id="txtTasheraNo" placeholder="رقم التأشيرة" />
@@ -303,7 +303,7 @@
                                             <input type="text" class="form-control validate[required]" runat="server" id="txtMofodName" placeholder="اسم المكتب المفوض" />
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o74 pull-right">
-                                            <input type="number" class="form-control validate[required]" runat="server" id="txtReportTo" placeholder="الجهة الموجه لها دراسة الجدوي" />
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtReportTo" placeholder="الجهة الموجه لها دراسة الجدوي" />
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o28 pull-right">
                                             <input type="number" class="form-control validate[required]" runat="server" id="txtTravleInusranceAmount" placeholder="مدة تأمين السفر" />

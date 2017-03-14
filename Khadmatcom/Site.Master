@@ -13,8 +13,8 @@
     <meta name="description" content="Site Description Goes Here" />
     <meta name="keywords" content="Site Keywords Goes Here" />
     <link rel="shortcut icon" type="" href="/images/logo.ico" />
-   <meta http-equiv="Cache-control" content="public">
-     <!-- //TODO: Add analytics code -->
+    <meta http-equiv="Cache-control" content="public">
+    <!-- //TODO: Add analytics code -->
 
     <!-- open graph -->
     <meta property="og:title" content="خدمات كوم" />
@@ -293,6 +293,15 @@
 
             </div>
             <asp:LoginView ID="LoginView4" runat="server">
+                <AnonymousTemplate>
+                    <div class="collapse navbar-collapse navbar-ex1-collapse padLeft0">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="<%= GetLocalizedUrl("info/how-we-work") %>"><%= GetGlobalResourceObject("general.aspx","lblUsersManual") %></a>
+                            </li>
+                        </ul>
+                    </div>
+                </AnonymousTemplate>
                 <LoggedInTemplate>
                     <div class="collapse navbar-collapse navbar-ex1-collapse padLeft0">
                         <ul class="nav navbar-nav">
