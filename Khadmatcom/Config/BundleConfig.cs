@@ -23,6 +23,7 @@ namespace Khadmatcom
                 "~/scripts/jquery.blockUI.min.js",
                 "~/scripts/jquery.magnific-popup.min.js",
                 "~/scripts/jquery.mask.js",
+                "~/scripts/jquery-ui-1.10.4.js",
                 "~/scripts/functions.js",
                 "~/scripts/site-query.js"
                 ));

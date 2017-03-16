@@ -247,16 +247,16 @@
                                             <input type="text" class="form-control validate[required]" runat="server" id="txtProductType" placeholder="نوع المنتج" />
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o57 pull-right">
-                                            <input type="text" class="form-control" runat="server" id="txtDate" placeholder="تاريخ" />
+                                            <input type="text" class="form-control datetimepicker" runat="server" id="txtDate" placeholder="تاريخ" />
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o68 pull-right">
                                             <input type="text" class="form-control" runat="server" id="txtPhone2" placeholder="رقم التليفون" />
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o78">
-                                            <input type="text" class="form-control validate[required]" runat="server" id="txtStartDate" placeholder="تاريخ الإصدار" />
+                                            <input type="text" class="form-control validate[required]  datetimepicker" runat="server" id="txtStartDate" placeholder="تاريخ الإصدار" />
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o79 pull-right">
-                                            <input type="text" class="form-control validate[required]" runat="server" id="txtFinishDate" placeholder="تاريخ الإنتهاء" />
+                                            <input type="text" class="form-control validate[required]  datetimepicker" runat="server" id="txtFinishDate" placeholder="تاريخ الإنتهاء" />
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o80 pull-right">
                                             <input type="text" class="form-control validate[required]" runat="server" id="txtTo" placeholder="نقل الى" />
@@ -323,7 +323,7 @@
                                             <input type="text" class="form-control" runat="server" id="txtBuildingNumber" placeholder="رقم المبني" />
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o37 pull-right">
-                                            <input type="text" class="form-control" runat="server" id="txtVisitDate" placeholder="تاريخ الزيارة" />
+                                            <input type="text" class="form-control  datetimepicker" runat="server" id="txtVisitDate" placeholder="تاريخ الزيارة" />
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o38 pull-right">
                                             <input type="text" class="form-control" runat="server" id="txtVisitTime" placeholder="وقت الزيارة" />
@@ -507,7 +507,7 @@
                                             <input type="text" class="form-control validate[required]" runat="server" id="txtResearchName" placeholder="عنوان البحث" />
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o142 pull-right">
-                                            <input type="text" class="form-control validate[required]" runat="server" id="txtEndDate" placeholder="تاريخ التسليم " />
+                                            <input type="text" class="form-control validate[required] datetimepicker" runat="server" id="txtEndDate" placeholder="تاريخ التسليم " />
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o143 pull-right">
                                             <input type="text" class="form-control validate[required]" runat="server" id="txtProjectSubject" placeholder="عنوان المشروع" />

@@ -6,12 +6,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link rel="author" href="/humans.txt" />
-    <title>بوابة خدمات كوم</title>
+    <title>خدمات كوم</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Site Description Goes Here" />
-    <meta name="keywords" content="Site Keywords Goes Here" />
+    <meta name="description" content="خدمات كوم" />
+    <meta name="keywords" content="الأقرب إليك" />
     <link rel="shortcut icon" type="" href="/images/logo.ico" />
     <meta http-equiv="Cache-control" content="public">
     <!-- //TODO: Add analytics code -->
@@ -21,7 +21,7 @@
     <meta property="og:image" content="http://e-kdmat.com//images/logo.png" />
     <meta content="520" property="og:image:width" />
     <meta property="og:image:height" content="300" />
-    <meta property="og:site_name" content="بوابة خدمات كوم" />
+    <meta property="og:site_name" content="خدمات كوم" />
     <meta property="og:description" content="الأقرب إليك" />
     <!-- /open graph -->
 
@@ -146,10 +146,26 @@
         ga('send', 'pageview');
 
     </script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-K6PCB4S');</script>
+    <!-- End Google Tag Manager -->
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6MKMTH"
+            height="0" width="0" style="display: none; visibility: hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <form id="form1" runat="server" novalidate>
         <header class="hidden-sm hidden-xs">
             <div class="container">
@@ -1090,7 +1106,9 @@
         </script>
         --%>
         <script>
-
+            $(document).ready(function () {
+                $('.datetimepicker').datepicker({ dateFormat: "yy/mm/dd" });
+            });
             function SendMessage() {
                 //do what you need here
                 if (validateForm('#ContactUs', '<%=IsoName %>')) {
@@ -1124,5 +1142,18 @@
         <asp:ContentPlaceHolder ID="js" runat="server">
         </asp:ContentPlaceHolder>
     </form>
+    <!-- Twitter universal website tag code -->
+    <script>
+        !function (e, t, n, s, u, a) {
+            e.twq || (s = e.twq = function () {
+                s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments);
+            }, s.version = '1.1', s.queue = [], u = t.createElement(n), u.async = !0, u.src = '//static.ads-twitter.com/uwt.js',
+            a = t.getElementsByTagName(n)[0], a.parentNode.insertBefore(u, a))
+        }(window, document, 'script');
+        // Insert Twitter Pixel ID and Standard Event data below
+        twq('init', 'nwdkm');
+        twq('track', 'PageView');
+    </script>
+    <!-- End Twitter universal website tag code -->
 </body>
 </html>
