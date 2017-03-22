@@ -50,7 +50,7 @@ namespace Khadmatcom.OnlinePayment
                     //send to client
                     Servston.MailManager.SendMail("client/request-approved.html", keysValues, "بوابة خدماتكم",
                         UserManger.GetEmail(request.Client.UserId.Value), adminEmail, replyToAddress, new List<string>() { siteMasterEmail });
-                    //send to client
+                    //send to provider
                     Servston.MailManager.SendMail("provider/request-approved.html", keysValues, "بوابة خدماتكم",
                        UserManger.GetEmail(request.Provider.UserId.Value), adminEmail, replyToAddress, new List<string>() { siteMasterEmail });
 
