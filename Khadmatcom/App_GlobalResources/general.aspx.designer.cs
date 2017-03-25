@@ -97,7 +97,7 @@ namespace Resources.general {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to أعمال.
+        ///   Looks up a localized string similar to خدمات أعمال.
         /// </summary>
         internal static string business {
             get {
@@ -565,7 +565,7 @@ namespace Resources.general {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to أفراد.
+        ///   Looks up a localized string similar to خدمات أفراد.
         /// </summary>
         internal static string personal {
             get {
