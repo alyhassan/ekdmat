@@ -236,8 +236,8 @@
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 pull-right o51">
                                             <select runat="server" id="ddlCompanyType" class="form-control validate[required]">
-                                                <option value="">أختر نوع كيان المؤسسة</option>
-                                                <option value="مؤسسة فردية">مؤسسة فردية</option>
+                                                <option value="">أختر نوع كيان المنشاءة</option>
+                                                <option value="مؤسسة فردية">مؤسسة </option>
                                                 <option value="شركة محدودة">شركة محدودة</option>
                                                 <option value="شركة مساهمة">شركة مساهمة</option>
                                                 <option value="شركة تضامنية">شركة تضامنية</option>
@@ -400,7 +400,7 @@
                                         </div>
                                         <div class="form-group options  col-md-6 pull-right o150">
                                             <span id="O150Value" class="hidden">150</span>
-                                            <label for="chkSteam">هل ترغب فى تنظيف البشرة مع البخار</label>
+                                            <label for="chkSteam">هل ترغبين بتنظيف البشرة مع البخار</label>
                                             <input type="checkbox" id="chkSteam" runat="server" />
                                         </div>
                                         <div class="form-group options  col-md-6 pull-right o161">
@@ -477,7 +477,7 @@
                                             <input type="text" class="form-control validate[required]" runat="server" id="txtPassword" placeholder="كلمة المرور" />
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o124 pull-right">
-                                            <input type="text" class="form-control validate[required]" runat="server" id="txtSize" placeholder="مساحة العقار" />
+                                            <input type="text" class="form-control validate[required]" runat="server" id="txtSize" placeholder="المساحة" />
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o129 pull-right">
                                             <input type="text" class="form-control validate[required]" runat="server" id="txtWH" placeholder="الطول X العرض" />
@@ -591,7 +591,7 @@
                                             <input type="checkbox" id="chkFamilyCar" runat="server" class="validate[required]" />
                                         </div>
                                         <div class="form-group options  col-md-6 pull-right o63">
-                                            <label for="chkAccount">هل لديك نظام محاسبى</label>
+                                            <label for="chkAccount">هل لديكم نظام محاسبى</label>
                                             <input type="checkbox" id="chkAccount" runat="server" />
                                         </div>
                                         <div class="form-group options  col-md-6 pull-right o61">
@@ -621,7 +621,7 @@
                                             <input type="checkbox" id="chkMore50" runat="server" class="validate[required]" />
                                         </div>
                                         <div class="form-group options  col-md-6 pull-right o52">
-                                            <label for="chkApproveBalance">هل يوجد لديكم ميزانية مصدقة من مكتب المحاسبة</label>
+                                            <label for="chkApproveBalance">هل يوجد لديكم ميزانية مصدقة من مكتب محاسبي</label>
                                             <input type="checkbox" id="chkApproveBalance" runat="server" />
                                         </div>
                                         <div class="form-group options  col-md-6 pull-right o40">
@@ -832,7 +832,7 @@
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 pull-right o184">
                                             <select runat="server" id="ddlTagleedType" class="form-control">
-                                                <option value="">نوع الإقامة</option>
+                                                <option value="">نوع التجليد</option>
                                                 <option value="عادي" cost="0">عادي</option>
                                                 <option value="فاخر" cost="0">فاخر</option>
                                             </select>
