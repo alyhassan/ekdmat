@@ -52,7 +52,7 @@
 
                                         <div class="form-group  col-md-2 col-sm-6 col-xs-12 pull-right hidden">
                                             <%-- <span id="lblNotes"></span>--%>
-                                            <label class="col-md-12 text-right text-nowrap"رقم الطلب</label>
+                                            <label class="col-md-12 text-right text-nowrap">رقم الطلب</label>
                                             <span class="fixed-no col-md-12 text-right text-nowrap form-control">###</span>
                                         </div>
                                         <div class="form-group  col-md-3  col-sm-6 col-xs-12 pull-right">
