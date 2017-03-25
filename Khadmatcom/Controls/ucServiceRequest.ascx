@@ -348,7 +348,7 @@
                                             <input type="text" class="form-control" runat="server" id="txtPageCount" placeholder="عدد الصفحات" />
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o95 pull-right">
-                                            <input type="text" class="form-control" runat="server" id="txtIstkdam" placeholder="الإستقدام" />
+                                            <input type="text" class="form-control" runat="server" id="txtIstkdam" placeholder="اللغة" />
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o96 pull-right">
 
