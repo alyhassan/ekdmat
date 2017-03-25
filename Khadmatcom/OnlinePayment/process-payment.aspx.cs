@@ -48,10 +48,10 @@ namespace Khadmatcom.OnlinePayment
                 try
                 {
                     //send to client
-                    Servston.MailManager.SendMail("client/request-approved.html", keysValues, "بوابة خدماتكم",
+                    Servston.MailManager.SendMail("client/request-paid.html", keysValues, "بوابة خدماتكم",
                         UserManger.GetEmail(request.Client.UserId.Value), adminEmail, replyToAddress, new List<string>() { siteMasterEmail });
-                    //send to client
-                    Servston.MailManager.SendMail("provider/request-approved.html", keysValues, "بوابة خدماتكم",
+                    //send to provider
+                    Servston.MailManager.SendMail("provider/request-paid.html", keysValues, "بوابة خدماتكم",
                        UserManger.GetEmail(request.Provider.UserId.Value), adminEmail, replyToAddress, new List<string>() { siteMasterEmail });
 
 
