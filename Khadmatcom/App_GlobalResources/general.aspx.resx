@@ -121,7 +121,7 @@
     <value />
   </data>
   <data name="business" xml:space="preserve">
-    <value>أعمال</value>
+    <value>خدمات أعمال</value>
   </data>
   <data name="ddlLangAr" xml:space="preserve">
     <value>عربى</value>
@@ -226,7 +226,7 @@
     <value />
   </data>
   <data name="personal" xml:space="preserve">
-    <value>أفراد</value>
+    <value>خدمات أفراد</value>
   </data>
   <data name="RightMenu" xml:space="preserve">
     <value />
