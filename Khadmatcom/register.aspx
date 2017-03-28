@@ -39,7 +39,7 @@
                 <div class="col-md-10 col-md-offset-1 form-group">
                     <label class="form-label">المجموعه</label>
                     <select class="form-control validate[required]" ID="ddlGroup" required="required" runat="server">
-                        <option>أختار نوع الإشتراك</option>
+                        <option value="">أختار نوع الإشتراك</option>
                         <option value="-1">كل منهما</option>
                         <option value="1">فردي</option>
                         <option value="2">أعمال</option>
