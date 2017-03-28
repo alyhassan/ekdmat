@@ -1114,7 +1114,7 @@
         --%>
         <script>
             $(document).ready(function () {
-                //$('.datetimepicker').datepicker({ dateFormat: "dd/mm/yy" });
+                $('.datetimepicker').datepicker({ dateFormat: "dd/mm/yy" });
             });
             function SendMessage() {
                 //do what you need here
