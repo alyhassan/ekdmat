@@ -17,8 +17,8 @@
                     <div class="col-md-12">
                         <ul class="nav nav-tabs nav-arow myTab col-lg-10 col-md-10 col-xs-6 col-sm-9 navbar-right pull-right" id="ai">
                             <li class="active"><a data-toggle="collapse" data-parent="#accordion500" href="#collapse500">بيانات رئيسية</a></li>
-                            <%--<li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse501">المرفقات</a></li>
-                     <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse502">بيانات الشحن </a></li>--%>
+                            <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse501">المرفقات</a></li>
+                            <%--<li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse502">بيانات الشحن </a></li>--%>
                             <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse503">متطلبات الطلب</a></li>
                             <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse504">إرسال الطلب</a></li>
                         </ul>
@@ -444,24 +444,24 @@
                                         </div>
                                         <div class="form-group options  col-md-6 pull-right o104">
                                             <span id="O104Value" class="hidden">35000</span>
-                                            <label for="chkMedcert">هل عرض الشارع اكبر من 40م</label>
+                                            <label for="chkMore40">هل عرض الشارع اكبر من 40م</label>
                                             <input type="checkbox" id="chkMore40" runat="server" />
                                         </div>
                                         <div class="form-group options  col-md-6 pull-right o105">
                                             <span id="O105Value" class="hidden">80000</span>
-                                            <label for="chkMedcert">هل المصنع المطلوب تصميمة يقع ضمن نطاق المدن الصناعية</label>
+                                            <label for="chkInIndustrailSection">هل المصنع المطلوب تصميمة يقع ضمن نطاق المدن الصناعية</label>
                                             <input type="checkbox" id="chkInIndustrailSection" runat="server" />
                                         </div>
                                         <div class="form-group options  col-md-6 pull-right o118">
-                                            <label for="chkMedcert">هل سبق وان قمتم بأي عملية استيراد </label>
-                                            <input type="checkbox" id="chkImport" runat="server"  class="validate[required]"/>
+                                            <label for="chkImport">هل سبق وان قمتم بأي عملية استيراد </label>
+                                            <input type="checkbox" id="chkImport" runat="server" class="validate[required]" />
                                         </div>
                                         <div class="form-group options  col-md-6 pull-right o133">
-                                            <label for="chkMedcert">يشترط أن لاتقل ميزانية الحملة عن 15000</label>
+                                            <label for="chkMore15">يشترط أن لاتقل ميزانية الحملة عن 15000</label>
                                             <input type="checkbox" id="chkMore15" runat="server" class="validate[required]" />
                                         </div>
                                         <div class="form-group options  col-md-6 pull-right o165">
-                                            <label for="chkMedcert">هل لديكم أسم مستخدم للتفاويض الألكترونية علي موقع مصلحة الجمارك</label>
+                                            <label for="chkUserName">هل لديكم أسم مستخدم للتفاويض الألكترونية علي موقع مصلحة الجمارك</label>
                                             <input type="checkbox" id="chkUserName" runat="server" class="validate[required]" />
                                         </div>
                                         <div class="form-group options col-md-4 col-sm-4 col-xs-12 o113 pull-right">
@@ -858,17 +858,17 @@
                                 </div>
                                 <div class="col-md-12 col-sm-12 ag-1">
                                     <a href="#" class="righttag hidden">Please register for the follow - up steps</a>
-                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" class="clasic-btn pull-right">التالي</a>
+                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse501" class="clasic-btn pull-right">التالي</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <%--    <div class="panel hidden">
+                    <div class="panel">
                         <div class="clearfix fal">
                             <div class="accordion-heading">المرفقات <i class="indi fa fa-chevron-up"></i></div>
                         </div>
-                        <div id="collapse501" class="collapse" aria-expanded="false">
+                        <div id="collapse501" class="collapse" aria-expanded="false" check="false">
                             <div class="accordion-body clearfix">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -894,15 +894,15 @@
                                 </div>
                                 <div class="clearfix">&nbsp;</div>
                                 <div class="col-md-12 form-group">
-                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" class="nxt clasic-btn">follow up</a><span>&nbsp; &nbsp; &nbsp;</span>
-                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse500" class="prv s-cl clasic-btn">Previous</a>
+                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" class="nxt clasic-btn">التالي</a><span>&nbsp; &nbsp; &nbsp;</span>
+                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse500" class="prv s-cl clasic-btn">السابق</a>
                                 </div>
 
                             </div>
                         </div>
 
                     </div>
-
+                    <%--
                     <div class="panel hidden">
                         <div class="clearfix fal">
                             <div class="accordion-heading">Shipping details<i class="indi fa fa-chevron-up"></i></div>
@@ -1061,6 +1061,11 @@
 
     function NextStep() {
         var result = <%= (Membership.GetUser()!=null).ToString().ToLower()%>;
+        if (result === false) {
+            toastr.error('فضلا سجل الدخول أولا','', {timeOut: 6000,rtl:true,closeButton:true,positionClass:'toast-top-center'});
+            return result;
+        }
+        
         //if (result == true) {
         //    if ($("#ai li:last").hasClass('active')) {
         //        $('.nxt').attr('disabled', true);
@@ -1075,7 +1080,7 @@
 
         //    }
         //}
-        if (result === 'false')
+        if (result === false)
             return result;
         var check = $('#accordion500 .in').attr('check');
         var doCheck = $('#hfChecked').val();
@@ -1087,7 +1092,7 @@
                 var id = $('#accordion500 .in').attr("id");
                 result = validateForm('#' + id, '<%= System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName.ToLower() %>');
 
-                if (result==='true') {
+                if (result===true) {
                     $('#hfChecked').val('1');
                     var optionsList = $('#hfOptions').val();
                     if (optionsList != '') {

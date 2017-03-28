@@ -75,9 +75,25 @@ namespace Khadmatcom.Controls
                     requestData.RequestsOptionsAnswers.Add(requestOption);
                 }
 
-                //attachment
-
                 request.AddRequest(requestData);
+
+                // save uploaded attachment
+                List<string> fileNames = new List<string>();
+                List<string> errorsList = new List<string>();
+                SaveUploadedFile(fup1, fileNames, errorsList);
+                SaveUploadedFile(fup2, fileNames, errorsList);
+                SaveUploadedFile(fup3, fileNames, errorsList);
+                SaveUploadedFile(fup4, fileNames, errorsList);
+                if (errorsList.Count > 0)
+                {
+                    Notify(string.Join("\r\n", errorsList.ToArray()), "حدث خطأ أثناء رفع المرفقات", NotificationType.Error);
+                }
+                else
+                {
+                    if (fileNames.Count > 0)
+                        request.AddRequestAttchments(fileNames, requestData.Id, false);
+                }
+                
                 //InitializeCulture();
 
                 //send notifications
@@ -88,7 +104,7 @@ namespace Khadmatcom.Controls
                     { "city", GetCities().First(x=>x.CityId==requestData.CityId).Name},
                     { "ServiceName", GetServices().First(x=>x.Id==int.Parse(hfServiceId.Value)).Name}
                 };
-
+                
                 string replyToAddress = WebConfigurationManager.AppSettings["ContactUsEmail"];
                 string adminEmail = WebConfigurationManager.AppSettings["AdminEmail"];
                 string siteMasterEmail = WebConfigurationManager.AppSettings["SiteMasterEmail"];
@@ -414,7 +430,7 @@ namespace Khadmatcom.Controls
                     answer = ddlCompany3000.Value;
                     break;
                 case 99:
-                    answer =ddlAirportsName.Value;
+                    answer = ddlAirportsName.Value;
                     break;
                 case 100:
                     answer = ddlIqamaType.Value;
@@ -474,11 +490,11 @@ namespace Khadmatcom.Controls
                     answer = chkBadrom.Checked.ToString();
                     break;
                 //case 119:
-                    //answer = chkGadwa.Checked.ToString();
-                    //break;
+                //answer = chkGadwa.Checked.ToString();
+                //break;
                 //case 117:
-                    //answer = chkGadwa.Checked.ToString();
-                    //break;
+                //answer = chkGadwa.Checked.ToString();
+                //break;
                 case 121:
                     answer = chkSabaha.Checked.ToString();
                     break;
@@ -525,11 +541,11 @@ namespace Khadmatcom.Controls
                     answer = txtPagesCount.Value;
                     break;
                 //case 136:
-                    //answer = chkGadwa.Checked.ToString();
-                   // break;
+                //answer = chkGadwa.Checked.ToString();
+                // break;
                 //case 137:
-                    //answer = chkGadwa.Checked.ToString();
-                    //break;
+                //answer = chkGadwa.Checked.ToString();
+                //break;
                 case 138:
                     answer = txtHieght.Value;
                     break;
@@ -564,8 +580,8 @@ namespace Khadmatcom.Controls
                     answer = chk5Years.Checked.ToString();
                     break;
                 //case 149:
-                    //answer = chkSteam.Checked.ToString();
-                    //break;
+                //answer = chkSteam.Checked.ToString();
+                //break;
                 case 150:
                     answer = chkSteam.Checked.ToString();
                     break;
@@ -576,11 +592,11 @@ namespace Khadmatcom.Controls
                     answer = txtLevelNo.Value;
                     break;
                 //case 153:
-                    //answer =ddlAirportsName.Value;
-                    //break;
+                //answer =ddlAirportsName.Value;
+                //break;
                 //case 154:
-                    //answer = chkGadwa.Checked.ToString();
-                    //break;
+                //answer = chkGadwa.Checked.ToString();
+                //break;
                 case 155:
                     answer = txtQa3aName.Value;
                     break;
@@ -609,7 +625,7 @@ namespace Khadmatcom.Controls
                     answer = txtContainerNo.Value;
                     break;
                 case 164:
-                    answer =txtContainersCount.Value;
+                    answer = txtContainersCount.Value;
                     break;
                 case 165:
                     answer = chkUserName.Checked.ToString();
@@ -624,8 +640,8 @@ namespace Khadmatcom.Controls
                     answer = txtActivityName.Value;
                     break;
                 //case 169:
-                    //answer = chkGadwa.Checked.ToString();
-                    //break;
+                //answer = chkGadwa.Checked.ToString();
+                //break;
                 case 170:
                     answer = chkStructure.Checked.ToString();
                     break;
@@ -636,8 +652,8 @@ namespace Khadmatcom.Controls
                     answer = chkOld.Checked.ToString();
                     break;
                 //case 173:
-                    //answer = chkGadwa.Checked.ToString();
-                    //break;
+                //answer = chkGadwa.Checked.ToString();
+                //break;
                 //case 174:
                 //    answer = chkGadwa.Checked.ToString();
                 //    break;
@@ -688,6 +704,47 @@ namespace Khadmatcom.Controls
                     break;
             }
             return answer;
+        }
+
+        private void SaveUploadedFile(FileUpload file, List<string> fileNames, List<string> errorsList)
+        {
+            string path = Server.MapPath("~/Attachments/");
+            if (file.HasFile)
+            {
+
+                bool fileError = false;
+                string fileExtension = System.IO.Path.GetExtension(file.PostedFile.FileName).ToLower();
+                var fileName = string.Format("{0}_{1}{2}", Servston.Utilities.GetRandomString(5, true), System.IO.Path.GetFileNameWithoutExtension(file.FileName), fileExtension);
+                //Is the file too big to upload?
+                int fileSize = file.PostedFile.ContentLength;
+                if (fileSize > (6 * 1024 * 1024))
+                {
+                    fileError = true;
+                    errorsList.Add(string.Format("هذا لملف -{0} - قد تخطى الحجم المسموح به.", file.FileName));
+                }
+
+                List<string> acceptedFileTypes = new List<string>()
+                        {
+                            ".pdf",
+                            ".doc",
+                            ".docx",
+                            ".jpg",
+                            ".jpeg",
+                            ".gif",
+                            ".png"
+                        };
+                if (!acceptedFileTypes.Contains(fileExtension))
+                {
+                    fileError = true;
+                    errorsList.Add(string.Format("امتداد هذا لملف -{0} - غير مسموح .", file.FileName));
+                }
+                if (!fileError)
+                {
+                    file.SaveAs(path + fileName);
+                    fileNames.Add(fileName);
+                }
+
+            }
         }
     }
 }

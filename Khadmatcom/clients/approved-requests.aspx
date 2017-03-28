@@ -145,12 +145,12 @@
                     showLoading();
                     if (res) {
                         hideLoading();
-                        toastr.success("تم تأكيد طلبك", "شكرا لك");
+                        toastr.success("تم تأكيد طلبك", "شكرا لك",{timeOut: 6000,rtl:true,closeButton:true,positionClass:'toast-top-center'});
                     }
                     else {
                         result = false;
                         hideLoading();
-                        toastr.error("هناك خطأ  أثناء تأكيد طلبك...فضلا حاول لاحقا.", "خطأ"); 
+                        toastr.error("هناك خطأ  أثناء تأكيد طلبك...فضلا حاول لاحقا.", "خطأ",{timeOut: 6000,rtl:true,closeButton:true,positionClass:'toast-top-center'}); 
                     }
                 });
 
