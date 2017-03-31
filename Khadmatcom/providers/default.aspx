@@ -73,6 +73,16 @@
                                         </div>
                                     </ItemTemplate>
                                 </asp:Repeater>
+
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                    <label class="list-group-item-heading pull-right blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>المرفقات :</label>
+                                    <asp:ListView runat="server" DataSource="<%# Item.Attachments.Where(x=>x.IsOutput==false) %>" ItemType="Khadmatcom.Data.Model.Attachment">
+                                        <ItemTemplate>
+                                            <a target="_blank" href='<%# string.Format("/Attachments/{0}", Item.Path)%>' class="attach_url">المرفق <%# Container.DataItemIndex+1 %></a>
+                                        </ItemTemplate>
+                                        <ItemSeparatorTemplate>, </ItemSeparatorTemplate>
+                                    </asp:ListView>
+                                </div>
                             </div>
                             <br />
 
@@ -170,15 +180,15 @@
                 $.getJSON("/api/Khadmatcom/UpdateProviderRequest", userData, function (res) {
                     showLoading();
                     if (res) {
-                       // setTimeout(function() {
-                            //do what you need here
+                        // setTimeout(function() {
+                        //do what you need here
                         //}, 4000);
-                            toastr.success("تم تنفيذ أمرك", "شكرا لك", {timeOut: 60000,rtl:true,closeButton:true,positionClass:'toast-top-center'});
-                            clearFormData('#txtPrice'+id);
-                            clearFormData('#txtReason'+id);
-                            clearFormData('#txtDuration'+id);
+                        toastr.success("تم تنفيذ أمرك", "شكرا لك", {timeOut: 60000,rtl:true,closeButton:true,positionClass:'toast-top-center'});
+                        clearFormData('#txtPrice'+id);
+                        clearFormData('#txtReason'+id);
+                        clearFormData('#txtDuration'+id);
                         
-                            location.reload();
+                        location.reload();
                     }
                     else {
                       
