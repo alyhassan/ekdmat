@@ -212,42 +212,42 @@ namespace Khadmatcom.API
             {
                 ServiceRequests _serviceRequests = new ServiceRequests();
                 _serviceRequests.CloseProviderRequest(id);
-                // send notification to the first provider
+                //// send notification to the first provider
 
-                var request = _serviceRequests.GetRequest(id);
-                var client = _serviceRequests.GetRequest(id).Client;
-                Dictionary<string, string> keysValues = new Dictionary<string, string>
-                {
-                    {"name", client.FullName},
-                    {"no", id.ToString()},
-                    {"duration", request.CurrentDuration.ToString()},
-                    {"ServiceName", request.Service.LocalizedServices.First(l => l.LanguageId == 3073).Title}
-                };
+                //var request = _serviceRequests.GetRequest(id);
+                //var client = _serviceRequests.GetRequest(id).Client;
+                //Dictionary<string, string> keysValues = new Dictionary<string, string>
+                //{
+                //    {"name", client.FullName},
+                //    {"no", id.ToString()},
+                //    {"duration", request.CurrentDuration.ToString()},
+                //    {"ServiceName", request.Service.LocalizedServices.First(l => l.LanguageId == 3073).Title}
+                //};
 
-                string replyToAddress = WebConfigurationManager.AppSettings["ContactUsEmail"];
-                string adminEmail = WebConfigurationManager.AppSettings["AdminEmail"];
-                string siteMasterEmail = WebConfigurationManager.AppSettings["SiteMasterEmail"];
-                try
-                {
-                    Servston.MailManager.SendMail("client/request-finished.html", keysValues,
-                        "تم الاستجابة على طلبكم ببوابة خدماتكم",
-                       UserManger.GetEmail(client.UserId.Value), adminEmail, replyToAddress, new List<string>() { siteMasterEmail });
-                    if (!string.IsNullOrEmpty(request.Client.MobielNumber) &&
-                        request.Client.MobielNumber.Length > 10)
-                    {
-                        string sms =
-                            string.Format(
-                                "عميلنا العزيز نفيدكم انه تم الإنتهاء من تنفيذ طلبكم رقم {0} شكرا لكم لإستخدامكم خدمات كوم.",
-                                request.Service.LocalizedServices.First(l => l.LanguageId == 3073).Title);
+                //string replyToAddress = WebConfigurationManager.AppSettings["ContactUsEmail"];
+                //string adminEmail = WebConfigurationManager.AppSettings["AdminEmail"];
+                //string siteMasterEmail = WebConfigurationManager.AppSettings["SiteMasterEmail"];
+                //try
+                //{
+                //    //Servston.MailManager.SendMail("client/request-finished.html", keysValues,
+                //    //    "تم الاستجابة على طلبكم ببوابة خدماتكم",
+                //    //   UserManger.GetEmail(client.UserId.Value), adminEmail, replyToAddress, new List<string>() { siteMasterEmail });
+                //    if (!string.IsNullOrEmpty(request.Client.MobielNumber) &&
+                //        request.Client.MobielNumber.Length > 10)
+                //    {
+                //        string sms =
+                //            string.Format(
+                //                "عميلنا العزيز نفيدكم انه تم الإنتهاء من تنفيذ طلبكم رقم {0} شكرا لكم لإستخدامكم خدمات كوم.",
+                //                request.Service.LocalizedServices.First(l => l.LanguageId == 3073).Title);
 
-                        Servston.SMS smsManager = new Servston.SMS();
-                        smsManager.Send(request.Client.MobielNumber, sms);
-                    }
+                //        Servston.SMS smsManager = new Servston.SMS();
+                //       // smsManager.Send(request.Client.MobielNumber, sms);
+                //    }
 
-                }
-                catch (Exception ex)
-                {
-                }
+                //}
+                //catch (Exception ex)
+                //{
+                //}
 
                 return true;
             }

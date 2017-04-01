@@ -60,6 +60,15 @@
                                         </div>
                                     </ItemTemplate>
                                 </asp:Repeater>
+                                <div class="col-md-6  col-sm-6 col-xs-12 pull-right">
+                                    <label class="list-group-item-heading pull-right blue"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>المرفقات :</label>
+                                    <asp:ListView runat="server" DataSource="<%# Item.Attachments.Where(x=>x.IsOutput==false) %>" ItemType="Khadmatcom.Data.Model.Attachment">
+                                        <ItemTemplate>
+                                            <a target="_blank" href='<%# string.Format("/Attachments/{0}", Item.Path)%>' class="attach_url">المرفق <%# Container.DataItemIndex+1 %></a>
+                                        </ItemTemplate>
+                                        <ItemSeparatorTemplate>, </ItemSeparatorTemplate>
+                                    </asp:ListView>
+                                </div>
                             </div>
                             <div class="L-button hidden" id="">
                                 <a href="<%# GetLocalizedUrl(string.Format("clients/services-requests/{0}/request-details",Item.Id.EncodeNumber())) %>" class="editt">Edit</a>
