@@ -888,7 +888,7 @@
                                     <div class="form-group">
                                         <label>المرفق 4</label>
                                         <asp:FileUpload ID="fup4" runat="server" CssClass="form-control" />
-                                        <input type="file" class="form-control" />
+                                       <%-- <input type="file" class="form-control" />--%>
                                     </div>
 
                                 </div>
