@@ -76,7 +76,7 @@ namespace Khadmatcom.clients
         {
             string paymentMethod = Request.Form["cars"];
             string payId = "";
-            CurrentRequest.ModifiedDate = DateTime.Now;
+            CurrentRequest.ModifiedDate = Servston.Utilities.GetCurrentClientDateTime();
             SetShippingInfo();
             // save uploaded files
             List<string> fileNames = new List<string>();

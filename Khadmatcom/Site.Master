@@ -871,7 +871,7 @@
                 <div class="pull-right">
 
                     <span class="foot-ab"><%= GetGlobalResourceObject("general.aspx","lblRightsReserved") %>  <%= DateTime.Today.Year %> &copy;</span>
-                    <a href="#">The privacy of your services</a>
+                    <a href="javascript:{}">The privacy of your services</a>
                     <a href="#p8" data-toggle="modal" class="footer-cn"><%= GetKeyValue("Telephone") %><i>&nbsp;</i></a>
                 </div>
             </div>

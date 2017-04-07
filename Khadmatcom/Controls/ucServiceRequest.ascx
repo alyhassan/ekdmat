@@ -94,7 +94,7 @@
                                         </div>
                                         <div class="form-group  col-md-3 col-sm-4 col-xs-6 pull-right">
                                             <label class="clo-md-12">تاريخ الطلب</label>
-                                            <span class="fixed-no form-control"><%= string.Format("{0:MMMM d, yyyy}",DateTime.Now) %></span>
+                                            <span class="fixed-no form-control"><%= string.Format("{0:MMMM d, yyyy}",Servston.Utilities.GetCurrentClientDateTime()) %></span>
 
                                         </div>
                                     </div>

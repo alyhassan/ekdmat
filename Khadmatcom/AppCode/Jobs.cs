@@ -20,14 +20,14 @@ namespace Khadmatcom.AppCode
             if (requests.Any())
             {
                 //update those requests state to expired if it has expired time
-                foreach (RequestProvider request in requests.Where(request => request.ExpiryTime <= DateTime.Now))
+                foreach (RequestProvider request in requests.Where(request => request.ExpiryTime <= Servston.Utilities.GetCurrentClientDateTime()))
                 {
                     requestsManager.UpdateProviderRequest(request.RequestId, request.ProviderId, (int)RequestStutus.Expired,
                         "", request.Price ?? 0, 0);
                 }
                 /*  foreach (RequestProvider request in requests)
                   {
-                      if (request.ExpiryTime <= DateTime.Now)
+                      if (request.ExpiryTime <= Servston.Utilities.GetCurrentClientDateTime())
                       {
                           requestsManager.UpdateProviderRequest(request.RequestId, request.ProviderId, (int)RequestStutus.Expired, "", request.Price ?? 0, 0);
                       }

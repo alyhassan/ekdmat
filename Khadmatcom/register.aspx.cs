@@ -30,8 +30,8 @@ namespace Khadmatcom
                     FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(
                     1, // Ticket version
                     txtEmail.Value, // Username to be associated with this ticket
-                    DateTime.Now, // Date/time ticket was issued
-                    DateTime.Now.AddDays(7), // Date and time the cookie will expire
+                    Servston.Utilities.GetCurrentClientDateTime(), // Date/time ticket was issued
+                    Servston.Utilities.GetCurrentClientDateTime().AddDays(7), // Date and time the cookie will expire
                     false, // if user has checked remember me then create persistent cookie
                     "", // store the user data,
                     FormsAuthentication.FormsCookiePath); // Cookie path specified in the web.config file in <Forms> tag if any.
@@ -52,7 +52,7 @@ namespace Khadmatcom
                     //if (providerUserKey != null)
                     //    Session["CurrentUser"] = userServices.GetUser((Guid) providerUserKey);
 
-                    RedirectAndNotify(returnUrl,"تم التسجيل بنجاح");
+                    RedirectAndNotify(returnUrl, "تم التسجيل بنجاح");
                 }
                 //Notify("تم التسجيل بنجاح", "", NotificationType.Success);
             }
