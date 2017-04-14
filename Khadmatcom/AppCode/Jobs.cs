@@ -19,8 +19,9 @@ namespace Khadmatcom.AppCode
             //check if there is new requests
             if (requests.Any())
             {
+                DateTime clientCurretTime = Servston.Utilities.GetCurrentClientDateTime();
                 //update those requests state to expired if it has expired time
-                foreach (RequestProvider request in requests.Where(request => request.ExpiryTime <= Servston.Utilities.GetCurrentClientDateTime()))
+                foreach (RequestProvider request in requests.Where(request => request.ExpiryTime <= clientCurretTime))
                 {
                     requestsManager.UpdateProviderRequest(request.RequestId, request.ProviderId, (int)RequestStutus.Expired,
                         "", request.Price ?? 0, 0);
