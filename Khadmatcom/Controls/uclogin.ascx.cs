@@ -29,8 +29,8 @@ namespace Khadmatcom.Controls
                 FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(
                 1, // Ticket version
                 userName, // Username to be associated with this ticket
-                Servston.Utilities.GetCurrentClientDateTime(), // Date/time ticket was issued
-                Servston.Utilities.GetCurrentClientDateTime().AddDays(7), // Date and time the cookie will expire
+                DateTime.Now, // Date/time ticket was issued
+                DateTime.Now.AddDays(7), // Date and time the cookie will expire
                 rememberUserName, // if user has checked remember me then create persistent cookie
                 "", // store the user data,
                 FormsAuthentication.FormsCookiePath); // Cookie path specified in the web.config file in <Forms> tag if any.

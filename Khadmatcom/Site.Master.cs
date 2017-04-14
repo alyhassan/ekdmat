@@ -65,6 +65,9 @@ namespace Khadmatcom
         {
             _settingServices = new SettingServices();
         }
+
+        public float ClientTimeOffeset => string.IsNullOrEmpty(hfClientTimeOffeset.Value)?0:float.Parse(hfClientTimeOffeset.Value);
+        
         protected void Page_Init(object sender, EventArgs e)
         {
             // The code below helps to protect against XSRF attacks
@@ -258,7 +261,7 @@ namespace Khadmatcom
                 redirectPath = $"~/en/{pathToTranslate}{queryString}";
             }
 
-
+            
             Response.Redirect(redirectPath);
         }
     }

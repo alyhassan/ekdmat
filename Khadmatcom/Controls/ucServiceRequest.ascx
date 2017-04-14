@@ -94,7 +94,7 @@
                                         </div>
                                         <div class="form-group  col-md-3 col-sm-4 col-xs-6 pull-right">
                                             <label class="clo-md-12">تاريخ الطلب</label>
-                                            <span class="fixed-no form-control"><%= string.Format("{0:MMMM d, yyyy}",Servston.Utilities.GetCurrentClientDateTime()) %></span>
+                                            <span class="fixed-no form-control"><%= string.Format("{0:MMMM d, yyyy}",DateTime.Now) %></span>
 
                                         </div>
                                     </div>
@@ -888,7 +888,7 @@
                                     <div class="form-group">
                                         <label>المرفق 4</label>
                                         <asp:FileUpload ID="fup4" runat="server" CssClass="form-control" />
-                                       <%-- <input type="file" class="form-control" />--%>
+                                        <%-- <input type="file" class="form-control" />--%>
                                     </div>
 
                                 </div>
@@ -1055,6 +1055,9 @@
         if (result == 'false') {
             toastr.error('فضلا سجل الدخول أولا','', {timeOut: 6000,rtl:true,closeButton:true,positionClass:'toast-top-center'});
         }
+        if(result == 'true')
+            showLoading();
+
         return (result == 'true');
     }
 

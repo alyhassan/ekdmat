@@ -7,8 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Khadmatcom.providers
-{
+namespace Khadmatcom.providers {
     
     
     public partial class _default {
@@ -21,5 +20,17 @@ namespace Khadmatcom.providers
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView lvServiceRequest;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new Khadmatcom.Site Master {
+            get {
+                return ((Khadmatcom.Site)(base.Master));
+            }
+        }
     }
 }

@@ -6,15 +6,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Khadmatcom.Data.Model;
 using Khadmatcom.Services;
-using Khadmatcom.Services.Model;
 
 namespace Khadmatcom.providers
 {
     public partial class _default : PageBase
     {
         private readonly ServiceRequests _serviceRequests;
-
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -45,6 +42,17 @@ namespace Khadmatcom.providers
         protected void OnClick(object sender, EventArgs e)
         {
 
+        }
+
+        protected string GetExpiryTime(DateTime expiryTime)
+        {
+            DateTime expiry = expiryTime;
+            float serverTimeOffeset = float.Parse(DateTimeOffset.Now.Offset.ToString().Split(new char[] { ':' }, StringSplitOptions.RemoveEmptyEntries)[0]);
+
+            if (serverTimeOffeset != 0)
+                expiry = expiryTime.AddHours(-serverTimeOffeset).AddHours(3);
+            //  ClientTimeOffeset
+            return string.Format("{0:yyy/MM/dd hh:mm:ss}", expiry);
         }
     }
 }

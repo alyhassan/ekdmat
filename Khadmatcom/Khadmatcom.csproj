@@ -579,6 +579,9 @@
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="providers\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="providers\expired-requests.aspx.cs">
       <DependentUpon>expired-requests.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

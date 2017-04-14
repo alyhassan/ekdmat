@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="Khadmatcom.providers._default" %>
-
 <%@ Import Namespace="Khadmatcom" %>
 
+<%@ MasterType VirtualPath="~/Site.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="/Content/carousel-css/owl.theme.css" />
     <link rel="stylesheet" type="text/css" href="/Content/carousel-css/owl.carousel.css" />
@@ -43,7 +43,7 @@
                                     <div class="clearfix"></div>
                                     <div class="L1">
                                         <span class="pull-right">: الوقت المتبقي للرد </span>
-                                        <span class="blue countDownContainer pull-right" time='<%# string.Format("{0:yyy/MM/dd hh:mm:ss}",Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime) %>' dir="rtl"><%# string.Format("{0:dd MMM yyyy HH:mm}",Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime) %></span>
+                                        <span class="blue countDownContainer pull-right" time='<%# GetExpiryTime(Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime) %>' time2='<%# Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime %>' dir="rtl"><%# string.Format("{0:dd MMM yyyy HH:mm}",Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime) %></span>
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
@@ -128,7 +128,9 @@
 
     </div>
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="js" runat="server">
+<asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="js" runat="server">
     <script src="/Scripts/carousel-js/owl.carousel.js"></script>
     <script src="/Scripts/carousel-js/owl.carousel.min.js"></script>
     <script src="/Scripts/jquery.countdownTimer.js"></script>
@@ -211,7 +213,6 @@
             });
 
 
-
             $(".owl-prev").addClass("fa");
             $(".owl-prev").addClass("fa-chevron-left");
             $(".owl-prev").text("");
@@ -219,6 +220,8 @@
             $(".owl-next").addClass("fa");
             $(".owl-next").addClass("fa-chevron-right");
             $(".owl-next").text("");
+            
+           
 
             //count down timer
             $('.countDownContainer').each(function(){

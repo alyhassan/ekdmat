@@ -44,6 +44,9 @@ namespace Khadmatcom.Controls
 
         protected void btnProceed_OnClick(object sender, EventArgs e)
         {
+            // show loadding control
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "notyScript", "showLoading();", true);
+            
             //string culture = "en-GB";
             //Page.Culture = Page.UICulture = culture;
             //Page.LCID = new System.Globalization.CultureInfo(culture).LCID;
@@ -58,9 +61,9 @@ namespace Khadmatcom.Controls
                     MemberId = CurrentUser.Id,
                     Details = txtDetails.Value,
                     Count = ddlCount.SelectedIndex,
-                    CreatedDate = Servston.Utilities.GetCurrentClientDateTime(),
+                    CreatedDate = DateTime.Now,
                     CreatedBy = CurrentUser.Id,
-                    RequestDate = Servston.Utilities.GetCurrentClientDateTime(),
+                    RequestDate = DateTime.Now,
                     // HijriDate = Servston.Utilities.GetHijriToday(),
                     StatusId = (int)RequestStatus.New,
                     ServiceId = int.Parse(hfServiceId.Value),
