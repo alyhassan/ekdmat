@@ -95,7 +95,7 @@ namespace Khadmatcom.Controls
                 }
 
                 // show loadding control
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "loadingScript", "$('#p10').modal('hide');showLoading(); ", true);
+                //Page.ClientScript.RegisterStartupScript(this.GetType(), "loadingScript", "$('#p10').modal('hide');showLoading(); ", true);
             
                 //InitializeCulture();
 

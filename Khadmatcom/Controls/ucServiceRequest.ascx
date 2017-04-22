@@ -868,7 +868,7 @@
                         <div class="clearfix fal">
                             <div class="accordion-heading">متطلبات الطلب<i class="indi fa fa-chevron-up"></i></div>
                         </div>
-                        <div id="collapse503" class="collapse" aria-expanded="false" check="false">
+                        <div id="collapse501" class="collapse" aria-expanded="false" check="false">
                             <div class="accordion-body clearfix">
                                 <div class="row ">
                                     <%-- <div class="form-group  col-md-2 col-sm-6 col-xs-12 pull-right">--%>
@@ -880,21 +880,26 @@
                                     <p>
                                     </p>
                                 </div>
-                                <div class="clearfix">&nbsp;</div>
-                                <div class="col-md-12 form-group">
-                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" class="nxt clasic-btn">التالي</a><span>&nbsp; &nbsp; &nbsp;</span>
-                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse500" class="prv s-cl clasic-btn">السابق</a>
+                                <div class="col-md-12 form-group clearfix">
+
+                                    <%-- <a href="#" class="nxt s-cl clasic-btn">Proceed</a>--%>
+                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" id="test2"  class="clasic-btn nxt">التالي</a>
+                                    <%--  <a data-toggle="collapse" data-parent="#accordion500" href="card-info.aspx" class="app-close s-cl clasic-btn">Pay Later</a>--%>
+
+                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse500" class="prv s-cl clasic-btn prv">السابق</a>
                                 </div>
+                                
 
 
                             </div>
                         </div>
                     </div>
+
                     <div class="panel">
                         <div class="clearfix fal">
                             <div class="accordion-heading">المرفقات <i class="indi fa fa-chevron-up"></i></div>
                         </div>
-                        <div id="collapse501" class="collapse" aria-expanded="false" check="false">
+                        <div id="collapse503" class="collapse" aria-expanded="false" check="false">
                             <div class="accordion-body clearfix">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -919,13 +924,10 @@
 
                                 </div>
 
-                                <div class="col-md-12 form-group clearfix">
-
-                                    <%-- <a href="#" class="nxt s-cl clasic-btn">Proceed</a>--%>
-                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse504" id="test2" onclick="buildSummary();" class="clasic-btn nxt">التالي</a>
-                                    <%--  <a data-toggle="collapse" data-parent="#accordion500" href="card-info.aspx" class="app-close s-cl clasic-btn">Pay Later</a>--%>
-
-                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse500" class="prv s-cl clasic-btn prv">السابق</a>
+                                <div class="clearfix">&nbsp;</div>
+                                <div class="col-md-12 form-group">
+                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse504" onclick="buildSummary();" class="nxt clasic-btn">التالي</a><span>&nbsp; &nbsp; &nbsp;</span>
+                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse501" class="prv s-cl clasic-btn">السابق</a>
                                 </div>
                             </div>
                         </div>
@@ -1050,11 +1052,12 @@
     }
 
     function checkLoggedIn() {
+        $('#p10').modal('hide');
         showLoading();
         var result = '<%= CurrentUser==null?"false":"true" %>';
         
-        hideLoading();
         if (result == 'false') {
+            hideLoading();
             toastr.error('فضلا سجل الدخول أولا','', {timeOut: 6000,rtl:true,closeButton:true,positionClass:'toast-top-center'});
         }
         //if(result == 'true')
@@ -1065,10 +1068,8 @@
 
 
     function NextStep() {
-        showLoading();
         var result = <%= (Membership.GetUser()!=null).ToString().ToLower()%>;
         if (result === false) {
-            hideLoading();
             toastr.error('فضلا سجل الدخول أولا','', {timeOut: 6000,rtl:true,closeButton:true,positionClass:'toast-top-center'});
             return result;
         }
@@ -1149,13 +1150,10 @@
                         
                     }
                     //return result;
-                    hideLoading();
                     return result;
                 }
-                hideLoading();
                 return result;
             }
-            hideLoading();
             return true;
         }
     }
