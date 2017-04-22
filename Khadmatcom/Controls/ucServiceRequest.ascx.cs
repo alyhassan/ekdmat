@@ -44,9 +44,6 @@ namespace Khadmatcom.Controls
 
         protected void btnProceed_OnClick(object sender, EventArgs e)
         {
-            // show loadding control
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "notyScript", "showLoading();", true);
-            
             //string culture = "en-GB";
             //Page.Culture = Page.UICulture = culture;
             //Page.LCID = new System.Globalization.CultureInfo(culture).LCID;
@@ -96,18 +93,21 @@ namespace Khadmatcom.Controls
                     if (fileNames.Count > 0)
                         request.AddRequestAttchments(fileNames, requestData.Id, false);
                 }
-                
+
+                // show loadding control
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "loadingScript", "$('#p10').modal('hide');showLoading(); ", true);
+            
                 //InitializeCulture();
 
-                //send notifications
-                Dictionary<string, string> keysValues = new Dictionary<string, string>
+                    //send notifications
+                    Dictionary < string, string > keysValues = new Dictionary<string, string>
                 {
                     { "name", CurrentUser.FullName},
                     { "no", requestData.Id.ToString()},
                     { "city", GetCities().First(x=>x.CityId==requestData.CityId).Name},
                     { "ServiceName", GetServices().First(x=>x.Id==int.Parse(hfServiceId.Value)).Name}
                 };
-                
+
                 string replyToAddress = WebConfigurationManager.AppSettings["ContactUsEmail"];
                 string adminEmail = WebConfigurationManager.AppSettings["AdminEmail"];
                 string siteMasterEmail = WebConfigurationManager.AppSettings["SiteMasterEmail"];

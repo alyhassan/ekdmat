@@ -31,6 +31,7 @@
                                     <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
                                     <span>نوعها:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
                                     <span>العدد:<span class="blue"><%# Item.Count%></span> </span>
+                                    <span>المدينة: <span class="blue"><%# Item.City1.LocalizedCities.First(l=>l.LanguageId==3073).Title %></span> </span>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="row L2">

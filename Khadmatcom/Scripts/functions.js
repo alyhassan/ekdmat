@@ -143,7 +143,7 @@ function showLoading(message) {
             backgroundColor: '#fff',
             '-webkit-border-radius': '10px',
             'border-radius': '10px',
-            opacity: .8,
+            opacity: .8,zIndex:"99999"
         }
     });
 }

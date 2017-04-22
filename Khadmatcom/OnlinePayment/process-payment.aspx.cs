@@ -65,7 +65,7 @@ namespace Khadmatcom.OnlinePayment
                             "عميلنا العزيز تم استلام فاتورة طلبكم رقم {0} بقيمة {1} وسيتم البدء بتنفيذها خلال المدة المتفق عليها شكرا لكم لإستخدامكم خدمات كوم.",
                             transactionId, request.CurrentPrice);
                         Servston.SMS smsManager = new Servston.SMS();
-                        smsManager.Send(request.Client.MobielNumber, sms);
+                        smsManager.Send(request.Client.MobielNumber, sms + " - https://e-kdmat.com/");
                     }
                     //send to provider
                     keysValues = new Dictionary<string, string>
@@ -84,7 +84,7 @@ namespace Khadmatcom.OnlinePayment
                             "شريكنا العزيز تم تأكيد طلب خدمة{0} من قبل العميل يمكنكم البدء بتنفيذ الخدمة",
                              request.Service.LocalizedServices.First(l => l.LanguageId == 3073).Title);
                         Servston.SMS smsManager = new Servston.SMS();
-                        smsManager.Send(request.Provider.MobielNumber, sms);
+                        smsManager.Send(request.Provider.MobielNumber, sms + " - https://e-kdmat.com/");
                     }
                     
                 }

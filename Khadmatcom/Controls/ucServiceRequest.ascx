@@ -17,9 +17,9 @@
                     <div class="col-md-12">
                         <ul class="nav nav-tabs nav-arow myTab col-lg-10 col-md-10 col-xs-6 col-sm-9 navbar-right pull-right" id="ai">
                             <li class="active"><a data-toggle="collapse" data-parent="#accordion500" href="#collapse500">بيانات رئيسية</a></li>
-                            <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse501">المرفقات</a></li>
+                            <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse501">متطلبات الطلب</a></li>
                             <%--<li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse502">بيانات الشحن </a></li>--%>
-                            <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse503">متطلبات الطلب</a></li>
+                            <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse503">المرفقات</a></li>
                             <li><a data-toggle="collapse" data-parent="#accordion500" href="#collapse504">إرسال الطلب</a></li>
                         </ul>
                         <ul class="nav nav-bar  col-lg-2 col-md-2 col-xs-6 col-sm-3 navbar-left">
@@ -866,6 +866,32 @@
 
                     <div class="panel">
                         <div class="clearfix fal">
+                            <div class="accordion-heading">متطلبات الطلب<i class="indi fa fa-chevron-up"></i></div>
+                        </div>
+                        <div id="collapse503" class="collapse" aria-expanded="false" check="false">
+                            <div class="accordion-body clearfix">
+                                <div class="row ">
+                                    <%-- <div class="form-group  col-md-2 col-sm-6 col-xs-12 pull-right">--%>
+                                    <div class="form-group  col-md-12 col-sm-12 col-xs-12 pull-right" style="margin-right: 10px; color: #4070a0;">
+                                        <div id="lblNotes"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 hidden">
+                                    <p>
+                                    </p>
+                                </div>
+                                <div class="clearfix">&nbsp;</div>
+                                <div class="col-md-12 form-group">
+                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" class="nxt clasic-btn">التالي</a><span>&nbsp; &nbsp; &nbsp;</span>
+                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse500" class="prv s-cl clasic-btn">السابق</a>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="clearfix fal">
                             <div class="accordion-heading">المرفقات <i class="indi fa fa-chevron-up"></i></div>
                         </div>
                         <div id="collapse501" class="collapse" aria-expanded="false" check="false">
@@ -892,12 +918,15 @@
                                     </div>
 
                                 </div>
-                                <div class="clearfix">&nbsp;</div>
-                                <div class="col-md-12 form-group">
-                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse503" class="nxt clasic-btn">التالي</a><span>&nbsp; &nbsp; &nbsp;</span>
-                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse500" class="prv s-cl clasic-btn">السابق</a>
-                                </div>
 
+                                <div class="col-md-12 form-group clearfix">
+
+                                    <%-- <a href="#" class="nxt s-cl clasic-btn">Proceed</a>--%>
+                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse504" id="test2" onclick="buildSummary();" class="clasic-btn nxt">التالي</a>
+                                    <%--  <a data-toggle="collapse" data-parent="#accordion500" href="card-info.aspx" class="app-close s-cl clasic-btn">Pay Later</a>--%>
+
+                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse500" class="prv s-cl clasic-btn prv">السابق</a>
+                                </div>
                             </div>
                         </div>
 
@@ -971,36 +1000,7 @@
                     </div>--%>
 
 
-                    <div class="panel">
-                        <div class="clearfix fal">
-                            <div class="accordion-heading">متطلبات الطلب<i class="indi fa fa-chevron-up"></i></div>
-                        </div>
-                        <div id="collapse503" class="collapse" aria-expanded="false" check="false">
-                            <div class="accordion-body clearfix">
-                                <div class="row ">
-                                    <%-- <div class="form-group  col-md-2 col-sm-6 col-xs-12 pull-right">--%>
-                                    <div class="form-group  col-md-12 col-sm-12 col-xs-12 pull-right" style="margin-right: 10px; color: #4070a0;">
-                                        <div id="lblNotes"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 hidden">
-                                    <p>
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                    </p>
-                                </div>
 
-                                <div class="col-md-12 form-group clearfix">
-
-                                    <%-- <a href="#" class="nxt s-cl clasic-btn">Proceed</a>--%>
-                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse504" id="test2" onclick="buildSummary();" class="clasic-btn nxt">التالي</a>
-                                    <%--  <a data-toggle="collapse" data-parent="#accordion500" href="card-info.aspx" class="app-close s-cl clasic-btn">Pay Later</a>--%>
-
-                                    <a data-toggle="collapse" data-parent="#accordion500" href="#collapse500" class="prv s-cl clasic-btn prv">السابق</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="panel">
                         <div class="clearfix fal">
@@ -1050,21 +1050,25 @@
     }
 
     function checkLoggedIn() {
+        showLoading();
         var result = '<%= CurrentUser==null?"false":"true" %>';
-       
+        
+        hideLoading();
         if (result == 'false') {
             toastr.error('فضلا سجل الدخول أولا','', {timeOut: 6000,rtl:true,closeButton:true,positionClass:'toast-top-center'});
         }
-        if(result == 'true')
-            showLoading();
+        //if(result == 'true')
+        //    showLoading();
 
         return (result == 'true');
     }
 
 
     function NextStep() {
+        showLoading();
         var result = <%= (Membership.GetUser()!=null).ToString().ToLower()%>;
         if (result === false) {
+            hideLoading();
             toastr.error('فضلا سجل الدخول أولا','', {timeOut: 6000,rtl:true,closeButton:true,positionClass:'toast-top-center'});
             return result;
         }
@@ -1145,11 +1149,13 @@
                         
                     }
                     //return result;
-                    
+                    hideLoading();
                     return result;
                 }
+                hideLoading();
                 return result;
             }
+            hideLoading();
             return true;
         }
     }

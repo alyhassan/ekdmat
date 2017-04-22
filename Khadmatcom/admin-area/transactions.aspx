@@ -139,7 +139,7 @@
                             
 
                             <%--المرفقات--%>
-                            <div <%# Item.StatusId>=(int)RequestStatus.InProgress&&(Item.StatusId!=(int)RequestStatus.Refused||Item.StatusId!=(int)RequestStatus.Expired||Item.StatusId!=(int)RequestStatus.Canceled)?"":"class='hidden'" %>>
+                            <div <%# Item.StatusId>=(int)RequestStatus.New&&(Item.StatusId!=(int)RequestStatus.Refused||Item.StatusId!=(int)RequestStatus.Expired||Item.StatusId!=(int)RequestStatus.Canceled)?"":"class='hidden'" %>>
                                 <hr />
                                 <asp:ListView runat="server" DataSource="<%# Item.Attachments.Where(x=>x.IsOutput==false) %>" ItemType="Khadmatcom.Data.Model.Attachment">
                                     <ItemTemplate>

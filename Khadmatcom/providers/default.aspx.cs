@@ -51,8 +51,8 @@ namespace Khadmatcom.providers
 
             if (serverTimeOffeset != 0)
                 expiry = expiryTime.AddHours(-serverTimeOffeset).AddHours(3);
-            //  ClientTimeOffeset
-            return string.Format("{0:yyy/MM/dd hh:mm:ss}", expiry);
+
+            return string.Format("{0:yyy/MM/dd HH:mm:ss}", expiry);
         }
     }
 }

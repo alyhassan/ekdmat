@@ -179,7 +179,7 @@ namespace Khadmatcom.API
                            "تمديد مدة تنفيذ طلبكم رقم {0} الخاص ب  {1} بمدة {2}",
                            id, request.Service.LocalizedServices.First(l => l.LanguageId == 3073).Title, duration);
                     if (!string.IsNullOrEmpty(request.Client.MobielNumber) && request.Client.MobielNumber.Length > 10)
-                        smsManager.Send(request.Client.MobielNumber, sms);
+                        smsManager.Send(request.Client.MobielNumber, sms + " - https://e-kdmat.com/");
 
                     //send sms to admins
                     sms =

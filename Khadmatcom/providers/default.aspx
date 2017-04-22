@@ -40,10 +40,11 @@
                                     <span>الخدمة المطلوبة: <span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"title") %></span> </span>
                                     <span>نوعها:<span class="blue"><%# GetServiceInfo(Item.ServiceId,LanguageId,"subcategory") %></span> </span>
                                     <span>العدد:<span class="blue"><%# Item.Count%></span> </span>
+                                    <span>المدينة: <span class="blue"><%# Item.City1.LocalizedCities.First(l=>l.LanguageId==3073).Title %></span> </span>
                                     <div class="clearfix"></div>
                                     <div class="L1">
                                         <span class="pull-right">: الوقت المتبقي للرد </span>
-                                        <span class="blue countDownContainer pull-right" time='<%# GetExpiryTime(Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime) %>' time2='<%# Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime %>' dir="rtl"><%# string.Format("{0:dd MMM yyyy HH:mm}",Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime) %></span>
+                                        <span id='t<%# Item.Id %>' class="blue countDownContainer pull-right" time='<%# GetExpiryTime(Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime) %>' time2='<%# Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime %>' dir="rtl"><%# string.Format("{0:dd MMM yyyy HH:mm}",Item.RequestProviders.First(x=>x.ProviderId==CurrentUser.Id).ExpiryTime) %></span>
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
@@ -227,7 +228,8 @@
             $('.countDownContainer').each(function(){
                 var i = $(this);
                 var down = i.attr("time");
-                i.countdowntimer({dateAndTime:down,size:'sm',regexpMatchFormat:"([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})",regexpReplaceWith:'$1<sup>ايام</sup> / $2<sup>ساعة</sup> / $3<sup>دقيقة</sup> / $4<sup>ثانية</sup>'});
+                var id = i.attr("id");
+                $('#'+id).countdowntimer({dateAndTime:down,size:'sm',regexpMatchFormat:"([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})",regexpReplaceWith:'$1<sup>ايام</sup> / $2<sup>ساعة</sup> / $3<sup>دقيقة</sup> / $4<sup>ثانية</sup>'});
             });
             //
 
