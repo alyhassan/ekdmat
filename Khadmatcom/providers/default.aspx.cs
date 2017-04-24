@@ -35,7 +35,15 @@ namespace Khadmatcom.providers
                 string reason = Request.Form["txtReason" + id.ToString()];
                 decimal price = decimal.Parse(Request.Form["txtPrice" + id.ToString()]);
                 int duration = int.Parse(Request.Form["txtDuration"] + id.ToString());
-                _serviceRequests.UpdateProviderRequest(id, CurrentUser.Id, status, reason, price, duration);
+                try
+                {
+                    _serviceRequests.UpdateProviderRequest(id, CurrentUser.Id, status, reason, price, duration);
+                    Notify("تم تنفيذ أمرك", "شكرا لك", NotificationType.Success);
+                }
+                catch 
+                {
+                    Notify("هناك خطأ  أثناء إرسال أمرك...فضلا حاول لاحقا.", "حدث خطأ", NotificationType.Error);
+                }
             }
         }
 
