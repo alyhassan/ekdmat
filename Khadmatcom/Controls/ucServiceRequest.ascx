@@ -1012,12 +1012,12 @@
                             <div class="accordion-body clearfix">
                                 <div class="col-md-12 form-group clearfix ">
                                     <ul class="cleafix" dir="rtl" style="margin-top: 10px; color: #4a78a6;">
-                                        <li class="col-md-6 col-sm-6 pull-right"><strong class="blue">أسم صاحب الطلب: </strong><span><%= CurrentUser==null?"طلب خدمة":CurrentUser.FullName %></span></li>
-                                        <li class="col-md-6 col-sm-6"><strong class="blue">نوع الخدمة: </strong><span id="summaryCategory"></span></li>
-                                        <li class="col-md-6 col-sm-6 pull-right"><strong class="blue">اسم الخدمة: </strong><span id="summaryService"></span></li>
-                                        <li class="col-md-6 col-sm-6"><strong class="blue">العدد: </strong><span id="summaryCount"></span></li>
-                                        <li class="col-md-6 col-sm-6 pull-right"><strong class="blue">المدينة: </strong><span id="summaryCity"></span></li>
-                                        <li class="col-md-6 col-sm-6"><strong class="blue">السعر المبدئي: </strong><span id="summaryPrice"></span></li>
+                                        <li class="col-md-6 col-sm-6 col-xs-12 pull-right"><strong class="blue">أسم صاحب الطلب: </strong><span><%= CurrentUser==null?"طلب خدمة":CurrentUser.FullName %></span></li>
+                                        <li class="col-md-6 col-sm-6 col-xs-12 pull-right"><strong class="blue">نوع الخدمة: </strong><span id="summaryCategory"></span></li>
+                                        <li class="col-md-6 col-sm-6 col-xs-12 pull-right"><strong class="blue">اسم الخدمة: </strong><span id="summaryService"></span></li>
+                                        <li class="col-md-6 col-sm-6 col-xs-12 pull-right"><strong class="blue">العدد: </strong><span id="summaryCount"></span></li>
+                                        <li class="col-md-6 col-sm-6 col-xs-12 pull-right"><strong class="blue">المدينة: </strong><span id="summaryCity"></span></li>
+                                        <li class="col-md-6 col-sm-6 col-xs-12 pull-right"><strong class="blue">السعر المبدئي: </strong><span id="summaryPrice"></span></li>
                                     </ul>
                                     <div class="clearfix"></div>
                                     <div class="clearfix col-md-12 alert alert-info fade in alert-dismissable" style="margin-top: 20px;">
