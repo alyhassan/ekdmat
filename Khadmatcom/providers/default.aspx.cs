@@ -38,11 +38,15 @@ namespace Khadmatcom.providers
                 try
                 {
                     _serviceRequests.UpdateProviderRequest(id, CurrentUser.Id, status, reason, price, duration);
-                    Notify("تم تنفيذ أمرك", "شكرا لك", NotificationType.Success);
+
+                    //finsh session
+                    RedirectAndNotify(Request.RawUrl, "تم تنفيذ أمرك", "شكرا لك", NotificationType.Success);
+                    //Notify("تم تنفيذ أمرك", "شكرا لك", NotificationType.Success);
                 }
                 catch 
                 {
-                    Notify("هناك خطأ  أثناء إرسال أمرك...فضلا حاول لاحقا.", "حدث خطأ", NotificationType.Error);
+                    RedirectAndNotify(Request.RawUrl, "هناك خطأ  أثناء إرسال أمرك...فضلا حاول لاحقا.", "حدث خطأ", NotificationType.Error);
+                    //Notify("هناك خطأ  أثناء إرسال أمرك...فضلا حاول لاحقا.", "حدث خطأ", NotificationType.Error);
                 }
             }
         }

@@ -176,7 +176,7 @@ namespace Khadmatcom.API
                     //send sms to client
                     string sms =
                        string.Format(
-                           "تمديد مدة تنفيذ طلبكم رقم {0} الخاص ب  {1} بمدة {2}",
+                           "تمديد مدة تنفيذ طلبكم رقم {0} الخاص ب  {1} بمدة {2} يوم",
                            id, request.Service.LocalizedServices.First(l => l.LanguageId == 3073).Title, duration);
                     if (!string.IsNullOrEmpty(request.Client.MobielNumber) && request.Client.MobielNumber.Length > 10)
                         smsManager.Send(request.Client.MobielNumber, sms + " - https://e-kdmat.com/");
@@ -184,7 +184,7 @@ namespace Khadmatcom.API
                     //send sms to admins
                     sms =
                         string.Format(
-                            "تمديد مدة تنفيذ طلب رقم {0} الخاص بشريك الخدمة {1} بمدة {2}",
+                            "تمديد مدة تنفيذ طلب رقم {0} الخاص بشريك الخدمة {1} بمدة {2} يوم",
                             id, request.Provider.CompanyName, duration);
 
                     smsManager.SendToAdmin(sms);
